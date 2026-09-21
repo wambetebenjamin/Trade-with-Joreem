@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Member Dashboard — Trade with Joreem</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="member dashboard, trading dashboard, member area" name="keywords">
+    <meta content="Secure member dashboard for active Trade with Joreem subscribers: live breakdowns, curriculum progress, signal log, resources and private community invites." name="description">
+
+    <link href="img/favicon.svg" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/trading.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center flex-wrap" style="height: 45px;">
+                    <a class="me-4" href="mailto:hello@tradewithjoreem.com"><i class="fa fa-envelope-open me-2"></i>hello@tradewithjoreem.com</a>
+                    <a class="me-4" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener"><i class="fab fa-telegram me-2"></i>@tradewithjoreem</a>
+                    <small class="text-light"><i class="fa fa-globe-africa me-2"></i>Global &bull; 100% Online</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-4 text-light"><span class="pulse-dot"></span><b class="mono" style="letter-spacing:.1em;font-size:11px">MARKETS OPEN</b></small>
+                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener"><i class="fab fa-telegram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-youtube fw-normal"></i></a>
+                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-sm-square rounded-circle" href="#"><i class="fab fa-whatsapp fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs><linearGradient id="g1" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#F0B429"/><stop offset="1" stop-color="#D99A14"/></linearGradient></defs>
+                    <rect width="48" height="48" rx="12" fill="url(#g1)"/>
+                    <g stroke="#0A1220" stroke-width="2.6" stroke-linecap="round">
+                        <line x1="14" y1="13" x2="14" y2="35"/>
+                        <line x1="24" y1="9" x2="24" y2="37"/>
+                        <line x1="34" y1="15" x2="34" y2="33"/>
+                    </g>
+                    <rect x="10.6" y="19" width="6.8" height="9.5" rx="1.6" fill="#0A1220"/>
+                    <rect x="20.6" y="14" width="6.8" height="11" rx="1.6" fill="#0A1220"/>
+                    <rect x="30.6" y="21" width="6.8" height="7.5" rx="1.6" fill="#0A1220"/>
+                </svg>
+                <h1 class="m-0">Trade with <span>Joreem</span></h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="bookstore.html" class="nav-item nav-link">Bookstore</a>
+                    <a href="mentorship.html" class="nav-item nav-link">Mentorship</a>
+                    <a href="contact.html" class="nav-item nav-link nav-contact">Contact</a>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-light btn-sm-square rounded-circle ms-3 position-relative" data-open-cart aria-label="Open cart">
+                    <i class="fa fa-shopping-basket fw-normal"></i>
+                    <span class="cart-badge position-absolute top-0 start-100 translate-middle d-none align-items-center justify-content-center rounded-circle" style="font-size:10px;padding:4px 5px;background:var(--secondary);color:#04121C;width:17px;height:17px">0</span>
+                </button>
+                <a href="member.html" class="btn btn-primary py-2 px-4 ms-2 ms-lg-3"><i class="fa fa-user-shield me-2"></i>Member Login</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Page Hero Start -->
+    <div class="container-fluid bg-header page-hero p-0">
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h5 class="fw-bold text-primary text-uppercase mb-3" style="letter-spacing:.18em;">Members Only</h5>
+                    <h1 class="display-4 text-white mb-3">Member Dashboard</h1>
+                    <p class="text-white-50 mb-4" style="max-width: 560px; line-height: 1.8;">Your trading room: live breakdowns, curriculum, signal log and your private community — all in one place.</p>
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Hero End -->
+
+
+
+    <div id="memberArea">
+    <!-- Dashboard Start -->
+    <div class="container-fluid section-pad">
+        <div class="container">
+            <div class="dash-layout">
+                <!-- Sidebar -->
+                <div class="dash-side">
+                    <div class="card-panel profile-card">
+                        <div class="profile-avatar" id="dashAvatar">TR</div>
+                        <div class="p-name" id="dashName">Trader</div>
+                        <div class="p-mail" id="dashMail">member@example.com</div>
+                        <span class="plan-chip" id="dashPlan">Pro Trader — Annual</span>
+                        <div class="card-panel p-3 mb-3" style="background: var(--darker);">
+                            <div class="d-flex justify-content-between" style="font-size: 12px; color: var(--muted);">
+                                <span>Renews on</span>
+                                <span class="mono" style="color: var(--primary); font-weight: 700;" id="dashRenew">—</span>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <a href="mentorship.html" class="btn btn-primary py-2"><i class="fa fa-arrow-up me-2"></i>Upgrade Plan</a>
+                            <button class="btn btn-dark py-2" id="dashLogout"><i class="fa fa-sign-out-alt me-2"></i>Sign Out</button>
+                        </div>
+                    </div>
+                    <div class="card-panel p-4 mt-4">
+                        <h6 class="mb-3" style="color:#fff;"><i class="fa fa-life-ring text-primary me-2"></i>Need help?</h6>
+                        <p style="font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 14px;">Support replies within 24h, Mon–Sat.</p>
+                        <a href="mailto:hello@tradewithjoreem.com" class="btn btn-outline-light btn-sm py-2 w-100"><i class="fa fa-envelope me-2"></i>Email Support</a>
+                    </div>
+                </div>
+
+                <!-- Main -->
+                <div>
+                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+                        <div>
+                            <h3 class="mb-1" style="color:#fff;">Welcome back, <span id="dashName2">Trader</span> <span class="wave">👋</span></h3>
+                            <p class="mb-0" style="color: var(--muted); font-size: 14px;">The market never sleeps — neither does the room. Here's where you left off.</p>
+                        </div>
+                        <span class="badge-chip"><span class="pulse-dot" style="margin-right:0;"></span>Next live breakdown: Tue 09:00 EAT</span>
+                    </div>
+
+                    <div class="dash-stats">
+                        <div class="dash-stat card-panel">
+                            <div class="lbl">Current Streak</div>
+                            <div class="val gold">18 days</div>
+                            <div class="sub">Daily journaling</div>
+                        </div>
+                        <div class="dash-stat card-panel">
+                            <div class="lbl">Lessons Completed</div>
+                            <div class="val">34 / 208</div>
+                            <div class="sub">16% of curriculum</div>
+                        </div>
+                        <div class="dash-stat card-panel">
+                            <div class="lbl">Signals Win Rate</div>
+                            <div class="val green">61.4%</div>
+                            <div class="sub">Last 90 days</div>
+                        </div>
+                        <div class="dash-stat card-panel">
+                            <div class="lbl">Community</div>
+                            <div class="val">2,514</div>
+                            <div class="sub">Members online weekly</div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Live breakdowns -->
+                        <div class="col-lg-8">
+                            <div class="dash-section-title">
+                                <h5><i class="fa fa-video"></i>Latest Live Breakdowns</h5>
+                                <a href="#">View all <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-4">
+                                    <div class="video-card">
+                                        <div class="video-thumb">
+                                            <span class="vt-pair">EUR/USD</span>
+                                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                                            <span class="vt-dur">42:18</span>
+                                        </div>
+                                        <div class="video-body">
+                                            <h6>London open: liquidity sweep &amp; the 3-scenario plan</h6>
+                                            <div class="v-meta">Yesterday &bull; M30/H1</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="video-card">
+                                        <div class="video-thumb" style="background: radial-gradient(300px 160px at 30% 30%, rgba(22,199,132,.18), transparent 70%), linear-gradient(140deg, #0E1B33, #081121);">
+                                            <span class="vt-pair" style="background: var(--secondary);">BTC/USD</span>
+                                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                                            <span class="vt-dur">38:05</span>
+                                        </div>
+                                        <div class="video-body">
+                                            <h6>BTC structure shift — how I sized it and where I'd invalidate</h6>
+                                            <div class="v-meta">2 days ago &bull; H1/H4</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="video-card">
+                                        <div class="video-thumb" style="background: radial-gradient(300px 160px at 60% 70%, rgba(246,70,93,.16), transparent 70%), linear-gradient(140deg, #0E1B33, #081121);">
+                                            <span class="vt-pair" style="background: var(--loss);">NAS100</span>
+                                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                                            <span class="vt-dur">29:47</span>
+                                        </div>
+                                        <div class="video-body">
+                                            <h6>Indices clinic: waiting for the pullback, not the breakout</h6>
+                                            <div class="v-meta">3 days ago &bull; M15</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Signals log -->
+                            <div class="dash-section-title">
+                                <h5><i class="fa fa-satellite-dish"></i>Signal Log — Last 7 Days</h5>
+                                <span class="mono" style="font-size: 12px; color: #5F7194;">For review &amp; learning</span>
+                            </div>
+                            <div class="card-panel overflow-auto" style="border-radius: 16px;">
+                                <table class="signal-table">
+                                    <thead>
+                                        <tr><th>Pair</th><th>Side</th><th>Entry</th><th>Target</th><th>Status</th><th>R</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>EUR/USD</td><td class="side-long">LONG</td><td>1.18120</td><td>1.18610</td><td><span class="status-pill win">WIN</span></td><td style="color:var(--secondary)">+1.8R</td></tr>
+                                        <tr><td>XAU/USD</td><td class="side-short">SHORT</td><td>2418.40</td><td>2402.10</td><td><span class="status-pill win">WIN</span></td><td style="color:var(--secondary)">+2.1R</td></tr>
+                                        <tr><td>BTC/USD</td><td class="side-long">LONG</td><td>96,240</td><td>99,100</td><td><span class="status-pill open">OPEN</span></td><td style="color:var(--primary)">+0.9R</td></tr>
+                                        <tr><td>GBP/USD</td><td class="side-short">SHORT</td><td>1.36910</td><td>1.36480</td><td><span class="status-pill win">WIN</span></td><td style="color:var(--secondary)">+1.5R</td></tr>
+                                        <tr><td>NAS100</td><td class="side-long">LONG</td><td>20,980</td><td>21,310</td><td><span class="status-pill" style="color:var(--loss); background:rgba(246,70,93,.1); border:1px solid rgba(246,70,93,.35);">-1R</span></td><td style="color:var(--loss)">-1.0R</td></tr>
+                                        <tr><td>ETH/USD</td><td class="side-long">LONG</td><td>3,290</td><td>3,440</td><td><span class="status-pill open">OPEN</span></td><td style="color:var(--primary)">+0.4R</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Right column -->
+                        <div class="col-lg-4">
+                            <!-- Curriculum -->
+                            <div class="dash-section-title">
+                                <h5><i class="fa fa-graduation-cap"></i>Your Curriculum</h5>
+                            </div>
+                            <div class="card-panel p-4 mb-4">
+                                <div class="module-row">
+                                    <div class="m-top"><span class="m-name">Module 1 • FX Foundations</span><span class="m-pct">100%</span></div>
+                                    <div class="progress"><div class="progress-bar green" data-w="100" style="width:0"></div></div>
+                                </div>
+                                <div class="module-row">
+                                    <div class="m-top"><span class="m-name">Module 2 • Structure &amp; Liquidity</span><span class="m-pct">72%</span></div>
+                                    <div class="progress"><div class="progress-bar" data-w="72" style="width:0"></div></div>
+                                </div>
+                                <div class="module-row">
+                                    <div class="m-top"><span class="m-name">Module 3 • Risk &amp; Position Sizing</span><span class="m-pct">58%</span></div>
+                                    <div class="progress"><div class="progress-bar" data-w="58" style="width:0"></div></div>
+                                </div>
+                                <div class="module-row">
+                                    <div class="m-top"><span class="m-name">Module 4 • Psychology &amp; Journaling</span><span class="m-pct">31%</span></div>
+                                    <div class="progress"><div class="progress-bar" data-w="31" style="width:0"></div></div>
+                                </div>
+                                <div class="module-row">
+                                    <div class="m-top"><span class="m-name">Module 5 • Crypto Markets</span><span class="m-pct">12%</span></div>
+                                    <div class="progress"><div class="progress-bar" data-w="12" style="width:0"></div></div>
+                                </div>
+                                <a href="#" class="btn btn-primary btn-sm py-2 w-100 mt-2">Continue Learning</a>
+                            </div>
+
+                            <!-- Resources -->
+                            <div class="dash-section-title">
+                                <h5><i class="fa fa-file-invoice"></i>Resources</h5>
+                            </div>
+                            <div class="card-panel p-4 mb-4">
+                                <a class="dl-card" href="assets/books/crypto-signals.pdf" download>
+                                    <i class="fa fa-file-pdf"></i>
+                                    <span><span class="t">Crypto Signals Handbook</span><br><span class="s">PDF • 2.1 MB</span></span>
+                                </a>
+                                <a class="dl-card" href="assets/books/stocks-from-zero.pdf" download>
+                                    <i class="fa fa-file-pdf"></i>
+                                    <span><span class="t">Stocks from Zero</span><br><span class="s">PDF • 1.8 MB</span></span>
+                                </a>
+                                <div class="dl-card" style="cursor:default">
+                                    <i class="fa fa-file-excel"></i>
+                                    <span><span class="t">Position Sizing Calculator</span><br><span class="s">Sheet • included in Pro &amp; Elite</span></span>
+                                </div>
+                                <div class="dl-card" style="cursor:default">
+                                    <i class="fa fa-bookmark"></i>
+                                    <span><span class="t">Daily Journal Template</span><br><span class="s">Notion + Print</span></span>
+                                </div>
+                            </div>
+
+                            <!-- Community -->
+                            <div class="dash-section-title">
+                                <h5><i class="fab fa-telegram"></i>Private Community</h5>
+                            </div>
+                            <div class="card-panel p-4">
+                                <p style="font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 14px;">Your members-only invite. Share only with your own device — links are monitored.</p>
+                                <a href="https://t.me/tradewithjoreem" target="_blank" rel="noopener" class="btn btn-primary py-2 w-100 mb-2"><i class="fab fa-telegram me-2"></i>Open Telegram</a>
+                                <a href="https://discord.gg/tradewithjoreem" target="_blank" rel="noopener" class="btn btn-dark py-2 w-100"><i class="fab fa-discord me-2"></i>Open Discord</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dashboard End -->
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer-main text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
+                        <a href="index.html" class="navbar-brand d-flex align-items-center">
+                            <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect width="48" height="48" rx="12" fill="#0A1220"/>
+                                <g stroke="#F0B429" stroke-width="2.6" stroke-linecap="round">
+                                    <line x1="14" y1="13" x2="14" y2="35"/>
+                                    <line x1="24" y1="9" x2="24" y2="37"/>
+                                    <line x1="34" y1="15" x2="34" y2="33"/>
+                                </g>
+                                <rect x="10.6" y="19" width="6.8" height="9.5" rx="1.6" fill="#F0B429"/>
+                                <rect x="20.6" y="14" width="6.8" height="11" rx="1.6" fill="#F0B429"/>
+                                <rect x="30.6" y="21" width="6.8" height="7.5" rx="1.6" fill="#F0B429"/>
+                            </svg>
+                            <h1 class="m-0">Trade with Joreem</h1>
+                        </a>
+                        <p class="mt-3 mb-4">Risk-first trading education in Forex, Crypto and Stocks. Books, live breakdowns and a private member community — built for serious, consistent growth.</p>
+                        <form onsubmit="event.preventDefault(); this.reset(); alert('Subscribed! Market notes land in your inbox every Monday.');">
+                            <div class="input-group">
+                                <input type="email" required class="form-control p-3" placeholder="Your email">
+                                <button class="btn px-4" type="submit">Join</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fa fa-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">hello@tradewithjoreem.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fab fa-telegram text-primary me-2"></i>
+                                <p class="mb-0">@tradewithjoreem</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fa fa-globe-africa text-primary me-2"></i>
+                                <p class="mb-0">Global &bull; 100% Online</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-sm-square me-2" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener"><i class="fab fa-telegram fw-normal"></i></a>
+                                <a class="btn btn-sm-square me-2" href="#"><i class="fab fa-youtube fw-normal"></i></a>
+                                <a class="btn btn-sm-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-sm-square" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="mb-0">Quick Links</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Joreem</a>
+                                <a class="mb-2" href="bookstore.html"><i class="bi bi-arrow-right text-primary me-2"></i>Bookstore</a>
+                                <a class="mb-2" href="mentorship.html"><i class="bi bi-arrow-right text-primary me-2"></i>Mentorship Plans</a>
+                                <a class="mb-2" href="member.html"><i class="bi bi-arrow-right text-primary me-2"></i>Member Login</a>
+                                <a href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="mb-0">Legal &amp; Payments</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start mb-4">
+                                <a class="mb-2" href="terms.html"><i class="bi bi-arrow-right text-primary me-2"></i>Terms of Service</a>
+                                <a class="mb-2" href="privacy.html"><i class="bi bi-arrow-right text-primary me-2"></i>Privacy Policy</a>
+                                <a href="risk.html"><i class="bi bi-arrow-right text-primary me-2"></i>Financial Risk Disclaimer</a>
+                            </div>
+                            <div class="pay-badges">
+                                <span class="pay-badge"><i class="fa fa-credit-card"></i>Visa</span>
+                                <span class="pay-badge"><i class="fa fa-credit-card"></i>Mastercard</span>
+                                <span class="pay-badge"><i class="fab fa-paypal"></i>PayPal</span>
+                                <span class="pay-badge"><i class="fa fa-mobile-alt"></i>M-Pesa</span>
+                                <span class="pay-badge"><i class="fa fa-bolt"></i>Airtel</span>
+                                <span class="pay-badge"><i class="fa fa-shield-alt"></i>Pesapal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid footer-bottom text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-8">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center" style="height: 70px; gap: 10px;">
+                        <p class="mb-0">&copy; 2026 <a class="text-white border-bottom" href="index.html">Trade with Joreem</a>. All Rights Reserved.</p>
+                        <p class="mb-0 d-none d-md-block" style="color: #3D4C68;">&bull;</p>
+                        <p class="mb-0 d-none d-md-block">Trading involves substantial risk of loss.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/trading.js"></script>
+
+</body>
+
+</html>

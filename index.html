@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Trade with Joreem — Forex, Crypto & Stocks Mentorship</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Forex, Crypto, Stocks, trading mentorship, trading books, Joreem" name="keywords">
+    <meta content="Trade with Joreem — learn Forex, Crypto and Stocks from a full-time trader. Books, live breakdowns and a private mentorship community." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/trading.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center flex-wrap" style="height: 45px;">
+                    <a class="me-4" href="mailto:hello@tradewithjoreem.com"><i class="fa fa-envelope-open me-2"></i>hello@tradewithjoreem.com</a>
+                    <a class="me-4" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener"><i class="fab fa-telegram me-2"></i>@tradewithjoreem</a>
+                    <small class="text-light"><i class="fa fa-globe-africa me-2"></i>Global &bull; 100% Online</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-4 text-light"><span class="pulse-dot"></span><b class="mono" style="letter-spacing:.1em;font-size:11px">MARKETS OPEN</b></small>
+                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener"><i class="fab fa-telegram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-youtube fw-normal"></i></a>
+                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-sm-square rounded-circle" href="#"><i class="fab fa-whatsapp fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs><linearGradient id="g1" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#F0B429"/><stop offset="1" stop-color="#D99A14"/></linearGradient></defs>
+                    <rect width="48" height="48" rx="12" fill="url(#g1)"/>
+                    <g stroke="#0A1220" stroke-width="2.6" stroke-linecap="round">
+                        <line x1="14" y1="13" x2="14" y2="35"/>
+                        <line x1="24" y1="9" x2="24" y2="37"/>
+                        <line x1="34" y1="15" x2="34" y2="33"/>
+                    </g>
+                    <rect x="10.6" y="19" width="6.8" height="9.5" rx="1.6" fill="#0A1220"/>
+                    <rect x="20.6" y="14" width="6.8" height="11" rx="1.6" fill="#0A1220"/>
+                    <rect x="30.6" y="21" width="6.8" height="7.5" rx="1.6" fill="#0A1220"/>
+                </svg>
+                <h1 class="m-0">Trade with <span>Joreem</span></h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="bookstore.html" class="nav-item nav-link">Bookstore</a>
+                    <a href="mentorship.html" class="nav-item nav-link">Mentorship</a>
+                    <a href="contact.html" class="nav-item nav-link nav-contact">Contact</a>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-light btn-sm-square rounded-circle ms-3 position-relative" data-open-cart aria-label="Open cart">
+                    <i class="fa fa-shopping-basket fw-normal"></i>
+                    <span class="cart-badge position-absolute top-0 start-100 translate-middle d-none align-items-center justify-content-center rounded-circle" style="font-size:10px;padding:4px 5px;background:var(--secondary);color:#04121C;width:17px;height:17px">0</span>
+                </button>
+                <a href="member.html" class="btn btn-primary py-2 px-4 ms-2 ms-lg-3"><i class="fa fa-user-shield me-2"></i>Member Login</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Hero Start -->
+    <div class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-glow"></div>
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="hero-kicker">Forex &bull; Crypto &bull; Stocks</div>
+                    <h1>Trade With <span class="gold">Joreem</span> — Master the Markets, Not the Stress</h1>
+                    <p class="hero-lead">From your first candlestick to your first consistent month. Learn price action, risk management and trader psychology from a mentor who trades what he teaches — with books, live breakdowns and a private member community.</p>
+                    <div class="hero-cta-row">
+                        <a href="mentorship.html" class="btn btn-primary py-3 px-4"><i class="fa fa-graduation-cap me-2"></i>Start Mentorship</a>
+                        <a href="bookstore.html" class="btn btn-outline-light py-3 px-4"><i class="fa fa-book me-2"></i>Browse Books</a>
+                    </div>
+                    <div class="hero-trust">
+                        <span><span class="stars me-1">★★★★★</span>4.9/5 from 600+ reviews</span>
+                        <span class="sep"></span>
+                        <span>2,500+ students worldwide</span>
+                        <span class="sep"></span>
+                        <span>Card, PayPal &amp; M-Pesa accepted</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+                    <div class="position-relative">
+                        <div class="terminal">
+                            <div class="terminal-head">
+                                <div class="terminal-dots"><span></span><span></span><span></span></div>
+                                <div class="terminal-pair">EUR/USD <span class="live">LIVE</span></div>
+                                <div class="terminal-time" id="termTime">LIVE</div>
+                            </div>
+                            <div class="terminal-price-row">
+                                <div class="terminal-price" id="termPrice">1.18420</div>
+                                <div class="terminal-chg up" id="termChg">+0.24%</div>
+                            </div>
+                            <div class="candle-wrap">
+                                <canvas id="candleCanvas" class="candle-canvas"></canvas>
+                            </div>
+                            <div class="ohlc-row" id="ohlcRow"></div>
+                            <div class="term-stats">
+                                <div class="term-stat">
+                                    <div class="lbl">Session High</div>
+                                    <div class="val green">1.18790</div>
+                                </div>
+                                <div class="term-stat">
+                                    <div class="lbl">Session Low</div>
+                                    <div class="val">1.18120</div>
+                                </div>
+                                <div class="term-stat">
+                                    <div class="lbl">Winners Trained</div>
+                                    <div class="val gold">2,500+</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="float-chip fc-1"><b>BTC/USD</b> 98,412 <span class="up">▲ 2.1%</span></div>
+                        <div class="float-chip fc-2"><b>XAU/USD</b> 2,412.35 <span class="up">▲ 0.8%</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- Ticker Start -->
+    <div class="ticker-wrap">
+        <div class="ticker-track"></div>
+    </div>
+    <!-- Ticker End -->
+
+
+    <!-- Facts Start -->
+    <div class="container-fluid facts py-5 pt-lg-0">
+        <div class="container py-5 pt-lg-0">
+            <div class="row gx-4">
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="fact-card bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="mb-0">Students Trained</h5>
+                            <h1 class="mb-0"><span data-toggle="counter-up">2500</span>+</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="fact-card bg-light shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                            <i class="fa fa-chart-line text-dark" style="color:#0A1220"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="mb-0">Years in the Markets</h5>
+                            <h1 class="mb-0"><span data-toggle="counter-up">8</span>+</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="fact-card bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                            <i class="fa fa-video"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="mb-0">Live Breakdowns Shared</h5>
+                            <h1 class="mb-0"><span data-toggle="counter-up">12000</span>+</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+
+    <!-- About / Mentor Start -->
+    <div class="container-fluid section-pad wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="mentor-frame">
+                        <img src="img/joreem.jpg" alt="Joreem — founder and head mentor">
+                        <div class="mentor-badge">
+                            <div class="num">8+</div>
+                            <div class="cap">Years trading full-time</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-4">
+                        <h5 class="fw-bold text-primary text-uppercase">Meet Your Mentor</h5>
+                        <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Joreem — Founder, Head Mentor &amp; Full-Time Trader</h2>
+                    </div>
+                    <p class="mb-4" style="color: var(--muted); line-height: 1.8;">Joreem started with one small account, a notebook, and a strict rule: protect the capital first. Eight years later he trades Forex, Crypto and Stocks full-time and has taught the same risk-first system to more than 2,500 students across 40+ countries. No gurus-on-stage, no rented-lifestyle marketing — just process, discipline and transparency.</p>
+                    <div class="row g-0 mb-3">
+                        <div class="col-sm-6">
+                            <ul class="check-list">
+                                <li class="col-12"><i class="fa fa-check"></i>Price action &amp; market structure</li>
+                                <li class="col-12"><i class="fa fa-check"></i>Risk-first position sizing</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="check-list">
+                                <li class="col-12"><i class="fa fa-check"></i>Trader psychology coaching</li>
+                                <li class="col-12"><i class="fa fa-check"></i>Live, on-camera breakdowns</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-3 mt-3">
+                        <a href="about.html" class="btn btn-primary py-3 px-4"><i class="fa fa-user me-2"></i>The Full Story</a>
+                        <a href="mentorship.html" class="btn btn-outline-light py-3 px-4">Join the Mentorship</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About / Mentor End -->
+
+
+    <!-- Features Start -->
+    <div class="container-fluid section-pad wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 640px;">
+                <h5 class="fw-bold text-primary text-uppercase">Why Trade With Joreem</h5>
+                <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Everything You Need to Trade With Confidence</h2>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon"><i class="fa fa-chart-line"></i></div>
+                        <h4 class="mb-3">Live Market Breakdowns</h4>
+                        <p class="m-0">Every session planned on-camera: structure, levels, scenarios and invalidations — before the market moves.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon"><i class="fa fa-shield-alt"></i></div>
+                        <h4 class="mb-3">Risk Management First</h4>
+                        <p class="m-0">Position sizing, R-multiples and drawdown control taught before any entry pattern. Survive first, profit second.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon"><i class="fa fa-user-tie"></i></div>
+                        <h4 class="mb-3">Personal Mentorship</h4>
+                        <p class="m-0">Your questions answered, your trades reviewed. Elite members get 1-on-1 sessions to fix what's actually holding you back.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon"><i class="fa fa-globe-africa"></i></div>
+                        <h4 class="mb-3">Multi-Market Coverage</h4>
+                        <p class="m-0">One system applied across Forex, Crypto and Stocks — so your edge travels with you as markets rotate.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon"><i class="fa fa-users"></i></div>
+                        <h4 class="mb-3">Private Community</h4>
+                        <p class="m-0">Instant access to the members-only Telegram &amp; Discord: study rooms, journal reviews and daily check-ins.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                    <div class="service-item promo d-flex flex-column align-items-center justify-content-center text-center h-100">
+                        <h4 class="mb-3 text-white" style="font-size:1.4rem;">Ready to trade with confidence?</h4>
+                        <p class="text-white-50 mb-4" style="font-size:14px;">Start with a book, or join the full mentorship today.</p>
+                        <a href="mentorship.html" class="btn btn-primary py-2 px-4"><i class="fa fa-arrow-right me-2"></i>View Plans</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+
+
+    <!-- Featured Books Start -->
+    <div class="container-fluid section-pad wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row align-items-end mb-5 gx-4">
+                <div class="col-lg">
+                    <div class="section-title position-relative pb-3">
+                        <h5 class="fw-bold text-primary text-uppercase">The Library</h5>
+                        <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Books That Build Your Edge</h2>
+                    </div>
+                </div>
+                <div class="col-lg-auto text-lg-end">
+                    <a href="bookstore.html" class="btn btn-outline-light py-2 px-4">Full Bookstore <i class="fa fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.2s">
+                    <div class="book-card">
+                        <div class="book-cover-wrap">
+                            <span class="format-badge print">Print + PDF</span>
+                            <img src="assets/books/forex-mastery.jpg" alt="Forex Mastery book cover">
+                        </div>
+                        <div class="book-body">
+                            <h4>Forex Mastery</h4>
+                            <p class="desc">The complete risk-first Forex system: structure, liquidity, entries and the exact sizing rules Joreem uses live.</p>
+                            <div class="book-meta">
+                                <div class="book-price">$59.00<small>Ships worldwide</small></div>
+                                <button class="btn-cart" data-add-to-cart="forex-mastery"><i class="fa fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.35s">
+                    <div class="book-card">
+                        <div class="book-cover-wrap">
+                            <span class="format-badge digital">Instant PDF</span>
+                            <img src="assets/books/crypto-signals.jpg" alt="Crypto Signals Handbook cover">
+                        </div>
+                        <div class="book-body">
+                            <h4>Crypto Signals Handbook</h4>
+                            <p class="desc">How to read, filter and trade crypto setups — and how to ignore the noise. Includes a working signal checklist.</p>
+                            <div class="book-meta">
+                                <div class="book-price">$29.00<small>Instant download</small></div>
+                                <button class="btn-cart" data-add-to-cart="crypto-signals"><i class="fa fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.5s">
+                    <div class="book-card">
+                        <div class="book-cover-wrap">
+                            <span class="format-badge print">Print + PDF</span>
+                            <img src="assets/books/psychology.jpg" alt="Trading Psychology book cover">
+                        </div>
+                        <div class="book-body">
+                            <h4>Trading Psychology</h4>
+                            <p class="desc">The trader's playbook: tilt control, journaling systems and the mental routines of consistently profitable traders.</p>
+                            <div class="book-meta">
+                                <div class="book-price">$49.00<small>Ships worldwide</small></div>
+                                <button class="btn-cart" data-add-to-cart="psychology"><i class="fa fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.65s">
+                    <div class="book-card">
+                        <div class="book-cover-wrap">
+                            <span class="format-badge digital">Instant PDF</span>
+                            <img src="assets/books/stocks-from-zero.jpg" alt="Stocks from Zero cover">
+                        </div>
+                        <div class="book-body">
+                            <h4>Stocks from Zero</h4>
+                            <p class="desc">A beginner-to-swing-trader playbook: reading charts, timing entries, and scaling out without the overwhelm.</p>
+                            <div class="book-meta">
+                                <div class="book-price">$25.00<small>Instant download</small></div>
+                                <button class="btn-cart" data-add-to-cart="stocks-zero"><i class="fa fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Featured Books End -->
+
+
+    <!-- Mentorship Highlight Start -->
+    <div class="container-fluid section-pad wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="cta-band p-4 p-lg-5">
+                <div class="row g-5 align-items-center position-relative" style="z-index:1;">
+                    <div class="col-lg-6">
+                        <div class="section-title position-relative pb-3 mb-4">
+                            <h5 class="fw-bold text-primary text-uppercase">The Mentorship</h5>
+                            <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Learn Every Day, Like It's Your Job</h2>
+                        </div>
+                        <p class="mb-4" style="color: var(--muted); line-height: 1.8;">A structured membership built around live market breakdowns, a full video curriculum, and direct feedback from Joreem. Pick monthly for flexibility or annual to save — and you're in the private community the moment your payment clears.</p>
+                        <ul class="check-list mb-4">
+                            <li class="col-12"><i class="fa fa-video"></i>Daily live breakdowns + on-demand lesson library</li>
+                            <li class="col-12"><i class="fab fa-telegram"></i>Auto-invite to private Telegram &amp; Discord on payment</li>
+                            <li class="col-12"><i class="fa fa-chart-bar"></i>Trade reviews, journal grading &amp; monthly 1-on-1 Q&amp;A</li>
+                            <li class="col-12"><i class="fa fa-credit-card"></i>Card, PayPal, M-Pesa, Airtel &amp; Pesapal checkout</li>
+                        </ul>
+                        <a href="mentorship.html" class="btn btn-primary py-3 px-4"><i class="fa fa-graduation-cap me-2"></i>View Plans &amp; Pricing</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="position-relative h-100" style="min-height: 360px;">
+                            <img src="img/about.jpg" alt="Trading desk" class="position-absolute w-100 h-100 rounded" style="object-fit: cover; border: 1px solid var(--line);">
+                            <div class="position-absolute bottom-0 start-0 m-4 p-3 rounded" style="background: rgba(4,8,15,.85); backdrop-filter: blur(6px); border: 1px solid var(--line);">
+                                <div class="mono" style="font-size:11px; color:#5F7194; letter-spacing:.12em;">THIS MONTH IN THE ROOM</div>
+                                <div class="mono" style="font-size:17px; color:#fff; font-weight:700;">148 breakdowns &bull; 32 live Q&amp;A</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mentorship Highlight End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid section-pad wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 640px;">
+                <h5 class="fw-bold text-primary text-uppercase">Student Results</h5>
+                <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">What Traders Say After 90 Days</h2>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
+                <div class="testimonial-item my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
+                        <div class="avatar-initials" style="background: linear-gradient(135deg, #F0B429, #D99A14);">WK</div>
+                        <div class="ps-4">
+                            <h4 class="mb-1" style="color:#fff;">Wanjiru K.</h4>
+                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">Nairobi, Kenya</small>
+                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        I'd blown two accounts before joining. The risk module alone saved me — I now trade 0.5R max and my first three months were all green. Joreem reviews actual trades, not highlight reels.
+                    </div>
+                </div>
+                <div class="testimonial-item my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
+                        <div class="avatar-initials" style="background: linear-gradient(135deg, #16C784, #0E9F68);">TA</div>
+                        <div class="ps-4">
+                            <h4 class="mb-1" style="color:#fff;">Tunde A.</h4>
+                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">Lagos, Nigeria</small>
+                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        The live breakdowns are the real product. You learn by watching him think, not by memorizing videos. Paid with M-Pesa in two minutes and I was in the Telegram group before the session ended.
+                    </div>
+                </div>
+                <div class="testimonial-item my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
+                        <div class="avatar-initials" style="background: linear-gradient(135deg, #7B8CDE, #5568C9);">DM</div>
+                        <div class="ps-4">
+                            <h4 class="mb-1" style="color:#fff;">Daniel M.</h4>
+                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">Accra, Ghana</small>
+                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i></div>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Bought Forex Mastery first. It's the clearest explanation of liquidity and structure I've found anywhere. The print quality is serious — it's the first thing I show new members.
+                    </div>
+                </div>
+                <div class="testimonial-item my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
+                        <div class="avatar-initials" style="background: linear-gradient(135deg, #E28AC0, #C45C9E);">SB</div>
+                        <div class="ps-4">
+                            <h4 class="mb-1" style="color:#fff;">Sarah B.</h4>
+                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">London, UK</small>
+                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        As a part-timer with a day job, the on-demand library and journal reviews are gold. The psychology book fixed my revenge-trading habit better than a year of "course-hopping" did.
+                    </div>
+                </div>
+                <div class="testimonial-item my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
+                        <div class="avatar-initials" style="background: linear-gradient(135deg, #F6465D, #C92B40);">OP</div>
+                        <div class="ps-4">
+                            <h4 class="mb-1" style="color:#fff;">Kevin O.</h4>
+                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">Toronto, Canada</small>
+                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Elite Desk is worth every dollar. The 1-on-1s exposed that I was over-leveraging everything by 3x. Six months later my equity curve looks completely different. Transparent, professional, no hype.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- FAQ Start -->
+    <div class="container-fluid section-pad wow fadeInUp" data-wow-delay="0.1s" id="faq">
+        <div class="container">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 640px;">
+                <h5 class="fw-bold text-primary text-uppercase">FAQ</h5>
+                <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Questions, Answered Straight</h2>
+            </div>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Do I need experience to join?<span class="faq-ico"><i class="fa fa-plus"></i></span></summary>
+                    <div class="faq-body">No. The Foundation plan starts from absolute zero — what a candle is, how to read structure, how to size a position — before any strategy is introduced. If you already trade, the risk and psychology modules will still save you money.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>What markets are covered?<span class="faq-ico"><i class="fa fa-plus"></i></span></summary>
+                    <div class="faq-body">Forex (majors and key crosses), Crypto (BTC, ETH and major alts) and Stocks/Indices (US tech, S&P 500). The core system is one — price action, liquidity and risk — applied across all three.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>How does the private Telegram &amp; Discord invite work?<span class="faq-ico"><i class="fa fa-plus"></i></span></summary>
+                    <div class="faq-body">The moment your subscription payment clears, the checkout screen issues your members-only invite link directly to Telegram and Discord. If anything doesn't arrive, email hello@tradewithjoreem.com with your order ID and we'll re-issue it within minutes.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Which payment methods do you accept?<span class="faq-ico"><i class="fa fa-plus"></i></span></summary>
+                    <div class="faq-body">Credit/debit cards (via Stripe), PayPal, and mobile money in East &amp; West Africa through Flutterwave (M-Pesa, Airtel Money, MTN MoMo) and Pesapal. All checkouts are encrypted; we never see or store your card details.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Is this a signals service? Do you promise profits?<span class="faq-ico"><i class="fa fa-plus"></i></span></summary>
+                    <div class="faq-body">No, and no. We teach a process you can verify yourself — and we never promise returns, because anyone who does is selling a fantasy. Members see Joreem's real live breakdowns (including the mistakes) so you can judge the quality for yourself. Trading involves real risk; only trade with money you can afford to lose.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I upgrade my plan later?<span class="faq-ico"><i class="fa fa-plus"></i></span></summary>
+                    <div class="faq-body">Yes. Upgrade from Monthly to Annual or from Pro to Elite at any time from your dashboard — you only pay the difference for the remaining period, and your Telegram access stays continuous.</div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <!-- FAQ End -->
+
+
+    <!-- Risk Disclaimer Start -->
+    <div class="risk-band">
+        <div class="container">
+            <div class="risk-inner">
+                <div class="risk-icon"><i class="fa fa-exclamation-triangle"></i></div>
+                <div>
+                    <h6>Risk Disclaimer</h6>
+                    <p>Trading foreign exchange, cryptocurrencies and stocks carries a high level of risk and may not be suitable for all investors. Past performance is not indicative of future results. Trade with Joreem provides education and mentorship only — not financial, investment or trading advice. Never trade with money you cannot afford to lose. Read our full <a href="risk.html">Financial &amp; Risk Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Risk Disclaimer End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer-main text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
+                        <a href="index.html" class="navbar-brand d-flex align-items-center">
+                            <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect width="48" height="48" rx="12" fill="#0A1220"/>
+                                <g stroke="#F0B429" stroke-width="2.6" stroke-linecap="round">
+                                    <line x1="14" y1="13" x2="14" y2="35"/>
+                                    <line x1="24" y1="9" x2="24" y2="37"/>
+                                    <line x1="34" y1="15" x2="34" y2="33"/>
+                                </g>
+                                <rect x="10.6" y="19" width="6.8" height="9.5" rx="1.6" fill="#F0B429"/>
+                                <rect x="20.6" y="14" width="6.8" height="11" rx="1.6" fill="#F0B429"/>
+                                <rect x="30.6" y="21" width="6.8" height="7.5" rx="1.6" fill="#F0B429"/>
+                            </svg>
+                            <h1 class="m-0">Trade with Joreem</h1>
+                        </a>
+                        <p class="mt-3 mb-4">Risk-first trading education in Forex, Crypto and Stocks. Books, live breakdowns and a private member community — built for serious, consistent growth.</p>
+                        <form onsubmit="event.preventDefault(); this.reset(); alert('Subscribed! Market notes land in your inbox every Monday.');">
+                            <div class="input-group">
+                                <input type="email" required class="form-control p-3" placeholder="Your email">
+                                <button class="btn px-4" type="submit">Join</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fa fa-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">hello@tradewithjoreem.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fab fa-telegram text-primary me-2"></i>
+                                <p class="mb-0">@tradewithjoreem</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fa fa-globe-africa text-primary me-2"></i>
+                                <p class="mb-0">Global &bull; 100% Online</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-sm-square me-2" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener"><i class="fab fa-telegram fw-normal"></i></a>
+                                <a class="btn btn-sm-square me-2" href="#"><i class="fab fa-youtube fw-normal"></i></a>
+                                <a class="btn btn-sm-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-sm-square" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="mb-0">Quick Links</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Joreem</a>
+                                <a class="mb-2" href="bookstore.html"><i class="bi bi-arrow-right text-primary me-2"></i>Bookstore</a>
+                                <a class="mb-2" href="mentorship.html"><i class="bi bi-arrow-right text-primary me-2"></i>Mentorship Plans</a>
+                                <a class="mb-2" href="member.html"><i class="bi bi-arrow-right text-primary me-2"></i>Member Login</a>
+                                <a href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="mb-0">Legal &amp; Payments</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start mb-4">
+                                <a class="mb-2" href="terms.html"><i class="bi bi-arrow-right text-primary me-2"></i>Terms of Service</a>
+                                <a class="mb-2" href="privacy.html"><i class="bi bi-arrow-right text-primary me-2"></i>Privacy Policy</a>
+                                <a href="risk.html"><i class="bi bi-arrow-right text-primary me-2"></i>Financial Risk Disclaimer</a>
+                            </div>
+                            <div class="pay-badges">
+                                <span class="pay-badge"><i class="fa fa-credit-card"></i>Visa</span>
+                                <span class="pay-badge"><i class="fa fa-credit-card"></i>Mastercard</span>
+                                <span class="pay-badge"><i class="fab fa-paypal"></i>PayPal</span>
+                                <span class="pay-badge"><i class="fa fa-mobile-alt"></i>M-Pesa</span>
+                                <span class="pay-badge"><i class="fa fa-bolt"></i>Airtel</span>
+                                <span class="pay-badge"><i class="fa fa-shield-alt"></i>Pesapal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid footer-bottom text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-8">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center" style="height: 70px; gap: 10px;">
+                        <p class="mb-0">&copy; 2026 <a class="text-white border-bottom" href="index.html">Trade with Joreem</a>. All Rights Reserved.</p>
+                        <p class="mb-0 d-none d-md-block" style="color: #3D4C68;">&bull;</p>
+                        <p class="mb-0 d-none d-md-block">Trading involves substantial risk of loss.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- Cart Drawer Start -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+        <div class="cart-head">
+            <h5><i class="fa fa-shopping-basket text-primary"></i> Your Cart <span class="count-chip cart-badge">0</span></h5>
+            <button class="btn-close" id="cartClose" aria-label="Close cart"></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-foot" id="cartFoot"></div>
+    </div>
+    <!-- Cart Drawer End -->
+
+
+    <!-- Checkout Modal Start -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fa fa-lock me-2 text-primary"></i>Secure Checkout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="co-steps">
+                        <div class="co-step" data-step="1"><span class="n">1</span>Details</div>
+                        <span class="bar"></span>
+                        <div class="co-step" data-step="2"><span class="n">2</span>Payment</div>
+                        <span class="bar"></span>
+                        <div class="co-step" data-step="3"><span class="n">3</span>Done</div>
+                    </div>
+
+                    <!-- Step 1: Details -->
+                    <div class="co-panel" id="coStep1">
+                        <div id="coItems"></div>
+                        <div class="row g-3 mt-3">
+                            <div class="col-12">
+                                <input id="coEmail" type="email" class="form-control" placeholder="Email address (for receipt & downloads)" style="height: 52px;">
+                            </div>
+                        </div>
+                        <div id="coShipBlock" class="mt-3" style="display: none;">
+                            <div class="row g-3">
+                                <div class="col-sm-6"><input type="text" class="form-control" placeholder="Full name" style="height: 52px;"></div>
+                                <div class="col-sm-6"><input type="text" class="form-control" placeholder="City / Region" style="height: 52px;"></div>
+                                <div class="col-12"><input type="text" class="form-control" placeholder="Street address" style="height: 52px;"></div>
+                                <div class="col-12">
+                                    <select id="shipRegion" class="form-select" style="height: 52px;">
+                                        <option value="ke" selected>Kenya — $5.00</option>
+                                        <option value="ng">Nigeria — $8.00</option>
+                                        <option value="ug">Uganda — $8.00</option>
+                                        <option value="tz">Tanzania — $8.00</option>
+                                        <option value="za">South Africa — $12.00</option>
+                                        <option value="int">International — $18.00</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-100 py-3 mt-3" id="coDetailsNext">Continue to Payment <i class="fa fa-arrow-right ms-2"></i></button>
+                    </div>
+
+                    <!-- Step 2: Payment -->
+                    <div class="co-panel" id="coStep2" style="display: none;">
+                        <div class="pay-tabs">
+                            <button class="pay-tab active" data-panel="Card"><i class="fa fa-credit-card"></i>Card (Stripe)</button>
+                            <button class="pay-tab" data-panel="Paypal"><i class="fab fa-paypal"></i>PayPal</button>
+                            <button class="pay-tab" data-panel="Momo"><i class="fa fa-mobile-alt"></i>Mobile Money</button>
+                            <button class="pay-tab" data-panel="Pesapal"><i class="fa fa-wallet"></i>Pesapal</button>
+                        </div>
+
+                        <div class="pay-panel active" id="payPanelCard">
+                            <div class="card-visual">
+                                <div>
+                                    <div class="cv-chip"></div>
+                                    <div class="cv-num" id="cvNum">4242 4242 4242 4242</div>
+                                </div>
+                                <div class="cv-net">VISA / MC</div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-12"><input id="cardNumber" class="form-control" placeholder="Card number" inputmode="numeric" style="height: 52px;"></div>
+                                <div class="col-sm-6"><input class="form-control" placeholder="MM / YY" style="height: 52px;"></div>
+                                <div class="col-sm-6"><input class="form-control" placeholder="CVC" style="height: 52px;"></div>
+                                <div class="col-12"><input class="form-control" placeholder="Name on card" style="height: 52px;"></div>
+                            </div>
+                            <p class="mt-2 mb-0" style="font-size: 11.5px; color: #5F7194;"><i class="fa fa-shield-alt me-1"></i>Processed by Stripe with 3-D Secure. We never store your card details.</p>
+                        </div>
+
+                        <div class="pay-panel" id="payPanelPaypal">
+                            <div class="card-visual" style="justify-content: center; flex-direction: column; align-items: center; padding: 26px;">
+                                <i class="fab fa-paypal" style="font-size: 44px; color: var(--primary);"></i>
+                                <p class="mb-0 mt-3" style="color: var(--muted); font-size: 14px;">You'll be redirected to PayPal to approve the payment securely.</p>
+                            </div>
+                        </div>
+
+                        <div class="pay-panel" id="payPanelMomo">
+                            <p style="color: var(--muted); font-size: 14px; margin-bottom: 14px;"><i class="fa fa-bolt text-primary me-2"></i>Pay via Flutterwave — an approval prompt lands on your phone.</p>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <select class="form-select" style="height: 52px;">
+                                        <option>M-Pesa (Safaricom)</option>
+                                        <option>Airtel Money</option>
+                                        <option>MTN Mobile Money</option>
+                                        <option>Equity Bank</option>
+                                        <option>Absa / FNB (card to MoMo)</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mm-phone">
+                                        <select class="form-select" style="height: 52px;">
+                                            <option>+254</option>
+                                            <option>+234</option>
+                                            <option>+256</option>
+                                            <option>+255</option>
+                                            <option>+27</option>
+                                        </select>
+                                        <input class="form-control" placeholder="Phone number (e.g. 0712 345 678)" style="height: 52px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pay-panel" id="payPanelPesapal">
+                            <div class="card-visual" style="justify-content: center; flex-direction: column; align-items: center; padding: 26px;">
+                                <i class="fa fa-wallet" style="font-size: 40px; color: var(--primary);"></i>
+                                <p class="mb-0 mt-3" style="color: var(--muted); font-size: 14px;">Pesapal supports bank cards &amp; mobile money across East Africa.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2 mt-3">
+                            <button class="btn btn-dark py-3" data-co-back="1"><i class="fa fa-arrow-left me-2"></i>Back</button>
+                            <button class="btn btn-primary py-3 flex-grow-1" id="coPayBtn"><i class="fa fa-lock me-2"></i>Pay Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Success -->
+                    <div class="co-panel" id="coStep3" style="display: none;">
+                        <div id="coSuccessBody"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Checkout Modal End -->
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Site JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/trading.js"></script>
+</body>
+
+</html>
