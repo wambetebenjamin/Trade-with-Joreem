@@ -56,8 +56,9 @@ Membership auth (`js/trading.js` → `initAuth`) stores a session flag in
 ## Brand assets
 
 - `img/joreem.jpg` — Joreem's headshot (provided)
-- `img/hero.jpg`, `img/about.jpg` — generated brand imagery
-- `assets/books/*.jpg` — generated book covers; `*.pdf` — sample digital downloads
+- `img/hero.jpg` — real photo, [Unsplash](https://images.unsplash.com/photo-1689732888407-310424e3a372) (Unsplash License: free for commercial use, no attribution required)
+- `img/about.jpg` — real photo, [Pexels](https://pexels.com/photo/7567432) (Pexels License: free for commercial use, no attribution required)
+- `assets/books/*.jpg` — designed book covers; `*.pdf` — sample digital downloads
 - `img/favicon.svg` — gold candlestick mark
 
 ## Files that were deliberately NOT carried over from the template

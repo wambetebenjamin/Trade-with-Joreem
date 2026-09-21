@@ -87,7 +87,9 @@
     color: var(--loss);
 }
 
-/* ============ Hero ============ */
+/* ============ Hero ============
+   img/hero.jpg — real photo via Unsplash (Unsplash License, free for commercial use):
+   https://images.unsplash.com/photo-1689732888407-310424e3a372 (dark candlestick chart, 3000x2000) */
 .hero {
     position: relative;
     min-height: 100vh;
