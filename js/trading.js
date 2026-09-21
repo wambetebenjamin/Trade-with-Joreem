@@ -1,4 +1,4 @@
-/********** Trade with Joreem — Interactive Engine **********/
+/********** Trade with Joreem - Interactive Engine **********/
 (function () {
     "use strict";
 
@@ -392,9 +392,9 @@
     var checkoutPlan = null;
 
     var PLANS = {
-        foundation: { id: "foundation", name: "Foundation — Monthly", price: 49, per: "/month", months: 1 },
-        pro:        { id: "pro",        name: "Pro Trader — Annual",  price: 399, per: "/year",  months: 12 },
-        elite:      { id: "elite",      name: "Elite Desk — Annual",  price: 999, per: "/year",  months: 12 }
+        foundation: { id: "foundation", name: "Foundation • Monthly", price: 49, per: "/month", months: 1 },
+        pro:        { id: "pro",        name: "Pro Trader • Annual",  price: 399, per: "/year",  months: 12 },
+        elite:      { id: "elite",      name: "Elite Desk • Annual",  price: 999, per: "/year",  months: 12 }
     };
 
     function coLines() {
@@ -549,7 +549,7 @@
                 '<div class="success-ico"><i class="fa fa-check"></i></div>' +
                 "<h4>Welcome to the Inner Circle</h4>" +
                 '<p class="sub">Your <b style="color:var(--primary)">' + p.name + "</b> membership is active. " +
-                "A receipt was sent to <b>" + email + "</b>. Your private community invite is ready below — members only.</p>" +
+                "A receipt was sent to <b>" + email + "</b>. Your private community invite is ready below. Members only.</p>" +
                 '<a class="tg-card" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener">' +
                 '<i class="fab fa-telegram"></i>' +
                 "<span><span class='t'>Open the Private Telegram</span><br><span class='s'>Auto-invite for verified members</span></span>" +
@@ -628,7 +628,7 @@
                 setTimeout(function () {
                     var auth = {
                         email: email,
-                        plan: "Pro Trader — Annual",
+                        plan: "Pro Trader • Annual",
                         since: new Date().toISOString().slice(0, 10),
                         renews: new Date(Date.now() + 365 * 864e5).toISOString().slice(0, 10)
                     };
@@ -682,7 +682,7 @@
                     '<div class="text-center py-5">' +
                     '<div class="success-ico"><i class="fa fa-paper-plane"></i></div>' +
                     "<h4 class='mb-2' style='color:#fff'>Message Sent</h4>" +
-                    "<p style='color:var(--muted);font-size:14px'>Thanks for reaching out — Joreem's team replies within 24 hours (Mon–Sat).</p>" +
+                    "<p style='color:var(--muted);font-size:14px'>Thanks for reaching out. Joreem's team replies within 24 hours (Monday to Saturday).</p>" +
                     "</div>";
             }, 1200);
         });
