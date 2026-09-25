@@ -397,10 +397,26 @@
         elite:      { id: "elite",      name: "Elite Desk • Annual",  price: 999, per: "/year",  months: 12 }
     };
 
+    /* ================= Get Funded (JCF evaluation) ================= */
+    var FARES = {
+        fast:     { id: "fast",     name: "Fast Funded", price: { "5": 32, "10": 59, "25": 139, "50": 219, "100": 399 } },
+        standard: { id: "standard", name: "2-Step Pro",  price: { "5": 49, "10": 99, "25": 189, "50": 229, "100": 449 } },
+        elite:    { id: "elite",    name: "Elite Scale", price: { "5": 79, "10": 149, "25": 299, "50": 549, "100": 999 } }
+    };
+    var fundingOrder = null; // { prog: id, size: "50", split: "85" }
+
     function coLines() {
         var modal = document.getElementById("coItems");
         if (!modal) return;
-        if (checkoutMode === "mentorship" && checkoutPlan) {
+        if (checkoutMode === "funding" && fundingOrder) {
+            var fare = FARES[fundingOrder.prog];
+            var price = fare.price[fundingOrder.size];
+            modal.innerHTML =
+                '<div class="co-item-line"><span><i class="fa fa-bolt me-2 text-primary"></i>' + fare.name + " &bull; $" + fundingOrder.size + "K Challenge</span><span class='amt'>" + fmtMoney(price) + "</span></div>" +
+                '<div class="co-item-line"><span style="color:var(--secondary)"><i class="fa fa-graduation-cap me-2"></i>Mentorship &amp; community included</span><span class="amt">Included</span></div>' +
+                '<div class="co-item-line"><span style="color:var(--secondary)"><i class="fa fa-chart-line me-2"></i>Reward split track: ' + (fundingOrder.split === "95" ? "Biweekly up to 95%" : "Standard track") + "</span><span class=\"amt\">Locked</span></div>" +
+                '<div class="co-item-line total" style="border-top:1px dashed var(--line);margin-top:8px;padding-top:12px;font-weight:700;color:#fff"><span>Total due today</span><span class="amt">' + fmtMoney(price) + "</span></div>";
+        } else if (checkoutMode === "mentorship" && checkoutPlan) {
             var p = PLANS[checkoutPlan];
             modal.innerHTML =
                 '<div class="co-item-line"><span><i class="fa fa-graduation-cap me-2 text-primary"></i>' + p.name + "</span><span class='amt'>" + fmtMoney(p.price) + "</span></div>" +
@@ -423,6 +439,7 @@
     function startCheckout(mode) {
         checkoutMode = mode;
         checkoutPlan = null;
+        fundingOrder = null;
         // reset state
         document.querySelectorAll("#checkoutModal .co-panel").forEach(function (p, i) {
             p.style.display = i === 0 ? "block" : "none";
@@ -435,6 +452,15 @@
         coLines();
         new bootstrap.Modal(document.getElementById("checkoutModal")).show();
     }
+
+    /* Buy a funded challenge from the Get Funded page picker */
+    window.TWJ = window.TWJ || {};
+    window.TWJ.buyFunding = function (prog, size, split) {
+        var fare = FARES[prog.id];
+        if (!fare) return;
+        fundingOrder = { prog: prog.id, size: size, split: split || "85" };
+        startCheckout("funding");
+    };
 
     function startPlanCheckout(planId) {
         checkoutPlan = planId;
@@ -533,7 +559,33 @@
         var box = document.getElementById("coSuccessBody");
         if (!box) return;
         var html = '<div class="success-box">';
-        if (checkoutMode === "mentorship" && checkoutPlan) {
+        if (checkoutMode === "funding" && fundingOrder) {
+            var fareF = FARES[fundingOrder.prog];
+            var emailF = (document.getElementById("coEmail") || {}).value || "your-email@example.com";
+            try {
+                localStorage.setItem("twj_funding", JSON.stringify({
+                    email: emailF,
+                    program: fareF.name,
+                    size: fundingOrder.size,
+                    split: fundingOrder.split,
+                    purchased: new Date().toISOString().slice(0, 10)
+                }));
+            } catch (e) {}
+            html =
+                '<div class="success-ico"><i class="fa fa-check"></i></div>' +
+                "<h4>Challenge Unlocked</h4>" +
+                '<p class="sub">Your <b style="color:var(--primary)">' + fareF.name + " &bull; $" + fundingOrder.size + "K</b> evaluation is active. " +
+                "Credentials and the platform link are on their way to <b>" + emailF + "</b>.</p>" +
+                '<a class="tg-card" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener">' +
+                '<i class="fab fa-telegram"></i>' +
+                "<span><span class='t'>Join the Private Community</span><br><span class='s'>Daily breakdowns &amp; study rooms</span></span>" +
+                "</a>" +
+                '<a class="tg-card" href="https://discord.gg/tradewithjoreem" target="_blank" rel="noopener">' +
+                '<i class="fab fa-discord"></i>' +
+                "<span><span class='t'>Join the Funded Desk</span><br><span class='s'>Trade reviews &amp; scaling playbook</span></span>" +
+                "</a>" +
+                '<a href="member.html" class="btn btn-primary w-100 py-3 mt-2"><i class="fa fa-chart-line me-2"></i>Go to My Dashboard</a>';
+        } else if (checkoutMode === "mentorship" && checkoutPlan) {
             var p = PLANS[checkoutPlan];
             var email = (document.getElementById("coEmail") || {}).value || "your-email@example.com";
             // simulate membership provisioning

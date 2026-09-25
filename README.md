@@ -13,6 +13,7 @@ element removed and the whole experience reskinned for trading.
 | `about.html`     | Joreem's story, the 3-pillar method, journey timeline                |
 | `bookstore.html` | Print + digital book catalog, bundle deal, shipping/payment info     |
 | `mentorship.html`| Program details, tiered pricing (monthly / annual / elite), how-it-works, FAQ |
+| `funded.html`    | "Get Funded" program: evaluation picker (plan + account size + split), spec grid, how-it-works, trader case study, live payout feed, community + FAQ |
 | `login.html`     | Member login (demo auth)                                             |
 | `member.html`    | Member dashboard: breakdowns, curriculum progress, signal log, resources, Telegram/Discord invites |
 | `contact.html`   | Contact form + support details                                       |
@@ -52,6 +53,24 @@ The checkout is a front-end simulation today. To go live:
 
 Membership auth (`js/trading.js` → `initAuth`) stores a session flag in
 `localStorage`; replace with real JWT/session validation before launch.
+
+## Get Funded program (`funded.html`)
+
+A prop-firm-style "funded trader" flow, inspired by the structure of leading
+funded-account sites (evaluation picker → spec grid → how-it-works → case study
+→ payout feed → community) with all copy and product naming original to the
+Joreem brand. `js/funding.js` drives the interactive picker; the checkout is
+wired into the existing engine via `js/trading.js` → `window.TWJ.buyFunding`
+(illustrative demo prices, front-end simulation only — no live billing).
+
+## SEO
+
+- Full meta set (title, description, keywords, robots, author, canonical),
+  Open Graph and Twitter Card tags, and `application/ld+json` structured data
+  (`Product`, `Organization`, `FAQPage`) on `funded.html`.
+- `sitemap.xml` + `robots.txt` at the site root (replace the
+  `https://tradewithjoreem.com` placeholder domain before publishing).
+- Social share image at `img/og.jpg` (1200×630).
 
 ## Brand assets
 
