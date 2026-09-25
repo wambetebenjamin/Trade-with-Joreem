@@ -1,0 +1,25 @@
+{
+  "name": "Trade with Joreem — Funded Accounts & Trading Education",
+  "short_name": "Trade with Joreem",
+  "description": "Forex, crypto and stocks mentorship plus funded-account evaluations up to $400K with up to a 95% profit split.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#070D1A",
+  "theme_color": "#070D1A",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    { "name": "Programs & Pricing", "url": "/funding.html#pricing" },
+    { "name": "Trading Rules", "url": "/challenge-rules.html" },
+    { "name": "Rewards & Payouts", "url": "/payouts.html" },
+    { "name": "Blog", "url": "/blog.html" }
+  ]
+}

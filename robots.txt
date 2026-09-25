@@ -1,0 +1,28 @@
+# Trade with Joreem — robots.txt
+# Replace the sitemap host with your live domain before launch.
+
+User-agent: *
+Allow: /
+
+# Keep the member area and gated sample downloads out of the index
+Disallow: /member.html
+Disallow: /login.html
+Disallow: /assets/books/*.pdf
+
+# Allow social crawlers to render link previews
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Crawl budget hygiene: block query-string permutations of the pricing page
+User-agent: *
+Disallow: /*?program=*&size=*
+Disallow: /*?utm_
+
+Sitemap: https://tradewithjoreem.com/sitemap.xml
+Host: tradewithjoreem.com

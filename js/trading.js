@@ -276,7 +276,7 @@
                     '<img src="' + p.img + '" alt="' + p.title + '">' +
                     '<div class="ci-body">' +
                     '<div class="ci-title">' + p.title + "</div>" +
-                    '<div class="ci-type">' + (p.type === "digital" ? "Instant PDF" : p.type === "bundle" ? "Bundle" : "Print book") + "</div>" +
+                    '<div class="ci-type">' + (p.typeLabel || (p.type === "digital" ? "Instant PDF" : p.type === "bundle" ? "Bundle" : "Print book")) + "</div>" +
                     '<div class="ci-row">' +
                     '<span class="qty-ctrl">' +
                     '<button data-act="dec" data-idx="' + idx + '" aria-label="Decrease">&minus;</button>' +
@@ -323,6 +323,25 @@
             }, 1400);
         }
     }
+
+    /* Public hook: page modules (js/funding.js) register dynamically priced
+       SKUs — funded-account challenges are priced live by the program /
+       account-size / add-on selector, so the price can't live in the static
+       CATALOG. Registered SKUs reuse the whole cart + checkout flow. */
+    window.TWJ = window.TWJ || {};
+    window.TWJ.fmtMoney = fmtMoney;
+    window.TWJ.addItem = function (item) {
+        if (!item || !item.id) return;
+        CATALOG[item.id] = {
+            id: item.id,
+            title: item.title,
+            type: item.type || "digital",
+            typeLabel: item.typeLabel || "Funded account challenge",
+            price: Number(item.price) || 0,
+            img: item.img || "img/challenge-card.jpg"
+        };
+        addToCart(item.id);
+    };
 
     function openCart() {
         var d = document.getElementById("cartDrawer");

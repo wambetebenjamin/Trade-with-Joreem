@@ -1,0 +1,15 @@
+# macOS / editors
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Local build scratch (the generated .html files are committed)
+_build/__pycache__/
+
+# Never commit payment keys, analytics secrets or member data
+.env
+.env.*
+*.pem
+secrets.json
