@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Position Sizing Formula: How to Risk 1% Correctly (With Examples)</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="position sizing formula, how to risk 1 percent per trade, forex lot size calculator, risk management trading" name="keywords">
+    <meta content="The exact position sizing formula used for funded accounts — risk per trade, stop distance, lot size and the drawdown maths that keeps an evaluation alive." name="description">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="author" content="Trade with Joreem">
+    <meta name="theme-color" content="#070D1A">
+    <link rel="canonical" href="https://tradewithjoreem.com/blog/position-sizing-risk-management.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Trade with Joreem">
+    <meta property="og:title" content="Position Sizing Formula: How to Risk 1% Correctly">
+    <meta property="og:description" content="Risk per trade, stop distance and lot size — with worked examples for a 50K and a 100K funded account.">
+    <meta property="og:url" content="https://tradewithjoreem.com/blog/position-sizing-risk-management.html">
+    <meta property="og:image" content="https://tradewithjoreem.com/img/og-default.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Position Sizing Formula: How to Risk 1% Correctly">
+    <meta name="twitter:description" content="Risk per trade, stop distance and lot size — with worked examples for a 50K and a 100K funded account.">
+    <meta name="twitter:image" content="https://tradewithjoreem.com/img/og-default.jpg">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.svg" rel="icon">
+    <link href="../site.webmanifest" rel="manifest">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/trading.css" rel="stylesheet">
+    <link href="../css/funding.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- Topbar Start -->
+    <div class="container-fluid topbar px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center flex-wrap" style="height: 45px;">
+                    <a class="me-4" href="mailto:hello@tradewithjoreem.com"><i class="fa fa-envelope-open me-2"></i>hello@tradewithjoreem.com</a>
+                    <a class="me-4" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener"><i class="fab fa-telegram me-2"></i>@tradewithjoreem</a>
+                    <small class="text-light"><i class="fa fa-globe-africa me-2"></i>Kenya &bull; Nigeria &bull; Ethiopia &bull; Somalia &bull; Global</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-4 text-light"><span class="pulse-dot"></span><b class="mono" style="letter-spacing:.1em;font-size:11px">MARKETS OPEN</b></small>
+                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener"><i class="fab fa-telegram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-youtube fw-normal"></i></a>
+                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-sm-square rounded-circle" href="#"><i class="fab fa-whatsapp fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="../index.html" class="navbar-brand p-0">
+                <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs><linearGradient id="g1" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#F0B429"/><stop offset="1" stop-color="#D99A14"/></linearGradient></defs>
+                    <rect width="48" height="48" rx="12" fill="url(#g1)"/>
+                    <g stroke="#0A1220" stroke-width="2.6" stroke-linecap="round">
+                        <line x1="14" y1="13" x2="14" y2="35"/>
+                        <line x1="24" y1="9" x2="24" y2="37"/>
+                        <line x1="34" y1="15" x2="34" y2="33"/>
+                    </g>
+                    <rect x="10.6" y="19" width="6.8" height="9.5" rx="1.6" fill="#0A1220"/>
+                    <rect x="20.6" y="14" width="6.8" height="11" rx="1.6" fill="#0A1220"/>
+                    <rect x="30.6" y="21" width="6.8" height="7.5" rx="1.6" fill="#0A1220"/>
+                </svg>
+                <h1 class="m-0">Trade with <span>Joreem</span></h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="../index.html" class="nav-item nav-link">Home</a>
+                    <a href="../about.html" class="nav-item nav-link">About</a>
+                    <div class="nav-item dropdown">
+                        <a href="../funding.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" aria-expanded="false">Funded Accounts</a>
+                        <div class="dropdown-menu">
+                            <a href="../funding.html" class="dropdown-item"><i class="fa fa-trophy text-primary me-2"></i>Programs &amp; Pricing</a>
+                            <a href="../challenge-rules.html" class="dropdown-item"><i class="fa fa-shield-alt text-primary me-2"></i>Rules &amp; Drawdown</a>
+                            <a href="../payouts.html" class="dropdown-item"><i class="fa fa-wallet text-primary me-2"></i>Rewards &amp; Payouts</a>
+                            <a href="../affiliates.html" class="dropdown-item"><i class="fa fa-handshake text-primary me-2"></i>Affiliate Program</a>
+                        </div>
+                    </div>
+                    <a href="../bookstore.html" class="nav-item nav-link">Bookstore</a>
+                    <a href="../mentorship.html" class="nav-item nav-link">Mentorship</a>
+                    <a href="../blog.html" class="nav-item nav-link active">Blog</a>
+                    <a href="../contact.html" class="nav-item nav-link nav-contact">Contact</a>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-light btn-sm-square rounded-circle ms-3 position-relative" data-open-cart aria-label="Open cart">
+                    <i class="fa fa-shopping-basket fw-normal"></i>
+                    <span class="cart-badge position-absolute top-0 start-100 translate-middle d-none align-items-center justify-content-center rounded-circle" style="font-size:10px;padding:4px 5px;background:var(--secondary);color:#04121C;width:17px;height:17px">0</span>
+                </button>
+                <a href="../member.html" class="btn btn-primary py-2 px-4 ms-2 ms-lg-3"><i class="fa fa-user-shield me-2"></i>Member Login</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->    <!-- Article Head Start -->
+    <div class="fp-article-head">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="fp-article-meta mb-3">
+                        <span class="tag">Risk &amp; psychology</span>
+                        <span><i class="fa fa-user me-1"></i>Joreem</span>
+                        <span><i class="fa fa-calendar me-1"></i>Updated 28 August 2026</span>
+                        <span><i class="fa fa-clock me-1"></i>8 min read</span>
+                    </div>
+                    <h1>Position sizing formula: how to risk 1% correctly</h1>
+                    <p style="color:#B9C7DE; font-size:16.5px; line-height:1.85; max-width:680px;" class="mb-0">
+                        Two traders can take the same trade, at the same level, with the same stop — and only one of them
+                        will survive the month. The difference is size. Here is the arithmetic, worked out properly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Article Head End -->
+
+
+    <!-- Article Body Start -->
+    <div class="container-fluid section-pad">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <div class="fp-prose">
+                        <div class="fp-key-takeaways">
+                            <h4>Key takeaways</h4>
+                            <ul>
+                                <li>Position size is derived from three inputs: account equity, risk percentage and stop distance.</li>
+                                <li>Formula for FX: lots = (equity × risk%) ÷ (stop pips × pip value per lot).</li>
+                                <li>Fixed-dollar risk beats fixed lots because it self-adjusts as your account and volatility change.</li>
+                                <li>Recalculate after every change to your balance — including after a reward payout.</li>
+                                <li>Never widen a stop to keep a size. Change the size to keep the stop.</li>
+                            </ul>
+                        </div>
+
+                        <p>
+                            Position sizing is the least glamorous skill in trading and the single highest-value one. It
+                            is also the skill most often skipped, because every social-media post shows the winner and
+                            none show the size relative to the account. If you get sizing right, an average strategy
+                            survives long enough to become a good one. If you get it wrong, a good strategy can still
+                            kill the account.
+                        </p>
+
+                        <h2>The formula</h2>
+                        <p>Three inputs, one output:</p>
+                        <blockquote>
+                            <p><strong>Risk amount</strong> = account equity × risk percentage<br>
+                                <strong>Position size</strong> = risk amount ÷ (stop distance × value per unit)</p>
+                        </blockquote>
+                        <p>
+                            For forex pairs quoted in USD (EUR/USD, GBP/USD, AUD/USD), one standard lot moves
+                            approximately $10 per pip. So for a 100K account risking 1% with a 30-pip stop:
+                        </p>
+                        <ul>
+                            <li>Risk amount = $100,000 × 1% = <strong>$1,000</strong></li>
+                            <li>Stop distance = 30 pips</li>
+                            <li>Lots = $1,000 ÷ (30 × $10) = <strong>0.33 lots</strong> (round down to 0.33)</li>
+                        </ul>
+                        <p>
+                            If you had simply traded 1 lot — a very common default — the same stop would cost $300, or
+                            0.3% of the account. Do that three times in a day and you have used 90% of a 1% daily budget.
+                            That is how accounts die quietly.
+                        </p>
+
+                        <div class="fp-callout">
+                            <h4>Quick reference: 1% risk per trade</h4>
+                            <div class="fp-table-wrap mt-3">
+                                <table class="fp-table" style="min-width:0;">
+                                    <thead><tr><th>Account</th><th>1% risk</th><th>20-pip stop</th><th>40-pip stop</th><th>80-pip stop</th></tr></thead>
+                                    <tbody>
+                                        <tr><th>10K</th><td>$100</td><td>0.50 lots</td><td>0.25 lots</td><td>0.12 lots</td></tr>
+                                        <tr><th>25K</th><td>$250</td><td>1.25 lots</td><td>0.62 lots</td><td>0.31 lots</td></tr>
+                                        <tr><th>50K</th><td>$500</td><td>2.50 lots</td><td>1.25 lots</td><td>0.62 lots</td></tr>
+                                        <tr><th>100K</th><td>$1,000</td><td>5.00 lots</td><td>2.50 lots</td><td>1.25 lots</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="fp-note mt-3 mb-0">
+                                Assumes a USD-quoted major where 1 standard lot = $10 per pip. Divide appropriately for
+                                mini (0.1) and micro (0.01) lots — most funded-account traders never need more than a
+                                small fraction of the "full" figure because stops on intraday setups are usually
+                                tighter than 40 pips.
+                            </p>
+                        </div>
+
+                        <h2>Why fixed-dollar risk beats fixed lots</h2>
+                        <p>
+                            If you always trade the same lot size, your risk in dollars changes every time the market's
+                            volatility does. A 15-pip stop on a quiet Asian session and a 70-pip stop after a CPI release
+                            are not remotely the same trade — but with fixed lots they cost you wildly different amounts.
+                            Fixed-dollar risk normalises that: volatile conditions automatically buy you a smaller size.
+                        </p>
+                        <p>
+                            It also compounds the right way. As your account grows, your risk grows proportionally and
+                            your P&amp;L scales. After a drawdown, size shrinks automatically, which protects the recovery.
+                        </p>
+
+                        <h2>Gold, indices and crypto: adjust the per-unit value</h2>
+                        <p>
+                            The formula does not change — only the value of one pip per lot does. Common approximations
+                            for a standard lot:
+                        </p>
+                        <ul>
+                            <li><strong>XAU/USD (gold):</strong> 1 lot = 100 oz, so a $1.00 move = $100. A 5-dollar stop on 1 lot risks $500.</li>
+                            <li><strong>US30 / NAS100:</strong> contract value varies; check the platform's specification window.</li>
+                            <li><strong>BTC/USD:</strong> 1 lot usually equals 1 BTC, so a $500 stop on 1 lot risks $500.</li>
+                        </ul>
+                        <p>
+                            On MT5, open the specification window and confirm "tick value". Two minutes of checking
+                            prevents the most expensive category of mistake on a funded account.
+                        </p>
+
+                        <h2>Sizing against the drawdown rules, not just the trade</h2>
+                        <p>
+                            On an evaluation, size has a second constraint: the daily loss limit. If you risk 1% per
+                            trade on a 5% daily limit, you can lose five trades before the day ends. That is a
+                            comfortable margin. If you risk 2.5% per trade, two losses ends your day — and one of those
+                            losses will inevitably occur on a day when you have already taken a loss.
+                        </p>
+                        <div class="fp-table-wrap">
+                            <table class="fp-table">
+                                <thead><tr><th>Risk per trade</th><th>Losses to breach a 5% daily limit</th><th>Losses to breach a 10% max loss</th><th>Verdict</th></tr></thead>
+                                <tbody>
+                                    <tr><th>0.5%</th><td>10</td><td>20</td><td class="ok">Very conservative</td></tr>
+                                    <tr><th>1%</th><td class="ok">5</td><td class="ok">10</td><td class="ok">Recommended</td></tr>
+                                    <tr><th>2%</th><td>2.5</td><td>5</td><td>Aggressive but survivable</td></tr>
+                                    <tr><th>3%</th><td>1.6</td><td>3.3</td><td class="no">Too fragile</td></tr>
+                                    <tr><th>5%</th><td>1</td><td>2</td><td class="no">One bad trade ends the day</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h2>The four sizing errors that end funded accounts</h2>
+                        <ol>
+                            <li><strong>Widening the stop to keep the lot size.</strong> If the structure needs a wider stop, the size must shrink. Always.</li>
+                            <li><strong>Revenge sizing.</strong> Doubling after a loss to "get it back" turns a 1% loss into a 2% loss and then a 4% loss.</li>
+                            <li><strong>Sizing off account size instead of equity.</strong> After a $6,000 drawdown, a 1% risk is 1% of $94,000, not of the original $100,000.</li>
+                            <li><strong>Forgetting correlated positions.</strong> Long EUR/USD, GBP/USD and AUD/USD is one dollar trade, not three 1% risks — it is a 3% risk.</li>
+                        </ol>
+
+                        <h2>A one-page process you can actually follow</h2>
+                        <ol>
+                            <li>Mark the level. Define the invalidation before entry.</li>
+                            <li>Measure the stop distance in pips or dollars.</li>
+                            <li>Open a calculator and solve for size at 1% or less.</li>
+                            <li>Round <em>down</em> to the nearest micro lot.</li>
+                            <li>Check total open risk including correlated pairs — keep the portfolio under 3%.</li>
+                            <li>Stack your account with <a href="../funding.html#pricing">a funded account</a> when risk is a habit, not a calculation.</li>
+                        </ol>
+
+                        <div class="fp-key-takeaways">
+                            <h4>Next steps</h4>
+                            <ul>
+                                <li>Calculate your own 1% lot size for your two main instruments and write it on a card.</li>
+                                <li>Read the <a href="../challenge-rules.html#daily-loss">daily loss rule</a> so you know exactly how many trades your budget allows.</li>
+                                <li>Run the <a href="../funding.html#pricing">reward calculator</a> to see what a realistic 6% cycle pays you.</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <a class="btn btn-primary px-4 py-3" href="../funding.html#pricing">See funded accounts</a>
+                                <a class="btn btn-outline-light px-4 py-3" href="../blog/pass-prop-firm-challenge-checklist.html">The 10-point pass checklist</a>
+                            </div>
+                        </div>
+
+                        <h2 id="faq">Position sizing FAQ</h2>
+                        <h3>Should I risk a fixed percentage or a fixed dollar amount?</h3>
+                        <p>
+                            A fixed percentage of equity. It scales your size up as the account grows and down after a
+                            drawdown, which keeps your risk constant relative to the capital you actually have.
+                        </p>
+                        <h3>What lot size is 1% risk on a 50K account?</h3>
+                        <p>
+                            At a 40-pip stop on a USD-quoted major, 1% of a 50K account is $500, which equals 1.25
+                            standard lots. With a 20-pip stop it is 2.5 lots; with an 80-pip stop it is 0.62 lots.
+                        </p>
+                        <h3>Is 1% too small to make money?</h3>
+                        <p>
+                            No. A 1% risk trader making 2R per week on three trades compounds to roughly 6% a month — that
+                            is $6,000 on a 100K funded account, or $5,400 net at a 90% split.
+                        </p>
+                        <h3>How do I size when trading gold or crypto?</h3>
+                        <p>
+                            Same formula, different per-unit value. Check the platform specification window for tick
+                            value, then solve for size. On gold, a $5 stop on one standard lot risks $500.
+                        </p>
+
+                        <div class="fp-share">
+                            <span>Share this guide:</span>
+                            <a class="fp-chip" href="https://t.me/share/url?url=https://tradewithjoreem.com/blog/position-sizing-risk-management.html" target="_blank" rel="noopener"><i class="fab fa-telegram me-1"></i>Telegram</a>
+                            <a class="fp-chip" href="https://twitter.com/intent/tweet?url=https://tradewithjoreem.com/blog/position-sizing-risk-management.html" target="_blank" rel="noopener"><i class="fab fa-twitter me-1"></i>X</a>
+                            <a class="fp-chip" href="https://wa.me/?text=https://tradewithjoreem.com/blog/position-sizing-risk-management.html" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-1"></i>WhatsApp</a>
+                        </div>
+
+                        <div class="fp-related">
+                            <h4 style="color:#fff; font-family:'Rubik',sans-serif;">Read next</h4>
+                            <div class="row g-4 mt-2">
+                                <div class="col-md-6">
+                                    <article class="fp-blog-card">
+                                        <div class="bc-top" style="height:110px;"><i class="fa fa-list-ol"></i></div>
+                                        <div class="bc-body">
+                                            <div class="bc-cat">Funded accounts</div>
+                                            <h3><a href="pass-prop-firm-challenge-checklist.html">The 10-point pass checklist</a></h3>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-md-6">
+                                    <article class="fp-blog-card">
+                                        <div class="bc-top" style="height:110px;"><i class="fa fa-balance-scale"></i></div>
+                                        <div class="bc-body">
+                                            <div class="bc-cat">Funded accounts</div>
+                                            <h3><a href="1-step-vs-2-step-challenge.html">1 Step vs 2 Step challenge</a></h3>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="fp-toc">
+                        <h6>In this guide</h6>
+                        <a href="#faq">Position sizing FAQ</a>
+                        <a href="../challenge-rules.html#daily-loss">Daily loss rule</a>
+                        <a href="../challenge-rules.html#drawdown">Maximum loss rule</a>
+                        <a href="../funding.html#pricing">Reward calculator</a>
+                    </div>
+                    <div class="card-panel p-4 mt-4">
+                        <h6 style="color:#fff; font-family:'Rubik',sans-serif;">Size it right on a funded account</h6>
+                        <p class="fp-note mb-3">Up to $400K allocation and a 95% split when your process is ready.</p>
+                        <a class="btn btn-primary w-100 py-3" href="../funding.html#pricing">Buy an Evaluation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Article Body End -->
+
+
+    <!-- Risk Disclaimer Start -->
+    <div class="risk-band">
+        <div class="container">
+            <div class="risk-inner">
+                <div class="risk-icon"><i class="fa fa-exclamation-triangle"></i></div>
+                <div>
+                    <h6>Risk Disclaimer</h6>
+                    <p>Examples are illustrative and assume simplified pip values. Real contract specifications differ by instrument and platform. Educational content only — not investment advice, and no outcome is guaranteed. Read the full <a href="../risk.html">Financial &amp; Risk Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Risk Disclaimer End -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Position sizing formula: how to risk 1% correctly",
+          "description": "The exact position sizing formula for funded accounts — risk per trade, stop distance, lot size and the drawdown maths that keeps an evaluation alive.",
+          "image": "https://tradewithjoreem.com/img/og-default.jpg",
+          "datePublished": "2026-08-28",
+          "dateModified": "2026-08-28",
+          "author": { "@type": "Person", "name": "Joreem", "url": "https://tradewithjoreem.com/about.html" },
+          "publisher": { "@type": "Organization", "name": "Trade with Joreem", "logo": { "@type": "ImageObject", "url": "https://tradewithjoreem.com/img/og-default.jpg" } },
+          "mainEntityOfPage": { "@type": "WebPage", "@id": "https://tradewithjoreem.com/blog/position-sizing-risk-management.html" },
+          "wordCount": 1240,
+          "articleSection": "Risk & psychology"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tradewithjoreem.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://tradewithjoreem.com/blog.html" },
+            { "@type": "ListItem", "position": 3, "name": "Position sizing formula", "item": "https://tradewithjoreem.com/blog/position-sizing-risk-management.html" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What lot size is 1% risk on a 50K account?", "acceptedAnswer": { "@type": "Answer", "text": "At a 40-pip stop on a USD-quoted major, 1% of a 50,000 account is 500 US dollars, equal to 1.25 standard lots. With a 20-pip stop it is 2.5 lots, and with an 80-pip stop it is 0.62 lots." } },
+            { "@type": "Question", "name": "Should I risk a fixed percentage or a fixed dollar amount per trade?", "acceptedAnswer": { "@type": "Answer", "text": "A fixed percentage of equity. It scales position size up as the account grows and down after a drawdown, keeping risk constant relative to capital." } },
+            { "@type": "Question", "name": "How do I size positions when trading gold or crypto?", "acceptedAnswer": { "@type": "Answer", "text": "Use the same formula with the correct per-unit value. Check the platform specification window for tick value, then solve for position size — a 5 dollar stop on one standard lot of gold risks 500 dollars." } }
+          ]
+        }
+      ]
+    }
+    </script>
+<!-- Footer Start -->
+    <div class="container-fluid footer-main text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
+                        <a href="../index.html" class="navbar-brand d-flex align-items-center">
+                            <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect width="48" height="48" rx="12" fill="#0A1220"/>
+                                <g stroke="#F0B429" stroke-width="2.6" stroke-linecap="round">
+                                    <line x1="14" y1="13" x2="14" y2="35"/>
+                                    <line x1="24" y1="9" x2="24" y2="37"/>
+                                    <line x1="34" y1="15" x2="34" y2="33"/>
+                                </g>
+                                <rect x="10.6" y="19" width="6.8" height="9.5" rx="1.6" fill="#F0B429"/>
+                                <rect x="20.6" y="14" width="6.8" height="11" rx="1.6" fill="#F0B429"/>
+                                <rect x="30.6" y="21" width="6.8" height="7.5" rx="1.6" fill="#F0B429"/>
+                            </svg>
+                            <h1 class="m-0">Trade with Joreem</h1>
+                        </a>
+                        <p class="mt-3 mb-4">Risk-first trading education in Forex, Crypto and Stocks, plus funded-account evaluations for traders who are ready to prove it.</p>
+                        <form onsubmit="event.preventDefault(); this.reset(); alert('Subscribed! Market notes land in your inbox every Monday.');">
+                            <div class="input-group">
+                                <input type="email" required class="form-control p-3" placeholder="Your email">
+                                <button class="btn px-4" type="submit">Join</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fa fa-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">hello@tradewithjoreem.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fab fa-telegram text-primary me-2"></i>
+                                <p class="mb-0">@tradewithjoreem</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fa fa-globe-africa text-primary me-2"></i>
+                                <p class="mb-0">Global &bull; 100% Online</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-sm-square me-2" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener"><i class="fab fa-telegram fw-normal"></i></a>
+                                <a class="btn btn-sm-square me-2" href="#"><i class="fab fa-youtube fw-normal"></i></a>
+                                <a class="btn btn-sm-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-sm-square" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="mb-0">Quick Links</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="mb-2" href="../index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="mb-2" href="../about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Joreem</a>
+                                <a class="mb-2" href="../funding.html"><i class="bi bi-arrow-right text-primary me-2"></i>Funded Accounts</a>
+                                <a class="mb-2" href="../challenge-rules.html"><i class="bi bi-arrow-right text-primary me-2"></i>Trading Rules</a>
+                                <a class="mb-2" href="../payouts.html"><i class="bi bi-arrow-right text-primary me-2"></i>Rewards &amp; Payouts</a>
+                                <a class="mb-2" href="../bookstore.html"><i class="bi bi-arrow-right text-primary me-2"></i>Bookstore</a>
+                                <a class="mb-2" href="../mentorship.html"><i class="bi bi-arrow-right text-primary me-2"></i>Mentorship Plans</a>
+                                <a class="mb-2" href="../blog.html"><i class="bi bi-arrow-right text-primary me-2"></i>Blog</a>
+                                <a class="mb-2" href="../affiliates.html"><i class="bi bi-arrow-right text-primary me-2"></i>Affiliate Program</a>
+                                <a class="mb-2" href="../member.html"><i class="bi bi-arrow-right text-primary me-2"></i>Member Login</a>
+                                <a href="../contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="mb-0">Legal &amp; Payments</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start mb-4">
+                                <a class="mb-2" href="../terms.html"><i class="bi bi-arrow-right text-primary me-2"></i>Terms of Service</a>
+                                <a class="mb-2" href="../privacy.html"><i class="bi bi-arrow-right text-primary me-2"></i>Privacy Policy</a>
+                                <a href="../risk.html"><i class="bi bi-arrow-right text-primary me-2"></i>Financial Risk Disclaimer</a>
+                            </div>
+                            <div class="pay-badges">
+                                <span class="pay-badge"><i class="fa fa-credit-card"></i>Visa</span>
+                                <span class="pay-badge"><i class="fa fa-credit-card"></i>Mastercard</span>
+                                <span class="pay-badge"><i class="fab fa-paypal"></i>PayPal</span>
+                                <span class="pay-badge"><i class="fa fa-mobile-alt"></i>M-Pesa</span>
+                                <span class="pay-badge"><i class="fa fa-bolt"></i>Airtel</span>
+                                <span class="pay-badge"><i class="fa fa-shield-alt"></i>Pesapal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid footer-bottom text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-8">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center" style="height: 70px; gap: 10px;">
+                        <p class="mb-0">&copy; 2026 <a class="text-white border-bottom" href="../index.html">Trade with Joreem</a>. All Rights Reserved.</p>
+                        <p class="mb-0 d-none d-md-block" style="color: #3D4C68;">&bull;</p>
+                        <p class="mb-0 d-none d-md-block">Trading involves substantial risk of loss.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End --><!-- Cart Drawer Start -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+        <div class="cart-head">
+            <h5><i class="fa fa-shopping-basket text-primary"></i> Your Cart <span class="count-chip cart-badge">0</span></h5>
+            <button class="btn-close" id="cartClose" aria-label="Close cart"></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-foot" id="cartFoot"></div>
+    </div>
+    <!-- Cart Drawer End -->
+
+
+    <!-- Checkout Modal Start -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fa fa-lock text-primary me-2"></i>Secure Checkout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="co-steps">
+                        <span class="co-step active">1. Your details</span>
+                        <span class="co-step">2. Payment</span>
+                        <span class="co-step">3. Confirmation</span>
+                    </div>
+
+                    <!-- Step 1: Details -->
+                    <div class="co-panel" id="coStep1">
+                        <div id="coItems"></div>
+                        <div class="mt-4">
+                            <label class="form-label" style="color:var(--muted); font-size:12.5px;">Email address (for receipt &amp; account credentials)</label>
+                            <input id="coEmail" type="email" class="form-control" placeholder="you@example.com" style="height: 52px;">
+                        </div>
+                        <div class="mt-3">
+                            <label class="form-label" style="color:var(--muted); font-size:12.5px;">Full name (KYC match)</label>
+                            <input id="coName" type="text" class="form-control" placeholder="As it appears on your ID" style="height: 52px;">
+                        </div>
+                        <div class="mt-3">
+                            <label class="form-label" style="color:var(--muted); font-size:12.5px;">Phone number (for mobile money payouts)</label>
+                            <input id="coPhone" type="tel" class="form-control" placeholder="+254 7XX XXX XXX" style="height: 52px;">
+                        </div>
+                        <button class="btn btn-primary w-100 py-3 mt-3" id="coDetailsNext">Continue to Payment <i class="fa fa-arrow-right ms-2"></i></button>
+                        <p class="fp-note mt-3 mb-0">Trading takes place in a simulated environment. By continuing you confirm you have read the <a class="fp-inline-link" href="../challenge-rules.html">trading rules</a> and the <a class="fp-inline-link" href="../risk.html">risk disclaimer</a>.</p>
+                    </div>
+
+                    <!-- Step 2: Payment -->
+                    <div class="co-panel" id="coStep2" style="display: none;">
+                        <div class="pay-tabs">
+                            <button class="pay-tab active" data-panel="Card" type="button"><i class="fa fa-credit-card"></i>Card</button>
+                            <button class="pay-tab" data-panel="Paypal" type="button"><i class="fab fa-paypal"></i>PayPal</button>
+                            <button class="pay-tab" data-panel="Momo" type="button"><i class="fa fa-mobile-alt"></i>Mobile Money</button>
+                            <button class="pay-tab" data-panel="Pesapal" type="button"><i class="fa fa-shield-alt"></i>Pesapal</button>
+                        </div>
+
+                        <div class="pay-panel active" id="payPanelCard">
+                            <div class="card-visual mb-3">
+                                <div class="d-flex justify-content-between align-items-start mb-4">
+                                    <i class="fa fa-microchip"></i>
+                                    <span class="mono" style="font-size:11px;letter-spacing:.14em">SECURE</span>
+                                </div>
+                                <div class="cv-num" id="cvNum">4242 4242 4242 4242</div>
+                                <div class="d-flex justify-content-between mt-3" style="font-size:11px;letter-spacing:.1em">
+                                    <span id="cvName">YOUR NAME</span><span id="cvExp">12/28</span>
+                                </div>
+                            </div>
+                            <div class="row g-2">
+                                <div class="col-12"><input id="cardNumber" class="form-control" placeholder="Card number" inputmode="numeric" style="height: 52px;"></div>
+                                <div class="col-7"><input class="form-control" placeholder="MM / YY" style="height: 52px;"></div>
+                                <div class="col-5"><input class="form-control" placeholder="CVC" style="height: 52px;"></div>
+                                <div class="col-12"><input id="coNameCard" class="form-control" placeholder="Name on card" style="height: 52px;"></div>
+                            </div>
+                            <p class="fp-note mt-3 mb-0">Demo checkout — no card is charged. Live card payments run through Stripe.</p>
+                        </div>
+
+                        <div class="pay-panel" id="payPanelPaypal">
+                            <p style="color:#B9C7DE; font-size:14px;">You'll be redirected to PayPal to approve the payment, then returned here automatically.</p>
+                            <div class="processing-box"><i class="fab fa-paypal"></i><span>PayPal JS SDK button loads on the live site.</span></div>
+                        </div>
+
+                        <div class="pay-panel" id="payPanelMomo">
+                            <p style="color:#B9C7DE; font-size:14px;">Pay with M-Pesa, Airtel Money or MTN MoMo. You'll receive an STK push prompt on the number entered in step 1.</p>
+                            <div class="mb-2"><input class="form-control" placeholder="Mobile money number" style="height: 52px;"></div>
+                            <div class="processing-box"><i class="fa fa-mobile-alt"></i><span>Flutterwave / Pesapal mobile money integration slot.</span></div>
+                        </div>
+
+                        <div class="pay-panel" id="payPanelPesapal">
+                            <p style="color:#B9C7DE; font-size:14px;">Pesapal supports cards, mobile money and bank transfer across East Africa.</p>
+                            <div class="processing-box"><i class="fa fa-shield-alt"></i><span>Pesapal form-post redirect slot.</span></div>
+                        </div>
+
+                        <div class="d-flex gap-2 mt-3">
+                            <button class="btn btn-outline-light py-3" data-co-back type="button"><i class="fa fa-arrow-left"></i></button>
+                            <button class="btn btn-primary py-3 flex-grow-1" id="coPayBtn"><i class="fa fa-lock me-2"></i>Pay Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Success -->
+                    <div class="co-panel" id="coStep3" style="display: none;">
+                        <div id="coSuccessBody"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Checkout Modal End --><!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Site JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/trading.js"></script>
+    <script src="../js/funding.js"></script>
+</body>
+
+</html>
