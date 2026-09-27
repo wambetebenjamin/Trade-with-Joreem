@@ -19,6 +19,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/trading.css" rel="stylesheet">
+    <link href="css/funding.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,6 +28,12 @@
         <div class="spinner"></div>
     </div>
     <!-- Spinner End -->
+    <!-- Promo Bar Start -->
+    <div class="promo-bar" id="promoBar">
+        New here? Get 20% OFF your first month with code <span class="code" id="promoCode" title="Click to copy">START20</span>. Excludes Elite Desk.
+        <button class="promo-close" id="promoClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+    <!-- Promo Bar End -->
 
     <!-- Topbar Start -->
     <div class="container-fluid topbar px-5 d-none d-lg-block">
@@ -73,11 +80,13 @@
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
+                                <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="index.html#how" class="nav-item nav-link">How It Works</a>
+                    <a href="index.html#pricing" class="nav-item nav-link">Pricing</a>
                     <a href="bookstore.html" class="nav-item nav-link">Bookstore</a>
                     <a href="mentorship.html" class="nav-item nav-link">Mentorship</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="contact.html" class="nav-item nav-link nav-contact">Contact</a>
                 </div>
                 <button type="button" class="btn btn-sm btn-outline-light btn-sm-square rounded-circle ms-3 position-relative" data-open-cart aria-label="Open cart">
@@ -90,19 +99,14 @@
     </div>
 
     <!-- Page Hero Start -->
-    <div class="container-fluid bg-header page-hero p-0">
+    <div class="container-fluid bg-header page-hero ph-center p-0">
         <div class="container position-relative" style="z-index: 2;">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h5 class="fw-bold text-primary text-uppercase mb-3" style="letter-spacing:.18em;">Financial Risk Disclaimer</h5>
-                    <h1 class="display-4 text-white mb-3">Financial Risk Disclaimer</h1>
-                    <p class="text-white-50 mb-4" style="max-width: 560px; line-height: 1.8;">Read before trading: the risks of forex, crypto and stock trading, and what this site is and is not.</p>
-                    <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <div class="ph-kicker"><i class="fa fa-exclamation-triangle"></i> Read Before Trading</div>
+            <h1 class="display-4 text-white mb-3">Financial Risk Disclaimer</h1>
+            <p class="text-white-50 mb-4" style="max-width: 640px; line-height: 1.8;">Read before trading: the risks of forex, crypto and stock trading, and what this site is and is not.</p>
+            <ol class="breadcrumb m-0 justify-content-center"><li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Risk Disclaimer</li>
-                    </ol>
-                </div>
-            </div>
+            </ol>
         </div>
     </div>
     <!-- Page Hero End -->

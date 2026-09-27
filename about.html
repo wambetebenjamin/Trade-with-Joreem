@@ -19,6 +19,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/trading.css" rel="stylesheet">
+    <link href="css/funding.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,6 +28,12 @@
         <div class="spinner"></div>
     </div>
     <!-- Spinner End -->
+    <!-- Promo Bar Start -->
+    <div class="promo-bar" id="promoBar">
+        New here? Get 20% OFF your first month with code <span class="code" id="promoCode" title="Click to copy">START20</span>. Excludes Elite Desk.
+        <button class="promo-close" id="promoClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+    <!-- Promo Bar End -->
 
     <!-- Topbar Start -->
     <div class="container-fluid topbar px-5 d-none d-lg-block">
@@ -74,11 +81,13 @@
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
+                                <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link active">About</a>
+                    <a href="index.html#how" class="nav-item nav-link">How It Works</a>
+                    <a href="index.html#pricing" class="nav-item nav-link">Pricing</a>
                     <a href="bookstore.html" class="nav-item nav-link">Bookstore</a>
                     <a href="mentorship.html" class="nav-item nav-link">Mentorship</a>
+                    <a href="about.html" class="nav-item nav-link active">About</a>
                     <a href="contact.html" class="nav-item nav-link nav-contact">Contact</a>
                 </div>
                 <button type="button" class="btn btn-sm btn-outline-light btn-sm-square rounded-circle ms-3 position-relative" data-open-cart aria-label="Open cart">
@@ -92,19 +101,15 @@
     <!-- Navbar End -->
 
     <!-- Page Hero Start -->
-    <div class="container-fluid bg-header page-hero p-0">
+    <div class="container-fluid bg-header page-hero ph-center p-0">
         <div class="container position-relative" style="z-index: 2;">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h5 class="fw-bold text-primary text-uppercase mb-3" style="letter-spacing:.18em;">The Person Behind the Charts</h5>
-                    <h1 class="display-4 text-white mb-3">About Joreem</h1>
-                    <p class="text-white-50 mb-4" style="max-width: 560px; line-height: 1.8;">Eight years in the markets. One system. A simple promise: teach the process, show the mistakes, and never promise what the markets can't.</p>
-                    <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <div class="ph-kicker"><i class="fa fa-user"></i> The Person Behind the Charts</div>
+            <h1 class="display-4 text-white mb-3">About Joreem</h1>
+            <p class="text-white-50 mb-4" style="max-width: 640px; line-height: 1.8;">Eight years in the markets. One system. A simple promise: teach the process, show the mistakes, and never promise what the markets can't.</p>
+            <div class="hero-stats"><div class="hstat"><div class="n">8<em>+</em></div><div class="l">Years Full-Time</div></div><div class="hstat"><div class="n">2,500<em>+</em></div><div class="l">Students Trained</div></div><div class="hstat"><div class="n">40<em>+</em></div><div class="l">Countries Reached</div></div><div class="hstat"><div class="n">4</div><div class="l">Books Published</div></div></div>
+            <ol class="breadcrumb m-0 justify-content-center"><li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">About</li>
-                    </ol>
-                </div>
-            </div>
+            </ol>
         </div>
     </div>
     <!-- Page Hero End -->
@@ -114,10 +119,8 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
-                    <div class="section-title position-relative pb-3 mb-4">
-                        <h5 class="fw-bold text-primary text-uppercase">The Story</h5>
-                        <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.4rem);">From One Small Account to a Trading Room Full of Students</h2>
-                    </div>
+                    <div class="case-chip"><i class="fa fa-book-open"></i> The Story</div>
+                    <h2 class="mb-4" style="color:#fff; font-size: clamp(1.8rem, 3vw, 2.4rem); line-height:1.25;">From One Small Account to a Trading Room Full of Students</h2>
                     <div class="prose">
                         <p class="mb-4">Joreem's first trade was a disaster: a leveraged FX position opened on a YouTube recommendation, closed at a loss within hours. He could have quit that day. Instead, he opened a notebook and wrote the rule that still runs everything at Trade with Joreem: <b style="color:#fff">protect the capital first; everything else is a detail.</b></p>
                         <p class="mb-4">Over the next several years he rebuilt his education the hard way: market structure, liquidity, position sizing, and the psychology of sitting still when your hands want to click. By year three he was consistently profitable. By year five, full-time. By year six, friends and followers started asking the same questions he'd wished someone would answer for him, clearly, and without the hype.</p>
@@ -174,82 +177,84 @@
                 <h5 class="fw-bold text-primary text-uppercase">The Method</h5>
                 <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Three Pillars, One System</h2>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.2s">
-                    <div class="card-panel p-4 h-100" style="position: relative; overflow: hidden;">
-                        <div class="mono" style="font-size: 44px; font-weight: 700; color: rgba(240,180,41,.16); position: absolute; top: 10px; right: 18px;">01</div>
-                        <div class="service-icon" style="margin-bottom: 22px;"><i class="fa fa-chart-line"></i></div>
-                        <h4 class="mb-3" style="color:#fff;">Structure &amp; Price Action</h4>
-                        <p style="color: var(--muted); font-size: 14px; line-height: 1.75;">Trend, liquidity and levels read the way professionals do. You learn where the market goes, and, just as important, where it goes when it changes its mind.</p>
-                    </div>
+            <div class="stage-grid">
+                <div class="stage-card wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="num">01</div>
+                    <div class="tag">Pillar One</div>
+                    <h3><i class="fa fa-chart-line me-2 text-primary"></i>Structure &amp; Price Action</h3>
+                    <p>Trend, liquidity and levels read the way professionals do. You learn where the market goes, and, just as important, where it goes when it changes its mind.</p>
                 </div>
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.4s">
-                    <div class="card-panel p-4 h-100" style="position: relative; overflow: hidden;">
-                        <div class="mono" style="font-size: 44px; font-weight: 700; color: rgba(240,180,41,.16); position: absolute; top: 10px; right: 18px;">02</div>
-                        <div class="service-icon" style="margin-bottom: 22px;"><i class="fa fa-shield-alt"></i></div>
-                        <h4 class="mb-3" style="color:#fff;">Risk &amp; Position Sizing</h4>
-                        <p style="color: var(--muted); font-size: 14px; line-height: 1.75;">The module most students skip, and the one that keeps them funded. Fixed R, max drawdown rules, and the math that turns a losing streak into a survivable one.</p>
-                    </div>
+                <div class="stage-card wow fadeInUp" data-wow-delay="0.35s">
+                    <div class="num">02</div>
+                    <div class="tag">Pillar Two</div>
+                    <h3><i class="fa fa-shield-alt me-2 text-primary"></i>Risk &amp; Position Sizing</h3>
+                    <p>The module most students skip, and the one that keeps them funded. Fixed R, max drawdown rules, and the math that turns a losing streak into a survivable one.</p>
                 </div>
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="card-panel p-4 h-100" style="position: relative; overflow: hidden;">
-                        <div class="mono" style="font-size: 44px; font-weight: 700; color: rgba(240,180,41,.16); position: absolute; top: 10px; right: 18px;">03</div>
-                        <div class="service-icon" style="margin-bottom: 22px;"><i class="fa fa-brain"></i></div>
-                        <h4 class="mb-3" style="color:#fff;">Psychology &amp; Consistency</h4>
-                        <p style="color: var(--muted); font-size: 14px; line-height: 1.75;">Journaling routines, tilt control and the daily habits of traders who stay in the game for decades. The market punishes emotion; this pillar builds your immune system.</p>
-                    </div>
+                <div class="stage-card wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="num">03</div>
+                    <div class="tag">Pillar Three</div>
+                    <h3><i class="fa fa-brain me-2 text-primary"></i>Psychology &amp; Consistency</h3>
+                    <p>Journaling routines, tilt control and the daily habits of traders who stay in the game for decades. The market punishes emotion; this pillar builds your immune system.</p>
                 </div>
             </div>
         </div>
     </div>
     <!-- Method End -->
 
-    <!-- Timeline Start -->
-    <div class="container-fluid section-pad wow fadeInUp" data-wow-delay="0.1s">
+    <!-- Timeline Start (FundingPips-style journey path) -->
+    <div class="container-fluid section-pad wow fadeInUp" data-wow-delay="0.1s" id="journey">
         <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-5">
-                    <div class="section-title position-relative pb-3 mb-4">
-                        <h5 class="fw-bold text-primary text-uppercase">The Journey</h5>
+            <div class="journey-wrap">
+                <div class="journey-left wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="case-chip"><i class="fa fa-route"></i> The Journey</div>
+                    <div class="journey-dates">2017 &mdash; 2026 &bull; Nine Years</div>
+                    <div class="section-title position-relative pb-3 mb-3">
                         <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.4rem);">Milestones, Not Hype</h2>
                     </div>
                     <p style="color: var(--muted); line-height: 1.8;">No rented Lambos, no "10,000% in a week" screenshots. Just the honest timeline of a trader who built the business one consistent month at a time.</p>
+                    <div class="journey-stats">
+                        <div class="jstat"><div class="n">2017</div><div class="l">First account</div></div>
+                        <div class="jstat"><div class="n green">2019</div><div class="l">Went full-time</div></div>
+                        <div class="jstat"><div class="n">2,500+</div><div class="l">Students today</div></div>
+                    </div>
                     <a href="mentorship.html" class="btn btn-primary py-3 px-4 mt-2"><i class="fa fa-graduation-cap me-2"></i>Start Learning</a>
                 </div>
-                <div class="col-lg-7">
-                    <div class="card-panel p-4 p-lg-5">
-                        <div class="timeline">
-                            <div class="tl-item">
-                                <div class="tl-year">2017</div>
-                                <h5>The First (Bad) Trade</h5>
-                                <p>First FX account opened, first lesson bought with a loss. The notebook rule is born: protect capital first.</p>
-                            </div>
-                            <div class="tl-item">
-                                <div class="tl-year">2019</div>
-                                <h5>Consistently Profitable</h5>
-                                <p>Three straight profitable quarters using structure, liquidity and fixed-R sizing. Full-time trading begins.</p>
-                            </div>
-                            <div class="tl-item">
-                                <div class="tl-year">2021</div>
-                                <h5>Trade with Joreem Launches</h5>
-                                <p>The first mentorship cohort starts: 40 traders, one Telegram group, daily breakdowns on camera.</p>
-                            </div>
-                            <div class="tl-item">
-                                <div class="tl-year">2023</div>
-                                <h5>The Book Library Begins</h5>
-                                <p>Forex Mastery and Trading Psychology published in print and digital, shipped across 30+ countries.</p>
-                            </div>
-                            <div class="tl-item">
-                                <div class="tl-year">2025</div>
-                                <h5>2,000 Members Strong</h5>
-                                <p>The member room grows to 2,000 active traders with a full curriculum, signal review desk and monthly 1-on-1s.</p>
-                            </div>
-                            <div class="tl-item">
-                                <div class="tl-year">2026</div>
-                                <h5>2,500+ Students, 4 Books</h5>
-                                <p>Crypto Signals Handbook and Stocks from Zero join the library. The mission is the same: process over prediction.</p>
-                            </div>
-                        </div>
+                <div class="jpath wow fadeInRight" data-wow-delay="0.3s">
+                    <div class="jnode">
+                        <div class="d">2017</div>
+                        <h5>The First (Bad) Trade</h5>
+                        <p>First FX account opened, first lesson bought with a loss. The notebook rule is born: protect capital first.</p>
+                        <span class="status clear">Lesson learned</span>
+                    </div>
+                    <div class="jnode">
+                        <div class="d">2019</div>
+                        <h5>Consistently Profitable</h5>
+                        <p>Three straight profitable quarters using structure, liquidity and fixed-R sizing. Full-time trading begins.</p>
+                        <span class="status clear">Full-time</span>
+                    </div>
+                    <div class="jnode">
+                        <div class="d">2021</div>
+                        <h5>Trade with Joreem Launches</h5>
+                        <p>The first mentorship cohort starts: 40 traders, one Telegram group, daily breakdowns on camera.</p>
+                        <span class="status funded">The room opens</span>
+                    </div>
+                    <div class="jnode">
+                        <div class="d">2023</div>
+                        <h5>The Book Library Begins</h5>
+                        <p>Forex Mastery and Trading Psychology published in print and digital, shipped across 30+ countries.</p>
+                        <span class="status clear">4 books</span>
+                    </div>
+                    <div class="jnode">
+                        <div class="d">2025</div>
+                        <h5>2,000 Members Strong</h5>
+                        <p>The member room grows to 2,000 active traders with a full curriculum, signal review desk and monthly 1-on-1s.</p>
+                        <span class="status clear">Growing</span>
+                    </div>
+                    <div class="jnode">
+                        <div class="d">2026</div>
+                        <h5>2,500+ Students, 4 Books</h5>
+                        <p>Crypto Signals Handbook and Stocks from Zero join the library. The mission is the same: process over prediction.</p>
+                        <span class="status funded">Today</span>
                     </div>
                 </div>
             </div>

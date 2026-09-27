@@ -19,6 +19,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/trading.css" rel="stylesheet">
+    <link href="css/funding.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,6 +28,12 @@
         <div class="spinner"></div>
     </div>
     <!-- Spinner End -->
+    <!-- Promo Bar Start -->
+    <div class="promo-bar" id="promoBar">
+        New here? Get 20% OFF your first month with code <span class="code" id="promoCode" title="Click to copy">START20</span>. Excludes Elite Desk.
+        <button class="promo-close" id="promoClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+    <!-- Promo Bar End -->
 
     <!-- Topbar Start -->
     <div class="container-fluid topbar px-5 d-none d-lg-block">
@@ -73,11 +80,13 @@
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
+                                <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="index.html#how" class="nav-item nav-link">How It Works</a>
+                    <a href="index.html#pricing" class="nav-item nav-link">Pricing</a>
                     <a href="bookstore.html" class="nav-item nav-link">Bookstore</a>
-                    <a href="mentorship.html" class="nav-item nav-link">Mentorship</a>
+                    <a href="mentorship.html" class="nav-item nav-link active">Mentorship</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="contact.html" class="nav-item nav-link nav-contact">Contact</a>
                 </div>
                 <button type="button" class="btn btn-sm btn-outline-light btn-sm-square rounded-circle ms-3 position-relative" data-open-cart aria-label="Open cart">
@@ -90,19 +99,15 @@
     </div>
 
     <!-- Page Hero Start -->
-    <div class="container-fluid bg-header page-hero p-0">
+    <div class="container-fluid bg-header page-hero ph-center p-0">
         <div class="container position-relative" style="z-index: 2;">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h5 class="fw-bold text-primary text-uppercase mb-3" style="letter-spacing:.18em;">The Inner Circle</h5>
-                    <h1 class="display-4 text-white mb-3">Mentorship</h1>
-                    <p class="text-white-50 mb-4" style="max-width: 560px; line-height: 1.8;">Live breakdowns, a full curriculum, direct feedback and a private community. One system, applied daily, with Joreem in the room.</p>
-                    <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <div class="ph-kicker"><i class="fa fa-graduation-cap"></i> The Inner Circle</div>
+            <h1 class="display-4 text-white mb-3">Mentorship</h1>
+            <p class="text-white-50 mb-4" style="max-width: 640px; line-height: 1.8;">Live breakdowns, a full curriculum, direct feedback and a private community. One system, applied daily, with Joreem in the room.</p>
+            <div class="hero-stats"><div class="hstat"><div class="n">Daily</div><div class="l">Live Breakdowns</div></div><div class="hstat"><div class="n">200<em>+</em></div><div class="l">On-Demand Lessons</div></div><div class="hstat"><div class="n">2,500<em>+</em></div><div class="l">Active Members</div></div><div class="hstat"><div class="n">0</div><div class="l">Lock-In Contracts</div></div></div>
+            <ol class="breadcrumb m-0 justify-content-center"><li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Mentorship</li>
-                    </ol>
-                </div>
-            </div>
+            </ol>
         </div>
     </div>
     <!-- Page Hero End -->
@@ -133,150 +138,147 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
-                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon"><i class="fa fa-video"></i></div>
-                        <h4 class="mb-3">Live Breakdowns</h4>
-                        <p class="m-0">Every session planned on camera: structure, levels, scenarios and invalidations before the market moves.</p>
-                    </div>
+                    <div class="term-feat h-100"><div class="ic"><i class="fa fa-video"></i></div><div><b>Live Breakdowns</b><small>Every session planned on camera: structure, levels, scenarios and invalidations before the market moves.</small></div></div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.4s">
-                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon"><i class="fa fa-play-circle"></i></div>
-                        <h4 class="mb-3">Lesson Library</h4>
-                        <p class="m-0">200+ on-demand lessons: fundamentals to advanced, FX to crypto to stocks. Watch at your own pace, forever.</p>
-                    </div>
+                    <div class="term-feat h-100"><div class="ic"><i class="fa fa-play-circle"></i></div><div><b>Lesson Library</b><small>200+ on-demand lessons: fundamentals to advanced, FX to crypto to stocks. Watch at your own pace, forever.</small></div></div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon"><i class="fab fa-telegram"></i></div>
-                        <h4 class="mb-3">Private Community</h4>
-                        <p class="m-0">Auto-invite to members-only Telegram &amp; Discord: study rooms, daily check-ins, zero tolerance for pump noise.</p>
-                    </div>
+                    <div class="term-feat h-100"><div class="ic"><i class="fab fa-telegram"></i></div><div><b>Private Community</b><small>Auto-invite to members-only Telegram &amp; Discord: study rooms, daily check-ins, zero tolerance for pump noise.</small></div></div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
-                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon"><i class="fa fa-search-dollar"></i></div>
-                        <h4 class="mb-3">Trade Reviews</h4>
-                        <p class="m-0">Submit your trades for grading. Get specific, written feedback on entry, size, management and psychology.</p>
-                    </div>
+                    <div class="term-feat h-100"><div class="ic"><i class="fa fa-search-dollar"></i></div><div><b>Trade Reviews</b><small>Submit your trades for grading. Get specific, written feedback on entry, size, management and psychology.</small></div></div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.4s">
-                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon"><i class="fa fa-user-tie"></i></div>
-                        <h4 class="mb-3">1-on-1 Access</h4>
-                        <p class="m-0">Monthly group Q&amp;A for all members; personal 1-on-1 coaching sessions on the Elite Desk plan.</p>
-                    </div>
+                    <div class="term-feat h-100"><div class="ic"><i class="fa fa-user-tie"></i></div><div><b>1-on-1 Access</b><small>Monthly group Q&amp;A for all members; personal 1-on-1 coaching sessions on the Elite Desk plan.</small></div></div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon"><i class="fa fa-book"></i></div>
-                        <h4 class="mb-3">The Library Included</h4>
-                        <p class="m-0">Pro &amp; Elite members get all digital books free, with new releases added as they publish.</p>
-                    </div>
+                    <div class="term-feat h-100"><div class="ic"><i class="fa fa-book"></i></div><div><b>The Library Included</b><small>Pro &amp; Elite members get all digital books free, with new releases added as they publish.</small></div></div>
                 </div>
             </div>
         </div>
     </div>
     <!-- What You Get End -->
 
-    <!-- Pricing Start -->
-    <div class="container-fluid section-pad">
+    <!-- Pricing Start (FundingPips-style configurator + comparison) -->
+    <div class="container-fluid section-pad" id="pricing">
         <div class="container">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 640px;">
+            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 720px;">
                 <h5 class="fw-bold text-primary text-uppercase">Pricing</h5>
-                <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Choose Your Plan</h2>
+                <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Buckle Up, Your Journey Starts Here!</h2>
+                <p class="mt-3 mb-0" style="color: var(--muted); font-size: 15px;">Foundation, Pro or Elite. Multiple plans to match your goals, budget and pace.</p>
             </div>
-            <div class="row g-4 align-items-stretch">
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
-                    <div class="plan-card">
-                        <div class="plan-name">Foundation</div>
-                        <div class="plan-tag">Monthly &bull; flexible, cancel anytime</div>
-                        <div class="plan-price"><span class="cur">$</span>49<span class="per">/month</span></div>
-                        <ul class="plan-list">
-                            <li><i class="fa fa-check"></i>Daily live market breakdowns</li>
-                            <li><i class="fa fa-check"></i>Full on-demand video curriculum</li>
-                            <li><i class="fa fa-check"></i>Private Telegram community</li>
-                            <li><i class="fa fa-check"></i>Weekly journal review (group)</li>
-                            <li class="dim"><i class="fa fa-times"></i>Monthly 1-on-1 Q&amp;A with Joreem</li>
-                            <li class="dim"><i class="fa fa-times"></i>Personalized trading plan</li>
-                        </ul>
-                        <button class="btn btn-outline-light py-3 w-100" data-plan-checkout="foundation">Enroll Now</button>
-                    </div>
+
+            <div class="seg-tabs wow fadeInUp" data-wow-delay="0.2s">
+                <button type="button" class="seg-tab" data-plan="foundation">
+                    <span class="t">Foundation</span>
+                    <span class="s">Start from zero</span>
+                </button>
+                <button type="button" class="seg-tab active" data-plan="pro">
+                    <span class="t">Pro Trader</span>
+                    <span class="s">Most popular</span>
+                </button>
+                <button type="button" class="seg-tab" data-plan="elite">
+                    <span class="t">Elite Desk</span>
+                    <span class="s">1-on-1 access</span>
+                </button>
+            </div>
+
+            <div class="seg-billing wow fadeInUp" data-wow-delay="0.3s">
+                <div class="bill-toggle">
+                    <button type="button" data-bill="m">Monthly</button>
+                    <button type="button" class="active" data-bill="a">Annual <span class="save">SAVE UP TO 44%</span></button>
                 </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.4s">
-                    <div class="plan-card featured">
-                        <div class="plan-flag">Most Popular</div>
-                        <div class="plan-name">Pro Trader</div>
-                        <div class="plan-tag">Annual &bull; best value</div>
-                        <div class="plan-price"><span class="cur">$</span>399<span class="per">/year</span></div>
-                        <span class="plan-save">Save 32% vs monthly</span>
-                        <ul class="plan-list">
-                            <li><i class="fa fa-check"></i>Everything in Foundation</li>
-                            <li><i class="fa fa-check"></i>Private Discord desk &amp; study rooms</li>
-                            <li><i class="fa fa-check"></i>Signal review &amp; trade grading</li>
-                            <li><i class="fa fa-check"></i>Monthly 1-on-1 Q&amp;A with Joreem</li>
-                            <li><i class="fa fa-check"></i>All digital books included</li>
-                            <li class="dim"><i class="fa fa-times"></i>4 personal 1-on-1 coaching sessions</li>
-                        </ul>
-                        <button class="btn btn-primary py-3 w-100" data-plan-checkout="pro"><i class="fa fa-graduation-cap me-2"></i>Enroll Now</button>
-                    </div>
+            </div>
+
+            <div class="price-card featured wow zoomIn" data-wow-delay="0.25s" id="priceCard">
+                <div class="pc-flag" id="pcFlag">Most Popular</div>
+                <div class="pc-plan" id="pcPlan">Pro Trader</div>
+                <div class="pc-price">
+                    <span class="cur">$</span><span class="amt" id="pcAmt">399</span><s id="pcCompare" style="display:none">$708</s><span class="per" id="pcPer">/year</span>
                 </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="plan-card">
-                        <div class="plan-name">Elite Desk</div>
-                        <div class="plan-tag">Annual &bull; capped at 20 seats</div>
-                        <div class="plan-price"><span class="cur">$</span>999<span class="per">/year</span></div>
-                        <ul class="plan-list">
-                            <li><i class="fa fa-check"></i>Everything in Pro Trader</li>
-                            <li><i class="fa fa-check"></i>4 personal 1-on-1 coaching sessions</li>
-                            <li><i class="fa fa-check"></i>Personalized trading plan &amp; audit</li>
-                            <li><i class="fa fa-check"></i>Priority Q&amp;A (24h response)</li>
-                            <li><i class="fa fa-check"></i>Quarterly strategy webinars</li>
-                            <li><i class="fa fa-check"></i>Early access to new courses</li>
-                        </ul>
-                        <button class="btn btn-outline-light py-3 w-100" data-plan-checkout="elite">Enroll Now</button>
-                    </div>
-                </div>            </div>
+                <div class="pc-sub" id="pcSub">Annual billing &bull; for the Pro Trader plan</div>
+                <button type="button" class="btn btn-primary py-3 pc-buy" id="pcBuy" data-plan-checkout="pro"><i class="fa fa-graduation-cap me-2"></i>Join the Mentorship</button>
+                <div class="pc-addon">Add-on available: <b style="color:#C6D3E8">Print Book Bundle (+$40)</b></div>
+                <div class="pc-specs" id="pcSpecs">
+                    <div class="pc-spec"><div class="l">Live Breakdowns</div><div class="v">Daily + replays</div></div>
+                    <div class="pc-spec"><div class="l">Curriculum</div><div class="v">Full library</div></div>
+                    <div class="pc-spec"><div class="l">Trade Reviews</div><div class="v">Graded weekly</div></div>
+                    <div class="pc-spec"><div class="l">1-on-1 Access</div><div class="v">Monthly Q&amp;A</div></div>
+                    <div class="pc-spec"><div class="l">Community</div><div class="v">TG + Discord</div></div>
+                    <div class="pc-spec"><div class="l">Books</div><div class="v gold">All digital</div></div>
+                </div>
+                <div class="pc-note" id="pcNote"><i class="fa fa-chart-line"></i>Students hit their first green month in ~90 days on average.</div>
+                <div class="pc-legal">Cancel anytime &bull; 7-day refund on your first month &bull; Card, PayPal, M-Pesa, Airtel &amp; Pesapal</div>
+            </div>
+
+            <!-- Plan comparison (FundingPips model-table pattern) -->
+            <div class="compare-wrap mt-5 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="overflow-auto">
+                    <table class="compare-table">
+                        <thead>
+                            <tr>
+                                <th>Compare Plans</th>
+                                <th class="col-plan">Foundation<span class="tag">START FROM ZERO</span></th>
+                                <th class="col-plan">Pro Trader<span class="tag">MOST POPULAR</span></th>
+                                <th class="col-plan">Elite Desk<span class="tag">CAPPED AT 20 SEATS</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><th>Live market breakdowns</th><td class="yes"><i class="fa fa-check"></i> Daily</td><td class="yes"><i class="fa fa-check"></i> Daily + replays</td><td class="yes"><i class="fa fa-check"></i> Daily + replays</td></tr>
+                            <tr><th>On-demand curriculum</th><td>40+ lessons</td><td class="yes">Full library (200+)</td><td class="yes">Full library (200+)</td></tr>
+                            <tr><th>Private community</th><td>Telegram</td><td class="yes">Telegram + Discord</td><td class="yes">Private Elite desk</td></tr>
+                            <tr><th>Weekly trade reviews</th><td>Group session</td><td class="yes">Graded, written</td><td class="yes">Graded, written</td></tr>
+                            <tr><th>Monthly 1-on-1 Q&amp;A</th><td class="no"><i class="fa fa-times"></i></td><td class="yes"><i class="fa fa-check"></i></td><td class="yes"><i class="fa fa-check"></i></td></tr>
+                            <tr><th>Personal coaching sessions</th><td class="no"><i class="fa fa-times"></i></td><td class="no"><i class="fa fa-times"></i></td><td class="yes">4 sessions</td></tr>
+                            <tr><th>Personalized plan &amp; audit</th><td class="no"><i class="fa fa-times"></i></td><td class="no"><i class="fa fa-times"></i></td><td class="yes"><i class="fa fa-check"></i></td></tr>
+                            <tr><th>Priority Q&amp;A (24h)</th><td class="no"><i class="fa fa-times"></i></td><td class="no"><i class="fa fa-times"></i></td><td class="yes"><i class="fa fa-check"></i></td></tr>
+                            <tr><th>Digital books</th><td class="no"><i class="fa fa-times"></i></td><td class="yes">All included</td><td class="yes">All included</td></tr>
+                            <tr><th>Print book set</th><td class="no"><i class="fa fa-times"></i></td><td class="no"><i class="fa fa-times"></i></td><td class="yes"><i class="fa fa-check"></i></td></tr>
+                            <tr><th>Monthly price</th><td class="mono">$49/mo</td><td class="mono">$59/mo</td><td class="mono">$119/mo</td></tr>
+                            <tr><th>Annual price</th><td class="mono">$470/yr</td><td class="mono gold">$399/yr</td><td class="mono">$999/yr</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="compare-cta">
+                    <button type="button" class="btn btn-outline-light py-2 px-4" data-plan-checkout="foundation">Choose Foundation</button>
+                    <button type="button" class="btn btn-primary py-2 px-4" data-plan-checkout="pro"><i class="fa fa-graduation-cap me-2"></i>Choose Pro Trader</button>
+                    <button type="button" class="btn btn-outline-light py-2 px-4" data-plan-checkout="elite">Choose Elite Desk</button>
+                </div>
+            </div>
+
             <p class="text-center mt-4 mb-0" style="color:#5F7194; font-size:13px;"><i class="fa fa-lock me-1"></i>Secure recurring billing. Cancel monthly plans anytime. Annual plans renew yearly with 30-day notice.</p>
         </div>
     </div>
     <!-- Pricing End -->
 
-    <!-- How It Works Start -->
+    <!-- How It Works Start (FundingPips-style steps) -->
     <div class="container-fluid section-pad">
         <div class="container">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 640px;">
                 <h5 class="fw-bold text-primary text-uppercase">Getting Started</h5>
                 <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">From Checkout to First Lesson in Minutes</h2>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-panel step-card">
-                        <div class="step-num">1</div>
-                        <h5>Choose your plan</h5>
-                        <p>Monthly for flexibility, Annual to save 32%, or Elite for personal coaching.</p>
-                    </div>
+            <div class="how-grid cols-4">
+                <div class="how-card wow fadeInUp" data-wow-delay="0.15s">
+                    <div class="how-num">01 &bull; Plan</div>
+                    <h3>Choose your plan</h3>
+                    <p>Monthly for flexibility, Annual to save up to 44%, or Elite for personal coaching.</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-panel step-card">
-                        <div class="step-num">2</div>
-                        <h5>Pay securely</h5>
-                        <p>Card, PayPal, M-Pesa, Airtel or Pesapal, encrypted checkout, instant receipt.</p>
-                    </div>
+                <div class="how-card wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="how-num">02 &bull; Pay</div>
+                    <h3>Pay securely</h3>
+                    <p>Card, PayPal, M-Pesa, Airtel or Pesapal, encrypted checkout, instant receipt.</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-panel step-card">
-                        <div class="step-num">3</div>
-                        <h5>Get your invite</h5>
-                        <p>The moment payment clears, your private Telegram &amp; Discord invite appears on screen.</p>
-                    </div>
+                <div class="how-card wow fadeInUp" data-wow-delay="0.45s">
+                    <div class="how-num">03 &bull; Invite</div>
+                    <h3>Get your invite</h3>
+                    <p>The moment payment clears, your private Telegram &amp; Discord invite appears on screen.</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-panel step-card">
-                        <div class="step-num">4</div>
-                        <h5>Start learning</h5>
-                        <p>Log in to your dashboard, grab the curriculum, and join the next live breakdown.</p>
-                    </div>
+                <div class="how-card wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="how-num">04 &bull; Learn</div>
+                    <h3>Start learning</h3>
+                    <p>Log in to your dashboard, grab the curriculum, and join the next live breakdown.</p>
                 </div>
             </div>
         </div>
