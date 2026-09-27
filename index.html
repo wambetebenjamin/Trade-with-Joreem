@@ -6,7 +6,7 @@
     <title>Trade with Joreem | Forex, Crypto & Stocks Mentorship</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Forex, Crypto, Stocks, trading mentorship, trading books, Joreem" name="keywords">
-    <meta content="Trade with Joreem. Learn Forex, Crypto and Stocks from a full-time trader. Books, live breakdowns and a private mentorship community." name="description">
+    <meta content="Trade with Joreem. Turn your passion for markets into real skill. Live daily breakdowns, a risk-first curriculum and a private community of 2,500+ students." name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.svg" rel="icon">
@@ -30,6 +30,7 @@
     <!-- Stylesheets -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/trading.css" rel="stylesheet">
+    <link href="css/funding.css" rel="stylesheet">
 </head>
 
 <body>
@@ -38,6 +39,14 @@
         <div class="spinner"></div>
     </div>
     <!-- Spinner End -->
+
+
+    <!-- Promo Bar Start (FundingPips-style announcement) -->
+    <div class="promo-bar" id="promoBar">
+        New here? Get 20% OFF your first month with code <span class="code" id="promoCode" title="Click to copy">START20</span>. Excludes Elite Desk.
+        <button class="promo-close" id="promoClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+    <!-- Promo Bar End -->
 
 
     <!-- Topbar Start -->
@@ -89,9 +98,11 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="#how" class="nav-item nav-link">How It Works</a>
+                    <a href="#pricing" class="nav-item nav-link">Pricing</a>
                     <a href="bookstore.html" class="nav-item nav-link">Bookstore</a>
                     <a href="mentorship.html" class="nav-item nav-link">Mentorship</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="contact.html" class="nav-item nav-link nav-contact">Contact</a>
                 </div>
                 <button type="button" class="btn btn-sm btn-outline-light btn-sm-square rounded-circle ms-3 position-relative" data-open-cart aria-label="Open cart">
@@ -105,65 +116,76 @@
     <!-- Navbar End -->
 
 
-    <!-- Hero Start -->
-    <div class="hero">
+    <!-- Hero Start (FundingPips-style centered hero) -->
+    <div class="hero hero-center">
         <div class="hero-bg"></div>
         <div class="hero-grid"></div>
         <div class="hero-glow"></div>
         <div class="container position-relative" style="z-index: 2;">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-                    <div class="hero-kicker">Forex &bull; Crypto &bull; Stocks</div>
-                    <h1>Trade With <span class="gold">Joreem</span>: Master the Markets, Not the Stress</h1>
-                    <p class="hero-lead">From your first candlestick to your first consistent month. Learn price action, risk management and trader psychology from a mentor who trades what he teaches, with books, live breakdowns and a private member community.</p>
-                    <div class="hero-cta-row">
-                        <a href="mentorship.html" class="btn btn-primary py-3 px-4"><i class="fa fa-graduation-cap me-2"></i>Start Mentorship</a>
-                        <a href="bookstore.html" class="btn btn-outline-light py-3 px-4"><i class="fa fa-book me-2"></i>Browse Books</a>
+            <div class="wow fadeIn" data-wow-delay="0.15s">
+                <div class="hero-kicker">Forex &bull; Crypto &bull; Stocks</div>
+                <h1>Turn your passion for markets into <span class="gold">real skill</span></h1>
+                <p class="hero-lead">Join 2,500+ students in Joreem's trading room &mdash; learn, grow and trade alongside a full-time mentor. Students from 40+ countries trust the program.</p>
+                <div class="hero-stats">
+                    <div class="hstat">
+                        <div class="n"><span data-count-to="40">40</span><em>+</em></div>
+                        <div class="l">Countries Reached</div>
                     </div>
-                    <div class="hero-trust">
-                        <span><span class="stars me-1">★★★★★</span>4.9/5 from 600+ reviews</span>
-                        <span class="sep"></span>
-                        <span>2,500+ students worldwide</span>
-                        <span class="sep"></span>
-                        <span>Card, PayPal &amp; M-Pesa accepted</span>
+                    <div class="hstat">
+                        <div class="n"><span data-count-to="2500">2,500</span><em>+</em></div>
+                        <div class="l">Students Trained</div>
+                    </div>
+                    <div class="hstat">
+                        <div class="n"><span data-count-to="12000">12,000</span><em>+</em></div>
+                        <div class="l">Live Breakdowns</div>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
-                    <div class="position-relative">
-                        <div class="terminal">
-                            <div class="terminal-head">
-                                <div class="terminal-dots"><span></span><span></span><span></span></div>
-                                <div class="terminal-pair">EUR/USD <span class="live">LIVE</span></div>
-                                <div class="terminal-time" id="termTime">LIVE</div>
-                            </div>
-                            <div class="terminal-price-row">
-                                <div class="terminal-price" id="termPrice">1.18420</div>
-                                <div class="terminal-chg up" id="termChg">+0.24%</div>
-                            </div>
-                            <div class="candle-wrap">
-                                <canvas id="candleCanvas" class="candle-canvas"></canvas>
-                            </div>
-                            <div class="ohlc-row" id="ohlcRow"></div>
-                            <div class="term-stats">
-                                <div class="term-stat">
-                                    <div class="lbl">Session High</div>
-                                    <div class="val green">1.18790</div>
-                                </div>
-                                <div class="term-stat">
-                                    <div class="lbl">Session Low</div>
-                                    <div class="val">1.18120</div>
-                                </div>
-                                <div class="term-stat">
-                                    <div class="lbl">Winners Trained</div>
-                                    <div class="val gold">2,500+</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="float-chip fc-1"><b>BTC/USD</b> 98,412 <span class="up">▲ 2.1%</span></div>
-                        <div class="float-chip fc-2"><b>XAU/USD</b> 2,412.35 <span class="up">▲ 0.8%</span></div>
+                <div class="hero-cta-row">
+                    <a href="#pricing" class="btn btn-primary py-3 px-5"><i class="fa fa-graduation-cap me-2"></i>Join the Mentorship</a>
+                    <a href="bookstore.html" class="btn btn-outline-light py-3 px-5"><i class="fa fa-book me-2"></i>Browse the Books</a>
+                </div>
+                <div class="hero-ratings">
+                    <div class="rate-chip"><span class="stars">★★★★★</span><span>Excellent &bull; <b>4.9/5</b> from 600+ reviews</span></div>
+                    <div class="rate-chip"><span class="score">SINCE 2018</span><span><b>Trusted</b> full-time trader &amp; mentor</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Terminal Stage -->
+    <div class="term-stage wow fadeInUp" data-wow-delay="0.35s">
+        <div class="position-relative">
+            <div class="terminal">
+                <div class="terminal-head">
+                    <div class="terminal-dots"><span></span><span></span><span></span></div>
+                    <div class="terminal-pair">EUR/USD <span class="live">LIVE</span></div>
+                    <div class="terminal-time" id="termTime">LIVE</div>
+                </div>
+                <div class="terminal-price-row">
+                    <div class="terminal-price" id="termPrice">1.18420</div>
+                    <div class="terminal-chg up" id="termChg">+0.24%</div>
+                </div>
+                <div class="candle-wrap">
+                    <canvas id="candleCanvas" class="candle-canvas"></canvas>
+                </div>
+                <div class="ohlc-row" id="ohlcRow"></div>
+                <div class="term-stats">
+                    <div class="term-stat">
+                        <div class="lbl">Session High</div>
+                        <div class="val green">1.18790</div>
+                    </div>
+                    <div class="term-stat">
+                        <div class="lbl">Session Low</div>
+                        <div class="val">1.18120</div>
+                    </div>
+                    <div class="term-stat">
+                        <div class="lbl">Winners Trained</div>
+                        <div class="val gold">2,500+</div>
                     </div>
                 </div>
             </div>
+            <div class="float-chip fc-1"><b>BTC/USD</b> 98,412 <span class="up">▲ 2.1%</span></div>
+            <div class="float-chip fc-2"><b>XAU/USD</b> 2,412.35 <span class="up">▲ 0.8%</span></div>
         </div>
     </div>
     <!-- Hero End -->
@@ -176,157 +198,608 @@
     <!-- Ticker End -->
 
 
-    <!-- Facts Start -->
-    <div class="container-fluid facts py-5 pt-lg-0">
-        <div class="container py-5 pt-lg-0">
-            <div class="row gx-4">
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
-                    <div class="fact-card bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
-                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
-                            <i class="fa fa-users"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-0">Students Trained</h5>
-                            <h1 class="mb-0"><span data-toggle="counter-up">2500</span>+</h1>
-                        </div>
+    <!-- Value Band Start ("Learn with peace of mind") -->
+    <div class="value-band" id="value">
+        <div class="container">
+            <div class="vb-inner">
+                <div class="vb-copy wow fadeInLeft" data-wow-delay="0.2s">
+                    <h2>Learn with peace of mind</h2>
+                    <p>No complicated processes. No hidden upsells. A clear path from your first candlestick to a consistent, reviewed trading process.</p>
+                    <a href="#pricing" class="btn btn-primary py-2 px-4">Pricing</a>
+                </div>
+                <div class="vb-chips">
+                    <div class="vchip wow zoomIn" data-wow-delay="0.25s">
+                        <div class="ic"><i class="fa fa-video"></i></div>
+                        <div><b>Daily Live Breakdowns</b><small>Every session planned on camera, before the market moves.</small></div>
+                    </div>
+                    <div class="vchip wow zoomIn" data-wow-delay="0.35s">
+                        <div class="ic"><i class="fa fa-shield-alt"></i></div>
+                        <div><b>Risk-First Curriculum</b><small>Position sizing and drawdown control taught before entries.</small></div>
+                    </div>
+                    <div class="vchip wow zoomIn" data-wow-delay="0.45s">
+                        <div class="ic"><i class="fa fa-infinity"></i></div>
+                        <div><b>Cancel Anytime</b><small>Monthly plans with no lock-in. Upgrade or pause whenever.</small></div>
+                    </div>
+                    <div class="vchip wow zoomIn" data-wow-delay="0.55s">
+                        <div class="ic"><i class="fa fa-tags"></i></div>
+                        <div><b>Starting at $49/mo</b><small>Foundation access with the private community included.</small></div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="fact-card bg-light shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
-                            <i class="fa fa-chart-line text-dark" style="color:#0A1220"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-0">Years in the Markets</h5>
-                            <h1 class="mb-0"><span data-toggle="counter-up">8</span>+</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Value Band End -->
+
+
+    <!-- Student Wins Widget Start (rewards-widget style) -->
+    <div class="container-fluid section-pad pt-0">
+        <div class="container">
+            <div class="app-widget wow fadeInUp" data-wow-delay="0.2s">
+                <div class="app-chrome">
+                    <div class="app-dots"><span></span><span></span><span></span></div>
+                    <div class="app-url"><i class="fa fa-lock"></i> app.tradewithjoreem.com/wins</div>
+                    <div class="wins-live"><span class="dot"></span> Live</div>
+                </div>
+                <div class="app-body">
+                    <div class="wins-panel">
+                        <h4>Ready to log your next green month?</h4>
+                        <p class="sub">Students self-report their journal results &mdash; every entry is verified in weekly reviews.</p>
+                        <div class="wins-table">
+                            <div class="wt-row head">
+                                <div>Student &darr;</div>
+                                <div>Plan</div>
+                                <div>Milestone</div>
+                                <div class="date">Logged</div>
+                            </div>
+                            <div class="wt-row">
+                                <div class="who"><b>Amina S.</b><small>Nairobi, KE</small></div>
+                                <div><span class="plan-tag">Foundation</span></div>
+                                <div>First green month (+4.1R)</div>
+                                <div class="date">Feb 14, 2026</div>
+                            </div>
+                            <div class="wt-row">
+                                <div class="who"><b>Brian O.</b><small>Lagos, NG</small></div>
+                                <div><span class="plan-tag">Pro</span></div>
+                                <div>Challenge phase 1 passed</div>
+                                <div class="date">Mar 21, 2026</div>
+                            </div>
+                            <div class="wt-row">
+                                <div class="who"><b>Chloe W.</b><small>London, UK</small></div>
+                                <div><span class="plan-tag">Pro</span></div>
+                                <div>First $1K green month</div>
+                                <div class="date">Apr 30, 2026</div>
+                            </div>
+                            <div class="wt-row">
+                                <div class="who"><b>David K.</b><small>Accra, GH</small></div>
+                                <div><span class="plan-tag elite">Elite</span></div>
+                                <div>Full-time transition plan</div>
+                                <div class="date">May 15, 2026</div>
+                            </div>
                         </div>
                     </div>
+                    <div class="wins-total">
+                        <div class="gem"><i class="fa fa-gem"></i></div>
+                        <div class="big" data-count-to="184320" data-prefix="$" data-suffix="+">$184,320+</div>
+                        <div class="lbl">Student P&amp;L logged in 2026</div>
+                        <div class="count"><i class="fa fa-chart-line me-1" style="color:var(--secondary)"></i> Green months logged: 1,240</div>
+                        <div class="note">Self-reported journal entries, verified in weekly trade reviews. Results are not typical &mdash; trading involves risk.</div>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="fact-card bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
-                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
-                            <i class="fa fa-video"></i>
+            </div>
+        </div>
+    </div>
+    <!-- Student Wins Widget End -->
+
+
+    <!-- How It Works Start -->
+    <div class="container-fluid section-pad" id="how">
+        <div class="container">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 680px;">
+                <h5 class="fw-bold text-primary text-uppercase">How It Works</h5>
+                <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">No fluff, no fine print. Here's exactly how it works.</h2>
+            </div>
+            <div class="how-grid">
+                <div class="how-card wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="how-num">01 &bull; Join the Room</div>
+                    <h3>Start the Program</h3>
+                    <p>A clear, structured path built to let serious students shine. Start from zero or sharpen what you already know.</p>
+                    <div class="how-visual mini-rules">
+                        <div class="mr-row"><span>Curriculum</span><b class="gold">40+ lessons</b></div>
+                        <div class="mr-row"><span>Live sessions</span><b>Daily</b></div>
+                        <div class="mr-row"><span>Community</span><b>Telegram + Discord</b></div>
+                        <div class="mr-row"><span>Trade reviews</span><b>Weekly</b></div>
+                    </div>
+                    <div class="how-quote">
+                        <div class="stars">★★★★★</div>
+                        <p>"The risk module alone saved me. I now trade 0.5R max and my first three months were all green."</p>
+                        <div class="who">Wanjiru K. &mdash; Kenya</div>
+                    </div>
+                </div>
+                <div class="how-card wow fadeInUp" data-wow-delay="0.35s">
+                    <div class="how-num">02 &bull; Learn Daily</div>
+                    <h3>Real Skill. Fast.</h3>
+                    <p>Live breakdowns, graded journal reviews and a curriculum you can actually finish &mdash; the same risk-first system every day.</p>
+                    <div class="how-visual mini-stat">
+                        <div class="big" data-count-to="12000" data-suffix="+">12,000+</div>
+                        <span class="s">live breakdowns shared with students so far</span>
+                    </div>
+                    <div class="how-quote">
+                        <div class="stars">★★★★★</div>
+                        <p>"You learn by watching him think, not by memorizing videos."</p>
+                        <div class="who">Tunde A. &mdash; Nigeria</div>
+                    </div>
+                </div>
+                <div class="how-card wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="how-num">03 &bull; Your Edge</div>
+                    <h3>Trade Your Own Plan</h3>
+                    <p>Grow from following along to trading your own reviewed plan &mdash; equity curve first, ego last.</p>
+                    <div class="how-visual mini-chart">
+                        <canvas id="howEquity"></canvas>
+                    </div>
+                    <div class="how-quote">
+                        <div class="stars">★★★★★</div>
+                        <p>"Six months later my equity curve looks completely different."</p>
+                        <div class="who">Kevin O. &mdash; Canada</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- How It Works End -->
+
+
+    <!-- Pricing Start (FundingPips-style configurator) -->
+    <div class="container-fluid section-pad" id="pricing">
+        <div class="container">
+            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 720px;">
+                <h5 class="fw-bold text-primary text-uppercase">Pricing</h5>
+                <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Buckle Up, Your Journey Starts Here!</h2>
+                <p class="mt-3 mb-0" style="color: var(--muted); font-size: 15px;">Foundation, Pro or Elite. Multiple plans to match your goals, budget and pace.</p>
+            </div>
+
+            <!-- Plan tabs -->
+            <div class="seg-tabs wow fadeInUp" data-wow-delay="0.2s">
+                <button type="button" class="seg-tab" data-plan="foundation">
+                    <span class="t">Foundation</span>
+                    <span class="s">Start from zero</span>
+                </button>
+                <button type="button" class="seg-tab active" data-plan="pro">
+                    <span class="t">Pro Trader</span>
+                    <span class="s">Most popular</span>
+                </button>
+                <button type="button" class="seg-tab" data-plan="elite">
+                    <span class="t">Elite Desk</span>
+                    <span class="s">1-on-1 access</span>
+                </button>
+            </div>
+
+            <!-- Billing toggle -->
+            <div class="seg-billing wow fadeInUp" data-wow-delay="0.3s">
+                <div class="bill-toggle">
+                    <button type="button" data-bill="m">Monthly</button>
+                    <button type="button" class="active" data-bill="a">Annual <span class="save">SAVE UP TO 44%</span></button>
+                </div>
+            </div>
+
+            <!-- Price card -->
+            <div class="price-card featured wow zoomIn" data-wow-delay="0.25s" id="priceCard">
+                <div class="pc-flag" id="pcFlag">Most Popular</div>
+                <div class="pc-plan" id="pcPlan">Pro Trader</div>
+                <div class="pc-price">
+                    <span class="cur">$</span><span class="amt" id="pcAmt">399</span><s id="pcCompare" style="display:none">$708</s><span class="per" id="pcPer">/year</span>
+                </div>
+                <div class="pc-sub" id="pcSub">Annual billing &bull; for the Pro Trader plan</div>
+                <button type="button" class="btn btn-primary py-3 pc-buy" id="pcBuy" data-plan-checkout="pro"><i class="fa fa-graduation-cap me-2"></i>Join the Mentorship</button>
+                <div class="pc-addon">Add-on available: <b style="color:#C6D3E8">Print Book Bundle (+$40)</b></div>
+                <div class="pc-specs" id="pcSpecs">
+                    <div class="pc-spec"><div class="l">Live Breakdowns</div><div class="v">Daily + replays</div></div>
+                    <div class="pc-spec"><div class="l">Curriculum</div><div class="v">Full library</div></div>
+                    <div class="pc-spec"><div class="l">Trade Reviews</div><div class="v">Graded weekly</div></div>
+                    <div class="pc-spec"><div class="l">1-on-1 Access</div><div class="v">Monthly Q&amp;A</div></div>
+                    <div class="pc-spec"><div class="l">Community</div><div class="v">TG + Discord</div></div>
+                    <div class="pc-spec"><div class="l">Books</div><div class="v gold">All digital</div></div>
+                </div>
+                <div class="pc-note" id="pcNote"><i class="fa fa-chart-line"></i>Students hit their first green month in ~90 days on average.</div>
+                <div class="pc-legal">Cancel anytime &bull; 7-day refund on your first month &bull; Card, PayPal, M-Pesa, Airtel &amp; Pesapal</div>
+            </div>
+        </div>
+    </div>
+    <!-- Pricing End -->
+
+
+    <!-- One System Banner Start -->
+    <div class="container-fluid section-pad pt-0">
+        <div class="container">
+            <div class="system-banner wow fadeInUp" data-wow-delay="0.2s">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-7">
+                        <div class="sb-word">ONE <span class="fill">SYSTEM</span></div>
+                        <h2>Everyone made trading education harder. We did the opposite.</h2>
+                        <p class="lead">One risk-first system applied across Forex, Crypto and Stocks &mdash; no strategy-hopping, no shiny-object resets. Learn it once, trade it for life.</p>
+                        <div class="sb-chips">
+                            <span class="sb-chip"><i class="fa fa-ban"></i>No strategy-hopping</span>
+                            <span class="sb-chip"><i class="fa fa-shield-alt"></i>One risk-first system</span>
+                            <span class="sb-chip"><i class="fa fa-globe-africa"></i>FX, Crypto &amp; Stocks</span>
+                            <span class="sb-chip"><i class="fa fa-clock"></i>Master it in 90 days</span>
                         </div>
-                        <div class="ps-4">
-                            <h5 class="mb-0">Live Breakdowns Shared</h5>
-                            <h1 class="mb-0"><span data-toggle="counter-up">12000</span>+</h1>
+                        <a href="mentorship.html" class="btn btn-primary py-3 px-5">Learn More <i class="fa fa-arrow-right ms-2"></i></a>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="position-relative">
+                            <img src="img/about.jpg" alt="Trading desk" class="w-100 rounded" style="object-fit:cover; border:1px solid var(--line); max-height:340px;">
+                            <div class="position-absolute bottom-0 start-0 m-4 p-3 rounded" style="background: rgba(4,8,15,.85); backdrop-filter: blur(6px); border: 1px solid var(--line);">
+                                <div class="mono" style="font-size:11px; color:#5F7194; letter-spacing:.12em;">THE ROOM, THIS MONTH</div>
+                                <div class="mono" style="font-size:16px; color:#fff; font-weight:700;">148 breakdowns &bull; 32 live Q&amp;A</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Facts End -->
+    <!-- One System Banner End -->
 
 
-    <!-- About / Mentor Start -->
+    <!-- Student Journey Start -->
+    <div class="container-fluid section-pad pt-0">
+        <div class="container">
+            <div class="journey-wrap">
+                <div class="journey-left wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="case-chip"><i class="fa fa-user-graduate"></i> Case Study</div>
+                    <div class="journey-dates">Jul 4 &mdash; Sep 21 &bull; Pro Trader</div>
+                    <div class="section-title position-relative pb-3 mb-3">
+                        <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.4rem);">Student's Journey</h2>
+                    </div>
+                    <p style="color: var(--muted); line-height: 1.8;">From first lesson to a funded-account payout in 11 weeks &mdash; same system, same risk rules, every step reviewed.</p>
+                    <div class="journey-stats">
+                        <div class="jstat"><div class="n">$399</div><div class="l">Invested in skill</div></div>
+                        <div class="jstat"><div class="n green">$8,240</div><div class="l">Growth, 14 mo*</div></div>
+                        <div class="jstat"><div class="n">1,967%</div><div class="l">Return on discipline*</div></div>
+                    </div>
+                    <div class="journey-quote">
+                        "Best of the best. I've been in the room for two years now &mdash; the reviews and the honesty keep me sharp."
+                        <b>&mdash; Grace N., Kenya &bull; Pro Trader</b>
+                    </div>
+                    <a href="#pricing" class="btn btn-primary py-3 px-4 mt-4"><i class="fa fa-arrow-right me-2"></i>Join the Room</a>
+                    <p class="mt-3 mb-0" style="font-size:11px; color:#5F7194;">*Self-reported case study. Results are not typical; trading involves substantial risk of loss.</p>
+                </div>
+                <div class="jpath wow fadeInRight" data-wow-delay="0.3s">
+                    <div class="jnode">
+                        <div class="d">Jul 4</div>
+                        <h5>Joined the Room</h5>
+                        <p>Pro Trader &bull; Annual membership purchased.</p>
+                        <span class="amt">$399</span>
+                        <span class="status clear">Active</span>
+                    </div>
+                    <div class="jnode">
+                        <div class="d">Jul 6</div>
+                        <h5>Risk Module Passed</h5>
+                        <p>Position sizing &amp; R-multiples locked in.</p>
+                        <span class="status clear">Clear</span>
+                    </div>
+                    <div class="jnode">
+                        <div class="d">Jul 21</div>
+                        <h5>First Green Week</h5>
+                        <p>+3.1R with 0.5% risk per trade, all reviewed.</p>
+                        <span class="amt green">+3.1R</span>
+                        <span class="status clear">Reviewed</span>
+                    </div>
+                    <div class="jnode">
+                        <div class="d">Aug 30</div>
+                        <h5>First Green Month</h5>
+                        <p>22 trades graded &mdash; plan followed, journal complete.</p>
+                        <span class="amt green">+9.4R</span>
+                        <span class="status clear">Reviewed</span>
+                    </div>
+                    <div class="jnode">
+                        <div class="d">Sep 21</div>
+                        <h5>First Funded Payout</h5>
+                        <p>Challenge phase 1 &amp; 2 passed with the same system.</p>
+                        <span class="amt green">$4,050.90</span>
+                        <span class="status funded">Funded</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Student Journey End -->
+
+
+    <!-- Testimonial Start -->
     <div class="container-fluid section-pad wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-5 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="mentor-frame">
-                        <img src="img/joreem.jpg" alt="Joreem, founder and head mentor">
-                        <div class="mentor-badge">
-                            <div class="num">8+</div>
-                            <div class="cap">Years trading full-time</div>
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 680px;">
+                <h5 class="fw-bold text-primary text-uppercase">Student Results</h5>
+                <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Real students, real results, real impact</h2>
+                <p class="mt-3 mb-0" style="color: var(--muted); font-size: 15px;">Hear it directly from students who followed the process and changed the way they trade.</p>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
+                <div class="testimonial-item my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
+                        <div class="avatar-initials" style="background: linear-gradient(135deg, #F0B429, #D99A14);">WK</div>
+                        <div class="ps-4">
+                            <h4 class="mb-1" style="color:#fff;">Wanjiru K.</h4>
+                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">Nairobi, Kenya</small>
+                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
                         </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        I'd blown two accounts before joining. The risk module alone saved me. I now trade 0.5R max and my first three months were all green. Joreem reviews actual trades, not highlight reels.
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <div class="section-title position-relative pb-3 mb-4">
-                        <h5 class="fw-bold text-primary text-uppercase">Meet Your Mentor</h5>
-                        <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Joreem: Founder, Head Mentor &amp; Full-Time Trader</h2>
-                    </div>
-                    <p class="mb-4" style="color: var(--muted); line-height: 1.8;">Joreem started with one small account, a notebook, and a strict rule: protect the capital first. Eight years later he trades Forex, Crypto and Stocks full-time and has taught the same risk-first system to more than 2,500 students across 40+ countries. No gurus-on-stage, no rented-lifestyle marketing, just process, discipline and transparency.</p>
-                    <div class="row g-0 mb-3">
-                        <div class="col-sm-6">
-                            <ul class="check-list">
-                                <li class="col-12"><i class="fa fa-check"></i>Price action &amp; market structure</li>
-                                <li class="col-12"><i class="fa fa-check"></i>Risk-first position sizing</li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6">
-                            <ul class="check-list">
-                                <li class="col-12"><i class="fa fa-check"></i>Trader psychology coaching</li>
-                                <li class="col-12"><i class="fa fa-check"></i>Live, on-camera breakdowns</li>
-                            </ul>
+                <div class="testimonial-item my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
+                        <div class="avatar-initials" style="background: linear-gradient(135deg, #16C784, #0E9F68);">TA</div>
+                        <div class="ps-4">
+                            <h4 class="mb-1" style="color:#fff;">Tunde A.</h4>
+                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">Lagos, Nigeria</small>
+                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
                         </div>
                     </div>
-                    <div class="d-flex flex-wrap gap-3 mt-3">
-                        <a href="about.html" class="btn btn-primary py-3 px-4"><i class="fa fa-user me-2"></i>The Full Story</a>
-                        <a href="mentorship.html" class="btn btn-outline-light py-3 px-4">Join the Mentorship</a>
+                    <div class="pt-4 pb-5 px-5">
+                        The live breakdowns are the real product. You learn by watching him think, not by memorizing videos. Paid with M-Pesa in two minutes and I was in the Telegram group before the session ended.
+                    </div>
+                </div>
+                <div class="testimonial-item my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
+                        <div class="avatar-initials" style="background: linear-gradient(135deg, #7B8CDE, #5568C9);">DM</div>
+                        <div class="ps-4">
+                            <h4 class="mb-1" style="color:#fff;">Daniel M.</h4>
+                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">Accra, Ghana</small>
+                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i></div>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Bought Forex Mastery first. It's the clearest explanation of liquidity and structure I've found anywhere. The print quality is serious. It's the first thing I show new members.
+                    </div>
+                </div>
+                <div class="testimonial-item my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
+                        <div class="avatar-initials" style="background: linear-gradient(135deg, #E28AC0, #C45C9E);">SB</div>
+                        <div class="ps-4">
+                            <h4 class="mb-1" style="color:#fff;">Sarah B.</h4>
+                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">London, UK</small>
+                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        As a part-timer with a day job, the on-demand library and journal reviews are gold. The psychology book fixed my revenge-trading habit better than a year of "course-hopping" did.
+                    </div>
+                </div>
+                <div class="testimonial-item my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
+                        <div class="avatar-initials" style="background: linear-gradient(135deg, #F6465D, #C92B40);">OP</div>
+                        <div class="ps-4">
+                            <h4 class="mb-1" style="color:#fff;">Kevin O.</h4>
+                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">Toronto, Canada</small>
+                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Elite Desk is worth every dollar. The 1-on-1s exposed that I was over-leveraging everything by 3x. Six months later my equity curve looks completely different. Transparent, professional, no hype.
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- About / Mentor End -->
+    <!-- Testimonial End -->
 
 
-    <!-- Features Start -->
-    <div class="container-fluid section-pad wow fadeInUp" data-wow-delay="0.1s">
+    <!-- Learn On Your Terms Start (features + assets + platform orbit) -->
+    <div class="container-fluid section-pad pt-0">
         <div class="container">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 640px;">
-                <h5 class="fw-bold text-primary text-uppercase">Why Trade With Joreem</h5>
-                <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Everything You Need to Trade With Confidence</h2>
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 720px;">
+                <h5 class="fw-bold text-primary text-uppercase">The Craft</h5>
+                <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Learn on your terms</h2>
+                <p class="mt-3 mb-0" style="color: var(--muted); font-size: 15px;">Professional-grade structure and flexible session coverage &mdash; your markets, your schedule, one system.</p>
             </div>
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon"><i class="fa fa-chart-line"></i></div>
-                        <h4 class="mb-3">Live Market Breakdowns</h4>
-                        <p class="m-0">Every session planned on-camera: structure, levels, scenarios and invalidations, before the market moves.</p>
+            <div class="terms-row">
+                <div class="term-feat wow zoomIn" data-wow-delay="0.2s">
+                    <div class="ic"><i class="fa fa-video"></i></div>
+                    <div>
+                        <b>Daily Live Breakdowns</b>
+                        <small>London and New York sessions planned on camera, every trading day &mdash; with full replays.</small>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon"><i class="fa fa-shield-alt"></i></div>
-                        <h4 class="mb-3">Risk Management First</h4>
-                        <p class="m-0">Position sizing, R-multiples and drawdown control taught before any entry pattern. Survive first, profit second.</p>
+                <div class="term-feat wow zoomIn" data-wow-delay="0.35s">
+                    <div class="ic"><i class="fa fa-clipboard-check"></i></div>
+                    <div>
+                        <b>Graded Trade Reviews</b>
+                        <small>Submit your journal each week and get a marked-up review with your focus for the next one.</small>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
-                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon"><i class="fa fa-user-tie"></i></div>
-                        <h4 class="mb-3">Personal Mentorship</h4>
-                        <p class="m-0">Your questions answered, your trades reviewed. Elite members get 1-on-1 sessions to fix what's actually holding you back.</p>
+            </div>
+            <div class="asset-chips wow fadeInUp" data-wow-delay="0.2s">
+                <span class="asset-chip">FX</span>
+                <span class="asset-chip">Crypto</span>
+                <span class="asset-chip">Stocks</span>
+                <span class="asset-chip">Indices</span>
+                <span class="asset-chip">Metals</span>
+                <span class="asset-chip">Energies</span>
+            </div>
+            <div class="orbit-wrap wow fadeIn" data-wow-delay="0.3s">
+                <div class="orbit-ring r1"></div>
+                <div class="orbit-ring r2"></div>
+                <div class="orbit-item oi-1">
+                    <div class="ob"><i class="fa fa-chart-line"></i><span><b>TradingView</b><small>Charting &amp; markups</small></span></div>
+                </div>
+                <div class="orbit-item oi-1 offset180">
+                    <div class="ob"><i class="fa fa-desktop"></i><span><b>MetaTrader 5</b><small>Execution &amp; journaling</small></span></div>
+                </div>
+                <div class="orbit-item oi-2">
+                    <div class="ob"><i class="fa fa-exchange-alt"></i><span><b>cTrader</b><small>Alternative execution</small></span></div>
+                </div>
+                <div class="orbit-item oi-2 offset180">
+                    <div class="ob"><i class="fa fa-handshake"></i><span><b>Your Broker</b><small>The system travels with you</small></span></div>
+                </div>
+                <div class="orbit-core">
+                    <div class="t">Trade along on <span>any platform</span></div>
+                    <span class="s">Watch the same setups on the platform you already use.</span>
+                </div>
+            </div>
+            <div class="asset-chips wow fadeInUp" data-wow-delay="0.2s">
+                <span class="asset-chip gold">London</span>
+                <span class="asset-chip gold">New York</span>
+                <span class="asset-chip gold">Tokyo</span>
+                <span class="asset-chip gold">Crypto 24/7</span>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#pricing" class="btn btn-primary py-3 px-5">Join the Mentorship</a>
+            </div>
+        </div>
+    </div>
+    <!-- Learn On Your Terms End -->
+
+
+    <!-- Stages Start ("Your discipline is our system") -->
+    <div class="container-fluid section-pad pt-0">
+        <div class="container">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 720px;">
+                <h5 class="fw-bold text-primary text-uppercase">The Path</h5>
+                <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Your discipline is our system</h2>
+                <p class="mt-3 mb-0" style="color: var(--muted); font-size: 15px;">A structured path from learning the rules to trading them full-time.</p>
+            </div>
+            <div class="stage-grid">
+                <div class="stage-card wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="num">01</div>
+                    <div class="tag">Stage One</div>
+                    <h3>Learn the System</h3>
+                    <p>The risk-first curriculum: market structure, liquidity, position sizing and psychology &mdash; from zero to a written trading plan.</p>
+                </div>
+                <div class="stage-card wow fadeInUp" data-wow-delay="0.35s">
+                    <div class="num">02</div>
+                    <div class="tag">Stage Two</div>
+                    <h3>Trade It Live</h3>
+                    <p>Daily breakdowns, graded journal reviews and a private community that keeps you accountable to your plan, not your feelings.</p>
+                </div>
+                <div class="stage-card wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="num">03</div>
+                    <div class="tag">Stage Three</div>
+                    <h3>Go Full-Time</h3>
+                    <p>Elite coaching, personalized audits and funded-pathway prep for when consistency becomes your job.</p>
+                </div>
+            </div>
+            <div class="stage-stats wow fadeInUp" data-wow-delay="0.3s">
+                <span class="stage-stat"><i class="fa fa-comments"></i><b>Daily</b> live Q&amp;A</span>
+                <span class="stage-stat"><i class="fa fa-users"></i><b>24/7</b> private community</span>
+                <span class="stage-stat"><i class="fa fa-clipboard-check"></i><b>Weekly</b> graded reviews</span>
+            </div>
+            <div class="text-center mt-3 wow fadeInUp" data-wow-delay="0.4s">
+                <a href="#pricing" class="btn btn-primary py-3 px-5 me-2 mb-2">Get Started</a>
+                <a href="mentorship.html" class="btn btn-outline-light py-3 px-5 mb-2">See the Roadmap</a>
+            </div>
+        </div>
+    </div>
+    <!-- Stages End -->
+
+
+    <!-- Shows Start ("Built by traders, for traders") -->
+    <div class="container-fluid section-pad pt-0">
+        <div class="container">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 720px;">
+                <h5 class="fw-bold text-primary text-uppercase">Built by Traders, for Traders</h5>
+                <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Your growth is our mission</h2>
+                <p class="mt-3 mb-0" style="color: var(--muted); font-size: 15px;">At Trade with Joreem we don't just teach traders. We build them.</p>
+            </div>
+            <div class="show-grid">
+                <div class="show-card wow zoomIn" data-wow-delay="0.2s">
+                    <img src="img/about.jpg" alt="The Live Desk">
+                    <div class="show-body">
+                        <div class="k">Live, Daily</div>
+                        <h4>The Live Desk</h4>
+                        <p>Watch Joreem execute live, every session &mdash; wins, losses and the thinking behind both.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon"><i class="fa fa-globe-africa"></i></div>
-                        <h4 class="mb-3">Multi-Market Coverage</h4>
-                        <p class="m-0">One system applied across Forex, Crypto and Stocks, so your edge travels with you as markets rotate.</p>
+                <div class="show-card wow zoomIn" data-wow-delay="0.35s">
+                    <img src="assets/books/psychology.jpg" alt="Trading Psychology">
+                    <div class="show-body">
+                        <div class="k">Coaching Series</div>
+                        <h4>Trading Psychology</h4>
+                        <p>Master the habits and mindset behind performance &mdash; tilt control, routines and journaling.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="service-item d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon"><i class="fa fa-users"></i></div>
-                        <h4 class="mb-3">Private Community</h4>
-                        <p class="m-0">Instant access to the members-only Telegram &amp; Discord: study rooms, journal reviews and daily check-ins.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
-                    <div class="service-item promo d-flex flex-column align-items-center justify-content-center text-center h-100">
-                        <h4 class="mb-3 text-white" style="font-size:1.4rem;">Ready to trade with confidence?</h4>
-                        <p class="text-white-50 mb-4" style="font-size:14px;">Start with a book, or join the full mentorship today.</p>
-                        <a href="mentorship.html" class="btn btn-primary py-2 px-4"><i class="fa fa-arrow-right me-2"></i>View Plans</a>
+                <div class="show-card wow zoomIn" data-wow-delay="0.5s">
+                    <img src="img/hero.jpg" alt="Beyond the Charts">
+                    <div class="show-body">
+                        <div class="k">Market Structure</div>
+                        <h4>Beyond the Charts</h4>
+                        <p>Understand what truly moves the market &mdash; liquidity, sessions and the story behind price.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Features End -->
+    <!-- Shows End -->
 
 
-    <!-- Featured Books Start -->
-    <div class="container-fluid section-pad wow fadeInUp" data-wow-delay="0.1s">
+    <!-- Community Start (Discord/Telegram widget) -->
+    <div class="container-fluid section-pad pt-0" id="community">
+        <div class="container">
+            <div class="community-grid">
+                <div class="wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="section-title position-relative pb-3 mb-3">
+                        <h5 class="fw-bold text-primary text-uppercase">Community</h5>
+                        <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.4rem);">Learn, grow and connect with traders worldwide</h2>
+                    </div>
+                    <p style="color: var(--muted); line-height: 1.8;">Students from 40+ countries trust the room. The moment you join, you're in &mdash; study rooms, journal reviews and daily check-ins, on Telegram and Discord.</p>
+                    <div class="comm-stats">
+                        <div class="jstat"><div class="n">2,500+</div><div class="l">Traders</div></div>
+                        <div class="jstat"><div class="n">12,000+</div><div class="l">Breakdowns</div></div>
+                        <div class="jstat"><div class="n green">24/7</div><div class="l">Community</div></div>
+                    </div>
+                    <div class="comm-cta">
+                        <a href="https://t.me/tradewithjoreem" target="_blank" rel="noopener" class="btn btn-primary py-3 px-4"><i class="fab fa-telegram me-2"></i>Join the Telegram</a>
+                        <a href="https://discord.gg/tradewithjoreem" target="_blank" rel="noopener" class="btn btn-outline-light py-3 px-4"><i class="fab fa-discord me-2"></i>Join the Discord</a>
+                    </div>
+                </div>
+                <div class="discord-widget wow fadeInRight" data-wow-delay="0.3s">
+                    <div class="dw-head">
+                        <div class="avatar">JW</div>
+                        <div>
+                            <b>Trade with Joreem</b>
+                            <small><i class="fa fa-globe me-1"></i>Verified community</small>
+                        </div>
+                        <div class="on"><b>184 Online</b><br>2,507 Members</div>
+                    </div>
+                    <div class="dw-body">
+                        <div class="dw-side">
+                            <div class="dw-cat">&mdash;&mdash; Announcement &mdash;&mdash;</div>
+                            <div class="dw-ch"><span>📣</span> announcements <span class="cnt">1</span></div>
+                            <div class="dw-ch"><span>🎁</span> giveaways</div>
+                            <div class="dw-ch"><span>📹</span> lesson-updates <span class="cnt">12</span></div>
+                            <div class="dw-cat">&mdash;&mdash; The Room &mdash;&mdash;</div>
+                            <div class="dw-ch"><span>💬</span> lounge <span class="cnt">38</span></div>
+                            <div class="dw-ch"><span>📚</span> study-rooms <span class="cnt">9</span></div>
+                            <div class="dw-ch"><span>✅</span> trade-reviews <span class="cnt">21</span></div>
+                            <div class="dw-cat">&mdash;&mdash; Wins &mdash;&mdash;</div>
+                            <div class="dw-ch active"><span>💰</span> win-log <span class="cnt">64</span></div>
+                            <div class="dw-ch"><span>🏆</span> wins-proof</div>
+                        </div>
+                        <div class="dw-main">
+                            <div class="dw-title"># 💰 <span>| win-log</span></div>
+                            <div id="dwFeed"></div>
+                            <div class="dw-foot">
+                                <span>Est. 2018 &bull; Trade with Joreem Community</span>
+                                <span><i class="fa fa-shield-alt me-1"></i>Members only</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Community End -->
+
+
+    <!-- The Library Start (featured books) -->
+    <div class="container-fluid section-pad pt-0 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="row align-items-end mb-5 gx-4">
                 <div class="col-lg">
                     <div class="section-title position-relative pb-3">
                         <h5 class="fw-bold text-primary text-uppercase">The Library</h5>
                         <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Books That Build Your Edge</h2>
+                        <p class="mt-3 mb-0" style="color: var(--muted); font-size: 15px;">Built by the mentor behind the room &mdash; the education you trust, in print and instant PDF.</p>
                     </div>
                 </div>
                 <div class="col-lg-auto text-lg-end">
@@ -401,121 +874,49 @@
             </div>
         </div>
     </div>
-    <!-- Featured Books End -->
+    <!-- The Library End -->
 
 
-    <!-- Mentorship Highlight Start -->
-    <div class="container-fluid section-pad wow fadeInUp" data-wow-delay="0.1s">
+    <!-- Global Band Start (mentor story) -->
+    <div class="container-fluid section-pad pt-0">
         <div class="container">
-            <div class="cta-band p-4 p-lg-5">
-                <div class="row g-5 align-items-center position-relative" style="z-index:1;">
-                    <div class="col-lg-6">
-                        <div class="section-title position-relative pb-3 mb-4">
-                            <h5 class="fw-bold text-primary text-uppercase">The Mentorship</h5>
-                            <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">Learn Every Day, Like It's Your Job</h2>
+            <div class="global-band wow fadeInUp" data-wow-delay="0.2s">
+                <div class="gb-copy">
+                    <div class="case-chip"><i class="fa fa-globe-africa"></i> Since 2018</div>
+                    <h2>Building traders <span>globally</span></h2>
+                    <p>Joreem started with one small account, a notebook, and a strict rule: protect the capital first. Eight years later he trades Forex, Crypto and Stocks full-time and has taught the same risk-first system to students across 40+ countries. No gurus-on-stage, no rented-lifestyle marketing &mdash; just process, discipline and transparency.</p>
+                    <div class="row g-0 mb-2">
+                        <div class="col-sm-6">
+                            <ul class="check-list">
+                                <li class="col-12"><i class="fa fa-check"></i>Price action &amp; market structure</li>
+                                <li class="col-12"><i class="fa fa-check"></i>Risk-first position sizing</li>
+                            </ul>
                         </div>
-                        <p class="mb-4" style="color: var(--muted); line-height: 1.8;">A structured membership built around live market breakdowns, a full video curriculum, and direct feedback from Joreem. Pick monthly for flexibility or annual to save, and you're in the private community the moment your payment clears.</p>
-                        <ul class="check-list mb-4">
-                            <li class="col-12"><i class="fa fa-video"></i>Daily live breakdowns + on-demand lesson library</li>
-                            <li class="col-12"><i class="fab fa-telegram"></i>Auto-invite to private Telegram &amp; Discord on payment</li>
-                            <li class="col-12"><i class="fa fa-chart-bar"></i>Trade reviews, journal grading &amp; monthly 1-on-1 Q&amp;A</li>
-                            <li class="col-12"><i class="fa fa-credit-card"></i>Card, PayPal, M-Pesa, Airtel &amp; Pesapal checkout</li>
-                        </ul>
-                        <a href="mentorship.html" class="btn btn-primary py-3 px-4"><i class="fa fa-graduation-cap me-2"></i>View Plans &amp; Pricing</a>
+                        <div class="col-sm-6">
+                            <ul class="check-list">
+                                <li class="col-12"><i class="fa fa-check"></i>Trader psychology coaching</li>
+                                <li class="col-12"><i class="fa fa-check"></i>Live, on-camera breakdowns</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="position-relative h-100" style="min-height: 360px;">
-                            <img src="img/about.jpg" alt="Trading desk" class="position-absolute w-100 h-100 rounded" style="object-fit: cover; border: 1px solid var(--line);">
-                            <div class="position-absolute bottom-0 start-0 m-4 p-3 rounded" style="background: rgba(4,8,15,.85); backdrop-filter: blur(6px); border: 1px solid var(--line);">
-                                <div class="mono" style="font-size:11px; color:#5F7194; letter-spacing:.12em;">THIS MONTH IN THE ROOM</div>
-                                <div class="mono" style="font-size:17px; color:#fff; font-weight:700;">148 breakdowns &bull; 32 live Q&amp;A</div>
-                            </div>
-                        </div>
+                    <div class="gb-stats">
+                        <div class="gb-stat"><div class="n">8+</div><div class="l">Years Full-Time</div></div>
+                        <div class="gb-stat"><div class="n">40+</div><div class="l">Countries</div></div>
+                        <div class="gb-stat"><div class="n">2,500+</div><div class="l">Students</div></div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary py-3 px-4 mt-4"><i class="fa fa-user me-2"></i>The Full Story</a>
+                </div>
+                <div class="gb-media">
+                    <img src="img/joreem.jpg" alt="Joreem, founder and head mentor">
+                    <div class="gb-badge">
+                        <div class="t">Full-Time Since 2018</div>
+                        <div class="v">8+ years trading <span>live</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Mentorship Highlight End -->
-
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid section-pad wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 640px;">
-                <h5 class="fw-bold text-primary text-uppercase">Student Results</h5>
-                <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.5rem);">What Traders Say After 90 Days</h2>
-            </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
-                <div class="testimonial-item my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
-                        <div class="avatar-initials" style="background: linear-gradient(135deg, #F0B429, #D99A14);">WK</div>
-                        <div class="ps-4">
-                            <h4 class="mb-1" style="color:#fff;">Wanjiru K.</h4>
-                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">Nairobi, Kenya</small>
-                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        I'd blown two accounts before joining. The risk module alone saved me. I now trade 0.5R max and my first three months were all green. Joreem reviews actual trades, not highlight reels.
-                    </div>
-                </div>
-                <div class="testimonial-item my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
-                        <div class="avatar-initials" style="background: linear-gradient(135deg, #16C784, #0E9F68);">TA</div>
-                        <div class="ps-4">
-                            <h4 class="mb-1" style="color:#fff;">Tunde A.</h4>
-                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">Lagos, Nigeria</small>
-                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        The live breakdowns are the real product. You learn by watching him think, not by memorizing videos. Paid with M-Pesa in two minutes and I was in the Telegram group before the session ended.
-                    </div>
-                </div>
-                <div class="testimonial-item my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
-                        <div class="avatar-initials" style="background: linear-gradient(135deg, #7B8CDE, #5568C9);">DM</div>
-                        <div class="ps-4">
-                            <h4 class="mb-1" style="color:#fff;">Daniel M.</h4>
-                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">Accra, Ghana</small>
-                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i></div>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Bought Forex Mastery first. It's the clearest explanation of liquidity and structure I've found anywhere. The print quality is serious. It's the first thing I show new members.
-                    </div>
-                </div>
-                <div class="testimonial-item my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
-                        <div class="avatar-initials" style="background: linear-gradient(135deg, #E28AC0, #C45C9E);">SB</div>
-                        <div class="ps-4">
-                            <h4 class="mb-1" style="color:#fff;">Sarah B.</h4>
-                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">London, UK</small>
-                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        As a part-timer with a day job, the on-demand library and journal reviews are gold. The psychology book fixed my revenge-trading habit better than a year of "course-hopping" did.
-                    </div>
-                </div>
-                <div class="testimonial-item my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5" style="border-color: var(--line) !important;">
-                        <div class="avatar-initials" style="background: linear-gradient(135deg, #F6465D, #C92B40);">OP</div>
-                        <div class="ps-4">
-                            <h4 class="mb-1" style="color:#fff;">Kevin O.</h4>
-                            <small class="text-uppercase" style="color: var(--muted); font-size: 11px; letter-spacing:.08em;">Toronto, Canada</small>
-                            <div class="stars mt-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Elite Desk is worth every dollar. The 1-on-1s exposed that I was over-leveraging everything by 3x. Six months later my equity curve looks completely different. Transparent, professional, no hype.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
+    <!-- Global Band End -->
 
 
     <!-- FAQ Start -->
@@ -532,7 +933,7 @@
                 </details>
                 <details class="faq-item">
                     <summary>What markets are covered?<span class="faq-ico"><i class="fa fa-plus"></i></span></summary>
-                    <div class="faq-body">Forex (majors and key crosses), Crypto (BTC, ETH and major alts) and Stocks/Indices (US tech, S&P 500). The core system is one, price action, liquidity and risk, applied across all three.</div>
+                    <div class="faq-body">Forex (majors and key crosses), Crypto (BTC, ETH and major alts) and Stocks/Indices (US tech, S&amp;P 500). The core system is one, price action, liquidity and risk, applied across all three.</div>
                 </details>
                 <details class="faq-item">
                     <summary>How does the private Telegram &amp; Discord invite work?<span class="faq-ico"><i class="fa fa-plus"></i></span></summary>
@@ -631,10 +1032,10 @@
                             </div>
                             <div class="link-animated d-flex flex-column justify-content-start">
                                 <a class="mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                                <a class="mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Joreem</a>
+                                <a class="mb-2" href="#how"><i class="bi bi-arrow-right text-primary me-2"></i>How It Works</a>
+                                <a class="mb-2" href="#pricing"><i class="bi bi-arrow-right text-primary me-2"></i>Mentorship Plans</a>
                                 <a class="mb-2" href="bookstore.html"><i class="bi bi-arrow-right text-primary me-2"></i>Bookstore</a>
-                                <a class="mb-2" href="mentorship.html"><i class="bi bi-arrow-right text-primary me-2"></i>Mentorship Plans</a>
-                                <a class="mb-2" href="member.html"><i class="bi bi-arrow-right text-primary me-2"></i>Member Login</a>
+                                <a class="mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Joreem</a>
                                 <a href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact</a>
                             </div>
                         </div>
@@ -835,6 +1236,7 @@
     <!-- Site JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/trading.js"></script>
+    <script src="js/home.js"></script>
 </body>
 
 </html>

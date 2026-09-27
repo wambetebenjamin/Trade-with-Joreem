@@ -5,20 +5,55 @@ forex/crypto/stocks mentorship brand. Built on the Startup HTML template engine
 (Bootstrap 5, jQuery, Owl Carousel, WOW, CounterUp) with every template brand
 element removed and the whole experience reskinned for trading.
 
-## Pages
+## Pages (all share the FundingPips-inspired structure layer)
+
+Every page carries the promo bar, the unified navbar (Home / How It Works /
+Pricing / Bookstore / Mentorship / About / Contact), a centered page hero with
+kicker chip + stat chips, and the same dark-gold trading theme
+(`css/funding.css`). Shared interactivity (promo bar, animated counters, plan
+configurator, cart, checkout) lives in `js/trading.js`; index-only widgets
+(equity sparkline, Discord feed) live in `js/home.js`.
 
 | File             | Purpose                                                              |
 |------------------|----------------------------------------------------------------------|
-| `index.html`     | Hero with live candlestick terminal, market ticker, books, plans, testimonials, FAQ, risk disclaimer |
-| `about.html`     | Joreem's story, the 3-pillar method, journey timeline                |
-| `bookstore.html` | Print + digital book catalog, bundle deal, shipping/payment info     |
-| `mentorship.html`| Program details, tiered pricing (monthly / annual / elite), how-it-works, FAQ |
-| `login.html`     | Member login (demo auth)                                             |
-| `member.html`    | Member dashboard: breakdowns, curriculum progress, signal log, resources, Telegram/Discord invites |
-| `contact.html`   | Contact form + support details                                       |
-| `terms.html`     | Terms of Service                                                     |
-| `privacy.html`   | Privacy Policy                                                       |
-| `risk.html`      | Full Financial & Risk Disclaimer (linked from every footer)          |
+| `index.html`     | Homepage rebuilt on the FundingPips-style structure (see below)       |
+| `about.html`     | Story, stat band, 3-pillar stage cards, horizontal journey timeline   |
+| `bookstore.html` | Value band, catalog, bundle as FundingPips price card, delivery chips |
+| `mentorship.html`| Plan configurator (tabs + monthly/annual) + plan comparison table, FP feature cards, 4-step getting-started grid |
+| `login.html`     | Two-panel auth: brand panel with stats & quote + login form           |
+| `member.html`    | Member dashboard: stat band, breakdowns, curriculum, signal log, community invites |
+| `contact.html`   | Value-chip contact info, stat chips, contact form                     |
+| `terms.html`     | Terms of Service (document text unchanged)                            |
+| `privacy.html`   | Privacy Policy (document text unchanged)                              |
+| `risk.html`      | Full Financial & Risk Disclaimer (document text unchanged)             |
+
+## Homepage structure (mirrors fundingpips.com, reskinned for Joreem)
+
+Top to bottom, each section maps 1:1 to FundingPips' homepage architecture:
+
+1. **Promo bar** – dismissible 20%-off announcement (`START20` code, click to copy)
+2. **Centered hero** – big headline, inline stat chips (countries / students / breakdowns), dual CTAs, rating chips
+3. **Live terminal stage** – the EUR/USD candlestick terminal floating over the hero, then the market ticker
+4. **Value band** – "Learn with peace of mind" + four value chips
+5. **Student wins widget** – browser-chrome app panel with a wins log table + total counter (the "rewards widget" pattern)
+6. **How it works** – three numbered step cards, each with a mini visual and a review quote
+7. **Pricing configurator** – plan tabs (Foundation / Pro / Elite) + monthly/annual toggle feeding a single spec-card (the "Buy Challenge" pattern), wired to `data-plan-checkout`
+8. **ONE SYSTEM banner** – the "1 Step Flex" highlight-band pattern
+9. **Student journey** – horizontal case-study timeline with milestone nodes and ROI stats
+10. **Testimonials** – "Real students, real results, real impact" carousel
+11. **Learn on your terms** – feature cards, asset chips, animated platform orbit, session chips
+12. **Stages** – "Your discipline is our system" three-stage path
+13. **Shows** – "Built by traders, for traders" cards (Live Desk / Psychology / Beyond the Charts)
+14. **Community** – live fake-Discord widget with channel sidebar and rotating win-log bot feed
+15. **The Library** – featured book cards (cart-enabled)
+16. **Global band** – mentor story + "Building traders globally since 2018" stats
+17. **FAQ, risk disclaimer, footer** – unchanged Joreem documents and links
+
+New files: `css/funding.css` (structure layer) and `js/home.js` (index-only
+widgets). `js/trading.js` carries the shared promo bar, counters and pricing
+configurator, plus monthly/annual plan variants (`foundation-a`, `pro-m`,
+`elite-m`) and a fix so plan checkout actually carries the selected plan into
+the modal.
 
 ## Run locally
 

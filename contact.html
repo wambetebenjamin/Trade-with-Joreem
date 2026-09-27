@@ -19,6 +19,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/trading.css" rel="stylesheet">
+    <link href="css/funding.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,6 +28,12 @@
         <div class="spinner"></div>
     </div>
     <!-- Spinner End -->
+    <!-- Promo Bar Start -->
+    <div class="promo-bar" id="promoBar">
+        New here? Get 20% OFF your first month with code <span class="code" id="promoCode" title="Click to copy">START20</span>. Excludes Elite Desk.
+        <button class="promo-close" id="promoClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+    <!-- Promo Bar End -->
 
     <!-- Topbar Start -->
     <div class="container-fluid topbar px-5 d-none d-lg-block">
@@ -73,12 +80,14 @@
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
+                                <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="index.html#how" class="nav-item nav-link">How It Works</a>
+                    <a href="index.html#pricing" class="nav-item nav-link">Pricing</a>
                     <a href="bookstore.html" class="nav-item nav-link">Bookstore</a>
                     <a href="mentorship.html" class="nav-item nav-link">Mentorship</a>
-                    <a href="contact.html" class="nav-item nav-link nav-contact">Contact</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="contact.html" class="nav-item nav-link active nav-contact">Contact</a>
                 </div>
                 <button type="button" class="btn btn-sm btn-outline-light btn-sm-square rounded-circle ms-3 position-relative" data-open-cart aria-label="Open cart">
                     <i class="fa fa-shopping-basket fw-normal"></i>
@@ -90,19 +99,15 @@
     </div>
 
     <!-- Page Hero Start -->
-    <div class="container-fluid bg-header page-hero p-0">
+    <div class="container-fluid bg-header page-hero ph-center p-0">
         <div class="container position-relative" style="z-index: 2;">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h5 class="fw-bold text-primary text-uppercase mb-3" style="letter-spacing:.18em;">We Answer Fast</h5>
-                    <h1 class="display-4 text-white mb-3">Contact</h1>
-                    <p class="text-white-50 mb-4" style="max-width: 560px; line-height: 1.8;">One inbox, real people, 24-hour replies. Ask us anything about the books, the plans or the method.</p>
-                    <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <div class="ph-kicker"><i class="fa fa-headset"></i> We Answer Fast</div>
+            <h1 class="display-4 text-white mb-3">Contact</h1>
+            <p class="text-white-50 mb-4" style="max-width: 640px; line-height: 1.8;">One inbox, real people, 24-hour replies. Ask us anything about the books, the plans or the method.</p>
+            <div class="hero-stats"><div class="hstat"><div class="n">24h</div><div class="l">Avg. Response</div></div><div class="hstat"><div class="n">Mon-Sat</div><div class="l">Support Hours</div></div><div class="hstat"><div class="n">100%</div><div class="l">Human Replies</div></div></div>
+            <ol class="breadcrumb m-0 justify-content-center"><li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Contact</li>
-                    </ol>
-                </div>
-            </div>
+            </ol>
         </div>
     </div>
     <!-- Page Hero End -->
@@ -113,33 +118,26 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-5">
-                    <div class="section-title position-relative pb-3 mb-4">
-                        <h5 class="fw-bold text-primary text-uppercase">Contact</h5>
-                        <h2 class="mb-0" style="font-size: clamp(1.8rem, 3vw, 2.4rem);">Talk to the Team</h2>
-                    </div>
+                    <div class="case-chip"><i class="fa fa-headset"></i> Contact</div>
+                    <h2 class="mb-4" style="color:#fff; font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.25;">Talk to the Team</h2>
                     <p style="color: var(--muted); line-height: 1.8;">Questions about a plan, an order, or whether the mentorship is right for you? Send a message. A human (not a bot) replies within 24 hours, Monday to Saturday.</p>
-                    <div class="card-panel p-4 mt-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center" style="width: 46px; height: 46px; margin-right: 14px;"><i class="fa fa-envelope text-dark" style="color:#0A1220"></i></div>
-                            <div>
-                                <div style="font-size: 12px; color: #5F7194; letter-spacing:.1em; text-transform: uppercase;">Email</div>
-                                <a href="mailto:hello@tradewithjoreem.com" style="font-size: 15px;">hello@tradewithjoreem.com</a>
-                            </div>
+                    <div class="vb-chips mt-4" style="grid-template-columns: 1fr; flex: 1 1 100%;">
+                        <div class="vchip">
+                            <div class="ic"><i class="fa fa-envelope"></i></div>
+                            <div><b>Email</b><small><a href="mailto:hello@tradewithjoreem.com">hello@tradewithjoreem.com</a></small></div>
                         </div>
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center" style="width: 46px; height: 46px; margin-right: 14px;"><i class="fab fa-telegram text-dark" style="color:#0A1220"></i></div>
-                            <div>
-                                <div style="font-size: 12px; color: #5F7194; letter-spacing:.1em; text-transform: uppercase;">Telegram</div>
-                                <a href="https://t.me/tradewithjoreem" target="_blank" rel="noopener" style="font-size: 15px;">@tradewithjoreem</a>
-                            </div>
+                        <div class="vchip">
+                            <div class="ic"><i class="fab fa-telegram"></i></div>
+                            <div><b>Telegram</b><small><a href="https://t.me/tradewithjoreem" target="_blank" rel="noopener">@tradewithjoreem</a></small></div>
                         </div>
-                        <div class="d-flex align-items-center">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center" style="width: 46px; height: 46px; margin-right: 14px;"><i class="fa fa-clock text-dark" style="color:#0A1220"></i></div>
-                            <div>
-                                <div style="font-size: 12px; color: #5F7194; letter-spacing:.1em; text-transform: uppercase;">Support Hours</div>
-                                <div style="font-size: 15px; color: #C6D3E8;">Mon to Sat &bull; 08:00-20:00 EAT</div>
-                            </div>
+                        <div class="vchip">
+                            <div class="ic"><i class="fa fa-clock"></i></div>
+                            <div><b>Support Hours</b><small>Mon to Sat &bull; 08:00-20:00 EAT</small></div>
                         </div>
+                    </div>
+                    <div class="stage-stats mt-4" style="justify-content: flex-start;">
+                        <span class="stage-stat"><i class="fa fa-bolt"></i><b>24h</b> avg. response</span>
+                        <span class="stage-stat"><i class="fa fa-user-check"></i><b>100%</b> human replies</span>
                     </div>
                 </div>
                 <div class="col-lg-7">

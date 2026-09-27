@@ -19,6 +19,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/trading.css" rel="stylesheet">
+    <link href="css/funding.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,6 +28,12 @@
         <div class="spinner"></div>
     </div>
     <!-- Spinner End -->
+    <!-- Promo Bar Start -->
+    <div class="promo-bar" id="promoBar">
+        New here? Get 20% OFF your first month with code <span class="code" id="promoCode" title="Click to copy">START20</span>. Excludes Elite Desk.
+        <button class="promo-close" id="promoClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+    <!-- Promo Bar End -->
 
     <!-- Topbar Start -->
     <div class="container-fluid topbar px-5 d-none d-lg-block">
@@ -73,11 +80,13 @@
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
+                                <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="bookstore.html" class="nav-item nav-link">Bookstore</a>
+                    <a href="index.html#how" class="nav-item nav-link">How It Works</a>
+                    <a href="index.html#pricing" class="nav-item nav-link">Pricing</a>
+                    <a href="bookstore.html" class="nav-item nav-link active">Bookstore</a>
                     <a href="mentorship.html" class="nav-item nav-link">Mentorship</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="contact.html" class="nav-item nav-link nav-contact">Contact</a>
                 </div>
                 <button type="button" class="btn btn-sm btn-outline-light btn-sm-square rounded-circle ms-3 position-relative" data-open-cart aria-label="Open cart">
@@ -90,27 +99,55 @@
     </div>
 
     <!-- Page Hero Start -->
-    <div class="container-fluid bg-header page-hero p-0">
+    <div class="container-fluid bg-header page-hero ph-center p-0">
         <div class="container position-relative" style="z-index: 2;">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h5 class="fw-bold text-primary text-uppercase mb-3" style="letter-spacing:.18em;">The Joreem Library</h5>
-                    <h1 class="display-4 text-white mb-3">Bookstore</h1>
-                    <p class="text-white-50 mb-4" style="max-width: 560px; line-height: 1.8;">Print books that ship worldwide and digital handbooks that land in your inbox instantly. Every page built from live trading, no filler.</p>
-                    <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <div class="ph-kicker"><i class="fa fa-book"></i> The Joreem Library</div>
+            <h1 class="display-4 text-white mb-3">Bookstore</h1>
+            <p class="text-white-50 mb-4" style="max-width: 640px; line-height: 1.8;">Print books that ship worldwide and digital handbooks that land in your inbox instantly. Every page built from live trading, no filler.</p>
+            <div class="hero-stats"><div class="hstat"><div class="n">4</div><div class="l">Titles in Print & PDF</div></div><div class="hstat"><div class="n">30<em>+</em></div><div class="l">Countries Shipped To</div></div><div class="hstat"><div class="n">24h</div><div class="l">PDF Delivery</div></div><div class="hstat"><div class="n">$100<em>+</em></div><div class="l">Free Shipping Over</div></div></div>
+            <ol class="breadcrumb m-0 justify-content-center"><li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Bookstore</li>
-                    </ol>
-                </div>
-            </div>
+            </ol>
         </div>
     </div>
     <!-- Page Hero End -->
 
+    <!-- Value Band Start -->
+    <div class="value-band">
+        <div class="container">
+            <div class="vb-inner">
+                <div class="vb-copy wow fadeInLeft" data-wow-delay="0.2s">
+                    <h2>Buy with peace of mind</h2>
+                    <p>No filler, no repackaged forum posts. Every page is built from live trading and ships to your door or your inbox.</p>
+                    <a href="#catalog" class="btn btn-primary py-2 px-4">Browse Books</a>
+                </div>
+                <div class="vb-chips">
+                    <div class="vchip wow zoomIn" data-wow-delay="0.25s">
+                        <div class="ic"><i class="fa fa-bolt"></i></div>
+                        <div><b>Instant PDF Delivery</b><small>Digital handbooks land in your inbox the second payment clears.</small></div>
+                    </div>
+                    <div class="vchip wow zoomIn" data-wow-delay="0.35s">
+                        <div class="ic"><i class="fa fa-truck"></i></div>
+                        <div><b>Ships Worldwide</b><small>Premium print editions dispatched within 2 business days.</small></div>
+                    </div>
+                    <div class="vchip wow zoomIn" data-wow-delay="0.45s">
+                        <div class="ic"><i class="fa fa-lock"></i></div>
+                        <div><b>Secure Checkout</b><small>Card, PayPal, M-Pesa, Airtel &amp; Pesapal, encrypted end-to-end.</small></div>
+                    </div>
+                    <div class="vchip wow zoomIn" data-wow-delay="0.55s">
+                        <div class="ic"><i class="fa fa-gift"></i></div>
+                        <div><b>Free Shipping $100+</b><small>Print orders over $100 ship free, anywhere in the world.</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Value Band End -->
+
 
 
     <!-- Catalog Start -->
-    <div class="container-fluid section-pad">
+    <div class="container-fluid section-pad" id="catalog">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
@@ -194,60 +231,48 @@
     </div>
     <!-- Catalog End -->
 
-    <!-- Bundle Start -->
+    <!-- Bundle Start (FundingPips-style price card) -->
     <div class="container-fluid section-pad">
         <div class="container">
-            <div class="cta-band p-4 p-lg-5">
-                <div class="row g-4 align-items-center position-relative" style="z-index:1;">
-                    <div class="col-lg-5">
-                        <div class="d-flex gap-2 mb-3">
-                            <img src="assets/books/forex-mastery.jpg" class="img-fluid" style="width: 64px; border-radius: 6px; transform: rotate(-4deg);" alt="">
-                            <img src="assets/books/crypto-signals.jpg" class="img-fluid" style="width: 64px; border-radius: 6px;" alt="">
-                            <img src="assets/books/psychology.jpg" class="img-fluid" style="width: 64px; border-radius: 6px; transform: rotate(3deg);" alt="">
-                            <img src="assets/books/stocks-from-zero.jpg" class="img-fluid" style="width: 64px; border-radius: 6px; transform: rotate(-2deg);" alt="">
-                        </div>
-                        <h3 class="mb-2" style="color:#fff;">The Complete Library</h3>
-                        <p style="color: var(--muted); font-size: 14px; line-height: 1.7; margin-bottom: 18px;">All four books: 2 print editions (ships worldwide) + 2 instant PDFs. The full Joreem library at one price.</p>
-                        <div class="d-flex align-items-center gap-3 flex-wrap">
-                            <div class="book-price" style="font-size: 1.8rem;">$99.00</div>
-                            <span class="mono" style="color:#5F7194; text-decoration: line-through;">$162.00</span>
-                            <span class="plan-save">Save $63</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-7 text-lg-end">
-                        <button class="btn btn-primary py-3 px-5" data-add-to-cart="bundle"><i class="fa fa-layer-group me-2"></i>Add Bundle to Cart</button>
-                        <p class="mt-3 mb-0" style="font-size: 12.5px; color: #5F7194;"><i class="fa fa-truck me-1"></i>Prints ship in 2 business days &bull; <i class="fa fa-bolt me-1"></i>PDFs delivered instantly</p>
-                    </div>
+            <div class="price-card featured wow zoomIn" data-wow-delay="0.25s">
+                <div class="pc-flag">Best Value</div>
+                <div class="pc-plan">The Complete Library</div>
+                <div class="pc-price">
+                    <span class="cur">$</span><span class="amt">99</span><s>$162</s><span class="per">one-time</span>
                 </div>
+                <div class="pc-sub">All four Joreem books at one price &bull; save $63</div>
+                <button type="button" class="btn btn-primary py-3 pc-buy" data-add-to-cart="bundle"><i class="fa fa-layer-group me-2"></i>Add Bundle to Cart</button>
+                <div class="pc-addon">Includes: 2 premium print editions (ships worldwide) + 2 instant PDFs</div>
+                <div class="pc-specs">
+                    <div class="pc-spec"><div class="l">Books</div><div class="v">All 4 titles</div></div>
+                    <div class="pc-spec"><div class="l">Formats</div><div class="v">2 print + 2 PDF</div></div>
+                    <div class="pc-spec"><div class="l">You Save</div><div class="v gold">$63 (39%)</div></div>
+                    <div class="pc-spec"><div class="l">Print Dispatch</div><div class="v">2 business days</div></div>
+                    <div class="pc-spec"><div class="l">PDF Delivery</div><div class="v green">Instant</div></div>
+                    <div class="pc-spec"><div class="l">Shipping</div><div class="v">Free over $100</div></div>
+                </div>
+                <div class="pc-note"><i class="fa fa-check-circle"></i>The same library Pro &amp; Elite members get free with their membership.</div>
+                <div class="pc-legal">Secure checkout &bull; Card, PayPal, M-Pesa, Airtel &amp; Pesapal</div>
             </div>
         </div>
     </div>
     <!-- Bundle End -->
 
-    <!-- Delivery Info Start -->
-    <div class="container-fluid section-pad">
+    <!-- Delivery Info Start (FundingPips-style chips) -->
+    <div class="container-fluid section-pad pt-0">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="card-panel p-4 h-100 text-center">
-                        <div class="service-icon" style="margin-bottom:20px;"><i class="fa fa-bolt"></i></div>
-                        <h5 class="mb-2" style="color:#fff;">Digital Books</h5>
-                        <p class="mb-0" style="color: var(--muted); font-size: 13.5px; line-height: 1.7;">Instant PDF delivery to your inbox the second your payment clears. Also available from your dashboard, forever.</p>
-                    </div>
+            <div class="vb-chips" style="flex: 1 1 100%;">
+                <div class="vchip wow zoomIn" data-wow-delay="0.2s">
+                    <div class="ic"><i class="fa fa-bolt"></i></div>
+                    <div><b>Digital Books</b><small>Instant PDF delivery to your inbox the second your payment clears. Also available from your dashboard, forever.</small></div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="card-panel p-4 h-100 text-center">
-                        <div class="service-icon" style="margin-bottom:20px;"><i class="fa fa-truck"></i></div>
-                        <h5 class="mb-2" style="color:#fff;">Print Books</h5>
-                        <p class="mb-0" style="color: var(--muted); font-size: 13.5px; line-height: 1.7;">Premium hardcover, dispatched within 2 business days. Kenya $5, E&amp;W Africa $8, International $18, free over $100.</p>
-                    </div>
+                <div class="vchip wow zoomIn" data-wow-delay="0.35s">
+                    <div class="ic"><i class="fa fa-truck"></i></div>
+                    <div><b>Print Books</b><small>Premium hardcover, dispatched within 2 business days. Kenya $5, E&amp;W Africa $8, International $18, free over $100.</small></div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="card-panel p-4 h-100 text-center">
-                        <div class="service-icon" style="margin-bottom:20px;"><i class="fa fa-credit-card"></i></div>
-                        <h5 class="mb-2" style="color:#fff;">Flexible Payment</h5>
-                        <p class="mb-0" style="color: var(--muted); font-size: 13.5px; line-height: 1.7;">Card, PayPal, M-Pesa, Airtel Money, MTN MoMo and Pesapal, all encrypted end-to-end. Questions? hello@tradewithjoreem.com.</p>
-                    </div>
+                <div class="vchip wow zoomIn" data-wow-delay="0.5s">
+                    <div class="ic"><i class="fa fa-credit-card"></i></div>
+                    <div><b>Flexible Payment</b><small>Card, PayPal, M-Pesa, Airtel Money, MTN MoMo and Pesapal, all encrypted end-to-end. Questions? hello@tradewithjoreem.com.</small></div>
                 </div>
             </div>
         </div>

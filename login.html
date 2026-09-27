@@ -19,6 +19,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/trading.css" rel="stylesheet">
+    <link href="css/funding.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,6 +28,12 @@
         <div class="spinner"></div>
     </div>
     <!-- Spinner End -->
+    <!-- Promo Bar Start -->
+    <div class="promo-bar" id="promoBar">
+        New here? Get 20% OFF your first month with code <span class="code" id="promoCode" title="Click to copy">START20</span>. Excludes Elite Desk.
+        <button class="promo-close" id="promoClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+    <!-- Promo Bar End -->
 
     <!-- Topbar Start -->
     <div class="container-fluid topbar px-5 d-none d-lg-block">
@@ -73,11 +80,13 @@
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
+                                <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="index.html#how" class="nav-item nav-link">How It Works</a>
+                    <a href="index.html#pricing" class="nav-item nav-link">Pricing</a>
                     <a href="bookstore.html" class="nav-item nav-link">Bookstore</a>
                     <a href="mentorship.html" class="nav-item nav-link">Mentorship</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="contact.html" class="nav-item nav-link nav-contact">Contact</a>
                 </div>
                 <button type="button" class="btn btn-sm btn-outline-light btn-sm-square rounded-circle ms-3 position-relative" data-open-cart aria-label="Open cart">
@@ -91,11 +100,27 @@
 
 
     <div class="login-wrap">
-        <div class="login-card card-panel">
+        <div class="auth-grid">
+            <div class="auth-brand">
+                <div class="ab-kicker"><i class="fa fa-chart-line me-1"></i> Trade with Joreem</div>
+                <h2>Your trading room, <span>every single day</span></h2>
+                <p>Live breakdowns, a full risk-first curriculum, graded trade reviews and a private community of 2,500+ traders across 40+ countries.</p>
+                <div class="auth-stats">
+                    <div class="jstat"><div class="n">Daily</div><div class="l">Live breakdowns</div></div>
+                    <div class="jstat"><div class="n green">200+</div><div class="l">Lessons</div></div>
+                    <div class="jstat"><div class="n">2,500+</div><div class="l">Members</div></div>
+                </div>
+                <div class="auth-quote">
+                    "I was in the Telegram group before the session ended. Best money I've spent on my trading."
+                    <b>&mdash; Tunde A., Pro Trader member</b>
+                </div>
+            </div>
+            <div class="auth-form-panel">
+                <div class="login-card card-panel" style="width: 100%; border: 0; background: transparent; box-shadow: none;">
             <div class="logo-row">
                 <svg class="brand-mark-lg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <defs><linearGradient id="g1" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#F0B429"/><stop offset="1" stop-color="#D99A14"/></linearGradient></defs>
-                    <rect width="48" height="48" rx="12" fill="url(#g1)"/>
+                    <defs><linearGradient id="g-login" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#F0B429"/><stop offset="1" stop-color="#D99A14"/></linearGradient></defs>
+                    <rect width="48" height="48" rx="12" fill="url(#g-login)"/>
                     <g stroke="#0A1220" stroke-width="2.6" stroke-linecap="round">
                         <line x1="14" y1="13" x2="14" y2="35"/>
                         <line x1="24" y1="9" x2="24" y2="37"/>
@@ -129,6 +154,8 @@
                 <div class="demo-hint"><b>DEMO:</b> use <b>demo@tradewithjoreem.com</b> / <b>demo123</b><br>(any valid email + 6-char password also works)</div>
             </form>
             <p class="text-center mt-4 mb-0" style="font-size: 13px; color: var(--muted);">Not a member yet? <a href="mentorship.html">View plans &amp; enroll <i class="fa fa-arrow-right"></i></a></p>
+                </div>
+            </div>
         </div>
     </div>
 
