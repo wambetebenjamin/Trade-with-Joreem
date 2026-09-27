@@ -392,9 +392,12 @@
     var checkoutPlan = null;
 
     var PLANS = {
-        foundation: { id: "foundation", name: "Foundation • Monthly", price: 49, per: "/month", months: 1 },
-        pro:        { id: "pro",        name: "Pro Trader • Annual",  price: 399, per: "/year",  months: 12 },
-        elite:      { id: "elite",      name: "Elite Desk • Annual",  price: 999, per: "/year",  months: 12 }
+        "foundation":   { id: "foundation",   name: "Foundation • Monthly",  price: 49,  per: "/month", months: 1 },
+        "foundation-a": { id: "foundation-a", name: "Foundation • Annual",   price: 470, per: "/year",  months: 12 },
+        "pro-m":        { id: "pro-m",        name: "Pro Trader • Monthly",  price: 59,  per: "/month", months: 1 },
+        "pro":          { id: "pro",          name: "Pro Trader • Annual",   price: 399, per: "/year",  months: 12 },
+        "elite-m":      { id: "elite-m",      name: "Elite Desk • Monthly",  price: 119, per: "/month", months: 1 },
+        "elite":        { id: "elite",        name: "Elite Desk • Annual",   price: 999, per: "/year",  months: 12 }
     };
 
     function coLines() {
@@ -420,9 +423,9 @@
         }
     }
 
-    function startCheckout(mode) {
+    function startCheckout(mode, planId) {
         checkoutMode = mode;
-        checkoutPlan = null;
+        checkoutPlan = planId || null;
         // reset state
         document.querySelectorAll("#checkoutModal .co-panel").forEach(function (p, i) {
             p.style.display = i === 0 ? "block" : "none";
@@ -437,8 +440,7 @@
     }
 
     function startPlanCheckout(planId) {
-        checkoutPlan = planId;
-        startCheckout("mentorship");
+        startCheckout("mentorship", planId);
     }
 
     function setCoStep(n) {

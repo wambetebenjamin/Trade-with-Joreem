@@ -9,7 +9,7 @@ element removed and the whole experience reskinned for trading.
 
 | File             | Purpose                                                              |
 |------------------|----------------------------------------------------------------------|
-| `index.html`     | Hero with live candlestick terminal, market ticker, books, plans, testimonials, FAQ, risk disclaimer |
+| `index.html`     | Homepage rebuilt on the FundingPips-style structure (see below)       |
 | `about.html`     | Joreem's story, the 3-pillar method, journey timeline                |
 | `bookstore.html` | Print + digital book catalog, bundle deal, shipping/payment info     |
 | `mentorship.html`| Program details, tiered pricing (monthly / annual / elite), how-it-works, FAQ |
@@ -19,6 +19,33 @@ element removed and the whole experience reskinned for trading.
 | `terms.html`     | Terms of Service                                                     |
 | `privacy.html`   | Privacy Policy                                                       |
 | `risk.html`      | Full Financial & Risk Disclaimer (linked from every footer)          |
+
+## Homepage structure (mirrors fundingpips.com, reskinned for Joreem)
+
+Top to bottom, each section maps 1:1 to FundingPips' homepage architecture:
+
+1. **Promo bar** – dismissible 20%-off announcement (`START20` code, click to copy)
+2. **Centered hero** – big headline, inline stat chips (countries / students / breakdowns), dual CTAs, rating chips
+3. **Live terminal stage** – the EUR/USD candlestick terminal floating over the hero, then the market ticker
+4. **Value band** – "Learn with peace of mind" + four value chips
+5. **Student wins widget** – browser-chrome app panel with a wins log table + total counter (the "rewards widget" pattern)
+6. **How it works** – three numbered step cards, each with a mini visual and a review quote
+7. **Pricing configurator** – plan tabs (Foundation / Pro / Elite) + monthly/annual toggle feeding a single spec-card (the "Buy Challenge" pattern), wired to `data-plan-checkout`
+8. **ONE SYSTEM banner** – the "1 Step Flex" highlight-band pattern
+9. **Student journey** – horizontal case-study timeline with milestone nodes and ROI stats
+10. **Testimonials** – "Real students, real results, real impact" carousel
+11. **Learn on your terms** – feature cards, asset chips, animated platform orbit, session chips
+12. **Stages** – "Your discipline is our system" three-stage path
+13. **Shows** – "Built by traders, for traders" cards (Live Desk / Psychology / Beyond the Charts)
+14. **Community** – live fake-Discord widget with channel sidebar and rotating win-log bot feed
+15. **The Library** – featured book cards (cart-enabled)
+16. **Global band** – mentor story + "Building traders globally since 2018" stats
+17. **FAQ, risk disclaimer, footer** – unchanged Joreem documents and links
+
+New files: `css/funding.css` (structure layer) and `js/home.js` (promo bar,
+counters, pricing configurator, equity sparkline, Discord feed). `js/trading.js`
+gained monthly/annual plan variants (`foundation-a`, `pro-m`, `elite-m`) and a
+fix so plan checkout actually carries the selected plan into the modal.
 
 ## Run locally
 
