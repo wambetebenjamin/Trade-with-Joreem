@@ -1,6 +1,5 @@
-/* Trade with Joreem — Monoline-inspired editorial layout layer.
-   Keeps the existing content and interactions while adopting the template's
-   generous spacing, clear type scale, quiet surfaces and anchored CTA rhythm. */
+/* Trade with Joreem: clean editorial layout layer.
+   Retains existing content and interactions with clear type and quiet surfaces. */
 .home-monoline {
   --editorial-bg: #07121d;
   --editorial-panel: #0d1b28;
@@ -8,7 +7,29 @@
   --editorial-gold: #eebc48;
   background: var(--editorial-bg);
 }
-.home-monoline .promo-bar { background: #eebc48; color: #111820; }
+.home-monoline .promo-bar { background: #eebc48; color: #111820; background-image: none; box-shadow: none; }
+.home-monoline .hero-bg,
+.home-monoline .hero-grid,
+.home-monoline .hero-glow { display: none !important; }
+.home-monoline .hero.hero-center { background: #0a1722; }
+.home-monoline .hero.hero-center:after { display: none !important; }
+.home-monoline .btn-primary { background: #eebc48 !important; background-image: none !important; border-color: #eebc48 !important; box-shadow: none !important; }
+.home-monoline .btn-primary:hover { background: #d9a735 !important; border-color: #d9a735 !important; box-shadow: none !important; transform: none; }
+.home-monoline .term-stage,
+.home-monoline .terminal,
+.home-monoline .student-wins-widget,
+.home-monoline .community-widget,
+.home-monoline .plan-card,
+.home-monoline .book-card,
+.home-monoline .stage-card,
+.home-monoline .feature-card,
+.home-monoline .show-card { box-shadow: none !important; }
+.home-monoline .stage-card:hover,
+.home-monoline .feature-card:hover,
+.home-monoline .show-card:hover,
+.home-monoline .book-card:hover { transform: none !important; }
+.home-monoline .pulse-dot,
+.home-monoline .live::before { animation: none !important; box-shadow: none !important; }
 .home-monoline .navbar { min-height: 82px; background: rgba(7,18,29,.92); border-bottom: 1px solid var(--editorial-line); }
 .home-monoline .hero.hero-center { text-align: left; justify-content: flex-start; min-height: 620px; padding: 100px 0 170px; overflow: hidden; }
 .home-monoline .hero.hero-center .container { max-width: 1180px; }
@@ -43,9 +64,6 @@
 .home-monoline .faq-item { border-bottom-color: var(--editorial-line); }
 .home-monoline .section-pad + .section-pad { border-top: 1px solid rgba(255,255,255,.025); }
 .home-monoline footer { border-top: 1px solid var(--editorial-line); }
-@media (min-width: 1200px) {
-  .home-monoline .hero.hero-center:after { content: ""; position: absolute; z-index: 1; right: -7vw; top: 115px; width: 38vw; height: 38vw; max-width: 600px; max-height: 600px; border: 1px solid rgba(238,188,72,.12); border-radius: 50%; box-shadow: 0 0 0 70px rgba(238,188,72,.025), 0 0 0 140px rgba(238,188,72,.018); pointer-events: none; }
-}
 @media (max-width: 767px) {
   .home-monoline .hero.hero-center { min-height: auto; padding: 82px 0 138px; text-align: center; }
   .home-monoline .hero.hero-center .hero-kicker { margin-left: auto; margin-right: auto; }
