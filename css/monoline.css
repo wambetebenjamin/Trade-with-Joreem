@@ -117,6 +117,16 @@ body.monoline-site {
 .monoline-site .stars i { color: #a56a00; font-size: .9em; margin-right: 2px; }
 .monoline-site .dw-ch > i { width: 15px; flex: 0 0 15px; text-align: center; }
 .monoline-site .dw-title > i { margin-right: 4px; }
+.monoline-site .testimonial-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.monoline-site .testimonial-grid .testimonial-item { height: 100%; margin: 0 !important; padding: 0; background: #f5f4f0 !important; border: 0 !important; border-radius: 0; color: #555 !important; box-shadow: none !important; transform: none !important; }
+.monoline-site .testimonial-grid .testimonial-item > .d-flex { padding: 22px 22px 14px !important; }
+.monoline-site .testimonial-grid .testimonial-item > .pt-4 { padding: 0 22px 24px !important; color: #555 !important; font-size: 14px; line-height: 1.7; }
+.monoline-site .testimonial-grid .avatar-initials { width: 42px; height: 42px; border-radius: 0; font-size: 14px; }
+.monoline-site .testimonial-grid h4 { color: #222 !important; font-size: 1.15rem; }
+.monoline-site .testimonial-grid small { color: #6c6c6c !important; }
+.monoline-site .testimonial-grid .stars { color: #a56a00; font-size: 12px; }
+@media (max-width: 991px) { .monoline-site .testimonial-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 575px) { .monoline-site .testimonial-grid { grid-template-columns: 1fr; } }
 .monoline-site .faq-list { max-width: none; margin: 0; }
 .monoline-site .faq-item { background: #f6f6f4 !important; border: 0 !important; border-radius: 0; margin: 0 0 10px; }
 .monoline-site .faq-item summary { color: #1b2032 !important; padding: 20px 22px; }
