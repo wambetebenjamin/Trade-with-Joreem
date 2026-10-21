@@ -1,9 +1,10 @@
 # Trade with Joreem — Website
 
-A fast, dark "trading-terminal" themed marketing + commerce site for the Joreem
+A fast, dark, editorial marketing + commerce site for the Joreem
 forex/crypto/stocks mentorship brand. Built on the Startup HTML template engine
-(Bootstrap 5, jQuery, Owl Carousel, WOW, CounterUp) with every template brand
-element removed and the whole experience reskinned for trading.
+(Bootstrap 5, jQuery, Owl Carousel, WOW, CounterUp), with its content and
+interactions preserved while the homepage adopts a Monoline-inspired spacious
+layout and a clarity-first educator storytelling rhythm.
 
 ## Pages (all share the FundingPips-inspired structure layer)
 
@@ -27,7 +28,15 @@ configurator, cart, checkout) lives in `js/trading.js`; index-only widgets
 | `privacy.html`   | Privacy Policy (document text unchanged)                              |
 | `risk.html`      | Full Financial & Risk Disclaimer (document text unchanged)             |
 
-## Homepage structure (mirrors fundingpips.com, reskinned for Joreem)
+## Homepage structure (Monoline-inspired, with KojoForex editorial cues)
+
+The homepage keeps the existing Joreem offer, trading terminal, pricing,
+student stories, bookstore and FAQ, but now uses a more editorial composition:
+clearer left-aligned hero and CTA hierarchy, generous section spacing, restrained
+surfaces, and an anchored terminal preview. The reference sites are used for
+layout and storytelling inspiration only; all copy, pricing and brand content
+remain Joreem's. Responsive refinements live in `css/monoline.css`.
+
 
 Top to bottom, each section maps 1:1 to FundingPips' homepage architecture:
 

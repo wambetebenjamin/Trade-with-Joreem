@@ -1,0 +1,62 @@
+/* Trade with Joreem — Monoline-inspired editorial layout layer.
+   Keeps the existing content and interactions while adopting the template's
+   generous spacing, clear type scale, quiet surfaces and anchored CTA rhythm. */
+.home-monoline {
+  --editorial-bg: #07121d;
+  --editorial-panel: #0d1b28;
+  --editorial-line: rgba(255,255,255,.09);
+  --editorial-gold: #eebc48;
+  background: var(--editorial-bg);
+}
+.home-monoline .promo-bar { background: #eebc48; color: #111820; }
+.home-monoline .navbar { min-height: 82px; background: rgba(7,18,29,.92); border-bottom: 1px solid var(--editorial-line); }
+.home-monoline .hero.hero-center { text-align: left; justify-content: flex-start; min-height: 620px; padding: 100px 0 170px; overflow: hidden; }
+.home-monoline .hero.hero-center .container { max-width: 1180px; }
+.home-monoline .hero.hero-center .wow { max-width: 760px; }
+.home-monoline .hero.hero-center .hero-kicker { margin: 0 0 24px; }
+.home-monoline .hero.hero-center h1 { margin: 0 0 24px; max-width: 760px; font-size: clamp(3rem, 6vw, 5.6rem); line-height: 1.04; letter-spacing: -.055em; }
+.home-monoline .hero.hero-center .hero-lead { margin: 0 0 34px; max-width: 620px; font-size: 18px; line-height: 1.75; }
+.home-monoline .hero-stats { justify-content: flex-start; margin-bottom: 30px; }
+.home-monoline .hstat { padding: 0 28px; text-align: left; }
+.home-monoline .hstat:first-child { padding-left: 0; }
+.home-monoline .hero.hero-center .hero-cta-row { justify-content: flex-start; margin-bottom: 24px; }
+.home-monoline .hero-ratings { justify-content: flex-start; }
+.home-monoline .rate-chip { background: rgba(255,255,255,.045); }
+.home-monoline .term-stage { max-width: 1040px; margin-top: -104px; position: relative; z-index: 4; }
+.home-monoline .section-pad { padding-top: clamp(76px, 9vw, 132px); padding-bottom: clamp(76px, 9vw, 132px); }
+.home-monoline .section-title h2 { letter-spacing: -.045em; line-height: 1.1; }
+.home-monoline .section-title > span { letter-spacing: .16em; }
+.home-monoline .section-title p { max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.8; }
+.home-monoline .section-title:not(.text-center) p { margin-left: 0; }
+.home-monoline .section-title,
+.home-monoline .container-fluid > .row { max-width: 1320px; margin-left: auto; margin-right: auto; }
+.home-monoline .value-chip,
+.home-monoline .stage-card,
+.home-monoline .feature-card,
+.home-monoline .show-card,
+.home-monoline .book-card,
+.home-monoline .plan-card { border-radius: 18px; }
+.home-monoline .journey-timeline { padding-top: 14px; }
+.home-monoline .journey-node { border-radius: 16px; }
+.home-monoline .community-widget,
+.home-monoline .student-wins-widget { border-radius: 20px; overflow: hidden; }
+.home-monoline .faq-item { border-bottom-color: var(--editorial-line); }
+.home-monoline .section-pad + .section-pad { border-top: 1px solid rgba(255,255,255,.025); }
+.home-monoline footer { border-top: 1px solid var(--editorial-line); }
+@media (min-width: 1200px) {
+  .home-monoline .hero.hero-center:after { content: ""; position: absolute; z-index: 1; right: -7vw; top: 115px; width: 38vw; height: 38vw; max-width: 600px; max-height: 600px; border: 1px solid rgba(238,188,72,.12); border-radius: 50%; box-shadow: 0 0 0 70px rgba(238,188,72,.025), 0 0 0 140px rgba(238,188,72,.018); pointer-events: none; }
+}
+@media (max-width: 767px) {
+  .home-monoline .hero.hero-center { min-height: auto; padding: 82px 0 138px; text-align: center; }
+  .home-monoline .hero.hero-center .hero-kicker { margin-left: auto; margin-right: auto; }
+  .home-monoline .hero-stats { justify-content: center; gap: 16px 0; }
+  .home-monoline .hstat { padding: 0 13px; text-align: center; }
+  .home-monoline .hero.hero-center .hero-cta-row,
+  .home-monoline .hero-ratings { justify-content: center; }
+  .home-monoline .term-stage { margin-top: -82px; }
+  .home-monoline .hero.hero-center h1 { font-size: clamp(2.55rem, 12vw, 4rem); }
+  .home-monoline .hero.hero-center .hero-lead { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-monoline *, .home-monoline *::before, .home-monoline *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
