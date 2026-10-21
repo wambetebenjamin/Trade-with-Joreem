@@ -96,6 +96,43 @@ body.monoline-site {
  .monoline-site .term-stage { margin-top: -72px; }
  .monoline-site .hero.hero-center h1 { font-size: clamp(2.5rem, 11vw, 3.7rem); }
 }
+/* Remove template-like outlines, rules and ornamental separators site-wide. */
+.monoline-site *,
+.monoline-site *::before,
+.monoline-site *::after {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+.monoline-site .section-title::before,
+.monoline-site .section-title::after,
+.monoline-site .navbar .nav-link::before,
+.monoline-site .hero-kicker::before,
+.monoline-site .hero-kicker::after,
+.monoline-site .how-num::after,
+.monoline-site .ticker-wrap::before,
+.monoline-site .ticker-wrap::after,
+.monoline-site .page-hero::after,
+.monoline-site .jnode::after,
+.monoline-site .show-card::after,
+.monoline-site .gb-media::after,
+.monoline-site .cta-band::after,
+.monoline-site .timeline::before,
+.monoline-site .tl-item::before,
+.monoline-site .login-wrap::before,
+.monoline-site .mentor-frame::before,
+.monoline-site .video-thumb::before { display: none !important; content: none !important; }
+.monoline-site .form-control,
+.monoline-site .form-select,
+.monoline-site input,
+.monoline-site textarea,
+.monoline-site select { border: 0 !important; outline: 0 !important; box-shadow: none !important; background-color: #f4f4f4; }
+.monoline-site .btn-outline-light { border: 0 !important; }
+.monoline-site .navbar { border: 0 !important; }
+.monoline-site .section-pad + .section-pad,
+.monoline-site .page-hero,
+.monoline-site footer,
+.monoline-site .footer { border: 0 !important; }
 @media (prefers-reduced-motion: reduce) {
  .monoline-site *, .monoline-site *::before, .monoline-site *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
