@@ -107,6 +107,27 @@ body.monoline-site {
  .monoline-site .term-stage { margin-top: -72px; }
  .monoline-site .hero.hero-center h1 { font-size: clamp(2.5rem, 11vw, 3.7rem); }
 }
+.faq-layout { display: grid; grid-template-columns: minmax(230px, .72fr) minmax(0, 1.28fr); gap: clamp(36px, 7vw, 100px); align-items: start; }
+.faq-intro { position: sticky; top: 110px; }
+.faq-label { display: block; color: #a56a00; font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 14px; }
+.faq-intro h2 { color: #1b2032; font-size: clamp(2.1rem, 4vw, 3.5rem); line-height: 1.08; margin: 0 0 18px; }
+.faq-intro p { color: #666; max-width: 340px; margin-bottom: 24px; }
+.faq-contact { display: inline-flex; gap: 9px; align-items: center; color: #1b2032 !important; font-weight: 600; }
+.faq-contact i { color: #a56a00; }
+.monoline-site .stars i { color: #a56a00; font-size: .9em; margin-right: 2px; }
+.monoline-site .dw-ch > i { width: 15px; flex: 0 0 15px; text-align: center; }
+.monoline-site .dw-title > i { margin-right: 4px; }
+.monoline-site .faq-list { max-width: none; margin: 0; }
+.monoline-site .faq-item { background: #f6f6f4 !important; border: 0 !important; border-radius: 0; margin: 0 0 10px; }
+.monoline-site .faq-item summary { color: #1b2032 !important; padding: 20px 22px; }
+.monoline-site .faq-item .faq-body { color: #555 !important; padding: 0 22px 22px; }
+.monoline-site .faq-item .faq-ico { background: transparent !important; color: #1b2032 !important; border-radius: 0; }
+.monoline-site .faq-item[open] .faq-ico { color: #a56a00 !important; transform: rotate(45deg); }
+@media (max-width: 767px) {
+ .faq-layout { grid-template-columns: 1fr; gap: 28px; }
+ .faq-intro { position: static; }
+}
+
 /* Remove template-like outlines, rules and ornamental separators site-wide. */
 .monoline-site *,
 .monoline-site *::before,
