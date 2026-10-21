@@ -14,9 +14,6 @@
 .home-lower .faq-item { background: #f1f0ec !important; color: #383838 !important; }
 .home-lower .asset-chip.gold { background: #e9e8e3 !important; color: #383838 !important; }
 .home-lower .orbit-wrap { display: none !important; }
-.home-lower .show-card img,
-.home-lower .book-cover-wrap img,
-.home-lower .gb-media img { filter: grayscale(100%); }
 .home-lower .show-card .show-body { background: rgba(245,244,240,.96); color: #333 !important; }
 .home-lower .show-card .show-body h4,.home-lower .show-card .show-body p { color: #333 !important; }
 .home-lower .show-card .show-body .k { color: #666 !important; }
