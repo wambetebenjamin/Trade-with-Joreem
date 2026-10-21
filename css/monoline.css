@@ -1,80 +1,101 @@
-/* Trade with Joreem: clean editorial layout layer.
-   Retains existing content and interactions with clear type and quiet surfaces. */
-.home-monoline {
-  --editorial-bg: #07121d;
-  --editorial-panel: #0d1b28;
-  --editorial-line: rgba(255,255,255,.09);
-  --editorial-gold: #eebc48;
-  background: var(--editorial-bg);
+/* Shared Monoline template foundation adapted to Trade with Joreem.
+   Original repo photography and all existing copy/interactions are retained. */
+body.monoline-site {
+  color: #747474;
+  background: #fff;
+  font-family: Poppins, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
 }
-.home-monoline .promo-bar { background: #eebc48; color: #111820; background-image: none; box-shadow: none; }
-.home-monoline .hero-bg,
-.home-monoline .hero-grid,
-.home-monoline .hero-glow { display: none !important; }
-.home-monoline .hero.hero-center { background: #0a1722; }
-.home-monoline .hero.hero-center:after { display: none !important; }
-.home-monoline .btn-primary { background: #eebc48 !important; background-image: none !important; border-color: #eebc48 !important; box-shadow: none !important; }
-.home-monoline .btn-primary:hover { background: #d9a735 !important; border-color: #d9a735 !important; box-shadow: none !important; transform: none; }
-.home-monoline .term-stage,
-.home-monoline .terminal,
-.home-monoline .student-wins-widget,
-.home-monoline .community-widget,
-.home-monoline .plan-card,
-.home-monoline .book-card,
-.home-monoline .stage-card,
-.home-monoline .feature-card,
-.home-monoline .show-card { box-shadow: none !important; }
-.home-monoline .stage-card:hover,
-.home-monoline .feature-card:hover,
-.home-monoline .show-card:hover,
-.home-monoline .book-card:hover { transform: none !important; }
-.home-monoline .pulse-dot,
-.home-monoline .live::before { animation: none !important; box-shadow: none !important; }
-.home-monoline .navbar { min-height: 82px; background: rgba(7,18,29,.92); border-bottom: 1px solid var(--editorial-line); }
-.home-monoline .hero.hero-center { text-align: left; justify-content: flex-start; min-height: 620px; padding: 100px 0 170px; overflow: hidden; }
-.home-monoline .hero.hero-center .container { max-width: 1180px; }
-.home-monoline .hero.hero-center .wow { max-width: 760px; }
-.home-monoline .hero.hero-center .hero-kicker { margin: 0 0 24px; }
-.home-monoline .hero.hero-center h1 { margin: 0 0 24px; max-width: 760px; font-size: clamp(3rem, 6vw, 5.6rem); line-height: 1.04; letter-spacing: -.055em; }
-.home-monoline .hero.hero-center .hero-lead { margin: 0 0 34px; max-width: 620px; font-size: 18px; line-height: 1.75; }
-.home-monoline .hero-stats { justify-content: flex-start; margin-bottom: 30px; }
-.home-monoline .hstat { padding: 0 28px; text-align: left; }
-.home-monoline .hstat:first-child { padding-left: 0; }
-.home-monoline .hero.hero-center .hero-cta-row { justify-content: flex-start; margin-bottom: 24px; }
-.home-monoline .hero-ratings { justify-content: flex-start; }
-.home-monoline .rate-chip { background: rgba(255,255,255,.045); }
-.home-monoline .term-stage { max-width: 1040px; margin-top: -104px; position: relative; z-index: 4; }
-.home-monoline .section-pad { padding-top: clamp(76px, 9vw, 132px); padding-bottom: clamp(76px, 9vw, 132px); }
-.home-monoline .section-title h2 { letter-spacing: -.045em; line-height: 1.1; }
-.home-monoline .section-title > span { letter-spacing: .16em; }
-.home-monoline .section-title p { max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.8; }
-.home-monoline .section-title:not(.text-center) p { margin-left: 0; }
-.home-monoline .section-title,
-.home-monoline .container-fluid > .row { max-width: 1320px; margin-left: auto; margin-right: auto; }
-.home-monoline .value-chip,
-.home-monoline .stage-card,
-.home-monoline .feature-card,
-.home-monoline .show-card,
-.home-monoline .book-card,
-.home-monoline .plan-card { border-radius: 18px; }
-.home-monoline .journey-timeline { padding-top: 14px; }
-.home-monoline .journey-node { border-radius: 16px; }
-.home-monoline .community-widget,
-.home-monoline .student-wins-widget { border-radius: 20px; overflow: hidden; }
-.home-monoline .faq-item { border-bottom-color: var(--editorial-line); }
-.home-monoline .section-pad + .section-pad { border-top: 1px solid rgba(255,255,255,.025); }
-.home-monoline footer { border-top: 1px solid var(--editorial-line); }
+.monoline-site h1,.monoline-site h2,.monoline-site h3,.monoline-site h4,.monoline-site h5,.monoline-site h6 {
+  color: #1b2032;
+  font-family: Oswald, "Arial Narrow", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.monoline-site a { color: #232a34; }
+.monoline-site p { color: #747474; }
+.monoline-site .promo-bar { background: #ffaa17; color: #17202a; box-shadow: none; border: 0; }
+.monoline-site .promo-bar .code { background: #1b2032; color: #fff; box-shadow: none; }
+.monoline-site .topbar { background: #1b2032; }
+.monoline-site .topbar a,.monoline-site .topbar small { color: #fff; }
+.monoline-site .navbar { background: #fff !important; border-bottom: 1px solid #eee; box-shadow: none; }
+.monoline-site .navbar .navbar-brand h1 { color: #1b2032; font-family: Oswald, sans-serif; }
+.monoline-site .navbar .navbar-brand h1 span { color: #ffaa17; }
+.monoline-site .navbar .nav-link { color: #232a34 !important; }
+.monoline-site .navbar .nav-link:hover,.monoline-site .navbar .nav-link.active { color: #ffaa17 !important; }
+.monoline-site .navbar-toggler { color: #1b2032; border-color: #ddd; }
+.monoline-site .btn-primary,.monoline-site .btn-primary:focus { color: #fff !important; background: #ffaa17 !important; background-image: none !important; border-color: #ffaa17 !important; box-shadow: none !important; }
+.monoline-site .btn-primary:hover { color: #fff !important; background: #e6970d !important; border-color: #e6970d !important; box-shadow: none !important; transform: none; }
+.monoline-site .btn-outline-light { color: #1b2032 !important; border-color: #1b2032 !important; }
+.monoline-site .btn-outline-light:hover { background: #1b2032 !important; color: #fff !important; }
+.monoline-site .hero.hero-center { min-height: 600px; padding: 96px 0 142px; text-align: left; justify-content: flex-start; background: #fff; overflow: hidden; }
+.monoline-site .hero-bg,.monoline-site .hero-grid,.monoline-site .hero-glow { display: none !important; }
+.monoline-site .hero.hero-center:after { content: none !important; }
+.monoline-site .hero.hero-center .container { max-width: 1200px; }
+.monoline-site .hero.hero-center .wow { max-width: 660px; }
+.monoline-site .hero.hero-center .hero-kicker { margin: 0 0 24px; color: #b77700; background: #fff7e8; border: 0; border-radius: 2px; }
+.monoline-site .hero.hero-center h1 { max-width: 720px; margin: 0 0 20px; color: #1b2032; font-size: clamp(3rem, 5.7vw, 5.4rem); line-height: 1.06; letter-spacing: 0; }
+.monoline-site .hero.hero-center h1 .gold { color: #e6970d; }
+.monoline-site .hero.hero-center .hero-lead { max-width: 560px; margin: 0 0 28px; color: #747474; font-size: 17px; line-height: 1.75; }
+.monoline-site .hero-stats { justify-content: flex-start; margin-bottom: 26px; }
+.monoline-site .hstat { padding: 0 24px; text-align: left; border-color: #e8e8e8; }
+.monoline-site .hstat:first-child { padding-left: 0; }
+.monoline-site .hstat .n,.monoline-site .hstat .n em { color: #1b2032; }
+.monoline-site .hstat .n em { color: #ffaa17; }
+.monoline-site .hstat .l { color: #777; font-family: Poppins, sans-serif; letter-spacing: .06em; }
+.monoline-site .hero.hero-center .hero-cta-row { justify-content: flex-start; margin-bottom: 20px; }
+.monoline-site .hero-ratings { justify-content: flex-start; }
+.monoline-site .rate-chip { background: #f8f8f8; border-color: #eee; border-radius: 2px; color: #747474; box-shadow: none; }
+.monoline-site .rate-chip b { color: #1b2032; }
+.monoline-site .term-stage { max-width: 1080px; margin-top: -92px; position: relative; z-index: 4; }
+.monoline-site .value-band { background: #f9fcff; border-color: #eee; }
+.monoline-site .vb-copy h2,.monoline-site .vb-copy p,.monoline-site .vchip b,.monoline-site .vchip small { color: #1b2032; }
+.monoline-site .vchip { background: #fff; border-color: #eee; border-radius: 3px; box-shadow: none; }
+.monoline-site .vchip:hover { transform: none; }
+.monoline-site .how-card,.monoline-site .stage-card,.monoline-site .feature-card,.monoline-site .book-card,.monoline-site .journey-node,.monoline-site .plan-card,.monoline-site .testimonial-card { background: #fff !important; color: #747474; border-color: #eee; border-radius: 3px; }
+.monoline-site .how-card h3,.monoline-site .stage-card h3,.monoline-site .feature-card h3,.monoline-site .book-card h3,.monoline-site .plan-card h3,.monoline-site .plan-card h4,.monoline-site .journey-node h3 { color: #1b2032 !important; }
+.monoline-site .how-card > p,.monoline-site .stage-card p,.monoline-site .feature-card p,.monoline-site .book-card p,.monoline-site .plan-card p,.monoline-site .testimonial-card p { color: #747474 !important; }
+.monoline-site .how-visual,.monoline-site .journey-quote,.monoline-site .mini-rules,.monoline-site .mini-stat { background: #f7f7f7 !important; border-color: #eee !important; color: #747474; }
+.monoline-site .how-visual span,.monoline-site .how-visual b,.monoline-site .how-quote p { color: #555 !important; }
+.monoline-site .plan-card.featured { background: #fffaf0 !important; box-shadow: none !important; transform: none !important; border-color: #ffaa17; }
+.monoline-site .plan-flag { background: #ffaa17 !important; color: #1b2032; border-radius: 2px; }
+.monoline-site .page-hero { background: #f9fcff !important; color: #747474; border-bottom: 1px solid #eee; }
+.monoline-site .page-hero h1,.monoline-site .page-hero h2 { color: #1b2032; }
+.monoline-site .page-hero .breadcrumb a,.monoline-site .page-hero .breadcrumb .active { color: #747474; }
+.monoline-site .journey-timeline .journey-node,.monoline-site .faq-item { background: transparent; }
+.monoline-site .app-widget,.monoline-site .community-widget,.monoline-site .student-wins-widget { box-shadow: none !important; border: 1px solid #e8e8e8; border-radius: 3px; }
+.monoline-site .section-pad + .section-pad { border-top: 0; }
+.monoline-site .terminal { box-shadow: 0 12px 32px rgba(27,32,50,.1); }
+.monoline-site .section-pad { padding-top: clamp(68px, 8vw, 112px); padding-bottom: clamp(68px, 8vw, 112px); background-color: #fff; }
+.monoline-site .section-pad:nth-of-type(even) { background-color: #f9fcff; }
+.monoline-site .section-title h2 { color: #1b2032; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: 0; line-height: 1.12; }
+.monoline-site .section-title p { color: #747474; line-height: 1.8; }
+.monoline-site .section-title > span { color: #e6970d; }
+.monoline-site .value-chip,.monoline-site .stage-card,.monoline-site .feature-card,.monoline-site .show-card,.monoline-site .book-card,.monoline-site .plan-card,
+.monoline-site .journey-node,.monoline-site .community-widget,.monoline-site .student-wins-widget,.monoline-site .how-card,.monoline-site .testimonial-card {
+  border: 1px solid #eee; border-radius: 3px; box-shadow: none !important;
+}
+.monoline-site .journey-timeline { padding-top: 14px; }
+.monoline-site .faq-item { border-bottom-color: #e8e8e8; }
+.monoline-site .show-card:hover,.monoline-site .stage-card:hover,.monoline-site .feature-card:hover,.monoline-site .book-card:hover { transform: none !important; box-shadow: none !important; }
+.monoline-site footer,.monoline-site .footer { background: #1b2032; border-top: 0; }
+.monoline-site footer h1,.monoline-site footer h2,.monoline-site footer h3,.monoline-site footer h4,.monoline-site footer p,.monoline-site footer a,
+.monoline-site .footer h1,.monoline-site .footer h2,.monoline-site .footer h3,.monoline-site .footer h4,.monoline-site .footer p,.monoline-site .footer a { color: #fff; }
+.monoline-site .pulse-dot,.monoline-site .live::before { animation: none !important; }
+@media (min-width: 992px) {
+ .monoline-site .hero.hero-center { background-image: linear-gradient(90deg,#fff 0%,#fff 44%,rgba(255,255,255,.94) 53%,rgba(255,255,255,.1) 100%),url('../img/hero.jpg'); background-repeat: no-repeat; background-size: 100% 100%, 51% auto; background-position: center, right 25%; }
+}
 @media (max-width: 767px) {
-  .home-monoline .hero.hero-center { min-height: auto; padding: 82px 0 138px; text-align: center; }
-  .home-monoline .hero.hero-center .hero-kicker { margin-left: auto; margin-right: auto; }
-  .home-monoline .hero-stats { justify-content: center; gap: 16px 0; }
-  .home-monoline .hstat { padding: 0 13px; text-align: center; }
-  .home-monoline .hero.hero-center .hero-cta-row,
-  .home-monoline .hero-ratings { justify-content: center; }
-  .home-monoline .term-stage { margin-top: -82px; }
-  .home-monoline .hero.hero-center h1 { font-size: clamp(2.55rem, 12vw, 4rem); }
-  .home-monoline .hero.hero-center .hero-lead { font-size: 16px; }
+ .monoline-site .hero.hero-center { min-height: auto; padding: 66px 0 126px; text-align: center; background-image: none; }
+ .monoline-site .hero.hero-center .hero-kicker { margin-left: auto; margin-right: auto; }
+ .monoline-site .hero.hero-center .hero-lead { font-size: 16px; }
+ .monoline-site .hero-stats { justify-content: center; gap: 14px 0; }
+ .monoline-site .hstat { padding: 0 11px; text-align: center; }
+ .monoline-site .hero.hero-center .hero-cta-row,.monoline-site .hero-ratings { justify-content: center; }
+ .monoline-site .term-stage { margin-top: -72px; }
+ .monoline-site .hero.hero-center h1 { font-size: clamp(2.5rem, 11vw, 3.7rem); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .home-monoline *, .home-monoline *::before, .home-monoline *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+ .monoline-site *, .monoline-site *::before, .monoline-site *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
