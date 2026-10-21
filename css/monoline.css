@@ -61,8 +61,19 @@ body.monoline-site {
 .monoline-site .plan-card.featured { background: #fffaf0 !important; box-shadow: none !important; transform: none !important; border-color: #ffaa17; }
 .monoline-site .plan-flag { background: #ffaa17 !important; color: #1b2032; border-radius: 2px; }
 .monoline-site .page-hero { background: #f9fcff !important; color: #747474; border-bottom: 1px solid #eee; }
-.monoline-site .page-hero h1,.monoline-site .page-hero h2 { color: #1b2032; }
+.monoline-site .page-hero h1,.monoline-site .page-hero h2,.monoline-site .page-hero .text-white { color: #1b2032 !important; }
+.monoline-site .page-hero .text-white-50,.monoline-site .page-hero p { color: #747474 !important; }
 .monoline-site .page-hero .breadcrumb a,.monoline-site .page-hero .breadcrumb .active { color: #747474; }
+.monoline-site .section-pad [style*="color:#fff"],
+.monoline-site .section-pad [style*="color: #fff"],
+.monoline-site .section-pad [style*="color: var(--muted)"],
+.monoline-site .section-pad .text-white,
+.monoline-site .section-pad .text-white-50,
+.monoline-site .section-pad .text-light { color: #555 !important; }
+.monoline-site .section-pad h1[style*="#fff"],
+.monoline-site .section-pad h2[style*="#fff"],
+.monoline-site .section-pad h3[style*="#fff"],
+.monoline-site .section-pad h4[style*="#fff"] { color: #1b2032 !important; }
 .monoline-site .journey-timeline .journey-node,.monoline-site .faq-item { background: transparent; }
 .monoline-site .app-widget,.monoline-site .community-widget,.monoline-site .student-wins-widget { box-shadow: none !important; border: 1px solid #e8e8e8; border-radius: 3px; }
 .monoline-site .section-pad + .section-pad { border-top: 0; }
