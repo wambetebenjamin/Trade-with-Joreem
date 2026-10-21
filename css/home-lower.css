@@ -1,0 +1,48 @@
+/* Quiet, consistent palette for the lower homepage sections. */
+.home-lower { background: #fff !important; color: #4c4c4c; }
+.home-lower .section-title h2,
+.home-lower h2,.home-lower h3,.home-lower h4,.home-lower h5 { color: #242424 !important; }
+.home-lower .section-title h5,
+.home-lower .section-title > span,
+.home-lower .k,.home-lower .tag,
+.home-lower .num,.home-lower .stage-stat i,
+.home-lower .term-feat .ic,.home-lower .check-list i { color: #666 !important; }
+.home-lower .term-feat .ic,
+.home-lower .asset-chip,
+.home-lower .stage-stat,
+.home-lower .gb-stat,
+.home-lower .faq-item { background: #f1f0ec !important; color: #383838 !important; }
+.home-lower .asset-chip.gold { background: #e9e8e3 !important; color: #383838 !important; }
+.home-lower .orbit-wrap { display: none !important; }
+.home-lower .show-card .show-body { background: rgba(245,244,240,.96); color: #333 !important; }
+.home-lower .show-card .show-body h4,.home-lower .show-card .show-body p { color: #333 !important; }
+.home-lower .show-card .show-body .k { color: #666 !important; }
+.home-lower .stage-card,
+.home-lower .feature-card,
+.home-lower .book-card,
+.home-lower .journey-node,
+.home-lower .plan-card { background: #f7f6f3 !important; color: #4c4c4c !important; }
+.home-lower .stage-card p,.home-lower .book-card p,.home-lower .term-feat small,
+.home-lower .global-band p,.home-lower .gb-stat .l { color: #626262 !important; }
+.home-lower .stage-card .num { -webkit-text-stroke: 0; color: #666 !important; }
+.home-lower .global-band { background: #f1f0ec !important; border: 0 !important; border-radius: 0; }
+.home-lower .gb-copy h2,.home-lower .gb-copy h2 span { color: #242424 !important; }
+.home-lower .gb-stat { border: 0 !important; border-radius: 0; }
+.home-lower .gb-stat .n { color: #383838 !important; }
+.home-lower .gb-badge { background: #242424 !important; border: 0 !important; border-radius: 0; color: #fff; }
+.home-lower .gb-badge .v span { color: #ddd !important; }
+.home-lower .discord-widget { filter: grayscale(1); box-shadow: none !important; border: 0 !important; border-radius: 0; }
+.home-lower .comm-stats .n,.home-lower .comm-stats .n.green { color: #444 !important; }
+.home-lower .risk-inner { background: #f1f0ec !important; border: 0 !important; border-radius: 0; }
+.home-lower .risk-icon,.home-lower .risk-inner h6 { color: #454545 !important; }
+.home-lower .risk-inner p,.home-lower .risk-inner a { color: #555 !important; }
+.home-lower .btn-primary { background: #292929 !important; border-color: #292929 !important; color: #fff !important; }
+.home-lower .btn-outline-light { background: transparent !important; color: #333 !important; }
+.home-lower .btn-outline-light:hover { background: #292929 !important; color: #fff !important; }
+.monoline-site .footer-main,.monoline-site .footer-bottom { background: #20201f !important; color: #dededb !important; }
+.monoline-site .footer-main h1,.monoline-site .footer-main h2,.monoline-site .footer-main h3,
+.monoline-site .footer-main h4,.monoline-site .footer-main a,.monoline-site .footer-bottom a { color: #dededb !important; }
+.monoline-site .footer-main .text-primary,.monoline-site .footer-bottom .text-primary { color: #b8b7b2 !important; }
+@media (max-width: 767px) {
+ .home-lower .gb-copy { padding: 32px 24px; }
+}
