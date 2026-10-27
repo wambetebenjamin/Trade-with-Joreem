@@ -13,7 +13,7 @@ spacing and section rhythm are adapted through `css/monoline.css`. Existing
 photos from `img/` and `assets/books/` are used; no new decorative or generated
 images have been added. The promo bar, navbar, pricing, cart and checkout remain
 functional. Shared interactions live in `js/trading.js`, while homepage widgets
-(equity sparkline and community feed) live in `js/home.js`.
+(the community feed) live in `js/home.js`.
 
 | File             | Purpose                                                              |
 |------------------|----------------------------------------------------------------------|
@@ -35,6 +35,11 @@ stories, bookstore and FAQ. Sections follow the template's spacious, responsive
 layout, with simple surfaces and an image-led hero using the repository's own
 trading photo. KojoForex informed the clarity of the educator story and calls to
 action. Copy, pricing and brand content remain Joreem's.
+
+The four stage breakdown sequence is conceptually informed by the specialist
+analysis and risk review workflow in [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents).
+It is presented as Joreem's human led teaching process, not as an AI feature or
+automated trading service. No TradingAgents source code or assets are bundled.
 
 
 1. **Promo bar** – dismissible 20%-off announcement (`START20` code, click to copy)
