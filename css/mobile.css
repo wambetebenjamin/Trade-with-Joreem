@@ -1,0 +1,113 @@
+/* Phone-first spacing, navigation and contrast fixes. */
+@media (max-width: 767px) {
+  html { scroll-padding-top: 78px; }
+  body.monoline-site { font-size: 15px; line-height: 1.6; }
+  body.home-monoline { padding-bottom: 66px; }
+  .monoline-site .topbar { display: none !important; }
+  .monoline-site .promo-bar { padding: 8px 38px 8px 12px; font-size: 11px; line-height: 1.45; }
+  .monoline-site .navbar { padding: 10px 14px !important; min-height: 64px; }
+  .monoline-site .navbar-brand h1 { font-size: 19px; }
+  .monoline-site .navbar-brand .brand-mark { width: 36px; height: 36px; }
+  .monoline-site .navbar-collapse { background: #fff; padding: 8px 0 12px; }
+  .monoline-site .navbar-nav .nav-link { padding: 9px 3px; color: #242424 !important; font-size: 15px; }
+  .monoline-site .navbar .btn-primary { margin: 10px 0 0 !important; }
+  .monoline-site .page-hero { padding: 38px 16px !important; }
+  .monoline-site .page-hero h1 { color: #202020 !important; font-size: 2.2rem; line-height: 1.12; }
+  .monoline-site .page-hero p,.monoline-site .page-hero .text-white-50 { color: #555 !important; font-size: 15px; }
+  .monoline-site .section-pad { padding: 42px 0 !important; background: #fff !important; }
+  .monoline-site .section-pad > .container-fluid { padding-left: 15px; padding-right: 15px; }
+  .monoline-site .section-title { margin-bottom: 22px !important; padding-bottom: 0 !important; }
+  .monoline-site .section-title h2 { color: #222 !important; font-size: 1.8rem !important; line-height: 1.2; }
+  .monoline-site .section-title h5 { color: #666 !important; font-size: 11px; letter-spacing: .1em; }
+  .monoline-site .section-title p { color: #555 !important; font-size: 14px !important; }
+  .monoline-site .section-pad p,.monoline-site .section-pad li,.monoline-site .section-pad small { line-height: 1.65; }
+  .monoline-site .section-pad [style*="color:#fff"],
+  .monoline-site .section-pad [style*="color: #fff"],
+  .monoline-site .section-pad [style*="var(--muted)"],
+  .monoline-site .section-pad .text-white,
+  .monoline-site .section-pad .text-white-50,
+  .monoline-site .section-pad .text-light { color: #4d4d4d !important; }
+  .monoline-site .section-pad h1[style*="#fff"],
+  .monoline-site .section-pad h2[style*="#fff"],
+  .monoline-site .section-pad h3[style*="#fff"],
+  .monoline-site .section-pad h4[style*="#fff"] { color: #222 !important; }
+  .monoline-site .form-label,.monoline-site label { color: #444 !important; }
+  .monoline-site .form-control,.monoline-site .form-select,.monoline-site input,
+  .monoline-site textarea,.monoline-site select { color: #222 !important; background: #f3f3f1 !important; font-size: 16px; }
+  .monoline-site .form-control::placeholder,.monoline-site input::placeholder,.monoline-site textarea::placeholder { color: #696969 !important; opacity: 1; }
+  .monoline-site .btn { min-height: 44px; white-space: normal; }
+  .monoline-site .btn-primary { background: #252525 !important; border-color: #252525 !important; color: #fff !important; }
+  .monoline-site .hero.hero-center h1 .gold,.monoline-site .hstat .n em { color: #865900 !important; }
+  .monoline-site .hero.hero-center { min-height: 0; padding: 38px 14px 48px; text-align: left; background: #fff !important; }
+  .monoline-site .hero.hero-center .container { width: 100%; padding: 0; }
+  .monoline-site .hero.hero-center .wow { max-width: none; }
+  .monoline-site .hero.hero-center .hero-kicker { margin: 0 0 15px; font-size: 11px; }
+  .monoline-site .hero.hero-center h1 { max-width: 100%; margin: 0 0 14px; font-size: clamp(2.35rem, 10vw, 3.3rem); line-height: 1.04; }
+  .monoline-site .hero.hero-center .hero-lead { margin: 0 0 22px; font-size: 15px; line-height: 1.6; }
+  .monoline-site .hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0 0 22px; }
+  .monoline-site .hstat { padding: 0 8px; text-align: left; }
+  .monoline-site .hstat:first-child { padding-left: 0; }
+  .monoline-site .hstat .n { font-size: 1.45rem; color: #222 !important; }
+  .monoline-site .hstat .l { font-size: 9px; letter-spacing: .02em; line-height: 1.25; }
+  .monoline-site .hero.hero-center .hero-cta-row { display: flex; gap: 8px; margin: 0; }
+  .monoline-site .hero-cta-row .btn { flex: 1 1 0; min-width: 0; padding: 11px 8px !important; font-size: 12px; line-height: 1.3; }
+  .monoline-site .hero-ratings { display: none; }
+  .monoline-site .term-stage,.monoline-site .ticker-wrap { display: none !important; }
+  .home-phone-hide { display: none !important; }
+  .home-monoline #community .discord-widget { display: none !important; }
+  .home-monoline .community-grid { display: block; }
+  .home-monoline .community-grid > div:first-child { max-width: none; }
+  .home-monoline .community-grid .section-title h2 { font-size: 1.8rem !important; }
+  .home-monoline .comm-stats { gap: 12px; justify-content: flex-start; }
+  .home-monoline .comm-stats .jstat { min-width: 0; }
+  .home-monoline .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 18px; }
+  .home-monoline .process-step > i { margin-bottom: 9px; font-size: 17px; }
+  .home-monoline .process-number { margin-bottom: 9px; }
+  .home-monoline .process-step h3 { font-size: 1.05rem; }
+  .home-monoline .process-step p { font-size: 13px; line-height: 1.55; }
+  .home-monoline .value-band { padding: 34px 0 !important; }
+  .home-monoline .vb-inner { display: block; }
+  .home-monoline .vb-copy { max-width: none; margin-bottom: 18px; }
+  .home-monoline .vb-chips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .home-monoline .vchip { padding: 0; gap: 8px; }
+  .home-monoline .vchip .ic { flex-basis: 22px; width: 22px; height: 22px; }
+  .home-monoline .price-card { padding: 8px 0 !important; }
+  .home-monoline .seg-tabs { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 6px; }
+  .home-monoline .seg-tab { min-width: 0; padding: 10px 5px; }
+  .home-monoline .seg-tab { min-width: 0; padding: 10px 5px; background: transparent !important; color: #555 !important; }
+  .home-monoline .seg-tab.active { background: #f0efeb !important; }
+  .home-monoline .seg-tab .t { color: #222 !important; font-size: 12px; }
+  .home-monoline .seg-tab .s { color: #666 !important; font-size: 10px; }
+  .home-monoline .seg-tab .save { display: none; }
+  .home-monoline .bill-toggle { background: #f0efeb !important; color: #333 !important; }
+  .home-monoline .bill-toggle button { color: #444 !important; }
+  .home-monoline .pc-price .amt { color: #222 !important; font-size: 3rem; }
+  .home-monoline .pc-price .cur,.home-monoline .pc-price .per,.home-monoline .pc-sub { color: #555 !important; }
+  .home-monoline .pc-specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px; background: transparent !important; }
+  .home-monoline .pc-spec { padding: 4px 0; }
+  .home-monoline .pc-spec .l { color: #666 !important; }
+  .home-monoline .pc-spec .v,.home-monoline .pc-spec .v.gold { color: #333 !important; }
+  .home-monoline .pc-note,.home-monoline .pc-legal,.home-monoline .pc-addon,.home-monoline .pc-addon b { color: #555 !important; }
+  .home-monoline .pc-flag { position: static; padding: 0; background: transparent !important; color: #555 !important; letter-spacing: .04em; }
+  .home-monoline .testimonial-grid { grid-template-columns: 1fr; gap: 24px; }
+  .home-monoline .testimonial-grid > .testimonial-item:nth-child(n+3) { display: none; }
+  .home-monoline .testimonial-grid .testimonial-item > .d-flex { padding-top: 8px !important; }
+  .home-monoline .home-book-grid { margin-right: -8px; margin-left: -8px; row-gap: 18px !important; }
+  .home-monoline .home-book-grid > div { flex: 0 0 50%; max-width: 50%; padding-right: 8px; padding-left: 8px; }
+  .home-monoline .book-grid,.home-monoline .show-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
+  .home-monoline .book-card .book-cover-wrap img { width: 100%; max-height: 220px; object-fit: contain; }
+  .home-monoline .book-card .book-body { padding: 10px 0 0; }
+  .home-monoline .book-card .desc { font-size: 12px; line-height: 1.5; }
+  .home-monoline .faq-layout { grid-template-columns: 1fr; gap: 18px; }
+  .home-monoline .faq-intro { position: static; }
+  .home-monoline .faq-intro h2 { font-size: 1.9rem; }
+  .home-monoline .faq-item summary { padding: 13px 0; font-size: 14px; }
+  .home-monoline .faq-item .faq-body { padding-bottom: 14px; font-size: 13px; }
+  .home-monoline .footer-main { padding-top: 32px !important; padding-bottom: 24px !important; margin-top: 0 !important; }
+  .home-monoline .footer-main .row { row-gap: 12px; }
+  .home-monoline .footer-bottom { padding: 12px !important; }
+  .mobile-quick-nav { position: fixed; z-index: 1050; right: 0; bottom: 0; left: 0; display: flex; align-items: center; justify-content: space-between; gap: 18px; min-height: 58px; padding: 8px 16px calc(8px + env(safe-area-inset-bottom)); background: #fff; }
+  .mobile-quick-nav a { color: #222 !important; font-size: 13px; font-weight: 600; text-decoration: none; }
+  .mobile-quick-nav .mobile-quick-primary { padding: 10px 14px; background: #252525; color: #fff !important; }
+}
+@media (min-width: 768px) { .mobile-quick-nav { display: none; } }
