@@ -1,0 +1,92 @@
+/* Open editorial treatment. Avoid boxed tiles; photos retain their original color. */
+.home-monoline .how-card,.home-monoline .vchip,.home-monoline .value-chip,
+.home-monoline .price-card,.home-monoline .system-banner,.home-monoline .app-widget,
+.home-monoline .student-wins-widget,.home-monoline .community-widget {
+  background: transparent !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important;
+}
+.home-monoline .how-card { padding-left: 0; padding-right: 0; }
+.home-monoline .how-card h3,.home-monoline .price-card h3,.home-monoline .price-card h4 { color: #242424 !important; }
+.home-monoline .how-card > p,.home-monoline .price-card p { color: #555 !important; }
+.home-monoline .how-visual,.home-monoline .mini-rules,.home-monoline .mini-stat,.home-monoline .mini-chart,
+.home-monoline .wins-table,.home-monoline .wins-total,.home-monoline .app-chrome,
+.home-monoline .value-chip,.home-monoline .case-chip { background: transparent !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+.home-monoline .how-visual { padding-left: 0; padding-right: 0; }
+.home-monoline .case-chip,.home-monoline .plan-flag { padding-left: 0; padding-right: 0; color: #666 !important; }
+.home-monoline .system-banner { border: 0 !important; border-radius: 0 !important; padding: 36px 0; }
+.home-monoline .sb-word,.home-monoline .sb-word .fill { color: #242424 !important; -webkit-text-stroke: 0 !important; background: none !important; }
+.home-monoline .system-banner h2,.home-monoline .system-banner p { color: #444 !important; }
+.home-monoline .sb-chip { background: transparent !important; border: 0 !important; color: #555 !important; padding-left: 0; }
+.home-monoline .system-banner .position-absolute { position: static !important; margin: 12px 0 0 !important; padding: 0 !important; background: transparent !important; color: #444 !important; backdrop-filter: none !important; }
+.home-monoline .system-banner .position-absolute .mono { color: #444 !important; }
+.home-monoline .price-card { width: 100%; max-width: 900px; margin-left: auto; margin-right: auto; }
+.home-monoline .price-card .pc-plan,.home-monoline .price-card .pc-price,.home-monoline .price-card .pc-spec,
+.home-monoline .price-card .pc-legal,.home-monoline .price-card .pc-addon { background: transparent !important; border: 0 !important; color: #555 !important; }
+.home-monoline .price-card .pc-flag,.home-monoline .price-card .pc-note { background: transparent !important; color: #555 !important; }
+.home-monoline .rounded,.home-monoline .rounded-circle { border-radius: 0 !important; }
+.home-monoline .gem,.home-monoline .vchip .ic,.home-monoline .value-chip .ic { background: transparent !important; color: #555 !important; }
+
+.home-lower { background: #fff !important; color: #4c4c4c; }
+.home-lower .section-title h2,
+.home-lower h2,.home-lower h3,.home-lower h4,.home-lower h5 { color: #242424 !important; }
+.home-lower .section-title h5,.home-lower .section-title > span,
+.home-lower .k,.home-lower .tag,.home-lower .num,.home-lower .stage-stat i,
+.home-lower .term-feat .ic,.home-lower .check-list i { color: #666 !important; }
+.home-lower .term-feat .ic { background: transparent !important; }
+.home-lower .asset-chip,.home-lower .asset-chip.gold,.home-lower .stage-stat,
+.home-lower .gb-stat,.home-lower .faq-item,.home-lower .term-feat,
+.home-lower .stage-card,.home-lower .feature-card,.home-lower .book-card,
+.home-lower .journey-node,.home-lower .plan-card,.home-lower .global-band,
+.home-lower .risk-inner,.home-lower .testimonial-item {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.home-lower .asset-chip,.home-lower .stage-stat { padding: 0 14px 0 0; color: #555 !important; }
+.home-lower .orbit-wrap { display: none !important; }
+.home-lower .stage-card,.home-lower .book-card,.home-lower .testimonial-item { padding-left: 0 !important; padding-right: 0 !important; }
+.home-lower .stage-card p,.home-lower .book-card p,.home-lower .term-feat small,
+.home-lower .global-band p,.home-lower .gb-stat .l { color: #626262 !important; }
+.home-lower .stage-card .num { -webkit-text-stroke: 0; color: #777 !important; }
+.home-lower .show-grid { gap: 34px; }
+.home-lower .show-card { display: block; min-height: 0; overflow: visible; border: 0 !important; border-radius: 0 !important; background: transparent !important; }
+.home-lower .show-card img { position: static; display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.home-lower .show-card .show-body { position: static; padding: 18px 0 0; background: transparent !important; color: #333 !important; }
+.home-lower .show-card .show-body h4,.home-lower .show-card .show-body p { color: #333 !important; }
+.home-lower .show-card .show-body .k { color: #777 !important; }
+.home-lower .show-card:hover,.home-lower .show-card:hover img { transform: none !important; }
+.home-lower .global-band { grid-template-columns: 1.12fr .88fr; gap: 42px; }
+.home-lower .gb-copy { padding: 0; }
+.home-lower .gb-copy h2,.home-lower .gb-copy h2 span { color: #242424 !important; }
+.home-lower .gb-stat { padding: 10px 0; text-align: left; }
+.home-lower .gb-stat .n { color: #383838 !important; }
+.home-lower .gb-media { min-height: 0; }
+.home-lower .gb-media img { position: static; display: block; width: 100%; height: auto; object-fit: contain; }
+.home-lower .gb-badge { position: static; display: block; padding: 12px 0 0; background: transparent !important; color: #444 !important; }
+.home-lower .gb-badge .v span { color: #555 !important; }
+.home-lower .discord-widget { filter: none; background: transparent !important; border: 0 !important; border-radius: 0; }
+.home-lower .dw-head,.home-lower .dw-side,.home-lower .dw-main { background: transparent !important; }
+.home-lower .dw-head .avatar,.home-lower .dw-msg .av,.home-lower .dw-msg .av.bot { background: transparent !important; color: #555 !important; border-radius: 0; }
+.home-lower .dw-head b,.home-lower .dw-title,.home-lower .dw-msg .txt,.home-lower .dw-msg .meta { color: #444 !important; }
+.home-lower .dw-head .on b,.home-lower .dw-msg .txt b,.home-lower .dw-msg .txt .gold { color: #555 !important; }
+.home-lower .dw-ch,.home-lower .dw-ch.active,.home-lower .dw-ch .cnt,.home-lower .dw-title span { background: transparent !important; color: #555 !important; }
+.home-lower .comm-stats .n,.home-lower .comm-stats .n.green { color: #444 !important; }
+.home-lower .risk-icon,.home-lower .risk-inner h6 { color: #454545 !important; }
+.home-lower .risk-inner p,.home-lower .risk-inner a { color: #555 !important; }
+.home-lower .btn-primary { background: #292929 !important; border-color: #292929 !important; color: #fff !important; }
+.home-lower .btn-outline-light { background: transparent !important; color: #333 !important; }
+.home-lower .btn-outline-light:hover { background: #292929 !important; color: #fff !important; }
+.monoline-site .footer-main,.monoline-site .footer-bottom { background: #20201f !important; color: #dededb !important; }
+.monoline-site .footer-main h1,.monoline-site .footer-main h2,.monoline-site .footer-main h3,
+.monoline-site .footer-main h4,.monoline-site .footer-main a,.monoline-site .footer-bottom a { color: #dededb !important; }
+.monoline-site .footer-main .text-primary,.monoline-site .footer-bottom .text-primary { color: #b8b7b2 !important; }
+.monoline-site .testimonial-grid .testimonial-item { background: transparent !important; border-radius: 0 !important; }
+.monoline-site .faq-item { background: transparent !important; }
+.monoline-site .faq-item summary { padding-left: 0; padding-right: 0; }
+.monoline-site .faq-item .faq-body { padding-left: 0; padding-right: 0; }
+.monoline-site .testimonial-grid .testimonial-item > .d-flex { padding-left: 0 !important; padding-right: 0 !important; }
+.monoline-site .testimonial-grid .testimonial-item > .pt-4 { padding-left: 0 !important; padding-right: 0 !important; }
+@media (max-width: 767px) {
+ .home-lower .gb-copy { padding: 0; }
+ .home-lower .global-band { grid-template-columns: 1fr; gap: 24px; }
+}

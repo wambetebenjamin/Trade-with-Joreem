@@ -27,7 +27,7 @@
             return '<span class="ticker-item ' + (up ? "up" : "down") + '" data-sym="' + t.sym + '">' +
                 '<span class="t-sym">' + t.sym + "</span>" +
                 '<span class="t-price">' + t.price.toFixed(t.dec) + "</span>" +
-                '<span class="t-chg">' + (up ? "▲" : "▼") + " " + Math.abs(parseFloat(chg)) + "%</span>" +
+                '<span class="t-chg">' + (up ? '<i class="fas fa-caret-up" aria-hidden="true"></i>' : '<i class="fas fa-caret-down" aria-hidden="true"></i>') + " " + Math.abs(parseFloat(chg)) + "%</span>" +
                 "</span>";
         }).join("");
     }

@@ -1,0 +1,9 @@
+/* A plain, human-led breakdown sequence inspired by specialist review workflows. */
+.process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 34px; }
+.process-step { padding: 0; background: transparent; border: 0; color: #555; }
+.process-number { display: block; margin-bottom: 18px; color: #777; font-size: 13px; font-weight: 600; letter-spacing: .04em; }
+.process-step > i { display: block; margin-bottom: 18px; color: #555; font-size: 20px; }
+.process-step h3 { margin: 0 0 10px; color: #242424; font-size: 1.25rem; }
+.process-step p { margin: 0; max-width: 260px; color: #626262; font-size: 14px; line-height: 1.75; }
+@media (max-width: 991px) { .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 32px; } }
+@media (max-width: 575px) { .process-grid { grid-template-columns: 1fr; gap: 25px; } }

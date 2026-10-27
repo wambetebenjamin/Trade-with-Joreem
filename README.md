@@ -1,18 +1,19 @@
 # Trade with Joreem — Website
 
-A fast, dark "trading-terminal" themed marketing + commerce site for the Joreem
-forex/crypto/stocks mentorship brand. Built on the Startup HTML template engine
-(Bootstrap 5, jQuery, Owl Carousel, WOW, CounterUp) with every template brand
-element removed and the whole experience reskinned for trading.
+Trade with Joreem is a forex, crypto and stocks mentorship site built on the
+Bootstrap 5, jQuery, Owl Carousel, WOW and CounterUp stack. Its existing content,
+commerce features and member tools are retained, with the Monoline HTML template
+providing the visual foundation across the site.
 
-## Pages (all share the FundingPips-inspired structure layer)
+## Shared design and pages
 
-Every page carries the promo bar, the unified navbar (Home / How It Works /
-Pricing / Bookstore / Mentorship / About / Contact), a centered page hero with
-kicker chip + stat chips, and the same dark-gold trading theme
-(`css/funding.css`). Shared interactivity (promo bar, animated counters, plan
-configurator, cart, checkout) lives in `js/trading.js`; index-only widgets
-(equity sparkline, Discord feed) live in `js/home.js`.
+The supplied Monoline template styles and responsive rules are included under
+`assets/monoline/css/`. Its light editorial palette, typography, generous
+spacing and section rhythm are adapted through `css/monoline.css`. Existing
+photos from `img/` and `assets/books/` are used; no new decorative or generated
+images have been added. The promo bar, navbar, pricing, cart and checkout remain
+functional. Shared interactions live in `js/trading.js`, while homepage widgets
+(the community feed) live in `js/home.js`.
 
 | File             | Purpose                                                              |
 |------------------|----------------------------------------------------------------------|
@@ -27,9 +28,19 @@ configurator, cart, checkout) lives in `js/trading.js`; index-only widgets
 | `privacy.html`   | Privacy Policy (document text unchanged)                              |
 | `risk.html`      | Full Financial & Risk Disclaimer (document text unchanged)             |
 
-## Homepage structure (mirrors fundingpips.com, reskinned for Joreem)
+## Homepage structure
 
-Top to bottom, each section maps 1:1 to FundingPips' homepage architecture:
+The homepage retains the Joreem offer, trading terminal, pricing, student
+stories, bookstore and FAQ. Sections follow the template's spacious, responsive
+layout, with simple surfaces and an image-led hero using the repository's own
+trading photo. KojoForex informed the clarity of the educator story and calls to
+action. Copy, pricing and brand content remain Joreem's.
+
+The four stage breakdown sequence is conceptually informed by the specialist
+analysis and risk review workflow in [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents).
+It is presented as Joreem's human led teaching process, not as an AI feature or
+automated trading service. No TradingAgents source code or assets are bundled.
+
 
 1. **Promo bar** – dismissible 20%-off announcement (`START20` code, click to copy)
 2. **Centered hero** – big headline, inline stat chips (countries / students / breakdowns), dual CTAs, rating chips
