@@ -1,0 +1,8 @@
+# Local build and QA scratch files
+.work/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Temporary image-search downloads (selected assets are copied into assets/stock/)
+image-search/
