@@ -15,9 +15,9 @@ Three separate courses were created from the three supplied transcripts. Every c
 - **Template-matched design:** 20 × 11.25 inch widescreen pages, the supplied template's colour system, Kitchakan display lettering and Inter body typography.
 - **Distinct course structures:** the masterclass progresses from foundations to top-down analysis; the complete course focuses on three zone methods and Fibonacci confluence; the SMC deck is a four-confluence playbook.
 - **Original schematic charts:** editable vector candles, zones, structure, liquidity, confirmation and risk diagrams in PowerPoint. These are illustrations, not live market data.
-- **Joreem's supplied portrait** on each cover and closing page, plus stock imagery from Pexels, the existing Joreem image library and the supplied template.
+- **Format-specific mentor artwork:** Joreem's supplied portrait appears on PowerPoint covers and closing slides; every PDF cover and closing page uses a branded, face-free candlestick panel instead. Stock imagery comes from Pexels, the existing Joreem image library and the supplied template.
 - **Speaker notes in PowerPoint:** each slide includes its transcript source range where applicable, plus educational cautions.
-- **Matching PDF editions:** the same page designs, embedded body fonts and clickable outline/bookmark entries for every page.
+- **Matching PDF editions:** the same course content and page layouts, embedded body fonts and clickable outline/bookmark entries for every page, with the requested face-free mentor panels.
 - **Risk-conscious editing:** payout and profit language is not presented as a guarantee. Source risk examples are identified as illustrations rather than recommendations.
 
 See `IMAGE_CREDITS.md` for image sources and `../tools/` for the reproducible build scripts.
@@ -40,7 +40,7 @@ python -m venv .venv
 .venv/bin/python -m tools.build_course_decks
 ```
 
-The script reads the original uploaded PowerPoint template and writes all six files into `presentations/`.
+The script reads the original uploaded PowerPoint template, writes all six files into `presentations/`, and rebuilds the verified eight-file collection ZIP.
 
 ## Important
 

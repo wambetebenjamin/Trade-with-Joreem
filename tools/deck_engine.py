@@ -682,6 +682,27 @@ def render_slide(b: Backend, data: dict, index: int, total: int, course: dict):
         raise ValueError(f"Unknown slide type: {kind}")
 
 
+def face_free_mentor_panel(b: Backend, x: float, y: float, w: float, h: float):
+    """Branded PDF-only replacement for the Joreem portrait."""
+    b.rect(x, y, w, h, "green_deep", "green_dark", 1.0, 0.04)
+    center = x + w / 2
+    base_y = y + 0.55
+    candles = [(-0.90, 0.72, "red"), (-0.30, 1.08, "green"), (0.30, 0.84, "red"), (0.90, 1.34, "green")]
+    for offset, height, color in candles:
+        xx = center + offset
+        b.line(xx, base_y, xx, base_y + height + 0.36, color, 2.0)
+        b.rect(xx - 0.13, base_y + 0.22, 0.26, height, color)
+    b.text(x + 0.35, y + 2.35, w - 0.70, 1.35, "TRADING\nEDUCATION", 40, "white", "display", "center", min_size=28, leading=1.0)
+    b.text(x + 0.35, y + h - 0.62, w - 0.70, 0.30, "FOREX • CRYPTO • STOCKS", 12.5, "green", "bold", "center", min_size=10)
+
+
+def mentor_panel(b: Backend, course: dict, x: float, y: float, w: float, h: float):
+    if b.kind == "pdf":
+        face_free_mentor_panel(b, x, y, w, h)
+    else:
+        b.image(course["assets"]["joreem"], x, y, w, h, (0.5, 0.43), 0.0)
+
+
 def render_cover(b: Backend, data: dict, index: int, total: int, course: dict):
     b.rect(0, 0, PAGE_W, PAGE_H, "bg")
     b.image(course["assets"][data.get("stock", "stock_charts")], 12.15, 0, 7.85, 11.25, (0.52, 0.5), 0.52)
@@ -700,9 +721,9 @@ def render_cover(b: Backend, data: dict, index: int, total: int, course: dict):
     b.line(1.15, 8.55, 9.95, 8.55, "grid", 0.8)
     b.text(1.15, 8.84, 9.35, 0.68, data.get("promise", "A structured learning deck with chart diagrams, checklists and practice prompts."), 17.5, "white", "regular", min_size=15)
     b.text(1.15, 10.15, 9.60, 0.30, "EDUCATIONAL ONLY • TRADING INVOLVES RISK • NO RETURNS ARE GUARANTEED", 11, "dim", "semibold", min_size=10)
-    # Portrait card on top of the stock-photo panel.
+    # Mentor card: portrait in PPTX, face-free brand artwork in PDF.
     b.rect(13.15, 1.15, 5.60, 6.15, "panel", "green", 1.4, 0.06)
-    b.image(course["assets"]["joreem"], 13.40, 1.40, 5.10, 5.10, (0.5, 0.43), 0.0)
+    mentor_panel(b, course, 13.40, 1.40, 5.10, 5.10)
     b.text(13.42, 6.68, 5.05, 0.36, "JOREEM", 22, "white", "bold", "center", min_size=20)
     b.rect(13.15, 7.70, 5.60, 1.02, "green_dark")
     b.text(13.46, 7.93, 4.98, 0.48, data.get("mentor_line", "LEARN THE PROCESS.\nRESPECT THE RISK."), 15, "white", "bold", "center", min_size=13)
@@ -712,7 +733,7 @@ def render_cover(b: Backend, data: dict, index: int, total: int, course: dict):
 def render_closing(b: Backend, data: dict, index: int, total: int, course: dict):
     b.rect(0, 0, PAGE_W, PAGE_H, "bg")
     b.polygon([(0, 0), (7.0, 0), (5.4, 11.25), (0, 11.25)], "green_deep")
-    b.image(course["assets"]["joreem"], 1.10, 1.15, 4.65, 4.65, (0.5, 0.43), 0.0)
+    mentor_panel(b, course, 1.10, 1.15, 4.65, 4.65)
     b.rect(1.10, 5.80, 4.65, 0.12, "green")
     b.text(1.10, 6.25, 4.65, 0.48, "JOREEM", 28, "white", "bold", min_size=24)
     b.text(1.10, 6.90, 4.65, 0.68, "TRADE WITH JOREEM\nLEARNING SERIES", 15, "muted", "semibold", min_size=13)

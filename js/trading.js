@@ -207,11 +207,11 @@
 
     /* ================= Cart ================= */
     var CATALOG = {
-        "forex-mastery":  { id: "forex-mastery",  title: "Forex Mastery",            type: "print",   price: 59, img: "assets/books/forex-mastery.jpg" },
-        "crypto-signals": { id: "crypto-signals", title: "Crypto Signals Handbook",  type: "digital", price: 29, img: "assets/books/crypto-signals.jpg",  file: "assets/books/crypto-signals.pdf" },
-        "psychology":     { id: "psychology",     title: "Trading Psychology",       type: "print",   price: 49, img: "assets/books/psychology.jpg" },
-        "stocks-zero":    { id: "stocks-zero",    title: "Stocks from Zero",         type: "digital", price: 25, img: "assets/books/stocks-from-zero.jpg", file: "assets/books/stocks-from-zero.pdf" },
-        "bundle":         { id: "bundle",         title: "The Complete Library",     type: "bundle",  price: 99, img: "assets/books/forex-mastery.jpg" }
+        "forex-mastery":  { id: "forex-mastery",  title: "Forex Mastery",            type: "print",   price: 59, img: "/assets/books/forex-mastery.webp" },
+        "crypto-signals": { id: "crypto-signals", title: "Crypto Signals Handbook",  type: "digital", price: 29, img: "/assets/books/crypto-signals.webp",  file: "/assets/books/crypto-signals.pdf" },
+        "psychology":     { id: "psychology",     title: "Trading Psychology",       type: "print",   price: 49, img: "/assets/books/psychology.webp" },
+        "stocks-zero":    { id: "stocks-zero",    title: "Stocks from Zero",         type: "digital", price: 25, img: "/assets/books/stocks-from-zero.webp", file: "/assets/books/stocks-from-zero.pdf" },
+        "bundle":         { id: "bundle",         title: "The Complete Library",     type: "bundle",  price: 99, img: "/assets/books/forex-mastery.webp" }
     };
 
     var SHIP_RATES = [
@@ -560,7 +560,7 @@
                 '<i class="fab fa-discord"></i>' +
                 "<span><span class='t'>Join the Discord Desk</span><br><span class='s'>Live breakdowns &amp; study rooms</span></span>" +
                 "</a>" +
-                '<a href="member.html" class="btn btn-primary w-100 py-3 mt-2"><i class="fa fa-chart-line me-2"></i>Go to My Dashboard</a>';
+                '<a href="/member" class="btn btn-primary w-100 py-3 mt-2"><i class="fa fa-chart-line me-2"></i>Go to My Dashboard</a>';
         } else {
             var downloads = cart.filter(function (i) {
                 var p = CATALOG[i.id];
@@ -635,7 +635,7 @@
                         renews: new Date(Date.now() + 365 * 864e5).toISOString().slice(0, 10)
                     };
                     localStorage.setItem("twj_auth", JSON.stringify(auth));
-                    window.location.href = "member.html";
+                    window.location.href = "/member";
                 }, 1100);
             });
         }
@@ -644,7 +644,7 @@
         if (memberPage) {
             var auth = getAuth();
             if (!auth) {
-                window.location.replace("login.html");
+                window.location.replace("/login");
                 return;
             }
             var name = auth.email.split("@")[0].replace(/[._]/g, " ");
@@ -666,7 +666,7 @@
         var logoutBtn = document.getElementById("dashLogout");
         if (logoutBtn) logoutBtn.addEventListener("click", function () {
             localStorage.removeItem("twj_auth");
-            window.location.href = "login.html";
+            window.location.href = "/login";
         });
     }
 

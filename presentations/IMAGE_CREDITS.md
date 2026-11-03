@@ -4,7 +4,7 @@
 
 - **File used:** `img/joreem.jpg`
 - **Source:** supplied with the Trade with Joreem project.
-- **Use:** cover and closing page of all three decks.
+- **Use:** cover and closing slide of all three PowerPoint decks only. The PDF editions use original face-free branded candlestick panels in these positions; Joreem's portrait is not embedded in the PDFs.
 
 ## Free stock photographs downloaded for this collection
 

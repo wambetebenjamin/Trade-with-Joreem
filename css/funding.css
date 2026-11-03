@@ -203,7 +203,7 @@ section[id], div[id] { scroll-margin-top: 92px; }
 .app-url i { color: #16C784; }
 .app-body { display: grid; grid-template-columns: 1.55fr 1fr; }
 .wins-panel { padding: 28px 30px; border-right: 1px solid var(--line); }
-.wins-panel h4 { color: #fff; font-size: 1.3rem; margin-bottom: 6px; }
+.wins-panel h3 { color: #fff; font-size: 1.3rem; margin-bottom: 6px; }
 .wins-panel .sub { color: var(--muted); font-size: 13.5px; }
 .wins-table {
     margin-top: 20px;
@@ -635,7 +635,7 @@ section[id], div[id] { scroll-margin-top: 92px; }
     letter-spacing: .16em;
     text-transform: uppercase;
 }
-.jnode h5 { color: #fff; font-size: 15px; margin: 9px 0 7px; }
+.jnode h3 { color: #fff; font-size: 15px; margin: 9px 0 7px; }
 .jnode p { color: var(--muted); font-size: 12.5px; line-height: 1.55; margin: 0; }
 .jnode .amt { font-family: 'JetBrains Mono', monospace; color: #fff; font-weight: 700; margin-top: 9px; display: block; font-size: 14px; }
 .jnode .amt.green { color: var(--secondary); }
@@ -825,7 +825,7 @@ section[id], div[id] { scroll-margin-top: 92px; }
     letter-spacing: .24em;
     text-transform: uppercase;
 }
-.show-body h4 { color: #fff; font-size: 1.3rem; margin: 10px 0; }
+.show-body h3 { color: #fff; font-size: 1.3rem; margin: 10px 0; }
 .show-body p { color: #B9C6DC; font-size: 13.5px; margin: 0; line-height: 1.65; }
 
 /* ============ Community / Discord widget ============ */
@@ -1154,8 +1154,8 @@ section[id], div[id] { scroll-margin-top: 92px; }
     color: var(--primary);
     margin-bottom: 18px;
 }
-.auth-brand h2 { color: #fff; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; margin-bottom: 14px; }
-.auth-brand h2 span { color: var(--primary); }
+.auth-brand h1 { color: #fff; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; margin-bottom: 14px; }
+.auth-brand h1 span { color: var(--primary); }
 .auth-brand p { color: var(--muted); font-size: 14.5px; line-height: 1.8; }
 .auth-stats { display: flex; gap: 12px; margin: 30px 0 8px; flex-wrap: wrap; }
 .auth-form-panel { padding: 52px 48px; display: flex; flex-direction: column; justify-content: center; }
