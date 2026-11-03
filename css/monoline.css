@@ -20,8 +20,8 @@ body.monoline-site {
 .monoline-site .topbar { background: #1b2032; }
 .monoline-site .topbar a,.monoline-site .topbar small { color: #fff; }
 .monoline-site .navbar { background: #fff !important; border-bottom: 1px solid #eee; box-shadow: none; }
-.monoline-site .navbar .navbar-brand h1 { color: #1b2032; font-family: Oswald, sans-serif; }
-.monoline-site .navbar .navbar-brand h1 span { color: #ffaa17; }
+.monoline-site .navbar .navbar-brand .brand-name { color: #1b2032; font-family: Oswald, sans-serif; }
+.monoline-site .navbar .navbar-brand .brand-name span { color: #ffaa17; }
 .monoline-site .navbar .nav-link { color: #232a34 !important; }
 .monoline-site .navbar .nav-link:hover,.monoline-site .navbar .nav-link.active { color: #ffaa17 !important; }
 .monoline-site .navbar-toggler { color: #1b2032; border-color: #ddd; }
@@ -91,11 +91,11 @@ body.monoline-site {
 .monoline-site .faq-item { border-bottom-color: #e8e8e8; }
 .monoline-site .show-card:hover,.monoline-site .stage-card:hover,.monoline-site .feature-card:hover,.monoline-site .book-card:hover { transform: none !important; box-shadow: none !important; }
 .monoline-site footer,.monoline-site .footer { background: #1b2032; border-top: 0; }
-.monoline-site footer h1,.monoline-site footer h2,.monoline-site footer h3,.monoline-site footer h4,.monoline-site footer p,.monoline-site footer a,
-.monoline-site .footer h1,.monoline-site .footer h2,.monoline-site .footer h3,.monoline-site .footer h4,.monoline-site .footer p,.monoline-site .footer a { color: #fff; }
+.monoline-site footer .brand-name,.monoline-site footer h2,.monoline-site footer h3,.monoline-site footer h4,.monoline-site footer p,.monoline-site footer a,
+.monoline-site .footer .brand-name,.monoline-site .footer h2,.monoline-site .footer h3,.monoline-site .footer h4,.monoline-site .footer p,.monoline-site .footer a { color: #fff; }
 .monoline-site .pulse-dot,.monoline-site .live::before { animation: none !important; }
 @media (min-width: 992px) {
- .monoline-site .hero.hero-center { background-image: linear-gradient(90deg,#fff 0%,#fff 44%,rgba(255,255,255,.94) 53%,rgba(255,255,255,.1) 100%),url('../img/hero.jpg'); background-repeat: no-repeat; background-size: 100% 100%, 51% auto; background-position: center, right 25%; }
+ .monoline-site .hero.hero-center { background-image: linear-gradient(90deg,#fff 0%,#fff 44%,rgba(255,255,255,.94) 53%,rgba(255,255,255,.1) 100%),url('../img/hero.webp'); background-repeat: no-repeat; background-size: 100% 100%, 51% auto; background-position: center, right 25%; }
 }
 @media (max-width: 767px) {
  .monoline-site .hero.hero-center { min-height: auto; padding: 66px 0 126px; text-align: center; background-image: none; }
@@ -122,7 +122,7 @@ body.monoline-site {
 .monoline-site .testimonial-grid .testimonial-item > .d-flex { padding: 22px 22px 14px !important; }
 .monoline-site .testimonial-grid .testimonial-item > .pt-4 { padding: 0 22px 24px !important; color: #555 !important; font-size: 14px; line-height: 1.7; }
 .monoline-site .testimonial-grid .avatar-initials { width: 42px; height: 42px; border-radius: 0; font-size: 14px; }
-.monoline-site .testimonial-grid h4 { color: #222 !important; font-size: 1.15rem; }
+.monoline-site .testimonial-grid h3 { color: #222 !important; font-size: 1.15rem; }
 .monoline-site .testimonial-grid small { color: #6c6c6c !important; }
 .monoline-site .testimonial-grid .stars { color: #a56a00; font-size: 12px; }
 @media (max-width: 991px) { .monoline-site .testimonial-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

@@ -1,287 +1,243 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>Member Login | Trade with Joreem</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="member login, trading member area" name="keywords">
-    <meta content="Sign in to your Trade with Joreem member dashboard." name="description">
-
-    <link href="img/favicon.svg" rel="icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/trading.css" rel="stylesheet">
-    <link href="css/funding.css" rel="stylesheet">
-    <link href="assets/monoline/css/style.css" rel="stylesheet">
-    <link href="assets/monoline/css/responsive.css" rel="stylesheet">
-    <link href="assets/monoline/css/menu.css" rel="stylesheet">
-    <link href="css/monoline.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-
-<body class="monoline-site">
-    <!-- Spinner Start -->
-    <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner"></div>
-    </div>
-    <!-- Spinner End -->
-    <!-- Promo Bar Start -->
-    <div class="promo-bar" id="promoBar">
+<meta charset="utf-8"/>
+<title>Member Login | Trade with Joreem</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="member login, trading member area" name="keywords"/>
+<meta content="Sign in to your Trade with Joreem member dashboard to continue your trading curriculum, review market breakdowns and access member resources." name="description"/>
+<link href="/img/favicon.svg" rel="icon"/>
+<link href="/css/site.01b921b36a10.min.css" rel="stylesheet"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/><meta content="#0A1220" name="theme-color"/><meta content="website" property="og:type"/><meta content="Trade with Joreem" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="Member Login | Trade with Joreem" property="og:title"/><meta content="Sign in to your Trade with Joreem member dashboard to continue your trading curriculum, review market breakdowns and access member resources." property="og:description"/><meta content="https://trade-with-joreem.vercel.app/login" property="og:url"/><meta content="https://trade-with-joreem.vercel.app/img/trade-with-joreem-social.jpg" property="og:image"/><meta content="https://trade-with-joreem.vercel.app/img/trade-with-joreem-social.jpg" property="og:image:secure_url"/><meta content="image/jpeg" property="og:image:type"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Trade with Joreem risk-first trading education" property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="Member Login | Trade with Joreem" name="twitter:title"/><meta content="Sign in to your Trade with Joreem member dashboard to continue your trading curriculum, review market breakdowns and access member resources." name="twitter:description"/><meta content="https://trade-with-joreem.vercel.app/img/trade-with-joreem-social.jpg" name="twitter:image"/><meta content="Trade with Joreem risk-first trading education" name="twitter:image:alt"/><link href="https://trade-with-joreem.vercel.app/login" rel="canonical"/><link as="font" crossorigin="" href="/assets/fonts/oswald-latin-wght-normal.woff2" rel="preload" type="font/woff2"/><link as="font" crossorigin="" href="/assets/fonts/poppins-latin-400-normal.woff2" rel="preload" type="font/woff2"/><link as="font" crossorigin="" href="/assets/fonts/poppins-latin-500-normal.woff2" rel="preload" type="font/woff2"/><link as="font" crossorigin="" href="/assets/fonts/poppins-latin-600-normal.woff2" rel="preload" type="font/woff2"/><link as="font" crossorigin="" href="/assets/fonts/poppins-latin-700-normal.woff2" rel="preload" type="font/woff2"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://trade-with-joreem.vercel.app/#organization","name":"Trade with Joreem","url":"https://trade-with-joreem.vercel.app/","logo":{"@type":"ImageObject","url":"https://trade-with-joreem.vercel.app/img/trade-with-joreem-logo.png","width":512,"height":512},"image":"https://trade-with-joreem.vercel.app/img/trade-with-joreem-social.jpg","email":"hello@tradewithjoreem.com","founder":{"@id":"https://trade-with-joreem.vercel.app/about#joreem"},"sameAs":["https://t.me/tradewithjoreem"]},{"@type":"WebSite","@id":"https://trade-with-joreem.vercel.app/#website","url":"https://trade-with-joreem.vercel.app/","name":"Trade with Joreem","description":"Risk-first Forex, crypto and stock trading education.","publisher":{"@id":"https://trade-with-joreem.vercel.app/#organization"},"inLanguage":"en"},{"@type":"Person","@id":"https://trade-with-joreem.vercel.app/about#joreem","name":"Joreem","url":"https://trade-with-joreem.vercel.app/about","image":"https://trade-with-joreem.vercel.app/img/joreem.jpg","jobTitle":"Founder and Trading Mentor","worksFor":{"@id":"https://trade-with-joreem.vercel.app/#organization"}},{"@type":"WebPage","@id":"https://trade-with-joreem.vercel.app/login#webpage","url":"https://trade-with-joreem.vercel.app/login","name":"Member Login | Trade with Joreem","description":"Sign in to your Trade with Joreem member dashboard to continue your trading curriculum, review market breakdowns and access member resources.","isPartOf":{"@id":"https://trade-with-joreem.vercel.app/#website"},"about":{"@id":"https://trade-with-joreem.vercel.app/#organization"},"primaryImageOfPage":"https://trade-with-joreem.vercel.app/img/trade-with-joreem-social.jpg","dateModified":"2026-11-03","inLanguage":"en"}]}</script></head>
+<body class="monoline-site" id="top"><a class="skip-link" href="#main-content">Skip to main content</a>
+<!-- Spinner Start -->
+<!-- Spinner End -->
+<!-- Promo Bar Start -->
+<div class="promo-bar" id="promoBar">
         New here? Get 20% OFF your first month with code <span class="code" id="promoCode" title="Click to copy">START20</span>. Excludes Elite Desk.
-        <button class="promo-close" id="promoClose" aria-label="Dismiss announcement">&times;</button>
-    </div>
-    <!-- Promo Bar End -->
-
-    <!-- Topbar Start -->
-    <div class="container-fluid topbar px-5 d-none d-lg-block">
-        <div class="row gx-0">
-            <div class="col-lg-8 mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center flex-wrap" style="height: 45px;">
-                    <a class="me-4" href="mailto:hello@tradewithjoreem.com"><i class="fa fa-envelope-open me-2"></i>hello@tradewithjoreem.com</a>
-                    <a class="me-4" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener"><i class="fab fa-telegram me-2"></i>@tradewithjoreem</a>
-                    <small class="text-light"><i class="fa fa-globe-africa me-2"></i>Global &bull; 100% Online</small>
-                </div>
-            </div>
-            <div class="col-lg-4 text-center text-lg-end">
-                <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <small class="me-4 text-light"><span class="pulse-dot"></span><b class="mono" style="letter-spacing:.1em;font-size:11px">MARKETS OPEN</b></small>
-                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener"><i class="fab fa-telegram fw-normal"></i></a>
-                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-youtube fw-normal"></i></a>
-                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
-                    <a class="btn btn-sm btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-instagram fw-normal"></i></a>
-                    <a class="btn btn-sm btn-sm-square rounded-circle" href="#"><i class="fab fa-whatsapp fw-normal"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navbar Start -->
-    <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
-                <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <defs><linearGradient id="g1" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#F0B429"/><stop offset="1" stop-color="#D99A14"/></linearGradient></defs>
-                    <rect width="48" height="48" rx="12" fill="url(#g1)"/>
-                    <g stroke="#0A1220" stroke-width="2.6" stroke-linecap="round">
-                        <line x1="14" y1="13" x2="14" y2="35"/>
-                        <line x1="24" y1="9" x2="24" y2="37"/>
-                        <line x1="34" y1="15" x2="34" y2="33"/>
-                    </g>
-                    <rect x="10.6" y="19" width="6.8" height="9.5" rx="1.6" fill="#0A1220"/>
-                    <rect x="20.6" y="14" width="6.8" height="11" rx="1.6" fill="#0A1220"/>
-                    <rect x="30.6" y="21" width="6.8" height="7.5" rx="1.6" fill="#0A1220"/>
-                </svg>
-                <h1 class="m-0">Trade with <span>Joreem</span></h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                                <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="index.html#how" class="nav-item nav-link">How It Works</a>
-                    <a href="index.html#pricing" class="nav-item nav-link">Pricing</a>
-                    <a href="bookstore.html" class="nav-item nav-link">Bookstore</a>
-                    <a href="mentorship.html" class="nav-item nav-link">Mentorship</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="contact.html" class="nav-item nav-link nav-contact">Contact</a>
-                </div>
-                <button type="button" class="btn btn-sm btn-outline-light btn-sm-square rounded-circle ms-3 position-relative" data-open-cart aria-label="Open cart">
-                    <i class="fa fa-shopping-basket fw-normal"></i>
-                    <span class="cart-badge position-absolute top-0 start-100 translate-middle d-none align-items-center justify-content-center rounded-circle" style="font-size:10px;padding:4px 5px;background:var(--secondary);color:#04121C;width:17px;height:17px">0</span>
-                </button>
-                <a href="member.html" class="btn btn-primary py-2 px-4 ms-2 ms-lg-3"><i class="fa fa-user-shield me-2"></i>Member Login</a>
-            </div>
-        </nav>
-    </div>
-
-
-    <div class="login-wrap">
-        <div class="auth-grid">
-            <div class="auth-brand">
-                <div class="ab-kicker"><i class="fa fa-chart-line me-1"></i> Trade with Joreem</div>
-                <h2>Your trading room, <span>every single day</span></h2>
-                <p>Live breakdowns, a full risk-first curriculum, graded trade reviews and a private community of 2,500+ traders across 40+ countries.</p>
-                <div class="auth-stats">
-                    <div class="jstat"><div class="n">Daily</div><div class="l">Live breakdowns</div></div>
-                    <div class="jstat"><div class="n green">200+</div><div class="l">Lessons</div></div>
-                    <div class="jstat"><div class="n">2,500+</div><div class="l">Members</div></div>
-                </div>
-                <div class="auth-quote">
+        <button aria-label="Dismiss announcement" class="promo-close" id="promoClose">×</button>
+</div>
+<!-- Promo Bar End -->
+<!-- Topbar Start -->
+<div class="container-fluid topbar px-5 d-none d-lg-block">
+<div class="row gx-0">
+<div class="col-lg-8 mb-2 mb-lg-0">
+<div class="d-inline-flex align-items-center flex-wrap" style="height: 45px;">
+<a class="me-4" href="mailto:hello@tradewithjoreem.com"><i class="fa fa-envelope-open me-2"></i>hello@tradewithjoreem.com</a>
+<a aria-label="Telegram — Trade with Joreem" class="me-4" href="https://t.me/tradewithjoreem" rel="noopener noreferrer" target="_blank"><i class="fab fa-telegram me-2"></i>@tradewithjoreem</a>
+<small class="text-light"><i class="fa fa-globe-africa me-2"></i>Global • 100% Online</small>
+</div>
+</div>
+<div class="col-lg-4 text-center text-lg-end">
+<div class="d-inline-flex align-items-center" style="height: 45px;">
+<small class="me-4 text-light"><span class="pulse-dot"></span><b class="mono" style="letter-spacing:.1em;font-size:11px">MARKETS OPEN</b></small>
+<a aria-label="Telegram — Trade with Joreem" class="btn btn-sm btn-sm-square rounded-circle me-2" href="https://t.me/tradewithjoreem" rel="noopener noreferrer" target="_blank"><i class="fab fa-telegram fw-normal"></i></a>
+</div>
+</div>
+</div>
+</div>
+<!-- Navbar Start -->
+<div class="container-fluid position-relative p-0">
+<nav aria-label="Primary navigation" class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+<a class="navbar-brand p-0" href="/">
+<svg aria-hidden="true" class="brand-mark" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="userSpaceOnUse" id="g1" x1="0" x2="48" y1="0" y2="48"><stop stop-color="#F0B429"></stop><stop offset="1" stop-color="#D99A14"></stop></lineargradient></defs>
+<rect fill="url(#g1)" height="48" rx="12" width="48"></rect>
+<g stroke="#0A1220" stroke-linecap="round" stroke-width="2.6">
+<line x1="14" x2="14" y1="13" y2="35"></line>
+<line x1="24" x2="24" y1="9" y2="37"></line>
+<line x1="34" x2="34" y1="15" y2="33"></line>
+</g>
+<rect fill="#0A1220" height="9.5" rx="1.6" width="6.8" x="10.6" y="19"></rect>
+<rect fill="#0A1220" height="11" rx="1.6" width="6.8" x="20.6" y="14"></rect>
+<rect fill="#0A1220" height="7.5" rx="1.6" width="6.8" x="30.6" y="21"></rect>
+</svg>
+<span class="m-0 brand-name">Trade with <span>Joreem</span></span>
+</a>
+<button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarCollapse" data-bs-toggle="collapse" type="button">
+<span class="fa fa-bars"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarCollapse">
+<div class="navbar-nav ms-auto py-0">
+<a class="nav-item nav-link" href="/">Home</a>
+<a class="nav-item nav-link" href="/#how">How It Works</a>
+<a class="nav-item nav-link" href="/#pricing">Pricing</a>
+<a class="nav-item nav-link" href="/bookstore">Bookstore</a>
+<a class="nav-item nav-link" href="/mentorship">Mentorship</a>
+<a class="nav-item nav-link" href="/about">About</a>
+<a class="nav-item nav-link nav-contact" href="/contact">Contact</a>
+</div>
+<button aria-label="Open cart" class="btn btn-sm btn-outline-light btn-sm-square rounded-circle ms-3 position-relative" data-open-cart="" type="button">
+<i class="fa fa-shopping-basket fw-normal"></i>
+<span class="cart-badge position-absolute top-0 start-100 translate-middle d-none align-items-center justify-content-center rounded-circle" style="font-size:10px;padding:4px 5px;background:var(--secondary);color:#04121C;width:17px;height:17px">0</span>
+</button>
+<a class="btn btn-primary py-2 px-4 ms-2 ms-lg-3" href="/member"><i class="fa fa-user-shield me-2"></i>Member Login</a>
+</div>
+</nav>
+</div>
+<main id="main-content" tabindex="-1"><div class="login-wrap">
+<div class="auth-grid">
+<div class="auth-brand">
+<div class="ab-kicker"><i class="fa fa-chart-line me-1"></i> Trade with Joreem</div>
+<h1 class="h2">Your trading room, <span>every single day</span></h1>
+<p>Live breakdowns, a full risk-first curriculum, graded trade reviews and a private community of 2,500+ traders across 40+ countries.</p>
+<div class="auth-stats">
+<div class="jstat"><div class="n">Daily</div><div class="l">Live breakdowns</div></div>
+<div class="jstat"><div class="n green">200+</div><div class="l">Lessons</div></div>
+<div class="jstat"><div class="n">2,500+</div><div class="l">Members</div></div>
+</div>
+<div class="auth-quote">
                     "I was in the Telegram group before the session ended. Best money I've spent on my trading."
                     <b>Tunde A., Pro Trader member</b>
-                </div>
-            </div>
-            <div class="auth-form-panel">
-                <div class="login-card card-panel" style="width: 100%; border: 0; background: transparent; box-shadow: none;">
-            <div class="logo-row">
-                <svg class="brand-mark-lg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <defs><linearGradient id="g-login" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#F0B429"/><stop offset="1" stop-color="#D99A14"/></linearGradient></defs>
-                    <rect width="48" height="48" rx="12" fill="url(#g-login)"/>
-                    <g stroke="#0A1220" stroke-width="2.6" stroke-linecap="round">
-                        <line x1="14" y1="13" x2="14" y2="35"/>
-                        <line x1="24" y1="9" x2="24" y2="37"/>
-                        <line x1="34" y1="15" x2="34" y2="33"/>
-                    </g>
-                    <rect x="10.6" y="19" width="6.8" height="9.5" rx="1.6" fill="#0A1220"/>
-                    <rect x="20.6" y="14" width="6.8" height="11" rx="1.6" fill="#0A1220"/>
-                    <rect x="30.6" y="21" width="6.8" height="7.5" rx="1.6" fill="#0A1220"/>
-                </svg>
-                <h3 class="mb-1" style="color:#fff;">Member Login</h3>
-                <p class="mb-0" style="color: var(--muted); font-size: 13.5px;">Welcome back to your trading room.</p>
-            </div>
-            <form id="loginForm" novalidate>
-                <div class="mb-3">
-                    <label class="form-label" for="loginEmail" style="font-size: 13px; color: var(--muted); font-weight: 600;">Email</label>
-                    <input type="email" id="loginEmail" class="form-control" placeholder="you@example.com" style="height: 52px;">
-                </div>
-                <div class="mb-2">
-                    <label class="form-label" for="loginPass" style="font-size: 13px; color: var(--muted); font-weight: 600;">Password</label>
-                    <input type="password" id="loginPass" class="form-control" placeholder="••••••••" style="height: 52px;">
-                </div>
-                <div class="d-flex justify-content-between align-items-center mt-2 mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe" style="font-size: 12.5px; color: var(--muted);">Remember me</label>
-                    </div>
-                    <a href="#" style="font-size: 12.5px;" onclick="alert('Password reset emails are sent from hello@tradewithjoreem.com. (Demo site)'); return false;">Forgot password?</a>
-                </div>
-                <div id="loginErr" style="display:none; background: rgba(246,70,93,.1); border: 1px solid rgba(246,70,93,.35); color: var(--loss); border-radius: 10px; padding: 10px 14px; font-size: 13px; margin-bottom: 14px;"></div>
-                <button class="btn btn-primary w-100 py-3" type="submit" id="loginBtn"><i class="fa fa-sign-in-alt me-2"></i>Sign In</button>
-                <div class="demo-hint"><b>DEMO:</b> use <b>demo@tradewithjoreem.com</b> / <b>demo123</b><br>(any valid email + 6-char password also works)</div>
-            </form>
-            <p class="text-center mt-4 mb-0" style="font-size: 13px; color: var(--muted);">Not a member yet? <a href="mentorship.html">View plans &amp; enroll <i class="fa fa-arrow-right"></i></a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer Start -->
-    <div class="container-fluid footer-main text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-4 col-md-6 footer-about">
-                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
-                        <a href="index.html" class="navbar-brand d-flex align-items-center">
-                            <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect width="48" height="48" rx="12" fill="#0A1220"/>
-                                <g stroke="#F0B429" stroke-width="2.6" stroke-linecap="round">
-                                    <line x1="14" y1="13" x2="14" y2="35"/>
-                                    <line x1="24" y1="9" x2="24" y2="37"/>
-                                    <line x1="34" y1="15" x2="34" y2="33"/>
-                                </g>
-                                <rect x="10.6" y="19" width="6.8" height="9.5" rx="1.6" fill="#F0B429"/>
-                                <rect x="20.6" y="14" width="6.8" height="11" rx="1.6" fill="#F0B429"/>
-                                <rect x="30.6" y="21" width="6.8" height="7.5" rx="1.6" fill="#F0B429"/>
-                            </svg>
-                            <h1 class="m-0">Trade with Joreem</h1>
-                        </a>
-                        <p class="mt-3 mb-4">Risk-first trading education in Forex, Crypto and Stocks. Books, live breakdowns and a private member community, built for serious, consistent growth.</p>
-                        <form onsubmit="event.preventDefault(); this.reset(); alert('Subscribed! Market notes land in your inbox every Monday.');">
-                            <div class="input-group">
-                                <input type="email" required class="form-control p-3" placeholder="Your email">
-                                <button class="btn px-4" type="submit">Join</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-6">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="mb-0">Get In Touch</h3>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="fa fa-envelope-open text-primary me-2"></i>
-                                <p class="mb-0">hello@tradewithjoreem.com</p>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="fab fa-telegram text-primary me-2"></i>
-                                <p class="mb-0">@tradewithjoreem</p>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="fa fa-globe-africa text-primary me-2"></i>
-                                <p class="mb-0">Global &bull; 100% Online</p>
-                            </div>
-                            <div class="d-flex mt-4">
-                                <a class="btn btn-sm-square me-2" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener"><i class="fab fa-telegram fw-normal"></i></a>
-                                <a class="btn btn-sm-square me-2" href="#"><i class="fab fa-youtube fw-normal"></i></a>
-                                <a class="btn btn-sm-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-sm-square" href="#"><i class="fab fa-instagram fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="mb-0">Quick Links</h3>
-                            </div>
-                            <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                                <a class="mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Joreem</a>
-                                <a class="mb-2" href="bookstore.html"><i class="bi bi-arrow-right text-primary me-2"></i>Bookstore</a>
-                                <a class="mb-2" href="mentorship.html"><i class="bi bi-arrow-right text-primary me-2"></i>Mentorship Plans</a>
-                                <a class="mb-2" href="member.html"><i class="bi bi-arrow-right text-primary me-2"></i>Member Login</a>
-                                <a href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="mb-0">Legal &amp; Payments</h3>
-                            </div>
-                            <div class="link-animated d-flex flex-column justify-content-start mb-4">
-                                <a class="mb-2" href="terms.html"><i class="bi bi-arrow-right text-primary me-2"></i>Terms of Service</a>
-                                <a class="mb-2" href="privacy.html"><i class="bi bi-arrow-right text-primary me-2"></i>Privacy Policy</a>
-                                <a href="risk.html"><i class="bi bi-arrow-right text-primary me-2"></i>Financial Risk Disclaimer</a>
-                            </div>
-                            <div class="pay-badges">
-                                <span class="pay-badge"><i class="fa fa-credit-card"></i>Visa</span>
-                                <span class="pay-badge"><i class="fa fa-credit-card"></i>Mastercard</span>
-                                <span class="pay-badge"><i class="fab fa-paypal"></i>PayPal</span>
-                                <span class="pay-badge"><i class="fa fa-mobile-alt"></i>M-Pesa</span>
-                                <span class="pay-badge"><i class="fa fa-bolt"></i>Airtel</span>
-                                <span class="pay-badge"><i class="fa fa-shield-alt"></i>Pesapal</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid footer-bottom text-white">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 col-md-8">
-                    <div class="d-flex flex-wrap align-items-center justify-content-center" style="height: 70px; gap: 10px;">
-                        <p class="mb-0">&copy; 2026 <a class="text-white border-bottom" href="index.html">Trade with Joreem</a>. All Rights Reserved.</p>
-                        <p class="mb-0 d-none d-md-block" style="color: #3D4C68;">&bull;</p>
-                        <p class="mb-0 d-none d-md-block">Trading involves substantial risk of loss.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/trading.js"></script>
-
+</div>
+</div>
+<div class="auth-form-panel">
+<div class="login-card card-panel" style="width: 100%; border: 0; background: transparent; box-shadow: none;">
+<div class="logo-row">
+<svg aria-hidden="true" class="brand-mark-lg" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="userSpaceOnUse" id="g-login" x1="0" x2="48" y1="0" y2="48"><stop stop-color="#F0B429"></stop><stop offset="1" stop-color="#D99A14"></stop></lineargradient></defs>
+<rect fill="url(#g-login)" height="48" rx="12" width="48"></rect>
+<g stroke="#0A1220" stroke-linecap="round" stroke-width="2.6">
+<line x1="14" x2="14" y1="13" y2="35"></line>
+<line x1="24" x2="24" y1="9" y2="37"></line>
+<line x1="34" x2="34" y1="15" y2="33"></line>
+</g>
+<rect fill="#0A1220" height="9.5" rx="1.6" width="6.8" x="10.6" y="19"></rect>
+<rect fill="#0A1220" height="11" rx="1.6" width="6.8" x="20.6" y="14"></rect>
+<rect fill="#0A1220" height="7.5" rx="1.6" width="6.8" x="30.6" y="21"></rect>
+</svg>
+<h2 class="mb-1 h3" style="color:#fff;">Member Login</h2>
+<p class="mb-0" style="color: var(--muted); font-size: 13.5px;">Welcome back to your trading room.</p>
+</div>
+<form id="loginForm" novalidate="">
+<div class="mb-3">
+<label class="form-label" for="loginEmail" style="font-size: 13px; color: var(--muted); font-weight: 600;">Email</label>
+<input class="form-control" id="loginEmail" placeholder="you@example.com" style="height: 52px;" type="email"/>
+</div>
+<div class="mb-2">
+<label class="form-label" for="loginPass" style="font-size: 13px; color: var(--muted); font-weight: 600;">Password</label>
+<input class="form-control" id="loginPass" placeholder="••••••••" style="height: 52px;" type="password"/>
+</div>
+<div class="d-flex justify-content-between align-items-center mt-2 mb-3">
+<div class="form-check">
+<input class="form-check-input" id="rememberMe" type="checkbox"/>
+<label class="form-check-label" for="rememberMe" style="font-size: 12.5px; color: var(--muted);">Remember me</label>
+</div>
+<a href="/contact?topic=password-reset" style="font-size: 12.5px;">Forgot password?</a>
+</div>
+<div id="loginErr" style="display:none; background: rgba(246,70,93,.1); border: 1px solid rgba(246,70,93,.35); color: var(--loss); border-radius: 10px; padding: 10px 14px; font-size: 13px; margin-bottom: 14px;"></div>
+<button class="btn btn-primary w-100 py-3" id="loginBtn" type="submit"><i class="fa fa-sign-in-alt me-2"></i>Sign In</button>
+<div class="demo-hint"><b>DEMO:</b> use <b>demo@tradewithjoreem.com</b> / <b>demo123</b><br/>(any valid email + 6-char password also works)</div>
+</form>
+<p class="text-center mt-4 mb-0" style="font-size: 13px; color: var(--muted);">Not a member yet? <a href="/mentorship">View plans &amp; enroll <i class="fa fa-arrow-right"></i></a></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Start -->
+</main><div class="container-fluid footer-main text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+<div class="container">
+<div class="row gx-5">
+<div class="col-lg-4 col-md-6 footer-about">
+<div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
+<a class="navbar-brand d-flex align-items-center" href="/">
+<svg aria-hidden="true" class="brand-mark" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#0A1220" height="48" rx="12" width="48"></rect>
+<g stroke="#F0B429" stroke-linecap="round" stroke-width="2.6">
+<line x1="14" x2="14" y1="13" y2="35"></line>
+<line x1="24" x2="24" y1="9" y2="37"></line>
+<line x1="34" x2="34" y1="15" y2="33"></line>
+</g>
+<rect fill="#F0B429" height="9.5" rx="1.6" width="6.8" x="10.6" y="19"></rect>
+<rect fill="#F0B429" height="11" rx="1.6" width="6.8" x="20.6" y="14"></rect>
+<rect fill="#F0B429" height="7.5" rx="1.6" width="6.8" x="30.6" y="21"></rect>
+</svg>
+<span class="m-0 brand-name">Trade with Joreem</span>
+</a>
+<p class="mt-3 mb-4">Risk-first trading education in Forex, Crypto and Stocks. Books, live breakdowns and a private member community, built for serious, consistent growth.</p>
+<form onsubmit="event.preventDefault(); this.reset(); alert('Subscribed! Market notes land in your inbox every Monday.');">
+<div class="input-group">
+<input aria-label="Email address for weekly market notes" autocomplete="email" class="form-control p-3" name="email" placeholder="Your email" required="" type="email"/>
+<button class="btn px-4" type="submit">Join</button>
+</div>
+</form>
+</div>
+</div>
+<div class="col-lg-8 col-md-6">
+<div class="row gx-5">
+<div class="col-lg-4 col-md-12 pt-5 mb-5">
+<div class="section-title section-title-sm position-relative pb-3 mb-4">
+<h3 class="mb-0">Get In Touch</h3>
+</div>
+<div class="d-flex mb-2">
+<i class="fa fa-envelope-open text-primary me-2"></i>
+<p class="mb-0">hello@tradewithjoreem.com</p>
+</div>
+<div class="d-flex mb-2">
+<i class="fab fa-telegram text-primary me-2"></i>
+<p class="mb-0">@tradewithjoreem</p>
+</div>
+<div class="d-flex mb-2">
+<i class="fa fa-globe-africa text-primary me-2"></i>
+<p class="mb-0">Global • 100% Online</p>
+</div>
+<div class="d-flex mt-4">
+<a aria-label="Telegram — Trade with Joreem" class="btn btn-sm-square me-2" href="https://t.me/tradewithjoreem" rel="noopener noreferrer" target="_blank"><i class="fab fa-telegram fw-normal"></i></a>
+</div>
+</div>
+<div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+<div class="section-title section-title-sm position-relative pb-3 mb-4">
+<h3 class="mb-0">Quick Links</h3>
+</div>
+<div class="link-animated d-flex flex-column justify-content-start">
+<a class="mb-2" href="/"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+<a class="mb-2" href="/about"><i class="bi bi-arrow-right text-primary me-2"></i>About Joreem</a>
+<a class="mb-2" href="/bookstore"><i class="bi bi-arrow-right text-primary me-2"></i>Bookstore</a>
+<a class="mb-2" href="/mentorship"><i class="bi bi-arrow-right text-primary me-2"></i>Mentorship Plans</a>
+<a class="mb-2" href="/member"><i class="bi bi-arrow-right text-primary me-2"></i>Member Login</a>
+<a href="/contact"><i class="bi bi-arrow-right text-primary me-2"></i>Contact</a>
+</div>
+</div>
+<div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+<div class="section-title section-title-sm position-relative pb-3 mb-4">
+<h3 class="mb-0">Legal &amp; Payments</h3>
+</div>
+<div class="link-animated d-flex flex-column justify-content-start mb-4">
+<a class="mb-2" href="/terms"><i class="bi bi-arrow-right text-primary me-2"></i>Terms of Service</a>
+<a class="mb-2" href="/privacy"><i class="bi bi-arrow-right text-primary me-2"></i>Privacy Policy</a>
+<a href="/risk"><i class="bi bi-arrow-right text-primary me-2"></i>Financial Risk Disclaimer</a>
+</div>
+<div class="pay-badges">
+<span class="pay-badge"><i class="fa fa-credit-card"></i>Visa</span>
+<span class="pay-badge"><i class="fa fa-credit-card"></i>Mastercard</span>
+<span class="pay-badge"><i class="fab fa-paypal"></i>PayPal</span>
+<span class="pay-badge"><i class="fa fa-mobile-alt"></i>M-Pesa</span>
+<span class="pay-badge"><i class="fa fa-bolt"></i>Airtel</span>
+<span class="pay-badge"><i class="fa fa-shield-alt"></i>Pesapal</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid footer-bottom text-white">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-10 col-md-8">
+<div class="d-flex flex-wrap align-items-center justify-content-center" style="height: 70px; gap: 10px;">
+<p class="mb-0">© 2026 <a class="text-white border-bottom" href="/">Trade with Joreem</a>. All Rights Reserved.</p>
+<p class="mb-0 d-none d-md-block" style="color: #3D4C68;">•</p>
+<p class="mb-0 d-none d-md-block">Trading involves substantial risk of loss.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Back to Top -->
+<a aria-label="Back to top" class="btn btn-lg btn-primary btn-lg-square back-to-top" href="#top"><i class="fa fa-arrow-up"></i></a>
+<!-- JavaScript Libraries -->
+<script src="/js/site.8c3481c7aeea.min.js"></script>
 </body>
-
 </html>
