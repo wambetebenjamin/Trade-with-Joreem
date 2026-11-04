@@ -112,4 +112,68 @@
   .mobile-quick-nav a { color: #222 !important; font-size: 13px; font-weight: 600; text-decoration: none; }
   .mobile-quick-nav .mobile-quick-primary { padding: 10px 14px; background: #252525; color: #fff !important; }
 }
+@media (max-width: 767px) {
+  /* A calmer phone layout: one compact header, fewer competing promos, and no
+     fixed bottom bar covering the page. */
+  body.home-monoline { padding-bottom: 0; }
+  .monoline-site .promo-bar { display: none !important; }
+  .mobile-quick-nav { display: none !important; }
+  .monoline-site .navbar { min-height: 58px; padding: 8px 12px !important; }
+  .monoline-site .navbar-brand { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .monoline-site .navbar-brand h1 { font-size: 16px; letter-spacing: -.02em; white-space: nowrap; }
+  .monoline-site .navbar-brand .brand-mark { width: 32px; height: 32px; flex: 0 0 32px; }
+  .monoline-site .navbar-toggler { padding: 6px 8px; border: 0; }
+  .monoline-site .navbar-collapse { margin: 8px -12px -8px; padding: 10px 16px 14px; }
+  .monoline-site .navbar-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 14px; }
+  .monoline-site .navbar-nav .nav-link { padding: 8px 0; font-size: 14px; }
+  .monoline-site .navbar-collapse > .btn[data-open-cart] { display: none !important; }
+  .monoline-site .navbar-collapse > .btn-primary { display: inline-flex; width: 100%; justify-content: center; margin: 8px 0 0 !important; }
+  .monoline-site .page-hero { padding: 30px 16px !important; }
+  .monoline-site .page-hero .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 8px; margin: 16px 0 0; }
+  .monoline-site .page-hero .hstat { padding: 0; }
+  .monoline-site .section-pad { padding: 28px 0 !important; }
+  .monoline-site .section-pad > .container-fluid,
+  .monoline-site .section-pad > .container { padding-right: 16px; padding-left: 16px; }
+  .monoline-site .section-title { margin-bottom: 16px !important; }
+  .monoline-site .section-title h2 { font-size: 1.55rem !important; }
+  .monoline-site .section-title p { margin-top: 8px !important; font-size: 13px !important; }
+  .monoline-site .section-pad .row { --bs-gutter-x: 1rem; --bs-gutter-y: 1.15rem; }
+  .monoline-site .hero.hero-center { padding: 30px 16px 32px; }
+  .monoline-site .hero.hero-center h1 { font-size: clamp(2rem, 8vw, 2.7rem); }
+  .home-monoline .hero-stats { display: none; }
+  .home-monoline .hero.hero-center .hero-lead { max-width: 34rem; margin-bottom: 18px; font-size: 14px; }
+  .home-monoline .hero-cta-row { flex-wrap: wrap; }
+  .home-monoline .hero-cta-row .btn { flex-basis: calc(50% - 4px); }
+  .home-monoline .value-band { padding: 26px 0 !important; }
+  .home-monoline .vb-copy { margin-bottom: 12px; }
+  .home-monoline .vb-copy h2 { margin-bottom: 8px; font-size: 1.5rem; }
+  .home-monoline .vb-copy p { margin-bottom: 12px; font-size: 13px; line-height: 1.5; }
+  .home-monoline .vb-chips { grid-template-columns: 1fr; gap: 12px; }
+  .home-monoline .vchip:nth-child(n+3) { display: none !important; }
+  .home-monoline #how .section-title { text-align: left !important; }
+  .home-monoline #how .process-grid { gap: 16px 14px; }
+  .home-monoline #how .process-step p { margin-bottom: 0; }
+  .home-monoline #community { display: none !important; }
+  .home-monoline .testimonial-grid { gap: 14px; }
+  .home-monoline .testimonial-grid > .testimonial-item:nth-child(n+2) { display: none !important; }
+  .home-monoline .faq-layout { gap: 12px; }
+  .home-monoline .faq-intro h2 { font-size: 1.55rem; }
+  .home-monoline .faq-intro p { margin-bottom: 8px; font-size: 13px; }
+  .home-monoline .faq-item summary { padding: 11px 0; }
+  .home-monoline .risk-band { padding: 18px 0; }
+  .home-monoline .risk-inner { align-items: flex-start; gap: 12px; }
+  .home-monoline .risk-inner p { font-size: 12px; line-height: 1.5; }
+  .home-monoline .footer-main { padding-top: 24px !important; }
+
+  /* Keep long product descriptions and repeated feature lists from stacking into
+     another wall of content on the bookstore screen. */
+  #catalog .card-panel { padding: 0 0 20px !important; border: 0 !important; border-bottom: 1px solid #e7e5df !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; }
+  #catalog .card-panel > div:first-child { width: 128px !important; max-width: 128px !important; margin: 0 auto 6px !important; border: 0 !important; border-radius: 0 !important; }
+  #catalog .card-panel > div:first-child img { max-height: 178px; object-fit: contain; }
+  #catalog .card-panel h3 { margin: 8px 0 !important; font-size: 1.2rem; text-align: center; }
+  #catalog .card-panel p { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; margin-bottom: 8px !important; font-size: 13px !important; }
+  #catalog .card-panel ul li:nth-child(n+3) { display: none; }
+  #catalog .card-panel .d-flex.align-items-center { justify-content: flex-start !important; gap: 12px !important; }
+}
+
 @media (min-width: 768px) { .mobile-quick-nav { display: none; } }
