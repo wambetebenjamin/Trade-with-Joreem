@@ -6,6 +6,25 @@
         return "$" + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     };
 
+    function setButtonLoading(button, message) {
+        if (!button) return;
+        button.dataset.originalHtml = button.innerHTML;
+        button.disabled = true;
+        button.setAttribute("aria-busy", "true");
+        button.innerHTML = '<span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>' +
+            '<span>' + message + '</span>';
+    }
+
+    function restoreButton(button) {
+        if (!button) return;
+        button.disabled = false;
+        button.removeAttribute("aria-busy");
+        if (button.dataset.originalHtml) {
+            button.innerHTML = button.dataset.originalHtml;
+            delete button.dataset.originalHtml;
+        }
+    }
+
     /* ================= Ticker tape ================= */
     var TICKER = [
         { sym: "EUR/USD", price: 1.18420, dec: 5 },
@@ -608,35 +627,52 @@
     function initAuth() {
         var loginForm = document.getElementById("loginForm");
         if (loginForm) {
+            ["loginEmail", "loginPass"].forEach(function (id) {
+                var input = document.getElementById(id);
+                input.addEventListener("input", function () {
+                    input.removeAttribute("aria-invalid");
+                    var fieldError = document.getElementById(id + "Error");
+                    if (fieldError) fieldError.textContent = "";
+                    var liveError = document.getElementById("loginErr");
+                    if (liveError) liveError.style.display = "none";
+                });
+            });
             loginForm.addEventListener("submit", function (e) {
                 e.preventDefault();
-                var email = document.getElementById("loginEmail").value.trim();
-                var pass = document.getElementById("loginPass").value;
+                var emailInput = document.getElementById("loginEmail");
+                var passInput = document.getElementById("loginPass");
+                var email = emailInput.value.trim();
+                var pass = passInput.value;
                 var err = document.getElementById("loginErr");
-                if (!email || email.indexOf("@") < 0) {
+                var emailError = document.getElementById("loginEmailError");
+                var passError = document.getElementById("loginPassError");
+                emailInput.removeAttribute("aria-invalid");
+                passInput.removeAttribute("aria-invalid");
+                emailError.textContent = "";
+                passError.textContent = "";
+                if (!emailInput.checkValidity()) {
+                    emailInput.setAttribute("aria-invalid", "true");
+                    emailError.textContent = email ? "Enter a valid email address." : "Email is required.";
                     err.style.display = "block";
-                    err.textContent = "Please enter a valid email address.";
+                    err.textContent = emailError.textContent;
+                    emailInput.focus();
                     return;
                 }
                 if (pass.length < 6) {
+                    passInput.setAttribute("aria-invalid", "true");
+                    passError.textContent = "Password must be at least 6 characters.";
                     err.style.display = "block";
-                    err.textContent = "Password must be at least 6 characters.";
+                    err.textContent = passError.textContent;
+                    passInput.focus();
                     return;
                 }
-                err.style.display = "none";
-                var btn = document.getElementById("loginBtn");
-                btn.disabled = true;
-                btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Verifying…';
-                setTimeout(function () {
-                    var auth = {
-                        email: email,
-                        plan: "Pro Trader • Annual",
-                        since: new Date().toISOString().slice(0, 10),
-                        renews: new Date(Date.now() + 365 * 864e5).toISOString().slice(0, 10)
-                    };
-                    localStorage.setItem("twj_auth", JSON.stringify(auth));
-                    window.location.href = "member.html";
-                }, 1100);
+                // Never simulate authentication or store credentials/session claims in browser storage.
+                var loginStatus = document.getElementById("loginStatus");
+                err.style.display = "block";
+                err.textContent = "Secure member sign-in is not available yet. Your password was not sent or saved.";
+                if (loginStatus) loginStatus.textContent = err.textContent;
+                passInput.value = "";
+                try { localStorage.removeItem("twj_auth"); } catch (_) {}
             });
         }
 
@@ -674,19 +710,70 @@
     function initContact() {
         var f = document.getElementById("contactForm");
         if (!f) return;
+        ["cName", "cEmail", "cMsg"].forEach(function (id) {
+            var input = document.getElementById(id);
+            input.addEventListener("input", function () {
+                input.removeAttribute("aria-invalid");
+                var fieldError = document.getElementById(id + "Error");
+                if (fieldError) fieldError.textContent = "";
+            });
+        });
         f.addEventListener("submit", function (e) {
             e.preventDefault();
+            var fields = [
+                { input: document.getElementById("cName"), message: "Please enter your name.", error: document.getElementById("cNameError") },
+                { input: document.getElementById("cEmail"), message: "Please enter a valid email address.", error: document.getElementById("cEmailError") },
+                { input: document.getElementById("cMsg"), message: "Please enter a message of at least 10 characters.", error: document.getElementById("cMsgError") }
+            ];
+            var firstInvalid = null;
+            fields.forEach(function (field) {
+                var value = field.input.value.trim();
+                var valid = field.input.checkValidity() && (field.input.id !== "cName" || value.length >= 2) &&
+                    (field.input.id !== "cMsg" || value.length >= 10);
+                field.error.textContent = "";
+                field.input.removeAttribute("aria-invalid");
+                if (!valid) {
+                    field.error.textContent = field.input.id === "cName" && value.length === 1 ?
+                        "Name must be at least 2 characters." : field.message;
+                    field.input.setAttribute("aria-invalid", "true");
+                    if (!firstInvalid) firstInvalid = field.input;
+                }
+            });
+            if (firstInvalid) {
+                firstInvalid.focus();
+                return;
+            }
             var btn = document.getElementById("contactBtn");
-            btn.disabled = true;
-            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending…';
-            setTimeout(function () {
-                f.innerHTML =
-                    '<div class="text-center py-5">' +
-                    '<div class="success-ico"><i class="fa fa-paper-plane"></i></div>' +
-                    "<h4 class='mb-2' style='color:#fff'>Message Sent</h4>" +
-                    "<p style='color:var(--muted);font-size:14px'>Thanks for reaching out. Joreem's team replies within 24 hours (Monday to Saturday).</p>" +
-                    "</div>";
-            }, 1200);
+            var contactStatus = document.getElementById("contactStatus");
+            var payload = {
+                name: document.getElementById("cName").value.trim(),
+                email: document.getElementById("cEmail").value.trim(),
+                topic: document.getElementById("cTopic").value,
+                phone: document.getElementById("cPhone").value.trim(),
+                message: document.getElementById("cMsg").value.trim(),
+                company: document.getElementById("cCompany").value.trim()
+            };
+            if (contactStatus) {
+                contactStatus.classList.remove("is-error");
+                contactStatus.textContent = "Sending your message…";
+            }
+            setButtonLoading(btn, "Sending…");
+            fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                body: JSON.stringify(payload)
+            }).then(function (response) {
+                return response.json().catch(function () { return {}; }).then(function (data) {
+                    if (!response.ok) throw new Error(data.error || "Message could not be sent. Please try again.");
+                    window.location.href = "thank-you.html";
+                });
+            }).catch(function (error) {
+                restoreButton(btn);
+                if (contactStatus) {
+                    contactStatus.classList.add("is-error");
+                    contactStatus.textContent = error.message || "Message could not be sent. Please email hello@tradewithjoreem.com.";
+                }
+            });
         });
     }
 
