@@ -557,15 +557,7 @@
         if (checkoutMode === "mentorship" && checkoutPlan) {
             var p = PLANS[checkoutPlan];
             var email = (document.getElementById("coEmail") || {}).value || "your-email@example.com";
-            // simulate membership provisioning
-            try {
-                localStorage.setItem("twj_auth", JSON.stringify({
-                    email: email,
-                    plan: p.name,
-                    since: new Date().toISOString().slice(0, 10),
-                    renews: new Date(Date.now() + p.months * 30.4 * 864e5).toISOString().slice(0, 10)
-                }));
-            } catch (e) {}
+            // The demo checkout must never mint a member session in browser storage.
             html =
                 '<div class="success-ico"><i class="fa fa-check"></i></div>' +
                 "<h4>Welcome to the Inner Circle</h4>" +
@@ -678,32 +670,10 @@
 
         var memberPage = document.getElementById("memberArea");
         if (memberPage) {
-            var auth = getAuth();
-            if (!auth) {
-                window.location.replace("login.html");
-                return;
-            }
-            var name = auth.email.split("@")[0].replace(/[._]/g, " ");
-            name = name.replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-            document.getElementById("dashName").textContent = name;
-            document.getElementById("dashMail").textContent = auth.email;
-            document.getElementById("dashPlan").textContent = auth.plan;
-            document.getElementById("dashRenew").textContent = auth.renews;
-            var avatar = document.getElementById("dashAvatar");
-            avatar.textContent = name.split(" ").map(function (w) { return w[0]; }).join("").slice(0, 2).toUpperCase();
-            // animate progress bars
-            setTimeout(function () {
-                document.querySelectorAll(".progress-bar[data-w]").forEach(function (b) {
-                    b.style.width = b.getAttribute("data-w") + "%";
-                });
-            }, 300);
+            // Static client-side checks are not authentication; keep the demo area closed until a server session exists.
+            try { localStorage.removeItem("twj_auth"); } catch (_) {}
+            window.location.replace("login.html");
         }
-
-        var logoutBtn = document.getElementById("dashLogout");
-        if (logoutBtn) logoutBtn.addEventListener("click", function () {
-            localStorage.removeItem("twj_auth");
-            window.location.href = "login.html";
-        });
     }
 
     /* ================= Contact form (demo) ================= */

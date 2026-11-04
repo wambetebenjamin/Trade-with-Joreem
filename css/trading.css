@@ -1926,3 +1926,15 @@
 .demo-hint b {
     color: var(--primary);
 }
+
+/* Accessible feedback for actions waiting on a response. */
+button[aria-busy="true"] { cursor: wait; }
+[role="status"] { min-height: 1px; }
+
+.field-error { display: block; min-height: 0; margin-top: 4px; color: #a32222; font-size: 12px; line-height: 1.4; }
+.field-error:empty { display: none; }
+[aria-invalid="true"] { border-color: #a32222 !important; outline-color: #a32222 !important; }
+
+.form-message { margin-top: 10px; color: #4d4d4d; font-size: 13px; line-height: 1.5; }
+.form-message:empty { display: none; }
+.form-message.is-error { color: #a32222; }
