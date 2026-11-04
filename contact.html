@@ -3,12 +3,17 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Contact | Trade with Joreem</title>
+    <title>Contact &amp; Support | Trade with Joreem</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="contact trading mentorship, support" name="keywords">
-    <meta content="Contact the Trade with Joreem team: mentorship questions, order help, payments and partnerships." name="description">
+    <meta name="description" content="Contact Trade with Joreem about mentorship, books, orders, payments, or support. Reach our team by email or Telegram.">
 
-    <link href="img/favicon.svg" rel="icon">
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#f0b429">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -26,9 +31,10 @@
     <link href="css/monoline.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="css/mobile.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/consent.css">
 </head>
 
-<body class="monoline-site">
+<body class="monoline-site mobile-cta-page">
     <!-- Spinner Start -->
     <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner"></div>
@@ -144,6 +150,14 @@
                             <div><b>Email</b><small><a href="mailto:hello@tradewithjoreem.com">hello@tradewithjoreem.com</a></small></div>
                         </div>
                         <div class="vchip">
+                            <div class="ic"><i class="fa fa-phone"></i></div>
+                            <div><b>Phone / WhatsApp</b><small><a href="tel:+256756434145">+256 756 434 145</a></small></div>
+                        </div>
+                        <div class="vchip">
+                            <div class="ic"><i class="fa fa-map-marker-alt"></i></div>
+                            <div><b>Location</b><small>Kampala, Uganda</small></div>
+                        </div>
+                        <div class="vchip">
                             <div class="ic"><i class="fab fa-telegram"></i></div>
                             <div><b>Telegram</b><small><a href="https://t.me/tradewithjoreem" target="_blank" rel="noopener">@tradewithjoreem</a></small></div>
                         </div>
@@ -160,14 +174,17 @@
                 <div class="col-lg-7">
                     <div class="card-panel p-4 p-lg-5">
                         <form id="contactForm" novalidate>
+                            <div class="visually-hidden" aria-hidden="true"><label for="cCompany">Company</label><input id="cCompany" name="company" type="text" tabindex="-1" autocomplete="off"></div>
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="form-label" for="cName" style="font-size: 13px; color: var(--muted); font-weight: 600;">Full name</label>
-                                    <input type="text" id="cName" class="form-control" placeholder="Your name" style="height: 52px;" required>
+                                    <input type="text" id="cName" class="form-control" placeholder="Your name" style="height: 52px;" minlength="2" maxlength="100" autocomplete="name" aria-describedby="cNameError" required>
+                                    <small class="field-error" id="cNameError"></small>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="cEmail" style="font-size: 13px; color: var(--muted); font-weight: 600;">Email</label>
-                                    <input type="email" id="cEmail" class="form-control" placeholder="you@example.com" style="height: 52px;" required>
+                                    <input type="email" id="cEmail" class="form-control" placeholder="you@example.com" style="height: 52px;" maxlength="254" autocomplete="email" aria-describedby="cEmailError" required>
+                                    <small class="field-error" id="cEmailError"></small>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="cTopic" style="font-size: 13px; color: var(--muted); font-weight: 600;">Topic</label>
@@ -181,14 +198,16 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="cPhone" style="font-size: 13px; color: var(--muted); font-weight: 600;">Phone / WhatsApp (optional)</label>
-                                    <input type="text" id="cPhone" class="form-control" placeholder="+254 ..." style="height: 52px;">
+                                    <input type="tel" id="cPhone" class="form-control" placeholder="+256 ..." autocomplete="tel" style="height: 52px;">
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label" for="cMsg" style="font-size: 13px; color: var(--muted); font-weight: 600;">Message</label>
-                                    <textarea id="cMsg" class="form-control" rows="5" placeholder="How can we help?" required></textarea>
+                                    <textarea id="cMsg" class="form-control" rows="5" placeholder="How can we help?" minlength="10" maxlength="3000" aria-describedby="cMsgError" required></textarea>
+                                    <small class="field-error" id="cMsgError"></small>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary py-3 px-5" type="submit" id="contactBtn"><i class="fa fa-paper-plane me-2"></i>Send Message</button>
+                                    <div id="contactStatus" class="form-message" role="status" aria-live="polite"></div>
+                                    <button class="btn btn-primary py-3 px-5" type="submit" id="contactBtn"><i class="fa fa-paper-plane me-2" aria-hidden="true"></i>Send Message</button>
                                 </div>
                             </div>
                         </form>
@@ -243,7 +262,7 @@
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="fa fa-globe-africa text-primary me-2"></i>
-                                <p class="mb-0">Global &bull; 100% Online</p>
+                                <p class="mb-0">Kampala, Uganda &bull; Online</p>
                             </div>
                             <div class="d-flex mt-4">
                                 <a class="btn btn-sm-square me-2" href="https://t.me/tradewithjoreem" target="_blank" rel="noopener"><i class="fab fa-telegram fw-normal"></i></a>
@@ -318,6 +337,8 @@
     <script src="js/chatwoot.js"></script>
     <script src="js/trading.js"></script>
 
+    <a class="mobile-sticky-cta" href="mentorship.html">View mentorship plans</a>
+    <script src="/js/site-consent.js" defer></script>
 </body>
 
 </html>
