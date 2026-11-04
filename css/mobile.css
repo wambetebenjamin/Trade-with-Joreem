@@ -1,5 +1,7 @@
 /* Phone-first spacing, navigation and contrast fixes. */
 @media (max-width: 767px) {
+  /* Never let a failed external script/CDN keep the full-page loader over content. */
+  #spinner { display: none !important; }
   html { scroll-padding-top: 78px; }
   body.monoline-site { font-size: 15px; line-height: 1.6; }
   body.home-monoline { padding-bottom: 66px; }

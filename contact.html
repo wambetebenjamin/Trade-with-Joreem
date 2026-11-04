@@ -34,6 +34,17 @@
         <div class="spinner"></div>
     </div>
     <!-- Spinner End -->
+    <script>
+        // Keep a broken or blocked third-party script from leaving the page covered.
+        (function () {
+            function hideSpinner() {
+                var spinner = document.getElementById("spinner");
+                if (spinner) spinner.classList.remove("show");
+            }
+            window.addEventListener("load", hideSpinner, { once: true });
+            window.setTimeout(hideSpinner, 2500);
+        })();
+    </script>
     <!-- Promo Bar Start -->
     <div class="promo-bar" id="promoBar">
         New here? Get 20% OFF your first month with code <span class="code" id="promoCode" title="Click to copy">START20</span>. Excludes Elite Desk.
