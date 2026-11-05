@@ -1,0 +1,2 @@
+import type {Metadata} from 'next';
+export function pageMetadata(title:string,description:string,path:string):Metadata{return{title,description,alternates:{canonical:path},openGraph:{title:`${title} | Trade with Joreem`,description,type:'website',url:path,siteName:'Trade with Joreem',images:[{url:'/img/og.jpg',width:1200,height:630,alt:'Trade with Joreem'}]},twitter:{card:'summary_large_image',title:`${title} | Trade with Joreem`,description,images:['/img/hero.jpg']}}}

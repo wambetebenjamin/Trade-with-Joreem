@@ -1,28 +1,29 @@
-# Security baseline and production gates
+# Security posture and launch checklist
 
-This repository is currently a mostly static marketing site. Security controls that depend on a database, real accounts, administrator privileges, or payment processing cannot be enforced by browser JavaScript. Do not treat the member demo as authentication or put private member/admin data in static files.
+## Implemented in the Next.js application
 
-## Implemented in this repository
+- Supabase SSR sessions are verified server-side for dashboard, curriculum, downloads and admin routes. Browser local storage is used only for a non-sensitive cart, never for identity or entitlements.
+- `supabase/migrations/202611050001_core_schema.sql` enables row-level security. Orders, entitlements, journals, fulfillment requests and community invites are owner-scoped. Journal inserts derive the owner from the verified session. Payment, entitlement, webhook and fulfillment writes are server-only.
+- Admin routes check the authenticated user's `profiles.is_admin` server-side. Authenticated users can update `display_name` only; they cannot change the admin flag. Service-role access is isolated to server modules and guarded by `server-only`.
+- Checkout SKUs and Stripe Price IDs are allow-listed server-side. A buyer must have a verified Supabase session. Stripe webhook signatures are verified against the raw request body; event IDs are recorded for idempotency. Access is granted only from a verified provider event, never a success-page query.
+- Digital delivery uses private Supabase Storage, checks a paid order or active Pro/Elite entitlement, then issues short-lived signed URLs. Sample PDFs are not sale-ready.
+- Print purchases, membership purchases, digital downloads and START20 fail closed until delivery readiness, shipping, files, email and coupon settings are configured.
+- Contact and journal endpoints validate same-origin requests, bound request sizes and fields, and keep provider secrets server-side. Baseline security headers are configured in `vercel.json`.
 
-- Contact-provider credentials are read only from server environment variables (`RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `CONTACT_EMAIL`); never place these values in HTML or browser JavaScript.
-- The contact endpoint accepts same-origin HTTPS JSON POSTs only, rejects oversized or unexpected payloads, limits field lengths, rejects malformed input, and includes a honeypot. These checks reduce abuse but **are not a substitute for a persistent rate limiter**.
-- Baseline response headers are configured in `vercel.json`: MIME sniffing protection, frame denial, a restrictive frame-ancestors directive, referrer policy, restricted browser permissions, and HSTS.
-- The login demo no longer grants a fake browser-side session or stores submitted credentials. Member sign-in remains unavailable until backed by a real authentication service.
+## Required before production
 
-## Required before accounts, admin, or private records go live
+1. Create and apply the migration in a dedicated Supabase project. Configure email verification/magic-link delivery, redirect allowlists, signup/email rate limits and bot protection. Add persistent edge/provider rate limits for contact and auth routes; in-memory serverless limits are not sufficient.
+2. Store secrets only in Vercel/server runtime. Keep the Supabase service-role key, Stripe secret, Stripe webhook secret, Resend key and bot tokens out of `NEXT_PUBLIC_*`, source control and browser responses. Rotate any exposed value.
+3. Configure Stripe test products, fixed shipping rate, the one-time START20 coupon and signed webhook. Test duplicate delivery, asynchronous payments, subscription cancellation, cross-user download denial, missing files, invalid signatures and unsupported SKUs before live mode.
+4. Upload the final licensed PDFs to the private Storage bucket and set `books.asset_ready=true` only after checking the full file and access path. Existing repository PDFs are sample chapters, not complete paid books.
+5. Set `MEMBERSHIP_DELIVERY_ENABLED=true` only after curriculum, support, payment/refund terms and community provisioning are operational. Set `PRINT_FULFILLMENT_ENABLED=true` only after staff and shipping are ready. Until then checkout intentionally returns 503 instead of accepting money without fulfillment.
+6. Assign the initial admin flag through a trusted, audited SQL/service-role process after verifying the account. Never expose self-promotion or an unauthenticated admin-create route.
+7. Review privacy, consumer, subscription and tax obligations with qualified advisers. Enable Stripe Tax only after the account/jurisdiction setup. Monitor webhook, auth, email and fulfillment failures.
 
-- Keep all privileged keys server-side; scope and rotate credentials, and use separate least-privilege keys for preview and production.
-- Use a real authentication provider with secure session cookies, MFA for administrators, recovery protections, and server-side role checks. Do not rely on hidden buttons, local storage, or client redirects for access control.
-- For every database table containing user data, enable row-level security and add policies that enforce `auth.uid() = owner_id` (or the equivalent trusted identity). Also check record ownership in every server endpoint; never trust an `owner_id` supplied by the browser. Test cross-account reads, writes, updates, and deletes.
-- Put admin routes and data behind server-enforced authentication and an explicit admin role. Deny by default and log privileged actions without logging secrets or unnecessary personal data.
-- Apply signup and login abuse controls at the server/edge: per-IP and per-account throttles, email verification, bot protection where appropriate, and alerting for credential stuffing. Avoid keeping rate limits only in process memory on serverless functions.
-- Verify every webhook signature using the provider's documented signing secret, compare timestamps, reject stale/replayed events with idempotency handling, and never act on unverified payloads.
-- Add automated dependency, secret, and static security checks to CI; review alerts and maintain an incident/credential rotation procedure.
+## Valinor monitoring
 
-## Valinor monitoring integration
+`valinor.sbs` is not integrated. A domain alone is not an integration specification. Verify the service owner, authenticated API/SDK endpoint, signature method, event schema, retention and privacy terms, and approve a minimal event scope before connecting it. Do not send contact contents, passwords, tokens, payment data or unnecessary personal information. Core site operation should not depend on monitoring availability.
 
-`valinor.sbs` has been named as the security-monitoring service, but this repository does not yet have an API endpoint, SDK, event schema, authentication method, privacy/security documentation, or configured credentials for that service. Do not transmit visitor data, contact form contents, IP addresses, or secrets to it until those details are verified and an approved, minimal event integration is configured server-side. Monitoring must not block core site behavior if the provider is unavailable.
+## Current configuration gaps
 
-## Current limitations
-
-There is no production database/RLS policy, real signup/authentication system, administrator backend, payment processor integration, webhook receiver, or persistent rate-limit store in this repository. The public static member page cannot be made private by a client-side redirect. Keep it free of confidential data until those services exist and are tested.
+No dedicated Trade with Joreem Supabase project, Stripe credentials/Price IDs, verified Resend sender, final private book PDFs, community bot credentials or Vercel Analytics enablement has been configured in this repository. The app builds, but no test/live charge or end-to-end delivery has been verified. Provider signup limits, edge rate limits, domain DNS and legal approvals remain deployment gates. Static legacy HTML remains only as a copy/reference archive; never place confidential data in it.

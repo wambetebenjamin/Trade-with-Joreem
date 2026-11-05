@@ -1,0 +1,3 @@
+import type {Metadata} from 'next';import {LoginForm} from '@/components/login-form';
+export const metadata:Metadata={title:'Sign in or create your learning account',robots:{index:false,follow:false}};
+export default async function Login({searchParams}:{searchParams:Promise<{next?:string}>}){const s=await searchParams;return <section className="section shell"><div className="section-head"><span className="eyebrow">Secure account access</span><h1>Sign in by email.</h1><p className="muted">We will email a one-time sign-in link. No password is requested.</p></div><LoginForm next={s.next||'/dashboard'}/></section>}

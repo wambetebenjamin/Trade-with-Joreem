@@ -1,0 +1,6 @@
+node_modules/
+.next/
+lib/**/*.js
+js/**
+assets/**
+public/**
