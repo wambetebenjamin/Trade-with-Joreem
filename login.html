@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Member Login | Trade with Joreem</title>
+    <title>Request Member Access | Trade with Joreem</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="member login, trading member area" name="keywords">
     <meta name="description" content="Sign in to the Trade with Joreem member area for mentorship resources and learning materials.">
@@ -116,7 +116,7 @@
                     <i class="fa fa-shopping-basket fw-normal"></i>
                     <span class="cart-badge position-absolute top-0 start-100 translate-middle d-none align-items-center justify-content-center rounded-circle" style="font-size:10px;padding:4px 5px;background:var(--secondary);color:#04121C;width:17px;height:17px">0</span>
                 </button>
-                <a href="member.html" class="btn btn-primary py-2 px-4 ms-2 ms-lg-3"><i class="fa fa-user-shield me-2"></i>Member Login</a>
+                <a href="member.html" class="btn btn-primary py-2 px-4 ms-2 ms-lg-3"><i class="fa fa-user-shield me-2"></i>Request Member Access</a>
             </div>
         </nav>
     </div>
@@ -153,33 +153,22 @@
                     <rect x="20.6" y="14" width="6.8" height="11" rx="1.6" fill="#0A1220"/>
                     <rect x="30.6" y="21" width="6.8" height="7.5" rx="1.6" fill="#0A1220"/>
                 </svg>
-                <h3 class="mb-1" style="color:#fff;">Member Login</h3>
-                <p class="mb-0" style="color: var(--muted); font-size: 13.5px;">Welcome back to your trading room.</p>
+                <h3 class="mb-1" style="color:#fff;">Request Member Access</h3>
+                <p class="mb-0" style="color: var(--muted); font-size: 13.5px;">We will record your email as an access request.</p>
             </div>
             <form id="loginForm" novalidate>
                 <div class="mb-3">
                     <label class="form-label" for="loginEmail" style="font-size: 13px; color: var(--muted); font-weight: 600;">Email</label>
-                    <input type="email" id="loginEmail" class="form-control" placeholder="you@example.com" style="height: 52px;" autocomplete="username" aria-describedby="loginEmailError" required>
+                    <input type="email" id="loginEmail" class="form-control" placeholder="you@example.com" style="height: 52px;" autocomplete="email" aria-describedby="loginEmailError" required>
                     <small class="field-error" id="loginEmailError"></small>
                 </div>
-                <div class="mb-2">
-                    <label class="form-label" for="loginPass" style="font-size: 13px; color: var(--muted); font-weight: 600;">Password</label>
-                    <input type="password" id="loginPass" class="form-control" placeholder="••••••••" style="height: 52px;" autocomplete="current-password" minlength="6" aria-describedby="loginPassError" required>
-                    <small class="field-error" id="loginPassError"></small>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mt-2 mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe" style="font-size: 12.5px; color: var(--muted);">Remember me</label>
-                    </div>
-                    <a href="#" style="font-size: 12.5px;" onclick="alert('Password reset emails are sent from hello@tradewithjoreem.com. (Demo site)'); return false;">Forgot password?</a>
-                </div>
+                <p class="notice">This records an access request only; it is not an account or secure sign-in. Never enter a password here.</p>
                 <div id="loginErr" role="alert" aria-live="assertive" style="display:none; background: rgba(246,70,93,.1); border: 1px solid rgba(246,70,93,.35); color: var(--loss); border-radius: 10px; padding: 10px 14px; font-size: 13px; margin-bottom: 14px;"></div>
                 <div id="loginStatus" class="visually-hidden" role="status" aria-live="polite"></div>
-                <button class="btn btn-primary w-100 py-3" type="submit" id="loginBtn"><i class="fa fa-sign-in-alt me-2" aria-hidden="true"></i>Sign In</button>
-                <div class="demo-hint" role="note">Member sign-in is temporarily unavailable while secure account services are being set up. Do not enter a real password here.</div>
+                <button class="btn btn-primary w-100 py-3" type="submit" id="loginBtn"><i class="fa fa-sign-in-alt me-2" aria-hidden="true"></i>Request access</button>
+                <div class="demo-hint" role="note">Google Sheets does not provide secure member authentication. This form does not create an account.</div>
             </form>
-            <p class="text-center mt-4 mb-0" style="font-size: 13px; color: var(--muted);">Not a member yet? <a href="mentorship.html">View plans &amp; enroll <i class="fa fa-arrow-right"></i></a></p>
+            <p class="text-center mt-4 mb-0" style="font-size: 13px; color: var(--muted);">Looking for mentorship? <a href="mentorship.html">View plans <i class="fa fa-arrow-right"></i></a></p>
                 </div>
             </div>
         </div>
@@ -206,9 +195,9 @@
                             <h1 class="m-0">Trade with Joreem</h1>
                         </a>
                         <p class="mt-3 mb-4">Risk-first trading education in Forex, Crypto and Stocks. Books, live breakdowns and a private member community, built for serious, consistent growth.</p>
-                        <form onsubmit="event.preventDefault(); this.reset(); alert('Subscribed! Market notes land in your inbox every Monday.');">
+                        <form data-sheet-form="Newsletter">
                             <div class="input-group">
-                                <input type="email" required class="form-control p-3" placeholder="Your email">
+                                <input type="email" name="email" required class="form-control p-3" placeholder="Your email" maxlength="254">
                                 <button class="btn px-4" type="submit">Join</button>
                             </div>
                         </form>
@@ -248,7 +237,7 @@
                                 <a class="mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Joreem</a>
                                 <a class="mb-2" href="bookstore.html"><i class="bi bi-arrow-right text-primary me-2"></i>Bookstore</a>
                                 <a class="mb-2" href="mentorship.html"><i class="bi bi-arrow-right text-primary me-2"></i>Mentorship Plans</a>
-                                <a class="mb-2" href="member.html"><i class="bi bi-arrow-right text-primary me-2"></i>Member Login</a>
+                                <a class="mb-2" href="member.html"><i class="bi bi-arrow-right text-primary me-2"></i>Request Member Access</a>
                                 <a href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact</a>
                             </div>
                         </div>
@@ -305,7 +294,6 @@
     <script src="js/chatwoot.js"></script>
     <script src="js/trading.js"></script>
 
-    <script src="/js/site-consent.js" defer></script>
 </body>
 
 </html>

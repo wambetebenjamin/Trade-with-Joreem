@@ -1,2 +1,13 @@
-'use client';import {useState} from 'react';
-export function LoginForm({next}:{next:string}){const[busy,setBusy]=useState(false),[msg,setMsg]=useState('');async function submit(e:React.FormEvent<HTMLFormElement>){e.preventDefault();setBusy(true);setMsg('');const email=new FormData(e.currentTarget).get('email');try{const r=await fetch('/api/auth/magic-link',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,next})});const d=await r.json();if(!r.ok)throw Error(d.error||'Could not send link.');setMsg('Check your inbox for a secure sign-in link.');}catch(x){setMsg(x instanceof Error?x.message:'Sign-in is not configured yet.')}finally{setBusy(false)}}return <form className="form" onSubmit={submit}><label>Email<input required type="email" name="email" autoComplete="email" maxLength={254}/></label><button className="button" disabled={busy}>{busy?'Sending link…':'Email me a sign-in link'}</button>{msg&&<p role="status" className="notice">{msg}</p>}</form>}
+'use client';
+import { useState } from 'react';
+import { submitSheetRows } from '@/lib/google-script';
+export function LoginForm() {
+  const [busy, setBusy] = useState(false), [message, setMessage] = useState(''), [error, setError] = useState(false);
+  async function submit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault(); const form = event.currentTarget; const email = String(new FormData(form).get('email') || '').trim(); setBusy(true); setMessage(''); setError(false);
+    try { await submitSheetRows('AccessRequests', [{ submitted_at: new Date().toISOString(), email, request_type: 'member_access' }]); form.reset(); setMessage('Your access request has been submitted. This is a request only, not a sign-in or account.'); }
+    catch (cause) { setError(true); setMessage(cause instanceof Error ? cause.message : 'Could not submit your request.'); }
+    finally { setBusy(false); }
+  }
+  return <form className="form" onSubmit={submit}><label>Email<input required type="email" name="email" autoComplete="email" maxLength={254}/></label><button className="button" disabled={busy}>{busy?'Submitting…':'Request member access'}</button>{message&&<p role="status" className={error?'error':'notice'}>{message}</p>}</form>;
+}

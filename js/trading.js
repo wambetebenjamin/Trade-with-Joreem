@@ -1,5 +1,17 @@
 /********** Trade with Joreem - Interactive Engine **********/
 (function () {
+    var GOOGLE_SCRIPT_WEBAPP_URL = window.GOOGLE_SCRIPT_WEBAPP_URL || "GOOGLE_SCRIPT_WEBAPP_URL";
+    window.TWJSheets = {
+        submit: async function (sheet, rows) {
+            if (!GOOGLE_SCRIPT_WEBAPP_URL || GOOGLE_SCRIPT_WEBAPP_URL === "GOOGLE_SCRIPT_WEBAPP_URL") throw new Error("Google Sheets is not configured. Set the Google Apps Script Web App URL.");
+            if (!Array.isArray(rows) || rows.some(function (row) { return !row || typeof row !== "object" || Array.isArray(row); })) throw new Error("Expected a JSON array of sheet row objects.");
+            var url = new URL(GOOGLE_SCRIPT_WEBAPP_URL); url.searchParams.set("sheet", sheet);
+            var response = await fetch(url.toString(), { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8", "Accept": "application/json" }, body: JSON.stringify(rows) });
+            var result = await response.json();
+            if (!response.ok || !result || result.ok !== true) throw new Error((result && result.error) || "Google Sheets could not accept this submission.");
+            return result;
+        }
+    };
     "use strict";
 
     var fmtMoney = function (n) {
@@ -611,69 +623,27 @@
         if (c) c.addEventListener("click", function () { bootstrap.Modal.getInstance(document.getElementById("checkoutModal")).hide(); });
     }
 
-    /* ================= Member auth (demo) ================= */
-    function getAuth() {
-        try { return JSON.parse(localStorage.getItem("twj_auth") || "null"); } catch (e) { return null; }
-    }
-
+    /* ================= Member access request (no passwords) ================= */
     function initAuth() {
-        var loginForm = document.getElementById("loginForm");
-        if (loginForm) {
-            ["loginEmail", "loginPass"].forEach(function (id) {
-                var input = document.getElementById(id);
-                input.addEventListener("input", function () {
-                    input.removeAttribute("aria-invalid");
-                    var fieldError = document.getElementById(id + "Error");
-                    if (fieldError) fieldError.textContent = "";
-                    var liveError = document.getElementById("loginErr");
-                    if (liveError) liveError.style.display = "none";
-                });
-            });
-            loginForm.addEventListener("submit", function (e) {
-                e.preventDefault();
-                var emailInput = document.getElementById("loginEmail");
-                var passInput = document.getElementById("loginPass");
-                var email = emailInput.value.trim();
-                var pass = passInput.value;
-                var err = document.getElementById("loginErr");
-                var emailError = document.getElementById("loginEmailError");
-                var passError = document.getElementById("loginPassError");
-                emailInput.removeAttribute("aria-invalid");
-                passInput.removeAttribute("aria-invalid");
-                emailError.textContent = "";
-                passError.textContent = "";
-                if (!emailInput.checkValidity()) {
-                    emailInput.setAttribute("aria-invalid", "true");
-                    emailError.textContent = email ? "Enter a valid email address." : "Email is required.";
-                    err.style.display = "block";
-                    err.textContent = emailError.textContent;
-                    emailInput.focus();
-                    return;
-                }
-                if (pass.length < 6) {
-                    passInput.setAttribute("aria-invalid", "true");
-                    passError.textContent = "Password must be at least 6 characters.";
-                    err.style.display = "block";
-                    err.textContent = passError.textContent;
-                    passInput.focus();
-                    return;
-                }
-                // Never simulate authentication or store credentials/session claims in browser storage.
-                var loginStatus = document.getElementById("loginStatus");
-                err.style.display = "block";
-                err.textContent = "Secure member sign-in is not available yet. Your password was not sent or saved.";
-                if (loginStatus) loginStatus.textContent = err.textContent;
-                passInput.value = "";
-                try { localStorage.removeItem("twj_auth"); } catch (_) {}
-            });
-        }
-
-        var memberPage = document.getElementById("memberArea");
-        if (memberPage) {
-            // Static client-side checks are not authentication; keep the demo area closed until a server session exists.
-            try { localStorage.removeItem("twj_auth"); } catch (_) {}
-            window.location.replace("login.html");
-        }
+        var form = document.getElementById("loginForm");
+        if (!form) return;
+        form.addEventListener("submit", async function (event) {
+            event.preventDefault();
+            var email = document.getElementById("loginEmail");
+            var status = document.getElementById("loginStatus");
+            var error = document.getElementById("loginErr");
+            if (!email || !email.checkValidity()) { email && email.focus(); return; }
+            var button = document.getElementById("loginBtn"); setButtonLoading(button, "Submitting…");
+            try {
+                await window.TWJSheets.submit("AccessRequests", [{ submitted_at: new Date().toISOString(), email: email.value.trim(), request_type: "member_access" }]);
+                if (status) status.textContent = "Access request submitted. This is not an account or sign-in.";
+                if (error) { error.style.display = "block"; error.textContent = "Access request submitted. This is not an account or sign-in."; error.style.color = "var(--muted)"; }
+                form.reset();
+            } catch (cause) {
+                if (error) { error.style.display = "block"; error.textContent = cause.message || "Could not submit access request."; }
+                if (status) status.textContent = (error && error.textContent) || "Could not submit access request.";
+            } finally { restoreButton(button); }
+        });
     }
 
     /* ================= Contact form (demo) ================= */
@@ -728,15 +698,8 @@
                 contactStatus.textContent = "Sending your message…";
             }
             setButtonLoading(btn, "Sending…");
-            fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json", "Accept": "application/json" },
-                body: JSON.stringify(payload)
-            }).then(function (response) {
-                return response.json().catch(function () { return {}; }).then(function (data) {
-                    if (!response.ok) throw new Error(data.error || "Message could not be sent. Please try again.");
-                    window.location.href = "thank-you.html";
-                });
+            window.TWJSheets.submit("ContactRequests", [{ submitted_at: new Date().toISOString(), name: payload.name, email: payload.email, topic: payload.topic, phone: payload.phone, message: payload.message }]).then(function () {
+                window.location.href = "thank-you.html";
             }).catch(function (error) {
                 restoreButton(btn);
                 if (contactStatus) {
@@ -925,8 +888,29 @@
         render();
     }
 
+    /* ================= Google Sheets newsletter submissions ================= */
+    function initSheetForms() {
+        document.querySelectorAll('form[data-sheet-form="Newsletter"]').forEach(function (form) {
+            form.addEventListener("submit", async function (event) {
+                event.preventDefault();
+                var input = form.querySelector('input[name="email"]');
+                if (!input || !input.checkValidity()) { input && input.reportValidity(); return; }
+                var button = form.querySelector('button[type="submit"]');
+                var status = form.querySelector('[role="status"]');
+                if (!status) { status = document.createElement("p"); status.setAttribute("role", "status"); status.setAttribute("aria-live", "polite"); form.appendChild(status); }
+                setButtonLoading(button, "Joining…");
+                try {
+                    await window.TWJSheets.submit("Newsletter", [{ submitted_at: new Date().toISOString(), email: input.value.trim(), source: location.pathname }]);
+                    status.textContent = "Thanks. Your email has been added to the newsletter list."; form.reset();
+                } catch (cause) { status.textContent = cause.message || "Could not submit your request."; }
+                finally { restoreButton(button); }
+            });
+        });
+    }
+
     /* ================= Boot ================= */
     document.addEventListener("DOMContentLoaded", function () {
+        initSheetForms();
         initPromo();
         initCounters();
         initPricing();

@@ -1,53 +1,73 @@
-# Trade with Joreem — Next.js rebuild
+# Trade with Joreem
 
-The live application is being migrated from the original static HTML pages to Next.js 15 App Router, TypeScript and Tailwind CSS. The original `.html` files and assets remain in the repository as a content/reference archive; Next.js owns the clean routes (`/`, `/mentorship`, `/bookstore`, `/about`, `/contact`, `/terms`, `/risk`, `/privacy`, `/cart`, `/login`, `/dashboard`).
+Trade with Joreem is a risk-first trading education and bookstore site built with Next.js 15 App Router, TypeScript and Tailwind. **The website is hosted on Render. Google Sheets, accessed through a Google Apps Script Web App, is the source of truth for submitted form rows and configured public catalog data.** The active website routes live under `app/`; the original HTML pages remain as a content/reference archive.
 
-## Local development
+## Data architecture
 
-1. Install Node.js 20.9+.
-2. `cp .env.example .env.local` and fill in the required **test-mode** provider configuration (details below).
-3. `npm install`
-4. `npm run dev` (binds to `0.0.0.0:3000` for preview environments).
-5. `npm run build` before deploying.
+- There is no local file database, JSON data store, SQL server, ORM, Supabase project, or local database connection code.
+- Browser form submissions send JSON arrays of column-keyed row objects directly to the deployed Google Apps Script Web App URL. The frontend uses `text/plain;charset=utf-8` to avoid a JSON preflight.
+- Public sheet reads return JSON arrays of objects matching header names. The public read allowlist in the Apps Script sample is limited to `Books`, `Plans` and `PublicContent`.
+- Contact, newsletter, access-request and journal submissions append to restricted tabs. Google Sheets does not provide user authentication, per-customer authorization or private member storage. Journal entries are not private.
+- Stripe checkout still uses a small Next.js server route because Stripe secret keys must not be placed in browser code. The Stripe webhook validates Stripe's signature server-side, then forwards verified events to Apps Script with a separate server-only shared secret. It does not use a database.
 
-The marketing pages run without credentials. Checkout, account sign-in, private downloads, and real contact delivery intentionally return clear setup errors until the relevant provider credentials and IDs exist; there is no fake payment or pretend account provisioning.
+## Run locally
 
-## Environment variables
+```bash
+npm ci
+cp .env.example .env.local
+npm run dev
+```
 
-See `.env.example`. All secret keys are server-only. Only the Supabase project URL and publishable/anon key use `NEXT_PUBLIC_` names. Never put Stripe secret keys, Supabase service-role keys, webhook secrets, Resend keys or bot tokens in client code or public variables.
+Marketing routes render without provider keys. Form/data operations require `NEXT_PUBLIC_GOOGLE_SCRIPT_WEBAPP_URL`. For browser requests, replace the placeholder with your deployed Apps Script `/exec` URL. Set the server-side `GOOGLE_SCRIPT_WEBAPP_URL` to the same URL for verified Stripe webhook forwarding.
 
-### Supabase setup
+## Deploy the frontend on Render
 
-1. Create/choose a dedicated Supabase project for Trade with Joreem (do not reuse an unrelated project).
-2. Apply `supabase/migrations/202611050001_core_schema.sql` using the Supabase CLI or SQL editor. Review it first. It creates profiles, orders, entitlements, books, journal entries, community/print fulfillment queues and Stripe event records, with RLS enabled and no client write path for payment/admin data.
-3. Configure `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` in `.env.local` and Vercel. The service-role key is only used by server routes and must remain private.
-4. In Supabase Auth, set the site URL and allowed redirect URL to `${NEXT_PUBLIC_SITE_URL}/auth/callback`. Configure production email/SMTP delivery and the provider's built-in email/signup rate limits. Magic-link sign-in is used; admin access is determined only by `profiles.is_admin`, never by client data. Set initial admin flags through a trusted SQL/service-role procedure after verifying the intended account; users cannot promote themselves through RLS/column grants.
-5. In Storage, the migration creates the private `book-files` bucket. Upload authorized PDFs using the exact file paths seeded in `books.file_path` (`crypto-signals.pdf`, `stocks-from-zero.pdf`, `forex-mastery.pdf`, `psychology.pdf`). Keep the bucket private. App download routes check a verified user's paid order or active Pro/Elite entitlement before issuing short-lived signed URLs. Do not upload files you do not own or have permission to distribute.
+1. Create a Render **Web Service** from this repository and choose the active branch to deploy.
+2. Build command: `npm ci && npm run build`
+3. Start command: `npm start` (the Next.js server binds to `0.0.0.0` and reads Render's `PORT`).
+4. Add `NEXT_PUBLIC_SITE_URL` using the Render public URL or confirmed custom domain.
+5. Add `NEXT_PUBLIC_GOOGLE_SCRIPT_WEBAPP_URL` (public frontend endpoint) and `GOOGLE_SCRIPT_WEBAPP_URL` (same URL, server-side).
+6. Add Stripe test-mode variables only if you are testing checkout. Keep live payments disabled until the release gates below pass.
 
-### Stripe test mode
+Do not deploy the old static HTML as the Render service root; the Next.js application owns the public routes. After deployment, test the contact form from the actual Render origin because Apps Script cross-origin response behavior must be confirmed in a real browser.
 
-1. Use Stripe **test mode** first. Create test products and prices with the existing displayed amounts (USD): Foundation $49/month and $470/year; Pro Trader $59/month and $399/year; Elite Desk $119/month and $999/year; books: Forex Mastery $59, Crypto Signals Handbook $29, Trading Psychology $49, Stocks from Zero $25, Complete Library $99. Recurring prices must use monthly/yearly intervals as named. No product ID is accepted from the browser; the server maps an allow-listed SKU to a configured Price ID.
-2. Set every `STRIPE_PRICE_*` value in `.env.local`/Vercel. Create a 20% off, one-time duration coupon for `STRIPE_START20_COUPON_ID`; the app only applies it to monthly Foundation/Pro subscriptions. Annual plans, Elite Desk and books are explicitly excluded. Checkout refuses the code if the coupon is not configured.
-3. Review tax obligations with the business adviser. If Stripe Tax is enabled for the account and jurisdiction, set `STRIPE_AUTOMATIC_TAX=true`; otherwise leave it false and confirm the price/tax disclosure is correct. Create a fixed-amount Stripe shipping rate in USD and set `STRIPE_SHIPPING_RATE_ID`; only then set `PRINT_FULFILLMENT_ENABLED=true` after staff are ready to process orders. Physical books and the bundle are blocked until both switches are in place. Eligible shipping destinations are defined in `app/api/checkout/route.ts`; verify the rate, destination coverage and delivery process before accepting a live order.
-4. Configure Stripe Billing Portal in the Stripe Dashboard to allow subscription cancellation and approved plan/payment-method changes. The dashboard's Manage subscription button creates a portal session for the signed-in user's own Stripe customer. Upload the final, approved digital PDFs to the private storage bucket. The repository's included PDFs are labelled sample chapters and are not a complete paid deliverable. Confirm correct private storage paths and then set `books.asset_ready=true` for each fully uploaded title. Digital and bundle checkouts are blocked until this readiness check passes.
-5. Run `stripe listen --forward-to localhost:3000/api/webhooks/stripe` and set the generated test `STRIPE_WEBHOOK_SECRET`. In Stripe, register the endpoint `/api/webhooks/stripe` and subscribe to `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `checkout.session.async_payment_failed`, `customer.subscription.updated`, `customer.subscription.deleted`, and `charge.refunded`. The webhook verifies the raw Stripe signature, records event IDs idempotently, and writes the order/entitlement only from server-verified events.
-6. Test checkout, cancellation, duplicate webhook delivery, async payment, subscription cancellation, download authorization across two users, print queue creation and promo-code eligibility. Do not switch to live keys until all checks pass and live product/refund/shipping terms are approved. The server also rejects `sk_live_`/`rk_live_` keys unless `ALLOW_LIVE_PAYMENTS=true` is deliberately set after launch approval.
+## Google Sheets + Docs/Slides setup
 
-Flutterwave and Pesapal are not connected to this Stripe Checkout flow. Do not advertise them as available payment methods; integrate them with separate signed webhook and reconciliation work if requested.
+Follow [`GOOGLE_APPS_SCRIPT_SETUP.md`](./GOOGLE_APPS_SCRIPT_SETUP.md). It contains the complete `doGet`/`doPost` script, tab contracts, document/slide automation actions, shared-secret setup and Render environment variables. Deploy the Apps Script Web App as **you**, with access set to **Anyone** for direct browser submissions. The script appends only to named form tabs and publicly reads only `Books` and `PublicContent`.
 
-### Resend, contact, fulfillment and communities
+Anyone who obtains the public Apps Script URL can submit to the allowlisted form tabs. Protect the spreadsheet itself, restrict editors, avoid collecting sensitive data and add anti-abuse controls before production traffic. Never expose private records through `doGet`.
 
-- Verify a sender domain in Resend; set `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `CONTACT_EMAIL`. The contact form reports failure instead of claiming a message was sent if delivery is unconfigured.
-- Paid orders generate email with short-lived signed PDF links if the private PDFs have been uploaded. Print orders go to the protected `/admin/fulfillment` queue for a person to confirm address and shipping. Until Telegram/Discord credentials are configured, mentorship access stays in a staff queue.
-- Optional Telegram: configure `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`; the bot must be an admin allowed to create invite links. Join requests are restricted for manual approval. Optional Discord: configure a bot with Create Invite permission and `DISCORD_CHANNEL_ID`. Do not paste bot secrets into chat or source control.
+## Stripe test setup (optional)
 
-## Analytics, domain and operations
+Set test-mode values in Render or `.env.local`:
 
-- The consent banner loads Vercel Web Analytics only after opt-in. Enable Web Analytics in the Vercel project before expecting data. Consent rejection keeps the analytics script unloaded.
-- Add `NEXT_PUBLIC_SITE_URL` as the verified production canonical origin, then update Supabase redirect allowlists, Stripe return URLs, email links and Vercel domain settings consistently. `trade-with-joreem.vercel.app` is the development/default canonical for now. The custom domain and `app.tradewithjoreem.com` are not considered live until Vercel DNS verification succeeds; do not replace existing Cloudflare DNS records without confirming the exact target records and any email/domain services they support.
-- Valinor security monitoring is not wired yet because the project needs its documented authenticated endpoint, event schema and approved data scope. Do not send customer information to an unverified host.
-- Signup and contact abuse protection still needs provider/edge rate limits enabled; an in-memory function limiter is not reliable on serverless. Monitor Stripe webhook failures and the admin queues.
+- `STRIPE_SECRET_KEY` (test key), `STRIPE_WEBHOOK_SECRET`
+- `STRIPE_PRICE_FOUNDATION_MONTHLY`, `STRIPE_PRICE_FOUNDATION_ANNUAL`, `STRIPE_PRICE_PRO_MONTHLY`, `STRIPE_PRICE_PRO_ANNUAL`, `STRIPE_PRICE_ELITE_MONTHLY`, `STRIPE_PRICE_ELITE_ANNUAL`
+- `STRIPE_PRICE_FOREX_MASTERY`, `STRIPE_PRICE_CRYPTO_SIGNALS`, `STRIPE_PRICE_TRADING_PSYCHOLOGY`, `STRIPE_PRICE_STOCKS_FROM_ZERO`, `STRIPE_PRICE_BUNDLE`
+- `STRIPE_START20_COUPON_ID` for the eligible monthly Foundation/Pro promotion
+- `STRIPE_SHIPPING_RATE_ID` and `PRINT_FULFILLMENT_ENABLED=true` only after shipping operations are ready
+- `MEMBERSHIP_DELIVERY_ENABLED=true` and `DIGITAL_DELIVERY_ENABLED=true` only after secure member access / file delivery exists
+- `GOOGLE_SCRIPT_WEBHOOK_SECRET`, matching the Apps Script Script Property `TWJ_STRIPE_WEBHOOK_SECRET`
+- Optional server-only `GOOGLE_SCRIPT_AUTOMATION_TOKEN`, matching Script Property `TWJ_AUTOMATION_TOKEN`, for trusted Docs/Slides creation
 
-## Security and launch gates
+In Stripe, set the webhook URL to `https://<your-render-host>/api/webhooks/stripe` and subscribe to `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `checkout.session.async_payment_failed`, `customer.subscription.updated`, `customer.subscription.deleted`, and `charge.refunded`. Test signed events in Stripe test mode and confirm rows appear in restricted `StripeEvents` and `Orders` tabs. The success page confirms status directly with Stripe; access/fulfilment is not provisioned by that page.
 
-See [`SECURITY.md`](./SECURITY.md). Private routes verify Supabase sessions server-side; admin queues require `profiles.is_admin`; user records are owner-scoped by RLS; payment fulfilment depends on signature-verified Stripe webhooks. Before production, configure environment secrets, email/redirects, private files, exact Stripe products/shipping/tax/refund terms, rate limits, custom domain DNS, and run test-mode end-to-end purchases. Do not accept real payments until fulfillment is staffed and legally reviewed.
+**Keep `ALLOW_LIVE_PAYMENTS=false`.** The server rejects `sk_live_`/`rk_live_` keys unless the flag is deliberately changed. Do not accept live payments until provider, catalog, tax, customer support, refund/shipping terms, final content, membership authentication and delivery have been tested. Flutterwave and Pesapal are not configured or advertised.
+
+## Current feature limits
+
+- No password, magic-link, session or member-auth system is implemented. The member form is an access request only.
+- No protected order history, private journal, authenticated downloads, billing portal or admin data browser is implemented. Google Sheets is not an access-control system.
+- The Books and mentorship-plan catalogs are loaded from the public `Books` and `Plans` sheets as arrays of row objects. Populate the documented headers; Stripe Price IDs remain authoritative for the charged price.
+- Repository book PDFs are sample material, not complete paid deliverables. Do not enable digital checkout until authorized final files and secure delivery are ready.
+- Contact/newsletter forms report endpoint/configuration errors rather than claiming success when the Apps Script call fails.
+
+## Checks
+
+```bash
+npm run lint
+npm run build
+npm audit
+```
+
+See `SECURITY.md` and `CONTACT_SETUP.md` before collecting real data. Review the privacy/terms language and operating process before launch.

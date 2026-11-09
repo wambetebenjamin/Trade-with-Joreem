@@ -162,13 +162,13 @@
 <p>This policy explains what information is stored on your device, what you submit through the Site, how optional analytics works, and your privacy choices. Some member, payment, and delivery features shown on the Site are demonstrations and do not process real transactions until the relevant services are configured.</p>
 
                         <h2 id="collect" class="mb-3" style="font-size: 1.4rem;">2. Data We Collect</h2>
-<ul><li><b style="color:#fff">Contact requests:</b> the name, email, topic, optional phone number, and message you enter. The form sends these details only when email delivery is configured; otherwise it reports that delivery is unavailable.</li><li><b style="color:#fff">Device storage:</b> cart contents, demo sign-in state, promotion dismissal, and your analytics preference may be stored in your browser's local storage.</li><li><b style="color:#fff">Orders and payments:</b> the Site currently demonstrates checkout flows. Do not enter real card or payment credentials into demo checkout fields. Real payment processing is not active through those fields.</li><li><b style="color:#fff">Optional analytics:</b> if you opt in, Vercel Web Analytics may receive page-view and technical usage information to help us understand site traffic.</li></ul>
+<ul><li><b style="color:#fff">Contact requests:</b> the name, email, topic, optional phone number, and message you enter. The form sends these details only when email delivery is configured; otherwise it reports that delivery is unavailable.</li><li><b style="color:#fff">Device storage:</b> cart contents, promotion dismissal, and consent preferences may be stored in your browser's local storage. No password is stored.</li><li><b style="color:#fff">Orders and payments:</b> the Site currently demonstrates checkout flows. Do not enter real card or payment credentials into demo checkout fields. Real payment processing is not active through those fields.</li><li><b style="color:#fff">Optional analytics:</b> optional analytics are not currently configured on the Render deployment, so no analytics requests are sent.</li></ul>
 
                         <h2 id="use" class="mb-3" style="font-size: 1.4rem;">3. How We Use It</h2>
 <p>We use submitted contact details to respond to enquiries, browser storage to keep site preferences and demo state working, and opted-in analytics to understand aggregate site usage. If real ordering or membership services are enabled later, the related data will be used to fulfil those services and meet legal obligations. We do not sell personal information.</p>
 
                         <h2 id="sharing" class="mb-3" style="font-size: 1.4rem;">4. Who We Share With</h2>
-<p>The Site is hosted by Vercel. If configured, contact-form messages are delivered through Resend; if the support-chat widget is enabled, messages are processed by the selected Chatwoot host. Optional site analytics are provided by Vercel after you opt in. If real purchases or membership services are introduced, the relevant payment, delivery, email, and community providers will be identified here before activation. Each provider's own privacy terms also apply.</p>
+<p>The Site is hosted by Render. Form submissions and configured catalog data are handled by Google Sheets through a Google Apps Script Web App. Stripe handles payment when checkout is enabled. Each provider's own privacy terms also apply.</p>
 
                         <h2 id="security" class="mb-3" style="font-size: 1.4rem;">5. Security</h2>
 <p>All transactions are encrypted in transit (TLS). Access to member data is restricted to staff who need it. Member community links are monitored and may be revoked if shared.</p>
@@ -177,7 +177,7 @@
 <p>Depending on your location, you may have rights to access, correct, export or delete your personal data, and to object to certain processing. To exercise any right, email hello@tradewithjoreem.com. We respond within 30 days.</p>
 
                         <h2 id="cookies" class="mb-3" style="font-size: 1.4rem;">7. Cookies & Storage</h2>
-<p>The Site stores cart contents, the demo sign-in state, promotion dismissal, and your analytics choice in local storage on your device. Vercel Web Analytics is not loaded unless you choose “Allow analytics” in the consent banner. If you reject optional analytics, it remains disabled. You can change this choice from the consent banner when it next appears or clear the Site's local storage in your browser settings. Required site functionality does not depend on optional analytics.</p>
+<p>The Site stores cart contents, the demo sign-in state, promotion dismissal, and your analytics choice in local storage on your device. No optional analytics are loaded on the current Render deployment. You can change this choice from the consent banner when it next appears or clear the Site's local storage in your browser settings. Required site functionality does not depend on optional analytics.</p>
 
                         <h2 id="children" class="mb-3" style="font-size: 1.4rem;">8. Children & Contact</h2>
 <p>The Site is not directed at persons under 18, and we do not knowingly collect data from them. For privacy questions: hello@tradewithjoreem.com.</p>
@@ -210,9 +210,9 @@
                             <h1 class="m-0">Trade with Joreem</h1>
                         </a>
                         <p class="mt-3 mb-4">Risk-first trading education in Forex, Crypto and Stocks. Books, live breakdowns and a private member community, built for serious, consistent growth.</p>
-                        <form onsubmit="event.preventDefault(); this.reset(); alert('Subscribed! Market notes land in your inbox every Monday.');">
+                        <form data-sheet-form="Newsletter">
                             <div class="input-group">
-                                <input type="email" required class="form-control p-3" placeholder="Your email">
+                                <input type="email" name="email" required class="form-control p-3" placeholder="Your email" maxlength="254">
                                 <button class="btn px-4" type="submit">Join</button>
                             </div>
                         </form>
@@ -309,7 +309,6 @@
     <script src="js/chatwoot.js"></script>
     <script src="js/trading.js"></script>
 
-    <script src="/js/site-consent.js" defer></script>
 </body>
 
 </html>

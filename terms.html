@@ -210,9 +210,9 @@
                             <h1 class="m-0">Trade with Joreem</h1>
                         </a>
                         <p class="mt-3 mb-4">Risk-first trading education in Forex, Crypto and Stocks. Books, live breakdowns and a private member community, built for serious, consistent growth.</p>
-                        <form onsubmit="event.preventDefault(); this.reset(); alert('Subscribed! Market notes land in your inbox every Monday.');">
+                        <form data-sheet-form="Newsletter">
                             <div class="input-group">
-                                <input type="email" required class="form-control p-3" placeholder="Your email">
+                                <input type="email" name="email" required class="form-control p-3" placeholder="Your email" maxlength="254">
                                 <button class="btn px-4" type="submit">Join</button>
                             </div>
                         </form>
@@ -309,7 +309,6 @@
     <script src="js/chatwoot.js"></script>
     <script src="js/trading.js"></script>
 
-    <script src="/js/site-consent.js" defer></script>
 </body>
 
 </html>

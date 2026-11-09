@@ -1,9 +1,10 @@
-# Contact email setup
+# Google Sheets contact and newsletter setup
 
-The production contact form uses the Next.js route `app/api/contact/route.ts` and Resend. Configure these values in `.env.local` for development and as server-side Production/Preview environment variables in Vercel:
+The contact and newsletter forms post directly from the browser to the Google Apps Script Web App. They do not call a Next.js contact API, Resend, or another database service.
 
-- `RESEND_API_KEY`: server-only Resend API key.
-- `RESEND_FROM_EMAIL`: sender on a domain verified in Resend.
-- `CONTACT_EMAIL`: recipient inbox, currently `hello@tradewithjoreem.com`.
+1. Follow `GOOGLE_APPS_SCRIPT_SETUP.md` and deploy the web app.
+2. Set `NEXT_PUBLIC_GOOGLE_SCRIPT_WEBAPP_URL` to the deployed `/exec` URL in Render's environment variables, then redeploy the site.
+3. Submit test data from the deployed Render origin and verify a row is appended to `ContactRequests` or `Newsletter` in the spreadsheet.
+4. If the request errors, verify the web-app deployment access is **Anyone**, the URL ends in `/exec`, and the Apps Script execution logs show no authorization or quota error.
 
-The form validates fields, checks same-origin requests, enforces input bounds and includes a honeypot. If Resend is missing or returns an error, the visitor sees an error and the form does not claim that the message was sent. Configure persistent rate limiting/edge abuse controls before public launch; a honeypot is not a rate limiter.
+The deployed public endpoint accepts writes to the named tabs and is not an authenticated private API. Protect spreadsheet editor access, collect only necessary information, and configure bot/rate protection before production use. A success message appears only after the frontend receives a successful JSON response.
