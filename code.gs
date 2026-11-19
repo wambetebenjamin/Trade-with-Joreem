@@ -1,6 +1,7 @@
 const PUBLIC_READ_SHEETS = new Set(['Books', 'Plans', 'PublicContent']);
 const FORM_WRITE_SHEETS = new Set(['ContactRequests', 'Newsletter', 'AccessRequests', 'JournalEntries']);
 const TIMEZONE = 'Etc/UTC';
+const NOTIFICATION_EMAIL = 'bigdeal3050@gmail.com';
 
 function doGet(e) {
   const sheetName = String((e && e.parameter && e.parameter.sheet) || '');
@@ -37,7 +38,31 @@ function doPost(e) {
   if (!FORM_WRITE_SHEETS.has(sheetName)) return json_({ ok: false, error: 'Sheet is not enabled for form submissions.' }, 403);
   const cleanRows = rows.map(row => cleanRow_(row));
   const result = appendRows_(sheetName, cleanRows);
-  return json_({ ok: true, count: result.count });
+  const notification = emailSubmissionCopies_(sheetName, cleanRows);
+  return json_({ ok: true, count: result.count, notification_sent: notification.sent });
+}
+
+function emailSubmissionCopies_(sheetName, rows) {
+  let sent = 0;
+  rows.forEach((row, index) => {
+    const subject = 'Trade with Joreem submission: ' + sheetName;
+    const body = [
+      'A new website submission was saved to the ' + sheetName + ' sheet.',
+      '',
+      'Submission ' + (index + 1) + ' of ' + rows.length,
+      '',
+      JSON.stringify(row, null, 2),
+      '',
+      'View the project spreadsheet: https://docs.google.com/spreadsheets/d/1LxuEbqSIuttf693o6IowZJTt9aEctE_yAhp0-Dc5fTY/edit'
+    ].join('\n');
+    try {
+      MailApp.sendEmail({ to: NOTIFICATION_EMAIL, subject: subject, body: body });
+      sent++;
+    } catch (error) {
+      console.error('Submission notification email failed: ' + String(error && error.message || error));
+    }
+  });
+  return { sent: sent };
 }
 
 function recordVerifiedStripe_(rows) {

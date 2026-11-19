@@ -4,12 +4,13 @@ This project uses a deployed Google Apps Script Web App as its form/data endpoin
 
 ## Apps Script code
 
-In the Google Sheet, open **Extensions → Apps Script**, replace the editor contents with this code, save, then deploy it as a Web App. It exposes only `Books` and `PublicContent` for reads; form submissions are append-only. Private sheets are never returned by `doGet`.
+In the Google Sheet, open **Extensions → Apps Script**, replace the editor contents with this code, save, authorize the requested mail permission, then deploy it as a Web App. It exposes only `Books`, `Plans` and `PublicContent` for reads; form submissions are append-only and each accepted form row triggers a copy email to `bigdeal3050@gmail.com`. Private sheets are never returned by `doGet`. The notification is sent by the Google account that owns/deploys the script; re-deploy after changing code.
 
 ```javascript
 const PUBLIC_READ_SHEETS = new Set(['Books', 'Plans', 'PublicContent']);
 const FORM_WRITE_SHEETS = new Set(['ContactRequests', 'Newsletter', 'AccessRequests', 'JournalEntries']);
 const TIMEZONE = 'Etc/UTC';
+const NOTIFICATION_EMAIL = 'bigdeal3050@gmail.com';
 
 function doGet(e) {
   const sheetName = String((e && e.parameter && e.parameter.sheet) || '');
@@ -46,7 +47,31 @@ function doPost(e) {
   if (!FORM_WRITE_SHEETS.has(sheetName)) return json_({ ok: false, error: 'Sheet is not enabled for form submissions.' }, 403);
   const cleanRows = rows.map(row => cleanRow_(row));
   const result = appendRows_(sheetName, cleanRows);
-  return json_({ ok: true, count: result.count });
+  const notification = emailSubmissionCopies_(sheetName, cleanRows);
+  return json_({ ok: true, count: result.count, notification_sent: notification.sent });
+}
+
+function emailSubmissionCopies_(sheetName, rows) {
+  let sent = 0;
+  rows.forEach((row, index) => {
+    const subject = 'Trade with Joreem submission: ' + sheetName;
+    const body = [
+      'A new website submission was saved to the ' + sheetName + ' sheet.',
+      '',
+      'Submission ' + (index + 1) + ' of ' + rows.length,
+      '',
+      JSON.stringify(row, null, 2),
+      '',
+      'View the project spreadsheet: https://docs.google.com/spreadsheets/d/1LxuEbqSIuttf693o6IowZJTt9aEctE_yAhp0-Dc5fTY/edit'
+    ].join('\n');
+    try {
+      MailApp.sendEmail({ to: NOTIFICATION_EMAIL, subject: subject, body: body });
+      sent++;
+    } catch (error) {
+      console.error('Submission notification email failed: ' + String(error && error.message || error));
+    }
+  });
+  return { sent: sent };
 }
 
 function recordVerifiedStripe_(rows) {
@@ -161,7 +186,7 @@ function json_(data) { return ContentService.createTextOutput(JSON.stringify(dat
 
 ## Deploy and configure
 
-1. In **Apps Script → Project Settings → Script Properties**, add `TWJ_STRIPE_WEBHOOK_SECRET` with a long random value. Add `TWJ_AUTOMATION_TOKEN` only if a trusted server-side tool will create Docs/Slides; never put it in browser code.
+1. The script emails accepted form submissions to `bigdeal3050@gmail.com`. Deploy it while signed into the Google account intended to run the project, and authorize the mail permission when prompted. In **Apps Script → Project Settings → Script Properties**, add `TWJ_STRIPE_WEBHOOK_SECRET` with a long random value. Add `TWJ_AUTOMATION_TOKEN` only if a trusted server-side tool will create Docs/Slides; never put it in browser code.
 2. Create a `Books` tab with header columns `id`, `title`, `desc`, `price`, `kind`, `image`, `active`. Create a `Plans` tab with `id`, `name`, `blurb`, `monthly`, `annual`, `featured`, `active`, `feature_1`, `feature_2`, `feature_3`, `feature_4`, `feature_5`, `feature_6`. Use `TRUE`/`FALSE` for flags. Keep the checkout SKU IDs exactly `foundation`, `pro`, `elite`; Stripe still validates the real amount at payment time. Use public HTTPS URLs or same-site paths for book images. Add `PublicContent` only for content you intentionally make public. Seed the public catalog with rows matching the headers; for `Books`, use the IDs `forex-mastery`, `crypto-signals`, `trading-psychology`, `stocks-from-zero`, and `bundle`. For `Plans`, seed the `foundation`, `pro`, and `elite` IDs and their approved monthly/annual prices/features. These rows are the public display source; the configured Stripe Price IDs remain authoritative for charged amounts.
 3. In **Deploy → New deployment → Web app**, execute as **you**. For a public website form, set access to **Anyone**. Copy the deployed URL ending in `/exec` (not `/dev`). Anyone with the URL can submit to the allowlisted form tabs; do not make private tabs readable. Protect the spreadsheet and restrict editor access. Add rate limiting/abuse protection before collecting real personal data.
 4. In Render environment variables, set both `NEXT_PUBLIC_GOOGLE_SCRIPT_WEBAPP_URL` and `GOOGLE_SCRIPT_WEBAPP_URL` to that same `/exec` URL. Set `GOOGLE_SCRIPT_WEBHOOK_SECRET` to the same value as `TWJ_STRIPE_WEBHOOK_SECRET`; this value is server-side only.
