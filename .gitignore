@@ -13,3 +13,5 @@ next-env.d.ts
 __pycache__/
 *.py[cod]
 image-search/
+
+/public/legacy-site/

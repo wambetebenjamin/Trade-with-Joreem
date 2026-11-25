@@ -28,4 +28,7 @@ for (const name of ['robots.txt', 'sitemap.xml', 'site.webmanifest', 'favicon.sv
   try { await cp(path.join(root, name), path.join(output, name)); } catch { /* optional public file */ }
 }
 await cp(path.join(root, 'js', 'sheets-forms.js'), path.join(output, 'js', 'sheets-forms.js'));
+const nextPublic = path.join(root, 'public', 'legacy-site');
+await rm(nextPublic, { recursive: true, force: true });
+await cp(output, nextPublic, { recursive: true });
 console.log(`Prepared previous static website (${htmlFiles.length} HTML pages) in dist/`);
