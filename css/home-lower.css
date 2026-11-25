@@ -28,7 +28,7 @@
 .home-lower { background: #fff !important; color: #4c4c4c; }
 .home-lower .section-title h2,
 .home-lower h2,.home-lower h3,.home-lower h4,.home-lower h5 { color: #242424 !important; }
-.home-lower .section-title h5,.home-lower .section-title > span,
+.home-lower .section-title .section-kicker,.home-lower .section-title > span,
 .home-lower .k,.home-lower .tag,.home-lower .num,.home-lower .stage-stat i,
 .home-lower .term-feat .ic,.home-lower .check-list i { color: #666 !important; }
 .home-lower .term-feat .ic { background: transparent !important; }
@@ -52,7 +52,7 @@
 .home-lower .show-card { display: block; min-height: 0; overflow: visible; border: 0 !important; border-radius: 0 !important; background: transparent !important; }
 .home-lower .show-card img { position: static; display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 .home-lower .show-card .show-body { position: static; padding: 18px 0 0; background: transparent !important; color: #333 !important; }
-.home-lower .show-card .show-body h4,.home-lower .show-card .show-body p { color: #333 !important; }
+.home-lower .show-card .show-body h3,.home-lower .show-card .show-body p { color: #333 !important; }
 .home-lower .show-card .show-body .k { color: #777 !important; }
 .home-lower .show-card:hover,.home-lower .show-card:hover img { transform: none !important; }
 .home-lower .global-band { grid-template-columns: 1.12fr .88fr; gap: 42px; }
@@ -71,13 +71,13 @@
 .home-lower .dw-head .on b,.home-lower .dw-msg .txt b,.home-lower .dw-msg .txt .gold { color: #555 !important; }
 .home-lower .dw-ch,.home-lower .dw-ch.active,.home-lower .dw-ch .cnt,.home-lower .dw-title span { background: transparent !important; color: #555 !important; }
 .home-lower .comm-stats .n,.home-lower .comm-stats .n.green { color: #444 !important; }
-.home-lower .risk-icon,.home-lower .risk-inner h6 { color: #454545 !important; }
+.home-lower .risk-icon,.home-lower .risk-inner h2 { color: #454545 !important; }
 .home-lower .risk-inner p,.home-lower .risk-inner a { color: #555 !important; }
 .home-lower .btn-primary { background: #292929 !important; border-color: #292929 !important; color: #fff !important; }
 .home-lower .btn-outline-light { background: transparent !important; color: #333 !important; }
 .home-lower .btn-outline-light:hover { background: #292929 !important; color: #fff !important; }
 .monoline-site .footer-main,.monoline-site .footer-bottom { background: #20201f !important; color: #dededb !important; }
-.monoline-site .footer-main h1,.monoline-site .footer-main h2,.monoline-site .footer-main h3,
+.monoline-site .footer-main .brand-name,.monoline-site .footer-main h2,.monoline-site .footer-main h3,
 .monoline-site .footer-main h4,.monoline-site .footer-main a,.monoline-site .footer-bottom a { color: #dededb !important; }
 .monoline-site .footer-main .text-primary,.monoline-site .footer-bottom .text-primary { color: #b8b7b2 !important; }
 .monoline-site .testimonial-grid .testimonial-item { background: transparent !important; border-radius: 0 !important; }

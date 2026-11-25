@@ -1,0 +1,25 @@
+# Trade with Joreem
+
+> Risk-first Forex, crypto and stock trading education from Joreem, including live market breakdowns, structured lessons, practical books and a global member community.
+
+## Main pages
+- [Home](https://trade-with-joreem.vercel.app/): Overview of mentorship, trading books, student resources and community.
+- [About Joreem](https://trade-with-joreem.vercel.app/about): Joreem's background, teaching method and trading milestones.
+- [Mentorship](https://trade-with-joreem.vercel.app/mentorship): Membership options, curriculum, live breakdowns, payments and FAQs.
+- [Bookstore](https://trade-with-joreem.vercel.app/bookstore): Forex, crypto, psychology and stock-trading books.
+- [Contact](https://trade-with-joreem.vercel.app/contact): Email, Telegram and support contact details.
+
+## Member pages
+- [Member login](https://trade-with-joreem.vercel.app/login): Sign in to the learning dashboard.
+- [Member dashboard](https://trade-with-joreem.vercel.app/member): Lessons, breakdowns, progress and resources for members.
+
+## Policies
+- [Risk disclaimer](https://trade-with-joreem.vercel.app/risk): Educational-use limits and financial risk information.
+- [Terms of service](https://trade-with-joreem.vercel.app/terms): Account, payment, refund and service terms.
+- [Privacy policy](https://trade-with-joreem.vercel.app/privacy): Data collection, use, protection and privacy rights.
+
+## Important context
+- Trade with Joreem provides education, not personalized financial advice or guaranteed returns.
+- Trading Forex, crypto and stocks involves substantial risk of loss.
+- Support: hello@tradewithjoreem.com and https://t.me/tradewithjoreem
+- Canonical website: https://trade-with-joreem.vercel.app/

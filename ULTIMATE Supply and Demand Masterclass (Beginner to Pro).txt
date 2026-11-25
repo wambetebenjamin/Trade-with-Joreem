@@ -1,0 +1,389 @@
+00:00 in this master class I'm going to teach you everything that you need to know about one of the best concepts in trading supply and demand we are going
+00:08 to go through all of this and by the end of the video you will fully understand the theory of supply and demand and how
+00:13 to apply it to find great trades so with that said let's get in to the video to
+00:19 briefly explain the theory of supply and demand this is the thing that drives all markets so we're looking at a price
+00:25 scale here and when demand increases so this will be our demand line we see an
+00:30 increase in the price of an asset so let's peg this to gold for this example as demand for gold increases the price
+00:38 of gold also increases this happens because the supply of gold that's
+00:43 available ready to trade in the market declines with the increase in demand now
+00:49 why does this happen why does supply fall as demand rises well it's because of course if there are lots of people
+00:56 trying to buy an asset i.e there is lots of demand then there are going to be people buying that asset taking
+01:03 available supply off of the market so that means as demand increases more assets are bought up and the supply will
+01:10 decrease a lower supply creates higher scarcity and a higher scarcity demands
+01:16 higher prices because of course if something is rare versus something that's not rare the price is going to be more expensive for the rare item okay
+01:23 that is simply how it works it's very simple format if we then saw demand start to slow down so we saw the market
+01:30 coming back down in terms of demand this would mean people are selling their
+01:35 assets now if they're selling their assets the supply is going to increase
+01:40 okay and as supply increases of course there are more readily available units in the market which generally means if
+01:47 there is less scarcity the price is therefore going to decrease so as we see
+01:52 an increase in demand we see supply lowering because the assets are being
+01:58 bought up when we see demand decrease we see more assets being sold to the market
+02:04 therefore a lower price comes in due to the fact that there is now more available supply less scarcity and
+02:10 simply the fact that if demand's low pretty much means no one wants the asset to bring supply and demand into our actual trading and our technical
+02:17 analysis we do this using zones so this here and this here indicate supply and
+02:24 demand zones a demand zone is an area in the market before a large upward move so
+02:29 when we see a sideways bit of price action can be an individual candle show you some examples in a moment and then a
+02:35 large push away this creates a demand zone when we see the same that kind of sideways price action of one candle or
+02:41 maybe more before a large move down this creates a supply zone now to talk about
+02:46 the theory as to why this happens basically the reason that we use this as our demand zone or our supply zone is
+02:53 because it's showing us where buying and selling pressure came into the market now in order for the market to slow down
+03:00 kind of recoil and consolidate before a large push up that tells us that this region here where it slowed down where
+03:07 it went sideways is where massive buying orders have been placed that is why the market drove higher because demand
+03:13 kicked in here supply was bought up the price appreciates because of that increase in demand and decrease in
+03:19 supply in the supply example here we see the area of consolidation before a large move down as essentially a point where
+03:26 new supply has entered the market demand has declined more assets have been sold readily available to trade therefore
+03:33 with more supply and lower demand the price depreciates now the way that we actually trade these then is to buy
+03:39 demand zones when the market returns to them or to sell supply zones when the market returns to them as well so in the
+03:46 case of a demand zone knowing that this area here is an area where significant buying is taking place we know that this
+03:52 is what we could call a discount price okay traders before saw this as a very
+03:57 good price to buy this asset so they stepped in in mass and we saw that large drive of momentum if we then get up to
+04:03 this point and we start to slow down this is telling us that the price up here is no longer seen as a discount
+04:09 price to buy and it's no longer seen as a good price to purchase this asset however we know we have solid
+04:15 confirmation that this area here was indeed seen as a good place to buy from
+04:21 a good price level to purchase this asset so the theory is and the concept is if the market is to return to this
+04:27 price range again we are likely to see a second phase of buying coming in because
+04:32 this is a discount price region if it was a good price to buy before and now the market's appreciated you can be damn
+04:38 sure it's going to be seen by a lot of people as a good price to buy at again the same goes for supply except this is
+04:44 what we would call a premium price level okay so this was a premium price to sell
+04:49 your assets at whether you are you know taking a buy trade and you're closing out for profit or you're getting into a
+04:55 short sell position where you've sold with the intention of profiting from a down move regardless it's a premium
+04:60 price to sell from and now the market's lower so if you're holding a buy maybe you don't want to sell it down here
+05:05 you'd rather sell it up here because the higher you sell it for the more profit you're going to get and if you want to get into a short position to profit from
+05:12 a down move well you don't want to do it down here because if you do it from up here you're going to get a much better entry which means more profits this
+05:18 entire range you could actually profit from instead of just you know selling all the way down here and hoping the
+05:24 market doesn't return so therefore with this understanding that this is a premium price to sell from if the market
+05:31 is able to return to this level again this is going to be a prime place to place a short order and to profit
+05:37 therefore from the move down so that is how supply and demand zones work let's take a look at those on real charts so
+05:43 here we have a market that is in a downtrend we're going to identify a supply zone and show you what it looks like in the real markets on a real
+05:50 candlestick chart so we can see we have this big push to the downside this candle here is an area of consolidation
+05:58 now how do we indicate an area of consolidation or indecision generally
+06:03 when we are plotting supply and demand the simple rule is to use an indecision candle and I like to use the last candle
+06:10 before the impulse okay so what this means is I don't care what color the candle is but I want to see the last
+06:16 candle before an impulsive move away so if we take a look at this one here and
+06:23 we take a look at this one here these are indecision candles they are indicated as indecision by the fact they
+06:29 have large wicks and very small candle bodies wicks show rejected prices so
+06:34 what we're seeing here with these wicks is attempts to go higher attempts to go lower and what we see with a small candle body is pretty much failure to
+06:41 get far in one direction uh either way okay we didn't get high we didn't get low in this given period of price action
+06:48 so this creates an indecision candle now we are looking for the last indecision candle before an impulsive move an
+06:56 impulsive move is a strong bearish or bullish candle or a series of strong bearish and bullish candles so you can
+07:02 see the candle I've just marked here this is a impulsive candle it's a large sell candle with no resistance from the
+07:08 buyers we see as well this one after this indecision candle is a large
+07:13 selling candle with clear strength from sellers okay no resistance from buyers
+07:19 so that is how we're going to be plotting these in real time we want to see the last indecision candle before
+07:25 the impulse last candle before the impulse is the rule I use now if you've learned supply and demand anywhere else
+07:30 before you might have the last down candle before the up move the last up candle before the down move as a rule i
+07:35 don't use that i use the last candle before the impulse the reason I do this is because it is this candle here where
+07:42 the selling pressure has accumulated okay it's not the last up candle where
+07:47 the selling pressure came in this was a strong bullish candle it's here it's the very last candle before the impulsive
+07:52 move it's exactly where the momentum has built up to create a selling move it's
+07:57 the selling pressure so that is the rule last candle before the impulse is going to be the one that we use for our supply
+08:04 zones okay so now to show you this example we're going to focus in on this one we're going to talk a bit more about
+08:10 differentiating zones a bit later but for now we've got our supply zone to mark a supply zone we find that last
+08:17 candle before the impulse and we want to mark the high to the low that includes the wicks so our supply zone would be
+08:24 this okay we've just gone high to low of this candle what we would then expect is for the market to return to this level
+08:31 and then sell off from there because we know that that's where the selling pressure has been previously we know
+08:37 this is a premium price to sell from so we would expect that to take place once again and this is going to be a supply
+08:45 zone so we're going to mark it SZ why is it supply because it's in a downtrend it's a selling move okay demand is
+08:51 obviously when we pull back to a buying zone supply is when we pull back to a selling zone so this is a supply zone so
+08:58 what we could generally expect to see from here then having plotted that correctly would be the market to return to here we would look to sell there and
+09:05 then we would profit from a new low being formed as the market falls so just as a very simple example trade we would
+09:13 have our entry there stop above the zone and our target down at the low we're
+09:18 going to get more into all of this stuff soon but first brief example here it is so there we go we see the market push
+09:23 into the supply zone and what actually happens here when the supply zone is hit is a new wave of selling pressure comes
+09:29 in because of that discount price level because that premium price has been hit sellers that sold here before are more
+09:35 than happy to sell here again and you get this nice positive movement straight down to your target which is of course
+09:41 how we make profits from supply and demand now one very important thing about supply and demand is that you use
+09:47 it in line with the overall trend direction so we can see this market is falling it's creating lower lows and
+09:54 lower highs meaning every low is lower than the previous one and every high is lower than the previous one as well so
+10:01 what this tells us is that the market is in what we call a downtrend okay and in a downtrend we only want to focus on
+10:08 selling supply zones we do not want to buy demand zones if we take a look at this market we have multiple areas we
+10:14 could see potentially as demand zones but if we were to buy these every time the market came into them we would be
+10:20 destroyed okay all of these areas would classify as demand zones but if you were buying here on the way down you're
+10:27 buying here you're buying here you're going to get killed you're going to lose loads of trades so the kind of sneaky
+10:32 thing about supply and demand is that supply and demand zones visibly appear everywhere but you need to trade them in
+10:38 context so in a market that is moving down we only want to sell from supply zones we do not want to focus on demand
+10:45 zones now I'm going to give you a very quick class on market structure to explain it let's go so through this
+10:51 phase of price action just here we can see the market is creating higher highs and higher lows okay so a higher high
+10:58 very simply is just a high like this that's been printed in the market that's higher than the previous one higher lows
+11:04 again it's just a low that's higher than the previous one so as the market is creating higher highs and higher lows
+11:10 that puts it in an uptrend and that means the only thing we should focus on doing here is buying demand zones we
+11:17 should not sell supply through here so this is an uptrend we want to buy demand
+11:22 and that is how we trade when the market is forming higher highs and higher lows at this point we see the market shift
+11:29 and it actually breaks into what we call a lower low how do we get this well
+11:34 simply this low is lower than the previous one therefore it's a lower low and through any phase of price action
+11:40 where we can clearly define the market is creating lower lows as well as lower highs we want to be selling supply so if
+11:49 the lows start to form lower than the previous ones and if the highs start to form lower than the previous ones this
+11:56 puts us into a downtrend and during a downtrend we want to pretty much ignore demand zones and in here we want to sell
+12:04 supply now there will be a card in the top corner of this video if you really want further depth on market structure
+12:10 lucky for you I have a full master class on that as well click in the top right somewhere and that will take you to it
+12:16 so here we have a market that is creating lower lows and lower highs therefore what would we want to do we
+12:22 would want to sell from supply zones now an extra little lesson woven in here i'm going to use this sideways candle this
+12:29 pullback candle this kind of indecision candle in this downward move as supply as we can see in this example there is a
+12:35 little wick here that extends further on the next candle so I would actually use this candle to mark my range the blue
+12:42 one but I will extend the high of the zone to the wick that's been created by the next following candle okay so we use
+12:48 the high there down to the low here that creates our supply zone so the idea is then we are going to sell supply because
+12:55 the market is currently downtrending creating new lows and new lower highs consistently so that would be pretty
+13:02 much where we get into a trade from that point onwards and as we see the market coming down of course we could then just
+13:08 continue selling supply zone so we see again indecision candle the market pulls back to supply that would be another
+13:15 opportunity to sell okay so that's the general idea as to how we focus on a downtrending phase of price action now
+13:24 as we can see coming in from this point we are starting to push to the upside
+13:30 taking a look at the structure we actually pushed over this high so we
+13:35 have a high lower low lower high lower low lower high lower low lower high lower low the market's pushed up and now
+13:42 it's created a higher high so this actually puts us into an uptrend okay
+13:47 meaning what do we want to do in uptrends we want to buy from demand so here's our indecision candle our
+13:54 sideways candle before the impulse last candle before the impulse is what I use for my uh zones and what we want to do
+14:00 at this point is buy from demand meaning any supply zones that form will be
+14:05 ignored okay you can see that demand zones did form in this move up but we ignored them and focused on selling supply because the market direction was
+14:12 down now that we've shifted up we want to focus on buying demand and we want to ignore supply because the market
+14:19 direction is up and we are moving with the market direction using supply and demand to make our executions so in one
+14:26 moment you will see market returns towards this area of demand and then we get a tap in and a push away into new
+14:32 highs so that is how we use supply and demand in line with the trend with a real example there of a downtrend
+14:38 selling supply and an uptrend buying demand so in order to validate a supply or demand zone we need to make sure
+14:45 there is something we call an imbalance if there is no imbalance into a zone then it's not a zone that we want to
+14:51 look at if we take a look at where I'm drawing these black lines we can see just above this candle here this blue
+14:57 candle is going to be our supply zone okay it's the last candle before this impulse to the downside now we can see
+15:04 what we have beneath the low of that candle and then above where price currently is there is an imbalance right
+15:11 an imbalance is an open price range it's this area here basically what it is is
+15:16 an area that hasn't been filled yet with wicks if this candle had pushed up and hit that area then this would have
+15:23 created what we call efficiency and removed any imbalance into that zone but because we still have this open price
+15:30 range here that means that there is imbalance into this supply zone so this
+15:35 would be a good supply zone to sell from okay and we would expect when the market comes back to it we could happily sell
+15:42 from this point because that would fill the imbalance and then the market would be likely to move lower now you have to
+15:48 have an imbalance to your supply or demand zone otherwise it's not really valid so if we take a look above we've
+15:54 got here this indecision candle this is the last candle before an impulse to the
+15:59 downside and just to clean it up let's get rid of this we'll get rid of this but the problem with this zone is there
+16:06 is no imbalance into it anymore right so here we have our supply zone we have a
+16:12 push away the market's pulled back filled in balance and pushed down so initially if you were looking at this
+16:17 supply and you wanted to sell it here that would have been okay but now that this has already been filled now that there is no imbalance this would not be
+16:25 a good supply zone to try and sell the market from for two reasons number one the market probably isn't going to get
+16:30 there because it's probably going to react from the area with the imbalance number two if it does get there because
+16:36 the imbalance has already been filled there's a high likelihood of it actually pushing higher which means it's low
+16:41 probability and probably isn't going to give you a good trade so we need to trade from supply or demand zones that
+16:48 still have imbalances okay if we look in this leg of price movement there is no imbalance up here there's no open price
+16:53 ranges every wick is touching previous wicks right so we have this wick pushed up touched this wick we pull back down
+16:59 we have these wicks being filled by these wicks but then we have a push down and we have a gap here where the wick is
+17:05 not meeting the wick so that is basically going to create our imbalance making this the high probability point
+17:10 to sell from and to show you that in action that's the kind of movement we would expect a fill of the imbalance and
+17:16 a push to the downside and a rule that goes alongside that is of course that a zone is only really good on its first
+17:24 tap in okay so here we of course had the first tap in at this point so we created
+17:30 supply pushed down pulled back and then sold off however if the market was to come back into this supply zone again we
+17:38 wouldn't want to trust that for a trade because it's already been hit and basically what we're looking for is for
+17:44 the supply zone to absorb all of the new sell orders and drive lower like the one we're currently looking at we have
+17:50 supply the market has pulled back filled in balance as soon as we hit supply we absorb all the selling orders new sell
+17:56 orders that come into the market we go and make a new low which means this supply zone is pretty much redundant now
+18:02 the actions we would then want to take would be to start looking at you know the next imbalanced supply zones for
+18:07 example maybe like this one but if the market was to return to that supply zone again so if we came up to here we
+18:15 definitely wouldn't want to look for another sell okay the more times a supply zone is hit even if it doesn't
+18:20 break the first time the more likely it is that soon it's going to break through and actually go the other way so let's
+18:27 take a look what happens next not 100% sure on this one but we can definitely
+18:32 take a look at that we can see that uh if the market comes up to this level we don't want to sell there again because
+18:38 there is a high likelihood as you can see there that the market's going to go through it so although we had this
+18:45 supply zone prepped up we had the first trade which would have been a great trade but then the second tap we don't
+18:50 want to sell here this is not likely to get us into new lows as you can see it didn't do that third tap we don't want
+18:55 to sell there fourth tap we don't want to sell there and then on the fifth tap it actually breaks through so a supply
+19:01 zone is only really good for its first retest right after that ignore it and the same goes for demand if we're in a
+19:08 buying example of course we only want to use the first tap of a demand zone then we move on to other zones to validate
+19:14 next trades because the more times that demand zone is rem it's essentially showing us that the buying pressure is
+19:19 not strong in here anymore and it's showing us sellers are really attempting to push this lower and eventually they
+19:24 will likely win so crucial tips to remember when trading supply and demand always trade it in line with the trend
+19:31 only trade imbalanced zones so any zones that aren't imbalanced or not worth trading and only trade the first tap of
+19:37 a zone if a zone has been hit three four five times do not trade it it will likely break okay now that we've covered
+19:43 all that I want to talk about different zones so we're going to talk about extreme zones first of all and then how
+19:48 to approach multiple zones so this market is downtrending okay we had a
+19:53 breakup structure here the market has created a new lower low at this price point say we want to sell this how are
+19:59 we going to select which zone to sell from first we can follow the rule of imbalance we say we want to see
+20:05 imbalances into a supply zone otherwise there is no uh reason to take a trade from that point if we take a look
+20:12 anywhere pretty much from the top of the movement down to here we can see there is no remaining imbalanced zones inside
+20:19 of this price movement so every single one of these zones here has been retested by a wick there is no candle
+20:26 where the wicks to wicks are not meeting each other therefore there is no imbalance okay now there was some slight
+20:31 imbalance created here but we see that the market filled that range and retested just here so all imbalance
+20:39 before this point is filled there is no imbalance ahead of this level that's going to lead us to look at this area
+20:45 just here and in here there are two areas that we could look at as our trade entry to sell the first is this one at
+20:52 the top this indecision candle before this impulsive move down this is what we call the extreme zone now an extreme
+20:60 zone is simply the furthest zone from price in the existing leg of movement so if there was an imbalance zone up here
+21:06 being within this leg of movement from the top down to the bottom the extreme
+21:11 zone would be whichever the furthest one from where price currently is is up here however there isn't any imbalanced areas
+21:18 up here so the furthest zone from price inside of this existing leg of price
+21:23 action from this point we're at now is going to be this one that we've drawn the red arrow to because this is the
+21:29 final imbalance zone therefore basically if the market gets past this we can expect because there's no real supply
+21:35 anywhere in here that the market has a pretty good likelihood of actually just moving into new highs okay so if we're
+21:42 looking for the highest probability place to sell from we can do that from just here now there is of course a level
+21:50 just beneath as well it's going to be this little bit of indecision before the continued selloff now it's not really
+21:57 the greatest supply zone and what we still have here is imbalance above which is pretty clear which leads us through
+22:03 to a pretty significant point being that extreme zone so in an example like this
+22:08 we would definitely want to focus on this zone over this zone however that's
+22:14 not to say that we have to completely write off any possibility of finding a position from this lower zone we could
+22:20 still maybe see the market flip so what we can do inside of any zones when we
+22:26 have a situation where there are multiple zones is we can use what we call a standard confirmation or a
+22:31 confirmation entry that's going to be a pattern like what you see here which is basically where we're looking for a
+22:37 lower time frame structural shift and then if the market goes from creating higher highs and higher lows inside of
+22:42 this existing trend for example where we start here create a high higher low
+22:48 higher high if we trended up like this and then we had a shift in this higher higher low structure into a lower low
+22:56 here then we would use fractal supply zones to sell again then we could use
+23:02 this area a supply zone inside of the smaller price action here to actually get an execution to take the market down
+23:08 okay so if we approach it this way basically if the market confirms a reversal in here we get a trade if it
+23:16 doesn't confirm a reversal so if the market just comes up and goes straight through then because we waited on that
+23:21 confirmation we actually don't take a loss we just don't take any trade at all because it hasn't confirmed so the
+23:28 extreme zone is the highest probability point to sell from or buy from when it comes to supply and demand we would be
+23:34 happy in this instance then to place a sell order in the terms of a sell limit at this level if you're going to be
+23:41 placing sell limits and buy limits the best place to do that is at extreme zones and if you're going to be
+23:46 approaching the market with confirmation or you're approaching a market that has multiple potential zones then you're
+23:51 going to want to use confirmation on pretty much all of them except the extreme zone now when we see the market come up into this area we do however get
+24:01 a confirmation entry and I want to walk you through it now so you can see what it looks like in the real market so we're going to remove that for now the
+24:07 hypothetical sell limit idea and we'll take a look at this structure that we have right here we've hit the supply
+24:13 zone just there which gives us what we want to see to have confidence and clarity to start selling now the
+24:20 confirmation entry has actually arisen inside of this price action so if we mark the low to the high to the low this
+24:28 is going to be our trending structure right now okay we then have basically smaller trending price action like that
+24:35 this is the kind of trend that we have okay by marking the highs and lows of this bullish movement we're then basically looking for this to shift
+24:41 bearish to provide us confirmation to sell into this market now as we can see then our swing lows or our higher lows
+24:49 are going to be pretty much this point here and then a more significant one will be this one here now we can see with this bearish candle we've had a
+24:55 closure beneath both of these lows so what this actually does is allow us to sell into this because we are seeing
+25:02 with the formation of this lower low that we've just got here we are seeing the market shifting to bearish to a
+25:09 selling setting we're seeing it shift to a downtrend which agrees with the high time frame narrative of of course this
+25:15 bearish trend idea so what we do here by bringing this in is actually use kind of
+25:20 the big picture and then a more refined smaller picture to build a scenario in
+25:26 the market where the high and the low time frames are in complete agreement when we have that we can sell with
+25:31 confidence because now we know the high time frame is telling us the market is bearish the low time frame has also now
+25:37 agreed and told us the market is bearish we actually use supply and demand here in a fractal nature so fractal
+25:44 essentially means the same patterns will form on all different time frames they will form in all different scenarios
+25:49 regardless of whether you're looking at the daily the weekly regardless of whether you're looking at the high time frame zoomed out price action or the
+25:55 more refined zoomed in price action it's all going to work the same so the big picture trend which is going to be this
+26:01 one that we're looking at this is bearish and we have our supply zone which we wanted to sell from now the
+26:07 smaller picture trend which is going to be this one here has also now shifted bearish and what it's done in doing so
+26:14 is provide us with a supply zone to sell from right now the supply zone in question here is the last indecision
+26:20 candle before the impulse away very simple stuff that means we can therefore place our sell limit on this area target
+26:26 down into the low or wherever we want this to go to and for this we don't have to put the stop over this swing high
+26:32 because we have new confirmations inside of this structure so we can actually put our stop loss over this high and that's
+26:38 going to provide a very safe trade as well but this time we have that kind of double confirmation we've had that shift
+26:44 standard confirmation here we've sold on this retest here and now we'd be looking
+26:49 for the market to roll over and make a new low given that it's reacted from supply once and then reacted from the
+26:55 second supply providing two supply reactions and as you can see that is exactly what happens so in a general
+27:03 market scenario you want to focus primarily on the extreme zone which is going to be the last imbalance candle in
+27:09 this leg of price action for this scenario it's this one here if there are other zones to focus on such as this one
+27:16 here then the best way to approach these if you want to focus on these zones at all is to go in with the standard
+27:22 confirmation which as you've just seen is actually what we've got going on here
+27:27 this pattern of shifting from higher highs and higher lows into a lower low and then pulling back and selling from
+27:32 supply can be utilized not only from the extreme zones but from these smaller zones within if you see this pattern
+27:39 formulating in one of the other zones in a scenario where there are multiple supply zones to choose from then that
+27:45 can give you the confirmation you want in order to get into a trade that is likely to win but if there is no
+27:50 confirmation such as there wasn't any in this zone then you simply avoid taking the trade meaning in most cases you're
+27:56 going to avoid taking a loss and then you can take your trades comfortably from the extreme zone or if you really
+28:02 want to you can use that confirmation from there anyway and that a lot of the times is going to provide you with a good entry to get in okay but I just
+28:09 want to give you a warning confirmation entries while they are very very strong are not going to happen all of the time
+28:14 if we take a look back at the price action here okay I'll jump it back just to show you at this point our extreme
+28:21 zone was this candle here this indecision candle We had this big push to the downside we
+28:27 have no imbalances above we have no other zones left open so our extreme zone is the one that we are looking at
+28:33 just here if you were going to wait for a confirmation from this zone you would then want to see the market pull in and make a shift in structure like this that
+28:40 would allow you to get into a trade however as you will see and as you may have already seen there was no
+28:45 confirmation given in fact the confirmation for this trade is actually going to be when the market returns all
+28:51 the way to this supply but this is going to mean you're not able to profit on this entire move down you're gonna have
+28:56 to wait for the pullback to get it so essentially that becomes a missed opportunity so you can avoid that from
+29:02 happening if you focus on extreme zones as I say sell and buy limits most of the time are going to be good from these
+29:07 it's not always going to work sometimes the market will flip on you but the riskreward you can get from these you know if you sold this extreme zone stop
+29:14 above the zone target down into you know wherever you wanted it to go you got potential 5% 6% 7% trades coming in here
+29:20 which means even if this only won half of the time you're making a significant profit overall due to the fact that
+29:26 every time you risk $100 you're making $700 in return right so they stack up from a riskreward perspective but that
+29:32 confirmation entry is uh a really solid way to number one double confirm the trades if you really feel like you need
+29:38 it so you know getting in from around this point after this market confirmation has occurred and number two
+29:44 you can use this if you're not trading from the extreme zone if you're looking at a more refined zone as well so that
+29:49 is kind of how you differentiate between multiple zones the extreme zone is always the highest probability the highest reward the most favorable zone
+29:55 to buy or sell from but if there are other areas that you might want to look at just go at it with that confirmation
+30:00 perspective as long as you wait for that you're going to get what you want you're going to have the confirmation you'll
+30:06 have the confidence and the clarity to get into the trade now just to quickly show you what this looks like from a bullish perspective then we would have
+30:12 instead a demand zone here demand zone's retested market pushes up we get a bullish break of structure this time so
+30:19 the market pushes over these lower highs and then pulling back we want to utilize
+30:24 the demand zone the last candle before the impulse that broke the structure that's where we're going to be getting into a trade there you can trade that up
+30:31 to the next highs or beyond if you want to that is a breakdown of extreme zones confirmation entries and how to approach
+30:37 supply and demand zones in real markets where things aren't as clean as theory talk so hopefully that's valuable let's
+30:43 move on now something really cool about supply and demand is that this is a fractal theory fractal means that the
+30:50 concept works on pretty much any time frame you want to look at whether you want to look at the weekly the daily the 4 hour the 5 minute the 1 minute it's
+30:56 all the same so let's take a look at some examples i bet you couldn't guess what time frame these three different
+31:01 examples are from now obviously they all look very similar the market follows price action regardless these are the
+31:08 monthly the 1 week and the 1 hour no I'm just kidding it's the hourly the 4 hour and the one minute time frame and I do
+31:14 that to show you that really you are never going to guess what time frame a supply or demand zone is formed on just by looking at it which is a great thing
+31:21 because it means whether you're day trading swing trading position trading scalping these concepts will work
+31:26 regardless of the time frame so don't worry you don't have to use a specific time frame to use supply and demand you
+31:32 can use it anywhere all right so one big thing that you should bring into your trading is top-down analysis which is
+31:38 pretty much the idea of using multiple different time frames to work out where the market's going to go you go from the
+31:44 top down on the weekly and daily to build narratives and you go to the lower time frames and actually find setups
+31:50 supply and demand can be used in this context and it can be used for two things first of all it can be used to
+31:56 identify target areas second of all it can be used to identify where trades are
+32:01 likely to take place from and lead into so we're taking a look at an example here on Euroad we're on the weekly time
+32:09 frame as I've shown you with fractalss it doesn't really matter what kind of time frames you're working on but this is a breakdown as to how you can take
+32:15 advantage of the targets and entries and building narratives on the high time frames using supply and demand here on
+32:21 the weekly I've just marked out a supply zone i've just marked out a demand zone because the weekly time frame moves so
+32:27 slowly and it covers so much ground we're not really looking for massive movements on a time frame like this what
+32:32 we're looking for is generally to find areas the market could lead into as targets and as trade entries so if we
+32:39 build this picture supply and demand we've now got a clear range as maybe the market could go up to here if it did and
+32:46 we got confirmation we could sell down to here or maybe the market could go down to here and if it did we would then
+32:52 look for opportunity to buy up to here and these ranges being weekly ranges are actually pretty big so if we were to
+32:58 look for a sell from here down to here we're looking at over 130 pips that's a
+33:04 pretty big range that you can trade through that will give you some very big trades and then the run from this zone to this zone is actually 400 pips which
+33:10 again is a very big range that you can find one very large or multiple smaller trades within now if we then run this
+33:16 market forward obviously it's lower time frames where you'll actually be doing the analysis but you're going to see
+33:23 that we actually do build narratives and ideas here because number one clear imbalanced demand well if the market is
+33:29 showing weakness down to this level selling here would be a good trade to look for so that's going to be a position that you could profit from
+33:36 number two when the zone is filled we know the next likely move for it to make is probably going to be a drive to the
+33:41 upside so you could start looking for buying opportunities from there given lower time frame confirmations now let's
+33:47 say we get into the point that we're at right now we've had again a break of structure where the markets came and
+33:52 created a higher high we have our standard confirmation pattern looking like this and now we would say we're
+33:59 looking for a long position so what do we do well on the weekly we would
+34:04 identify an area of demand like so and then on the lower time frames because
+34:10 we've now got this high time frame narrative of pulling back to here and buying we could look for opportunities
+34:15 to sell from where we are throughout the week using lower time frames daily 4 hour and then when we meet this area we
+34:22 could start looking for opportunities to buy so if you build your high time frame narratives all you literally need to do
+34:28 is use very simple ranges and very simple supply and demand and as you can see by how this market is forming right
+34:34 now it's going to fit into your analysis and going to give you some very very good trading opportunities number one in
+34:40 the form of sells down into demand zones or buys up into supply zones as we saw here but number two once the ranges are
+34:48 filled and once these demand zones and supply zones are hit well then you've got clear entry opportunities because
+34:53 you understand the probability is that that zone will hold and we will likely lead through towards the next area with
+34:59 the next movement in price action weekly time frames and daily time frames for building narratives with supply and
+35:04 demand very strong stuff super super simple and very effective as well you can start to trade range to range using
+35:11 the supply and demand format it really simplifies your high time frame analysis and gives you biases to work with inside
+35:16 of each week so to lead on and elaborate on one of the concepts we just discussed there this is the idea of using supply
+35:22 and demand not only for entries but also for targets we've gone to a completely polarizing opportunity we are looking at
+35:28 the twominut time frame to highlight that supply and demand works the same on every single time frame that you look at
+35:34 okay for our setup like this the opposing move is basically going to be
+35:39 this push down right or in the real example here we're looking inside of here to find areas of supply let's take
+35:47 a look from the low then well we have this one but this has been hit this is efficient there is no reason to look at this anymore as we know when the market
+35:53 hits a supply zone or demand zone more than once it becomes essentially useless which is also good news by the way for
+35:60 forecasting the strength of this trade because the fact we've gotten back into this supply zone again and traded higher
+36:05 than we did previously and closed higher than we even did when we formed the supply zone tells us this is a strong
+36:11 move okay so they can actually be used uh multiple retests on supply or demand zones to indicate strength against the
+36:18 zone which allows us to get more clarity for trades like this one but obviously that then is going to write off this
+36:24 supply well then there is no imbalanced supply zone here there's a supply zone here but it was filled with this wick
+36:30 okay and then there is an imbalance supply here this indecision candle
+36:36 before this impulse down so we're going to follow the same rule we're going to mark out the low to the high of that supply zone and what we are going to do
+36:44 as we've done in these previous examples and as I've showed you we're going to cover the high of the wick of the next
+36:49 candle as well so that's our supply zone so now yes we could target the overall
+36:54 high but if the market wanted to slow down inside of this supply or if we
+36:60 wanted the simplest and most probable high probability trade that we can get well then we could go with this as our
+37:06 target which would be a 1 to5 riskreward the idea then being if we get our fill
+37:12 if the market's going to reverse it is very highly likely at this point to at least get to this supply zone before it
+37:19 reverses and of course a supply zone is the highest probable point for a reversal to take place because this is
+37:26 indication that sellers stepped in here before so there is therefore the kind of forecasted potential that sellers could
+37:33 step in here again when they do that what happens the market goes down so if we want the cleanest possible trades we
+37:39 can actually use supply and demand to identify the highest probable points to get in but also the highest probable
+37:45 points for sellers to step in against our trade or the highest probable points for reversals to take place and then if
+37:51 we simply trade within that range from demand to supply as we are here you know there is no imbalance supply anywhere
+37:57 here there is here so there is very high likelihood of us getting to this point but there is also a reasonable
+38:02 likelihood that this is where the market reverses so by understanding this we have a clean trading range we can be in
+38:10 at demand extreme zone no imbalances left beneath high probability entry and we can be out at supply extreme zone
+38:17 high probability reversal high probability exit no imbalance beneath this which creates a very high probable
+38:23 range for us to push through okay now I'm going to run this you're going to see what happens when the supply is hit
+38:29 we get a small push through good sign to begin with but then we have this pretty dramatic sell-off okay now obviously in
+38:36 some cases the market is going to drill straight through those zones and take you up towards your targets but in some
+38:42 of these cases we are going to get these selling movements and this can lead us back into new bearish moves so if you
+38:48 target from demand to supply or from supply to demand you're basically setting yourself up with the most
+38:54 simplified positions that you can possibly take and you avoid getting killed when the market does stuff like this reverses on your trade after
+39:01 getting very very close to the target you know if you held this trade all the way up here well you're going to miss out on this entire move now because it's
+39:07 all the way back down to entry but if you just focused on demand to supply trading number one it's very simple it's
+39:13 very easy number two you're going to be out of these trades because the market is highly likely to trade from range to
+39:19 range it's only when new ranges are met that significant reversals can take place making this the most simple way to
+39:25 use supply and demand as targets and entries so that's pretty much everything you need to know about supply and demand
+39:31 now if you want to get results like these and master supply and demand fast head to the link in the description and
+39:36 join my trading academy if you don't want to do that I have a free course called Seven Steps to Profitable Trades
+39:42 where I'm going to help you to build systems simplify your trading improve your trades and ultimately find success
+39:47 there is a link to that at the top of the description as well and if you don't want to do either of those things watch
+39:52 this master class on market structure this is going to follow on from what we've covered today in supply and demand
+39:57 and help you to become a masterful trader so thank you for watching

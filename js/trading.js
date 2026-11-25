@@ -1,41 +1,10 @@
 /********** Trade with Joreem - Interactive Engine **********/
 (function () {
-    var GOOGLE_SCRIPT_WEBAPP_URL = window.GOOGLE_SCRIPT_WEBAPP_URL || "GOOGLE_SCRIPT_WEBAPP_URL";
-    window.TWJSheets = {
-        submit: async function (sheet, rows) {
-            if (!GOOGLE_SCRIPT_WEBAPP_URL || GOOGLE_SCRIPT_WEBAPP_URL === "GOOGLE_SCRIPT_WEBAPP_URL") throw new Error("Google Sheets is not configured. Set the Google Apps Script Web App URL.");
-            if (!Array.isArray(rows) || rows.some(function (row) { return !row || typeof row !== "object" || Array.isArray(row); })) throw new Error("Expected a JSON array of sheet row objects.");
-            var url = new URL(GOOGLE_SCRIPT_WEBAPP_URL); url.searchParams.set("sheet", sheet);
-            var response = await fetch(url.toString(), { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8", "Accept": "application/json" }, body: JSON.stringify(rows) });
-            var result = await response.json();
-            if (!response.ok || !result || result.ok !== true) throw new Error((result && result.error) || "Google Sheets could not accept this submission.");
-            return result;
-        }
-    };
     "use strict";
 
     var fmtMoney = function (n) {
         return "$" + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     };
-
-    function setButtonLoading(button, message) {
-        if (!button) return;
-        button.dataset.originalHtml = button.innerHTML;
-        button.disabled = true;
-        button.setAttribute("aria-busy", "true");
-        button.innerHTML = '<span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>' +
-            '<span>' + message + '</span>';
-    }
-
-    function restoreButton(button) {
-        if (!button) return;
-        button.disabled = false;
-        button.removeAttribute("aria-busy");
-        if (button.dataset.originalHtml) {
-            button.innerHTML = button.dataset.originalHtml;
-            delete button.dataset.originalHtml;
-        }
-    }
 
     /* ================= Ticker tape ================= */
     var TICKER = [
@@ -238,11 +207,11 @@
 
     /* ================= Cart ================= */
     var CATALOG = {
-        "forex-mastery":  { id: "forex-mastery",  title: "Forex Mastery",            type: "print",   price: 59, img: "assets/books/forex-mastery.jpg" },
-        "crypto-signals": { id: "crypto-signals", title: "Crypto Signals Handbook",  type: "digital", price: 29, img: "assets/books/crypto-signals.jpg",  file: "assets/books/crypto-signals.pdf" },
-        "psychology":     { id: "psychology",     title: "Trading Psychology",       type: "print",   price: 49, img: "assets/books/psychology.jpg" },
-        "stocks-zero":    { id: "stocks-zero",    title: "Stocks from Zero",         type: "digital", price: 25, img: "assets/books/stocks-from-zero.jpg", file: "assets/books/stocks-from-zero.pdf" },
-        "bundle":         { id: "bundle",         title: "The Complete Library",     type: "bundle",  price: 99, img: "assets/books/forex-mastery.jpg" }
+        "forex-mastery":  { id: "forex-mastery",  title: "Forex Mastery",            type: "print",   price: 59, img: "/assets/books/forex-mastery.webp" },
+        "crypto-signals": { id: "crypto-signals", title: "Crypto Signals Handbook",  type: "digital", price: 29, img: "/assets/books/crypto-signals.webp",  file: "/assets/books/crypto-signals.pdf" },
+        "psychology":     { id: "psychology",     title: "Trading Psychology",       type: "print",   price: 49, img: "/assets/books/psychology.webp" },
+        "stocks-zero":    { id: "stocks-zero",    title: "Stocks from Zero",         type: "digital", price: 25, img: "/assets/books/stocks-from-zero.webp", file: "/assets/books/stocks-from-zero.pdf" },
+        "bundle":         { id: "bundle",         title: "The Complete Library",     type: "bundle",  price: 99, img: "/assets/books/forex-mastery.webp" }
     };
 
     var SHIP_RATES = [
@@ -569,7 +538,15 @@
         if (checkoutMode === "mentorship" && checkoutPlan) {
             var p = PLANS[checkoutPlan];
             var email = (document.getElementById("coEmail") || {}).value || "your-email@example.com";
-            // The demo checkout must never mint a member session in browser storage.
+            // simulate membership provisioning
+            try {
+                localStorage.setItem("twj_auth", JSON.stringify({
+                    email: email,
+                    plan: p.name,
+                    since: new Date().toISOString().slice(0, 10),
+                    renews: new Date(Date.now() + p.months * 30.4 * 864e5).toISOString().slice(0, 10)
+                }));
+            } catch (e) {}
             html =
                 '<div class="success-ico"><i class="fa fa-check"></i></div>' +
                 "<h4>Welcome to the Inner Circle</h4>" +
@@ -583,7 +560,7 @@
                 '<i class="fab fa-discord"></i>' +
                 "<span><span class='t'>Join the Discord Desk</span><br><span class='s'>Live breakdowns &amp; study rooms</span></span>" +
                 "</a>" +
-                '<a href="member.html" class="btn btn-primary w-100 py-3 mt-2"><i class="fa fa-chart-line me-2"></i>Go to My Dashboard</a>';
+                '<a href="/member" class="btn btn-primary w-100 py-3 mt-2"><i class="fa fa-chart-line me-2"></i>Go to My Dashboard</a>';
         } else {
             var downloads = cart.filter(function (i) {
                 var p = CATALOG[i.id];
@@ -623,26 +600,73 @@
         if (c) c.addEventListener("click", function () { bootstrap.Modal.getInstance(document.getElementById("checkoutModal")).hide(); });
     }
 
-    /* ================= Member access request (no passwords) ================= */
+    /* ================= Member auth (demo) ================= */
+    function getAuth() {
+        try { return JSON.parse(localStorage.getItem("twj_auth") || "null"); } catch (e) { return null; }
+    }
+
     function initAuth() {
-        var form = document.getElementById("loginForm");
-        if (!form) return;
-        form.addEventListener("submit", async function (event) {
-            event.preventDefault();
-            var email = document.getElementById("loginEmail");
-            var status = document.getElementById("loginStatus");
-            var error = document.getElementById("loginErr");
-            if (!email || !email.checkValidity()) { email && email.focus(); return; }
-            var button = document.getElementById("loginBtn"); setButtonLoading(button, "Submitting…");
-            try {
-                await window.TWJSheets.submit("AccessRequests", [{ submitted_at: new Date().toISOString(), email: email.value.trim(), request_type: "member_access" }]);
-                if (status) status.textContent = "Access request submitted. This is not an account or sign-in.";
-                if (error) { error.style.display = "block"; error.textContent = "Access request submitted. This is not an account or sign-in."; error.style.color = "var(--muted)"; }
-                form.reset();
-            } catch (cause) {
-                if (error) { error.style.display = "block"; error.textContent = cause.message || "Could not submit access request."; }
-                if (status) status.textContent = (error && error.textContent) || "Could not submit access request.";
-            } finally { restoreButton(button); }
+        var loginForm = document.getElementById("loginForm");
+        if (loginForm) {
+            loginForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                var email = document.getElementById("loginEmail").value.trim();
+                var pass = document.getElementById("loginPass").value;
+                var err = document.getElementById("loginErr");
+                if (!email || email.indexOf("@") < 0) {
+                    err.style.display = "block";
+                    err.textContent = "Please enter a valid email address.";
+                    return;
+                }
+                if (pass.length < 6) {
+                    err.style.display = "block";
+                    err.textContent = "Password must be at least 6 characters.";
+                    return;
+                }
+                err.style.display = "none";
+                var btn = document.getElementById("loginBtn");
+                btn.disabled = true;
+                btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Verifying…';
+                setTimeout(function () {
+                    var auth = {
+                        email: email,
+                        plan: "Pro Trader • Annual",
+                        since: new Date().toISOString().slice(0, 10),
+                        renews: new Date(Date.now() + 365 * 864e5).toISOString().slice(0, 10)
+                    };
+                    localStorage.setItem("twj_auth", JSON.stringify(auth));
+                    window.location.href = "/member";
+                }, 1100);
+            });
+        }
+
+        var memberPage = document.getElementById("memberArea");
+        if (memberPage) {
+            var auth = getAuth();
+            if (!auth) {
+                window.location.replace("/login");
+                return;
+            }
+            var name = auth.email.split("@")[0].replace(/[._]/g, " ");
+            name = name.replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+            document.getElementById("dashName").textContent = name;
+            document.getElementById("dashMail").textContent = auth.email;
+            document.getElementById("dashPlan").textContent = auth.plan;
+            document.getElementById("dashRenew").textContent = auth.renews;
+            var avatar = document.getElementById("dashAvatar");
+            avatar.textContent = name.split(" ").map(function (w) { return w[0]; }).join("").slice(0, 2).toUpperCase();
+            // animate progress bars
+            setTimeout(function () {
+                document.querySelectorAll(".progress-bar[data-w]").forEach(function (b) {
+                    b.style.width = b.getAttribute("data-w") + "%";
+                });
+            }, 300);
+        }
+
+        var logoutBtn = document.getElementById("dashLogout");
+        if (logoutBtn) logoutBtn.addEventListener("click", function () {
+            localStorage.removeItem("twj_auth");
+            window.location.href = "/login";
         });
     }
 
@@ -650,63 +674,19 @@
     function initContact() {
         var f = document.getElementById("contactForm");
         if (!f) return;
-        ["cName", "cEmail", "cMsg"].forEach(function (id) {
-            var input = document.getElementById(id);
-            input.addEventListener("input", function () {
-                input.removeAttribute("aria-invalid");
-                var fieldError = document.getElementById(id + "Error");
-                if (fieldError) fieldError.textContent = "";
-            });
-        });
         f.addEventListener("submit", function (e) {
             e.preventDefault();
-            var fields = [
-                { input: document.getElementById("cName"), message: "Please enter your name.", error: document.getElementById("cNameError") },
-                { input: document.getElementById("cEmail"), message: "Please enter a valid email address.", error: document.getElementById("cEmailError") },
-                { input: document.getElementById("cMsg"), message: "Please enter a message of at least 10 characters.", error: document.getElementById("cMsgError") }
-            ];
-            var firstInvalid = null;
-            fields.forEach(function (field) {
-                var value = field.input.value.trim();
-                var valid = field.input.checkValidity() && (field.input.id !== "cName" || value.length >= 2) &&
-                    (field.input.id !== "cMsg" || value.length >= 10);
-                field.error.textContent = "";
-                field.input.removeAttribute("aria-invalid");
-                if (!valid) {
-                    field.error.textContent = field.input.id === "cName" && value.length === 1 ?
-                        "Name must be at least 2 characters." : field.message;
-                    field.input.setAttribute("aria-invalid", "true");
-                    if (!firstInvalid) firstInvalid = field.input;
-                }
-            });
-            if (firstInvalid) {
-                firstInvalid.focus();
-                return;
-            }
             var btn = document.getElementById("contactBtn");
-            var contactStatus = document.getElementById("contactStatus");
-            var payload = {
-                name: document.getElementById("cName").value.trim(),
-                email: document.getElementById("cEmail").value.trim(),
-                topic: document.getElementById("cTopic").value,
-                phone: document.getElementById("cPhone").value.trim(),
-                message: document.getElementById("cMsg").value.trim(),
-                company: document.getElementById("cCompany").value.trim()
-            };
-            if (contactStatus) {
-                contactStatus.classList.remove("is-error");
-                contactStatus.textContent = "Sending your message…";
-            }
-            setButtonLoading(btn, "Sending…");
-            window.TWJSheets.submit("ContactRequests", [{ submitted_at: new Date().toISOString(), name: payload.name, email: payload.email, topic: payload.topic, phone: payload.phone, message: payload.message }]).then(function () {
-                window.location.href = "thank-you.html";
-            }).catch(function (error) {
-                restoreButton(btn);
-                if (contactStatus) {
-                    contactStatus.classList.add("is-error");
-                    contactStatus.textContent = error.message || "Message could not be sent. Please email hello@tradewithjoreem.com.";
-                }
-            });
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending…';
+            setTimeout(function () {
+                f.innerHTML =
+                    '<div class="text-center py-5">' +
+                    '<div class="success-ico"><i class="fa fa-paper-plane"></i></div>' +
+                    "<h4 class='mb-2' style='color:#fff'>Message Sent</h4>" +
+                    "<p style='color:var(--muted);font-size:14px'>Thanks for reaching out. Joreem's team replies within 24 hours (Monday to Saturday).</p>" +
+                    "</div>";
+            }, 1200);
         });
     }
 
@@ -888,29 +868,8 @@
         render();
     }
 
-    /* ================= Google Sheets newsletter submissions ================= */
-    function initSheetForms() {
-        document.querySelectorAll('form[data-sheet-form="Newsletter"]').forEach(function (form) {
-            form.addEventListener("submit", async function (event) {
-                event.preventDefault();
-                var input = form.querySelector('input[name="email"]');
-                if (!input || !input.checkValidity()) { input && input.reportValidity(); return; }
-                var button = form.querySelector('button[type="submit"]');
-                var status = form.querySelector('[role="status"]');
-                if (!status) { status = document.createElement("p"); status.setAttribute("role", "status"); status.setAttribute("aria-live", "polite"); form.appendChild(status); }
-                setButtonLoading(button, "Joining…");
-                try {
-                    await window.TWJSheets.submit("Newsletter", [{ submitted_at: new Date().toISOString(), email: input.value.trim(), source: location.pathname }]);
-                    status.textContent = "Thanks. Your email has been added to the newsletter list."; form.reset();
-                } catch (cause) { status.textContent = cause.message || "Could not submit your request."; }
-                finally { restoreButton(button); }
-            });
-        });
-    }
-
     /* ================= Boot ================= */
     document.addEventListener("DOMContentLoaded", function () {
-        initSheetForms();
         initPromo();
         initCounters();
         initPricing();

@@ -7,3 +7,8 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
+.work/
+.venv/
+__pycache__/
+*.py[cod]
+image-search/
