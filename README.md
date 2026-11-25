@@ -1,6 +1,6 @@
 # Trade with Joreem
 
-Trade with Joreem is a risk-first trading education and bookstore site built with Next.js 15 App Router, TypeScript and Tailwind. **The website is hosted on Vercel. Google Sheets, accessed through a Google Apps Script Web App, is the source of truth for submitted form rows and configured public catalog data.** The active website routes live under `app/`; the original HTML pages remain as a content/reference archive.
+Trade with Joreem is a risk-first trading education and bookstore site. The public-facing design is served from the existing HTML pages in the repository root; the Next.js 15 app is used for server-side `/api/*` endpoints. Vercel routes public pages to the static `site` service and form/API requests to the Next.js `app` service. **Google Sheets, accessed through a Google Apps Script Web App, remains the source of truth for submitted form rows and configured public catalog data.**
 
 ## Data architecture
 
@@ -20,11 +20,9 @@ npm run dev
 
 Marketing routes render without provider keys. Form/data operations require `NEXT_PUBLIC_GOOGLE_SCRIPT_WEBAPP_URL`. For browser requests, replace the placeholder with your deployed Apps Script `/exec` URL. Set the server-side `GOOGLE_SCRIPT_WEBAPP_URL` to the same URL for verified Stripe webhook forwarding.
 
-## Deploy the frontend on Vercel
+## Vercel deployment
 
-The existing Vercel project is connected to this repository and deploys from its configured production branch. For a deployment, verify the build command is `npm run build` (or leave Vercel’s Next.js defaults), set the project root to the repository root, and add required variables under **Project Settings → Environment Variables**. Set `NEXT_PUBLIC_SITE_URL` to `https://joreemtrading.com`, and configure the Google Apps Script URL variables described above. Keep Stripe test-mode variables optional and live payments disabled until the release gates below pass.
-
-Do not deploy the old static HTML as the Vercel project root; the Next.js application owns the public routes. After deployment, test the contact form from the actual Vercel domain because Apps Script cross-origin response behavior must be confirmed in a real browser.
+The existing Vercel project is connected to this repository. Its `site` service builds the original HTML design with `npm run build:static` into the ignored `dist/` directory. The `app` service runs Next.js and receives `/api/*` requests. Top-level rewrites send the public website to `site` and API requests to `app`. The form endpoint reads `GOOGLE_SCRIPT_WEBAPP_URL` server-side; set it in **Project Settings → Environment Variables**. Do not add Stripe credentials or enable payments. After deployment, test contact and newsletter submissions on the real domain and verify rows and notification emails in Sheets/Gmail.
 
 ## Google Sheets + Docs/Slides setup
 

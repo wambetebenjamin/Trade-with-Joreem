@@ -4,6 +4,12 @@
     "app": {
       "root": ".",
       "framework": "nextjs"
+    },
+    "site": {
+      "root": ".",
+      "framework": "other",
+      "buildCommand": "npm run build:static",
+      "outputDirectory": "dist"
     }
   },
   "cleanUrls": true,
@@ -130,9 +136,15 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/api/(.*)",
       "destination": {
         "service": "app"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "site"
       }
     }
   ]
