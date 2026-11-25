@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev --hostname 0.0.0.0",
     "build": "next build",
+    "build:static": "node scripts/build-static-site.mjs",
     "start": "next start --hostname 0.0.0.0",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prebuild": "npm run build:static"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",

@@ -1,6 +1,7 @@
 node_modules/
 .next/
 out/
+dist/
 .env*
 !.env.example
 .vercel/
@@ -12,3 +13,5 @@ next-env.d.ts
 __pycache__/
 *.py[cod]
 image-search/
+
+/public/legacy-site/
