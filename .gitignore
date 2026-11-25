@@ -1,8 +1,14 @@
-# Local build and QA scratch files
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
 .work/
 .venv/
 __pycache__/
 *.py[cod]
-
-# Temporary image-search downloads (selected assets are copied into assets/stock/)
 image-search/

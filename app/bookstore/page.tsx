@@ -1,0 +1,4 @@
+import { pageMetadata } from '@/lib/metadata';
+import { SheetBookCatalog } from '@/components/sheet-book-catalog';
+export const metadata=pageMetadata('Trading books and learning resources','Browse practical trading books for Forex, crypto, stocks and trading psychology.','/bookstore');
+export default function Bookstore(){return <><section className="hero"><div className="shell"><span className="eyebrow">The bookstore</span><h1>Resources for your own process.</h1><p className="lead">Browse the current catalog loaded from the Google Sheets Books tab. Checkout is available only after Stripe and delivery settings are configured.</p></div></section><section className="section shell"><SheetBookCatalog/><p className="notice">Digital downloads and print fulfilment remain disabled until final files, shipping and delivery operations are configured.</p></section></>}

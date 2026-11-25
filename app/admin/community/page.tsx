@@ -1,0 +1,2 @@
+export const metadata={title:'Community provisioning',robots:{index:false,follow:false}};
+export default function CommunityQueue(){return <section className="section shell"><span className="eyebrow">Staff setup</span><h1>Community access</h1><p className="notice">Member authentication and community provisioning are not implemented with Google Sheets. Verify payments in Stripe and fulfil access manually through your approved process.</p></section>}

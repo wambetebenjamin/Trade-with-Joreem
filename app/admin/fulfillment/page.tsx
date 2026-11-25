@@ -1,0 +1,2 @@
+export const metadata={title:'Print order fulfillment',robots:{index:false,follow:false}};
+export default function FulfillmentQueue(){return <section className="section shell"><span className="eyebrow">Staff setup</span><h1>Print fulfilment</h1><p className="notice">No order data is displayed here. Use the restricted Orders sheet and verify payment in Stripe before fulfilment. Do not publish the Sheets web app with access to private order data.</p></section>}
