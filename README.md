@@ -1,6 +1,6 @@
 # Trade with Joreem
 
-Trade with Joreem is a risk-first trading education and bookstore site built with Next.js 15 App Router, TypeScript and Tailwind. **The website is hosted on Render. Google Sheets, accessed through a Google Apps Script Web App, is the source of truth for submitted form rows and configured public catalog data.** The active website routes live under `app/`; the original HTML pages remain as a content/reference archive.
+Trade with Joreem is a risk-first trading education and bookstore site built with Next.js 15 App Router, TypeScript and Tailwind. **The website is hosted on Vercel. Google Sheets, accessed through a Google Apps Script Web App, is the source of truth for submitted form rows and configured public catalog data.** The active website routes live under `app/`; the original HTML pages remain as a content/reference archive.
 
 ## Data architecture
 
@@ -20,26 +20,21 @@ npm run dev
 
 Marketing routes render without provider keys. Form/data operations require `NEXT_PUBLIC_GOOGLE_SCRIPT_WEBAPP_URL`. For browser requests, replace the placeholder with your deployed Apps Script `/exec` URL. Set the server-side `GOOGLE_SCRIPT_WEBAPP_URL` to the same URL for verified Stripe webhook forwarding.
 
-## Deploy the frontend on Render
+## Deploy the frontend on Vercel
 
-1. Create a Render **Web Service** from this repository and choose the active branch to deploy.
-2. Build command: `npm ci && npm run build`
-3. Start command: `npm start` (the Next.js server binds to `0.0.0.0` and reads Render's `PORT`).
-4. Add `NEXT_PUBLIC_SITE_URL` using the Render public URL or confirmed custom domain.
-5. Add `NEXT_PUBLIC_GOOGLE_SCRIPT_WEBAPP_URL` (public frontend endpoint) and `GOOGLE_SCRIPT_WEBAPP_URL` (same URL, server-side).
-6. Add Stripe test-mode variables only if you are testing checkout. Keep live payments disabled until the release gates below pass.
+The existing Vercel project is connected to this repository and deploys from its configured production branch. For a deployment, verify the build command is `npm run build` (or leave Vercel’s Next.js defaults), set the project root to the repository root, and add required variables under **Project Settings → Environment Variables**. Set `NEXT_PUBLIC_SITE_URL` to `https://joreemtrading.com`, and configure the Google Apps Script URL variables described above. Keep Stripe test-mode variables optional and live payments disabled until the release gates below pass.
 
-Do not deploy the old static HTML as the Render service root; the Next.js application owns the public routes. After deployment, test the contact form from the actual Render origin because Apps Script cross-origin response behavior must be confirmed in a real browser.
+Do not deploy the old static HTML as the Vercel project root; the Next.js application owns the public routes. After deployment, test the contact form from the actual Vercel domain because Apps Script cross-origin response behavior must be confirmed in a real browser.
 
 ## Google Sheets + Docs/Slides setup
 
-Follow [`GOOGLE_APPS_SCRIPT_SETUP.md`](./GOOGLE_APPS_SCRIPT_SETUP.md). It contains the complete `doGet`/`doPost` script, tab contracts, document/slide automation actions, shared-secret setup and Render environment variables. Deploy the Apps Script Web App as **you**, with access set to **Anyone** for direct browser submissions. The script appends only to named form tabs and publicly reads only `Books` and `PublicContent`.
+Follow [`GOOGLE_APPS_SCRIPT_SETUP.md`](./GOOGLE_APPS_SCRIPT_SETUP.md). It contains the complete `doGet`/`doPost` script, tab contracts, document/slide automation actions, shared-secret setup and Vercel environment variables. Deploy the Apps Script Web App as **you**, with access set to **Anyone** for direct browser submissions. The script appends only to named form tabs and publicly reads only `Books` and `PublicContent`.
 
 Anyone who obtains the public Apps Script URL can submit to the allowlisted form tabs. Protect the spreadsheet itself, restrict editors, avoid collecting sensitive data and add anti-abuse controls before production traffic. Never expose private records through `doGet`.
 
 ## Stripe test setup (optional)
 
-Set test-mode values in Render or `.env.local`:
+Set test-mode values in Vercel or `.env.local`:
 
 - `STRIPE_SECRET_KEY` (test key), `STRIPE_WEBHOOK_SECRET`
 - `STRIPE_PRICE_FOUNDATION_MONTHLY`, `STRIPE_PRICE_FOUNDATION_ANNUAL`, `STRIPE_PRICE_PRO_MONTHLY`, `STRIPE_PRICE_PRO_ANNUAL`, `STRIPE_PRICE_ELITE_MONTHLY`, `STRIPE_PRICE_ELITE_ANNUAL`
@@ -50,7 +45,7 @@ Set test-mode values in Render or `.env.local`:
 - `GOOGLE_SCRIPT_WEBHOOK_SECRET`, matching the Apps Script Script Property `TWJ_STRIPE_WEBHOOK_SECRET`
 - Optional server-only `GOOGLE_SCRIPT_AUTOMATION_TOKEN`, matching Script Property `TWJ_AUTOMATION_TOKEN`, for trusted Docs/Slides creation
 
-In Stripe, set the webhook URL to `https://<your-render-host>/api/webhooks/stripe` and subscribe to `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `checkout.session.async_payment_failed`, `customer.subscription.updated`, `customer.subscription.deleted`, and `charge.refunded`. Test signed events in Stripe test mode and confirm rows appear in restricted `StripeEvents` and `Orders` tabs. The success page confirms status directly with Stripe; access/fulfilment is not provisioned by that page.
+In Stripe, set the webhook URL to `https://joreemtrading.com/api/webhooks/stripe` and subscribe to `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `checkout.session.async_payment_failed`, `customer.subscription.updated`, `customer.subscription.deleted`, and `charge.refunded`. Test signed events in Stripe test mode and confirm rows appear in restricted `StripeEvents` and `Orders` tabs. The success page confirms status directly with Stripe; access/fulfilment is not provisioned by that page.
 
 **Keep `ALLOW_LIVE_PAYMENTS=false`.** The server rejects `sk_live_`/`rk_live_` keys unless the flag is deliberately changed. Do not accept live payments until provider, catalog, tax, customer support, refund/shipping terms, final content, membership authentication and delivery have been tested. Flutterwave and Pesapal are not configured or advertised.
 

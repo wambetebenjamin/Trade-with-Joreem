@@ -1,4 +1,4 @@
-# Google Sheets Web App setup (Render frontend)
+# Google Sheets Web App setup (Vercel frontend)
 
 This project uses a deployed Google Apps Script Web App as its form/data endpoint. Google Sheets is the system of record. No SQL database, ORM, Supabase account database, or local data file is used.
 
@@ -189,8 +189,8 @@ function json_(data) { return ContentService.createTextOutput(JSON.stringify(dat
 1. The script emails accepted form submissions to `bigdeal3050@gmail.com`. Deploy it while signed into the Google account intended to run the project, and authorize the mail permission when prompted. In **Apps Script → Project Settings → Script Properties**, add `TWJ_STRIPE_WEBHOOK_SECRET` with a long random value. Add `TWJ_AUTOMATION_TOKEN` only if a trusted server-side tool will create Docs/Slides; never put it in browser code.
 2. Create a `Books` tab with header columns `id`, `title`, `desc`, `price`, `kind`, `image`, `active`. Create a `Plans` tab with `id`, `name`, `blurb`, `monthly`, `annual`, `featured`, `active`, `feature_1`, `feature_2`, `feature_3`, `feature_4`, `feature_5`, `feature_6`. Use `TRUE`/`FALSE` for flags. Keep the checkout SKU IDs exactly `foundation`, `pro`, `elite`; Stripe still validates the real amount at payment time. Use public HTTPS URLs or same-site paths for book images. Add `PublicContent` only for content you intentionally make public. Seed the public catalog with rows matching the headers; for `Books`, use the IDs `forex-mastery`, `crypto-signals`, `trading-psychology`, `stocks-from-zero`, and `bundle`. For `Plans`, seed the `foundation`, `pro`, and `elite` IDs and their approved monthly/annual prices/features. These rows are the public display source; the configured Stripe Price IDs remain authoritative for charged amounts.
 3. In **Deploy → New deployment → Web app**, execute as **you**. For a public website form, set access to **Anyone**. Copy the deployed URL ending in `/exec` (not `/dev`). Anyone with the URL can submit to the allowlisted form tabs; do not make private tabs readable. Protect the spreadsheet and restrict editor access. Add rate limiting/abuse protection before collecting real personal data.
-4. In Render environment variables, set both `NEXT_PUBLIC_GOOGLE_SCRIPT_WEBAPP_URL` and `GOOGLE_SCRIPT_WEBAPP_URL` to that same `/exec` URL. Set `GOOGLE_SCRIPT_WEBHOOK_SECRET` to the same value as `TWJ_STRIPE_WEBHOOK_SECRET`; this value is server-side only.
-5. When using Stripe, keep `STRIPE_WEBHOOK_SECRET` set in Render. Stripe posts to the Next route `/api/webhooks/stripe`; Next verifies Stripe's signature first, then forwards verified event rows to Apps Script. Never point Stripe directly at a public, unsigned Sheets append endpoint.
+4. In Vercel environment variables, set both `NEXT_PUBLIC_GOOGLE_SCRIPT_WEBAPP_URL` and `GOOGLE_SCRIPT_WEBAPP_URL` to that same `/exec` URL. Set `GOOGLE_SCRIPT_WEBHOOK_SECRET` to the same value as `TWJ_STRIPE_WEBHOOK_SECRET`; this value is server-side only.
+5. When using Stripe, keep `STRIPE_WEBHOOK_SECRET` set in Vercel Project Settings → Environment Variables. Stripe posts to the Next route `/api/webhooks/stripe`; Next verifies Stripe's signature first, then forwards verified event rows to Apps Script. Never point Stripe directly at a public, unsigned Sheets append endpoint.
 6. Re-deploy the frontend after changing its public URL variable. Test `/bookstore` reads `Books`, and submit a test contact/newsletter/access request. Verify rows are appended in their named tabs. Test `StripeEvents` with Stripe test mode before enabling live payments.
 7. Do not enable membership, print or digital checkout until member authentication, protected file delivery, email and fulfilment are independently secured and operational. Google Sheets is not a per-user authorization system.
 
@@ -198,7 +198,7 @@ function json_(data) { return ContentService.createTextOutput(JSON.stringify(dat
 
 Frontend write requests are JSON arrays of objects; each object's properties become sheet column headers. Current form tabs are `ContactRequests`, `Newsletter`, `AccessRequests`, and `JournalEntries`. `doGet` returns a standard JSON array of objects keyed by the header row. Only `Books`, `Plans` and `PublicContent` are readable from the public web app. Successful checkout events are recorded in restricted `StripeEvents` and `Orders` tabs after Stripe signature verification.
 
-The browser sends `Content-Type: text/plain;charset=utf-8` to avoid a JSON preflight. Apps Script Web Apps have Google-controlled redirects and browser cross-origin behavior can vary. Test the deployed `/exec` URL from the actual Render origin; if the browser blocks reading its response, do not silently switch to opaque `no-cors` success claims. Use a controlled CORS-capable relay or a Google-supported integration instead.
+The browser sends `Content-Type: text/plain;charset=utf-8` to avoid a JSON preflight. Apps Script Web Apps have Google-controlled redirects and browser cross-origin behavior can vary. Test the deployed `/exec` URL from the actual Vercel domain; if the browser blocks reading its response, do not silently switch to opaque `no-cors` success claims. Use a controlled CORS-capable relay or a Google-supported integration instead.
 
 
 ## Optional server-side Docs / Slides calls
@@ -216,4 +216,4 @@ const response = await fetch(url, {
 const result = await response.json(); // { ok: true, ids: [Google file ID] }
 ```
 
-Set `GOOGLE_SCRIPT_AUTOMATION_TOKEN` as a server-only Render environment variable equal to `TWJ_AUTOMATION_TOKEN`. The token is deliberately not included in any frontend bundle or sample client form. The Apps Script creates the file in the executing Google account's Drive.
+Set `GOOGLE_SCRIPT_AUTOMATION_TOKEN` as a server-only Vercel environment variable equal to `TWJ_AUTOMATION_TOKEN`. The token is deliberately not included in any frontend bundle or sample client form. The Apps Script creates the file in the executing Google account's Drive.

@@ -7,5 +7,5 @@
 - The browser-visible Apps Script URL is not a secret. Never put `GOOGLE_SCRIPT_WEBHOOK_SECRET`, `TWJ_AUTOMATION_TOKEN`, Stripe keys or admin credentials in browser code or `NEXT_PUBLIC_*` variables.
 - Google Sheets does not provide user authentication or row-level authorization. Member dashboard, downloads, order history, account changes and admin queues remain unavailable until a dedicated secure access mechanism is implemented.
 - Checkout is gated by membership, digital delivery and print fulfilment environment flags. Keep `ALLOW_LIVE_PAYMENTS=false` until all providers, legal terms, final files and fulfilment operations are tested.
-- Configure Render secrets as environment variables; do not commit `.env.local` or provider keys.
+- Configure Vercel secrets as environment variables; do not commit `.env.local` or provider keys.
 - `valinor.sbs` is not integrated. Do not send visitor/security information there without its documented endpoint, authentication, schema and an approved data scope.
