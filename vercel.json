@@ -7,7 +7,7 @@
     },
     "site": {
       "root": ".",
-      "framework": "other",
+      "runtime": "static",
       "buildCommand": "npm run build:static",
       "outputDirectory": "dist"
     }
