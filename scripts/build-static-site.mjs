@@ -28,7 +28,17 @@ for (const name of ['robots.txt', 'sitemap.xml', 'site.webmanifest', 'favicon.sv
   try { await cp(path.join(root, name), path.join(output, name)); } catch { /* optional public file */ }
 }
 await cp(path.join(root, 'js', 'sheets-forms.js'), path.join(output, 'js', 'sheets-forms.js'));
-const nextPublic = path.join(root, 'public', 'legacy-site');
+const publicRoot = path.join(root, 'public');
+// Legacy HTML references assets from the site root (for example /css/... and /img/...).
+// Copy those same files into Next.js' public root as well as legacy-site/ so Vercel
+// serves them at the URLs used by the original pages.
+for (const name of ['assets', 'css', 'img', 'js', 'lib', 'presentations']) {
+  await cp(path.join(root, name), path.join(publicRoot, name), { recursive: true, force: true });
+}
+for (const name of ['robots.txt', 'sitemap.xml', 'site.webmanifest', 'favicon.svg']) {
+  try { await cp(path.join(root, name), path.join(publicRoot, name), { force: true }); } catch { /* optional public file */ }
+}
+const nextPublic = path.join(publicRoot, 'legacy-site');
 await rm(nextPublic, { recursive: true, force: true });
 await cp(output, nextPublic, { recursive: true });
-console.log(`Prepared previous static website (${htmlFiles.length} HTML pages) in dist/`);
+console.log(`Prepared previous static website (${htmlFiles.length} HTML pages) in dist/ and public/legacy-site/`);
