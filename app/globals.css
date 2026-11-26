@@ -4,3 +4,26 @@
 .mobile-sticky-cta{display:none}@media(max-width:780px){.mobile-sticky-cta{display:block;position:fixed;z-index:80;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));padding:12px;text-align:center;background:var(--gold);color:#17130a;font-weight:800;box-shadow:0 8px 28px #0007}.footer{padding-bottom:85px}}
 .lesson-copy{max-width:760px;white-space:normal;line-height:1.85}.lesson-copy p{margin:0 0 18px}
 .promo{display:flex;align-items:center;justify-content:center;gap:14px;padding-right:52px;position:relative}.promo button{position:absolute;right:12px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:#17130a;font-size:22px;line-height:1;cursor:pointer;padding:4px 8px}.promo button:hover{background:#00000012}
+
+/* Shared Elearn-inspired design language for Next.js utility routes as well as
+   the legacy marketing pages. Keeps their existing content and behavior. */
+:root{--bg:#fff;--surface:#fff;--surface2:#f7f7f8;--ink:#2c2b31;--muted:#6c6a74;--gold:#ff6600;--line:#e8e7ea;--green:#287b55}
+body{background:#fff;color:#6c6a74;font-family:Poppins,Montserrat,Arial,sans-serif}
+.top{background:#fff;border-bottom:1px solid #f0eff2;box-shadow:0 5px 20px rgba(0,0,0,.05);backdrop-filter:none}
+.brand{color:#ff6600}.brand span{color:#2c2b31}.nav nav{color:#2c2b31}.nav nav a:hover,.footer a:hover{color:#ff6600}
+.button{background:#ff6600;border-color:#ff6600;color:#fff;border-radius:3px}.button:hover{background:#ed5c00;color:#fff;border-color:#ed5c00}
+.button.secondary{color:#2c2b31;border-color:#2c2b31;background:transparent}.button.secondary:hover{background:#2c2b31;color:#fff}
+.hero{background:linear-gradient(90deg,rgba(25,25,31,.88),rgba(25,25,31,.50)),url('/img/elearn-hero.jpg') center/cover no-repeat;color:#fff}
+.hero h1{color:#fff}.hero .lead{color:#f4f2f3}.eyebrow,.tag{color:#ff6600}
+.section.alt{background:#f7f7f8}.section h2,.open-panel h3{color:#2c2b31}
+.open-panel{border:1px solid #e8e7ea;border-radius:4px;background:#fff;padding:24px;box-shadow:0 8px 24px rgba(37,31,26,.045)}
+.plan,.market,.book,.grid>*,.dashboard-grid>*{border-color:#e8e7ea}
+.plan,.market,.faq details{background:#fff;border:1px solid #e8e7ea;border-radius:4px;padding:22px;box-shadow:0 8px 24px rgba(37,31,26,.045)}
+.plan.featured{background:#fffaf6;border-color:#ffb27d}
+.notice{border-left-color:#ff6600;background:#fff7f1;color:#6c6a74}
+.form input,.form textarea,.form select{background:#fff;border:1px solid #d8d6da;color:#2c2b31}
+.form label{color:#6c6a74}.pill{border-color:#ffccae;color:#a63f00}
+.footer{background:#2c2b31;border-top:0;color:#ddd}.footer a{color:#eee}.fine{border-top-color:#514f55}
+.consent,.consent-reopen{background:#2c2b31;border-color:#514f55;color:#fff}.consent p{color:#e4e2e5}
+.promo{background:#ff6600;color:#fff}.promo button{color:#fff}
+@media(max-width:780px){.nav nav{color:#2c2b31}.hero{background-position:58% center}.section{padding:50px 0}}

@@ -1,0 +1,82 @@
+/* Trade with Joreem — visual adaptation of the supplied Elearn template.
+   Preserve the site's existing copy, page sections, forms, and behavior. */
+body.elearn-style {
+  --elearn-orange: #ff6600;
+  --elearn-orange-deep: #ed5c00;
+  --elearn-ink: #2c2b31;
+  --elearn-muted: #6c6a74;
+  --elearn-line: #e8e7ea;
+  --elearn-surface: #fff;
+  --elearn-soft: #f7f7f8;
+  color: var(--elearn-muted);
+  background: var(--elearn-surface);
+  font-family: Poppins, Montserrat, Arial, sans-serif;
+}
+body.elearn-style h1, body.elearn-style h2, body.elearn-style h3,
+body.elearn-style h4, body.elearn-style h5, body.elearn-style h6 {
+  color: var(--elearn-ink) !important;
+  font-family: Poppins, Montserrat, Arial, sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -.025em !important;
+}
+body.elearn-style p { color: var(--elearn-muted) !important; }
+body.elearn-style a { transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
+body.elearn-style .topbar { background: var(--elearn-ink) !important; color: #fff !important; }
+body.elearn-style .topbar a, body.elearn-style .topbar small { color: #e5e3e8 !important; }
+body.elearn-style .navbar { background: #fff !important; border-bottom: 1px solid #f0eff2 !important; box-shadow: 0 5px 20px rgba(0,0,0,.05) !important; }
+body.elearn-style .navbar .navbar-brand .brand-name { color: var(--elearn-ink) !important; }
+body.elearn-style .navbar .nav-link { color: var(--elearn-ink) !important; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: .055em; }
+body.elearn-style .navbar .nav-link:hover, body.elearn-style .navbar .nav-link.active { color: var(--elearn-orange) !important; }
+body.elearn-style .navbar .btn, body.elearn-style .btn-primary,
+body.elearn-style .btn-primary:focus { color: #fff !important; background: var(--elearn-orange) !important; border-color: var(--elearn-orange) !important; box-shadow: none !important; border-radius: 3px !important; }
+body.elearn-style .btn-primary:hover { background: var(--elearn-orange-deep) !important; border-color: var(--elearn-orange-deep) !important; }
+body.elearn-style .btn-outline-light { color: var(--elearn-ink) !important; border-color: var(--elearn-ink) !important; border-radius: 3px !important; }
+body.elearn-style .btn-outline-light:hover { color: #fff !important; background: var(--elearn-ink) !important; }
+body.elearn-style .hero.hero-center {
+  min-height: min(780px, 100vh); padding: 158px 0 110px; text-align: left; justify-content: flex-start;
+  background: linear-gradient(90deg,rgba(18,19,25,.88) 0%,rgba(18,19,25,.72) 52%,rgba(18,19,25,.22) 100%),url('/img/elearn-hero.jpg') center 48%/cover no-repeat;
+}
+body.elearn-style .hero.hero-center .container { max-width: 1200px; }
+body.elearn-style .hero.hero-center .wow { max-width: 690px; }
+body.elearn-style .hero.hero-center .hero-kicker { color: #fff !important; background: rgba(255,102,0,.88) !important; border: 0 !important; border-radius: 2px !important; }
+body.elearn-style .hero.hero-center h1 { color: #fff !important; font-size: clamp(2.8rem,5.5vw,5rem) !important; line-height: 1.12 !important; }
+body.elearn-style .hero.hero-center h1 span, body.elearn-style .hero.hero-center h1 .gold { color: #ff8a00 !important; }
+body.elearn-style .hero.hero-center .hero-lead { color: #f4f2f3 !important; }
+body.elearn-style .hero.hero-center .hero-bg, body.elearn-style .hero.hero-center .hero-grid,
+body.elearn-style .hero.hero-center .hero-glow { display: none !important; }
+body.elearn-style .hero .hstat .n, body.elearn-style .hero .hstat .n em { color: #fff !important; }
+body.elearn-style .hero .hstat .l { color: #f0edf0 !important; }
+body.elearn-style .hero .rate-chip { color: #fff !important; background: rgba(24,24,28,.66) !important; border-color: rgba(255,255,255,.22) !important; }
+body.elearn-style .section-pad { padding-top: clamp(54px,6vw,84px) !important; padding-bottom: clamp(54px,6vw,84px) !important; background-color: #fff !important; }
+body.elearn-style .section-pad:nth-of-type(even), body.elearn-style .value-band { background-color: #f7f7f8 !important; }
+body.elearn-style .section-title h2, body.elearn-style .vb-copy h2 { font-size: clamp(1.9rem,3.5vw,3rem) !important; line-height: 1.2 !important; }
+body.elearn-style .section-title .section-kicker, body.elearn-style .section-kicker,
+body.elearn-style .hero-kicker, body.elearn-style .ph-kicker { color: var(--elearn-orange) !important; }
+body.elearn-style .vchip, body.elearn-style .how-card, body.elearn-style .stage-card,
+body.elearn-style .feature-card, body.elearn-style .show-card, body.elearn-style .book-card,
+body.elearn-style .plan-card, body.elearn-style .testimonial-item, body.elearn-style .term-feat,
+body.elearn-style .card-panel, body.elearn-style .jstat, body.elearn-style .jnode,
+body.elearn-style .global-band, body.elearn-style .community-widget, body.elearn-style .app-widget {
+  background: #fff !important; border: 1px solid var(--elearn-line) !important;
+  border-radius: 4px !important; box-shadow: 0 8px 24px rgba(37,31,26,.045) !important;
+}
+body.elearn-style .pc-flag, body.elearn-style .plan-flag, body.elearn-style .case-chip,
+body.elearn-style .format-badge, body.elearn-style .pc-plan { background: var(--elearn-orange) !important; color: #fff !important; }
+body.elearn-style .price-card.featured, body.elearn-style .plan-card.featured { background: #fffaf6 !important; border-color: #ffb27d !important; box-shadow: 0 12px 30px rgba(255,102,0,.09) !important; }
+body.elearn-style .page-hero { background: linear-gradient(110deg,#f7f7f8,#fff) !important; border-bottom: 1px solid var(--elearn-line) !important; }
+body.elearn-style .page-hero h1, body.elearn-style .page-hero .text-white { color: var(--elearn-ink) !important; }
+body.elearn-style .page-hero p, body.elearn-style .page-hero .text-white-50 { color: var(--elearn-muted) !important; }
+body.elearn-style .navbar .navbar-toggler { color: var(--elearn-ink) !important; border-color: var(--elearn-line) !important; }
+body.elearn-style .accordion-button:not(.collapsed), body.elearn-style .faq-item[open] summary { color: var(--elearn-orange) !important; }
+body.elearn-style .footer-main, body.elearn-style .footer-bottom { background: var(--elearn-ink) !important; }
+body.elearn-style .footer-main h2, body.elearn-style .footer-main h3, body.elearn-style .footer-main h4,
+body.elearn-style .footer-main p, body.elearn-style .footer-main a { color: #fff !important; }
+body.elearn-style .footer-main .btn-primary { color: #fff !important; }
+body.elearn-style .payment-badge, body.elearn-style .pay-badge { border-color: rgba(255,255,255,.2) !important; }
+@media (max-width: 767.98px) {
+  body.elearn-style .hero.hero-center { min-height: 620px; padding: 115px 0 104px; text-align: center; background-position: 58% center; }
+  body.elearn-style .hero.hero-center .hero-cta-row, body.elearn-style .hero.hero-center .hero-ratings { justify-content: center; }
+  body.elearn-style .section-pad { padding-top: 48px !important; padding-bottom: 48px !important; }
+  body.elearn-style .navbar-collapse { background: #fff !important; }
+  body.elearn-style .navbar-collapse .nav-link { color: var(--elearn-ink) !important; }
+}
