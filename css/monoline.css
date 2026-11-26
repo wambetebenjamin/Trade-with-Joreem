@@ -78,7 +78,7 @@ body.monoline-site {
 .monoline-site .app-widget,.monoline-site .community-widget,.monoline-site .student-wins-widget { box-shadow: none !important; border: 1px solid #e8e8e8; border-radius: 3px; }
 .monoline-site .section-pad + .section-pad { border-top: 0; }
 .monoline-site .terminal { box-shadow: 0 12px 32px rgba(27,32,50,.1); }
-.monoline-site .section-pad { padding-top: clamp(68px, 8vw, 112px); padding-bottom: clamp(68px, 8vw, 112px); background-color: #fff; }
+.monoline-site .section-pad { padding-top: clamp(52px, 5vw, 76px); padding-bottom: clamp(52px, 5vw, 76px); background-color: #fff; }
 .monoline-site .section-pad:nth-of-type(even) { background-color: #f9fcff; }
 .monoline-site .section-title h2 { color: #1b2032; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: 0; line-height: 1.12; }
 .monoline-site .section-title p { color: #747474; line-height: 1.8; }
