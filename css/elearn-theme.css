@@ -20,6 +20,8 @@ body.elearn-style h4, body.elearn-style h5, body.elearn-style h6 {
   letter-spacing: -.025em !important;
 }
 body.elearn-style p { color: var(--elearn-muted) !important; }
+/* Do not let a failed or delayed WOW.js animation hide the page content. */
+body.elearn-style .wow { visibility: visible !important; }
 body.elearn-style a { transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
 body.elearn-style .topbar { background: var(--elearn-ink) !important; color: #fff !important; }
 body.elearn-style .topbar a, body.elearn-style .topbar small { color: #e5e3e8 !important; }
