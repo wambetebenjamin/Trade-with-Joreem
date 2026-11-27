@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
+import './premium.css';
 import { SITE_URL } from '@/lib/site';
 import {CartProvider,CartCount} from '@/components/cart';
 import {ConsentBanner} from '@/components/consent-banner';
