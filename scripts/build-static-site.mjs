@@ -10,6 +10,8 @@ const entries = await readdir(root, { withFileTypes: true });
 const htmlFiles = entries.filter((entry) => entry.isFile() && entry.name.endsWith('.html')).map((entry) => entry.name);
 for (const name of htmlFiles) {
   let html = await readFile(path.join(root, name), 'utf8');
+  // Remove the full-width promotional strip from every legacy marketing page.
+  html = html.replace(/<div class="promo-bar" id="promoBar">[\s\S]*?<\/div>/g, '');
   html = html.replace(/onsubmit="event\.preventDefault\(\);\s*this\.reset\(\);\s*alert\('Subscribed! Market notes land in your inbox every Monday\.'\);"/g, 'data-sheet-form="Newsletter"');
   html = html.replace('<form id="contactForm" novalidate="">', '<form id="contactForm" data-sheet-form="ContactRequests" novalidate="">');
   html = html.replace(/<script src="\/js\/site\.8c3481c7aeea\.min\.js"><\/script>/g, '<script src="/js/site.8c3481c7aeea.min.js"></script><script src="/js/sheets-forms.js" defer></script>');
