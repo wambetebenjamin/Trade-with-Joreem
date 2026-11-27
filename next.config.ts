@@ -9,6 +9,10 @@ const securityHeaders=[
 ];
 const config:NextConfig={
   async headers(){return [{source:'/:path*',headers:securityHeaders}]},
+  outputFileTracingIncludes:{'/*':['./dist/index.html']},
+  async rewrites(){return {beforeFiles:[
+    ...['about','bookstore','contact','mentorship','member','login','privacy','risk','terms','thank-you'].map((p)=>({source:`/${p}`,destination:`/legacy-site/${p}.html`})),
+  ]}},
   async redirects(){return [
     ...['mentorship','bookstore','about','contact','terms','risk','privacy','login','member'].map((p)=>({source:`/${p}.html`,destination:p==='member'?'/dashboard':`/${p}`,permanent:true})),
     {source:'/index.html',destination:'/',permanent:true},{source:'/thank-you.html',destination:'/contact',permanent:true},{source:'/404.html',destination:'/',permanent:false}
