@@ -33,7 +33,7 @@ body.elearn-style .btn-primary:hover { background: var(--elearn-orange-deep) !im
 body.elearn-style .btn-outline-light { color: var(--elearn-ink) !important; border-color: var(--elearn-ink) !important; border-radius: 3px !important; }
 body.elearn-style .btn-outline-light:hover { color: #fff !important; background: var(--elearn-ink) !important; }
 body.elearn-style .hero.hero-center {
-  min-height: min(620px, 78vh); padding: 88px 0 70px; text-align: left; justify-content: flex-start;
+  min-height: min(500px, 68vh); padding: 56px 0 44px; text-align: left; justify-content: flex-start;
   background: linear-gradient(90deg,rgba(18,19,25,.88) 0%,rgba(18,19,25,.72) 52%,rgba(18,19,25,.22) 100%),url('/img/elearn-hero.jpg') center 48%/cover no-repeat;
 }
 body.elearn-style .hero.hero-center .container { max-width: 1200px; }
@@ -47,7 +47,7 @@ body.elearn-style .hero.hero-center .hero-glow { display: none !important; }
 body.elearn-style .hero .hstat .n, body.elearn-style .hero .hstat .n em { color: #fff !important; }
 body.elearn-style .hero .hstat .l { color: #f0edf0 !important; }
 body.elearn-style .hero .rate-chip { color: #fff !important; background: rgba(24,24,28,.66) !important; border-color: rgba(255,255,255,.22) !important; }
-body.elearn-style .section-pad { padding-top: clamp(36px,4vw,56px) !important; padding-bottom: clamp(36px,4vw,56px) !important; background-color: #fff !important; }
+body.elearn-style .section-pad { padding-top: clamp(26px,3vw,40px) !important; padding-bottom: clamp(26px,3vw,40px) !important; background-color: #fff !important; }
 body.elearn-style .section-pad:nth-of-type(even), body.elearn-style .value-band { background-color: #f7f7f8 !important; }
 body.elearn-style .section-title h2, body.elearn-style .vb-copy h2 { font-size: clamp(1.9rem,3.5vw,3rem) !important; line-height: 1.2 !important; }
 body.elearn-style .section-title .section-kicker, body.elearn-style .section-kicker,
@@ -74,9 +74,9 @@ body.elearn-style .footer-main p, body.elearn-style .footer-main a { color: #fff
 body.elearn-style .footer-main .btn-primary { color: #fff !important; }
 body.elearn-style .payment-badge, body.elearn-style .pay-badge { border-color: rgba(255,255,255,.2) !important; }
 @media (max-width: 767.98px) {
-  body.elearn-style .hero.hero-center { min-height: 0; padding: 64px 0 48px; text-align: center; background-position: 58% center; }
+  body.elearn-style .hero.hero-center { min-height: 0; padding: 40px 0 32px; text-align: center; background-position: 58% center; }
   body.elearn-style .hero.hero-center .hero-cta-row, body.elearn-style .hero.hero-center .hero-ratings { justify-content: center; }
-  body.elearn-style .section-pad { padding-top: 30px !important; padding-bottom: 30px !important; }
+  body.elearn-style .section-pad { padding-top: 24px !important; padding-bottom: 24px !important; }
   body.elearn-style .page-hero { padding-top: 30px !important; padding-bottom: 30px !important; }
   body.elearn-style .navbar-collapse { background: #fff !important; }
   body.elearn-style .navbar-collapse .nav-link { color: var(--elearn-ink) !important; }
